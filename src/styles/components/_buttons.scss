@@ -1,0 +1,188 @@
+.button {
+  position: relative;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 0.875rem;
+  transition: color $trs1, border-color $trs1, background-color $trs1;
+  height: 40px;
+  line-height: 38px;
+  padding: 0 15px;
+  border-radius: 2px;
+  min-width: 144px;
+  font-weight: 400;
+  .icon {
+    height: 18px;
+    width: 18px;
+    transition: fill $trs1;
+    &:not(:last-child) {
+      margin-right: 12px;
+    }
+  }
+  &_style-1 {
+    border: 1px solid var(--color-button1-border, #B7CBE5);
+    color: var(--color-button1, #1C52AC);
+    background-color: var(--color-button1-bg, transparent);;
+    .icon {
+      fill: var(--color-button1-icon, #2363D1);
+      stroke: var(--color-button1-icon, #2363D1);
+    }
+    &.touch,
+    &.hover {
+      color: var(--color-button1-hover, #fff);
+      background-color: var(--color-button1-hover-bg, #E7EEF6);
+      border-color: var(--color-button1-hover-border, #2363D1);
+      .icon {
+        fill: var(--color-button1-hover-icon, #1C52AC);
+        stroke: var(--color-button1-hover-icon, #1C52AC);
+      }
+    }
+  }
+  &_style-2 {
+    border: 1px solid var(--color-button2-bg, #2363D1);
+    color: var(--color-button2, #fff);
+    background-color: var(--color-button2-bg, #2363D1);
+    .icon {
+      fill: var(--color-button2-icon, #fff);
+      stroke: var(--color-button2-icon, #fff);
+    }
+    &.touch,
+    &.hover {
+      background-color: var(--color-button2-hover-bg, #1C52AC);
+      border-color: var(--color-button2-hover-bg, #1C52AC);
+    }
+  }
+  &_style-5 {
+    border: 1px solid var(--color-button4, #3EC28F);
+    color: #fff;
+    background-color: var(--color-button4, #3EC28F);
+    .icon {
+      fill: #fff;
+      stroke: #fff;
+    }
+    &.touch,
+    &.hover {
+      background-color: var(--color-hover-button4, #2ea879);
+      border-color: var(--color-hover-button4, #2ea879);
+    }
+  }
+  &_style-3 {
+    padding: 0;
+    min-width: 0px;
+    color: inherit;
+    line-height: 24px;
+    height: 24px;
+    .icon {
+      fill: var(--color-button3, #2363D1);
+      stroke: var(--color-button3, #2363D1);;
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+    &.touch,
+    &.hover {
+      color: var(--color-button3, #2363D1);
+    }
+  }
+  &_style-4 {
+    width: 100%;
+    background-color: var(--color-button4-bg, #F3F6FB);
+    border: 2px solid var(--color-button4-bg, #F3F6FB);
+    color: inherit;
+    line-height: 44px;
+    font-size: 1.125rem;
+    height: 48px;
+    span {
+      width: 20px;
+      height: 20px;
+      border: 2px solid #000;
+      border-radius: 20px;
+      transition: border-color $trs1, background-color $trs1;
+      position: absolute;
+      left: 15px;
+      top: 12px;
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        background: #fff;
+        top: 3px;
+        left: 3px;
+        transition: opacity $trs1;
+        opacity: 0;
+      }
+    }
+    &.touch,
+    &.hover,
+    &.active {
+      border-color: var(--color-button4-accent, #2363D1)
+    }
+    &.active {
+      background-color: transparent;
+      pointer-events: none;
+      span {
+        border-color: var(--color-button4-accent, #2363D1);
+        background-color: var(--color-button4-accent, #2363D1);
+        &:after {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  &_icon {
+    width: 52px;
+    min-width: 40px;
+  }
+  &_xl {
+    line-height: 46px;
+    padding: 0 20px;
+    height: 48px;
+    font-size: 1.125rem;
+    .icon {
+      height: 20px;
+      width: 20px;
+    }
+  }
+  &_rounded-arrow {
+    width: 24px;
+    height: 24px;
+    border-radius: 24px;
+    padding: 0;
+    min-width: 0px;
+    pointer-events: none;
+    background-color: var(--color-filter-arrow-bg, #F3F6FB);
+    transition: transform $trs1;
+    .icon {
+      width: 10px;
+      height: 10px;
+    }
+  }
+}
+
+.tooltip-btn {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 18px;
+  color: var(--color-accent-darker, #1C52AC);
+  border: 1px solid var(--color-border-1, #D9D9DE);
+  transition: border-color $trs1, color $trs1, background-color $trs1;
+  text-decoration: none;
+  margin-left: 4px;
+  &.touch,
+  &.hover {
+    border-color: var(--color-accent-darker, #1C52AC);
+    color: #fff;
+    background-color: var(--color-accent-darker, #1C52AC);
+  }
+}

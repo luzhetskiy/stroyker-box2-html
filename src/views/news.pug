@@ -1,0 +1,63 @@
+extends layout/layout
+block title
+  title Новости и акции
+block breadcrumbs 
+  -var title = 'Новости и акции'
+  include blocks/breadcrumbs
+block content
+  section.section.services
+    .container
+      h1.section__title Новости и акции
+      .row.grid
+        include blocks/cards
+        +news-card-large(1, 'grid__head col-12')
+        +news-card(1, 'grid__block col-lg-4 col-sm-6')
+        +news-card(2, 'grid__block col-lg-4 col-sm-6')
+        +news-card(1, 'grid__block col-lg-4 col-sm-6')
+        +news-card(2, 'grid__block col-lg-4 col-sm-6')
+        +news-card(1, 'grid__block col-lg-4 col-sm-6')
+        +news-card(2, 'grid__block col-lg-4 col-sm-6')
+      -var paginationAlignLeft = true
+      include blocks/pagination
+  section.section.additionalLinks-section
+    .container
+      h2.section__title Добро пожаловать в клуб современной дистрибуции
+      .row
+        .additionalLinks-block.col-md-6
+          .additionalLinks-block__container
+            h2.additionalLinks-block__title Калькулятор доставки
+            p.additionalLinks-block__text Откройте для себя наш удобный инструмент для рассчета стоимости доставки
+            a(href="#").button.button_style-1.button_xl.additionalLinks-block__button
+              svg.icon
+                use(xlink:href="img/icons/icons-sprite.svg#box")
+              span Рассчитать
+        .additionalLinks-block.col-md-6
+          .additionalLinks-block__container
+            h2.additionalLinks-block__title Экономьте свое время
+            p.additionalLinks-block__text Выставите счет в корзине или отправьте запрос менеджеру в свободной форме
+            a(href="#").button.button_style-1.button_xl.additionalLinks-block__button
+              svg.icon
+                use(xlink:href="img/icons/icons-sprite.svg#document")
+              span Посмотреть все объекты
+  section.section
+    .container
+      h2.section__title Распродажа
+      .slider.slider_grid.slider_arrows.row.product-slider
+        include blocks/cards
+        +card4(true, 'col product-card_catalogue', 4, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(false, 'col product-card_catalogue', 2, 'Фанера ФК')
+        +card4(true, 'col product-card_catalogue', 3, 'Фанера ФК')
+        +card4(false, 'col product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(true, 'col product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(true, 'col product-card_catalogue', 3, 'Фанера ФК')
+        +card4(false, 'col product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(true, 'col product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+
+  -var formTitle = 'Станьте нашим партнером'
+  include blocks/form   
+  section.section
+    .container
+      .row.justify-content-center
+        .col-xl-10
+          h2 Почему мы лучше продаем стройматериал
+          p Инвестируем в заводы, производящие листовые строительные материалы (ДСП ЦСП ФАНЕРА, ОСБ и т.д.) заключаем договора, выкупаем партии продукции, везем вагонами или фурами на склад и после поставляют постоянным клиентам типа “Красной цены”, “Сатурна”, “Центр строя” и т.д. Если есть товар в наличии и их цена ниже, то мы продаем, если нет — то продают конкуренты.

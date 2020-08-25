@@ -1,0 +1,194 @@
+.filter {
+  font-size: 0.875rem;
+  box-shadow: 0px 2px 25px rgba(118, 118, 118, 0.15);
+  border: 1px solid var(--color-border-1, #D9D9DE);
+  border-radius: 2px;
+  background-color: #fff;
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  &__head {
+    display: none;
+  }
+  &__sections {
+  }
+  &__container {
+    padding: 24px 0 12px 0;
+  }
+  &-section {
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+    &:last-child {
+      .filter-section__content-inner {
+        padding-bottom: 0;
+      }
+    }
+    &__head {
+      position: relative;
+      margin-bottom: 8px;
+      user-select: none;
+      cursor: pointer;
+      &.active {
+        .button_rounded-arrow {
+          transform: rotate(180deg);
+        }
+      }
+    }
+    &__item {
+      &:not(:first-child) {
+        margin-top: 20px;
+      }
+      margin-top: 20px;
+    }
+    &__content-inner {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    &__items {
+      margin-top: -20px;
+    }
+    &__content {
+
+      &.scrollbar {
+        max-height: 170px;
+      }
+    }
+    &__items-content {
+      margin-bottom: -20px;
+    }
+    &__title {
+      margin: 0;
+      line-height: 24px;
+      padding-right: 30px;
+      position: relative;
+      .button {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+  &__buttons {
+    margin-top: 20px;
+  }
+  &__button {
+    width: 100%;
+  }
+  @include media-breakpoint-up(lg) {
+    &__reset {
+      margin-top: 5px;
+      border: transparent !important;
+      background-color: transparent !important;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: 200;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: opacity $trs1, visibility $trs1;
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    &-section {
+      &__title {
+        display: inline-block;
+        padding: 0;
+        max-width: calc(100% - 36px);
+        .button {
+          left: 100%;
+          margin-left: 12px;
+        }
+      }
+    }
+    .scrollbar {
+      &:before {
+        background: linear-gradient(0deg,rgba(255,255,255,0) 0, var(--color-sections-bg, #F5F5F5) 100%);
+      }
+      &:after {
+        background: linear-gradient(180deg,rgba(255,255,255,0) 0, var(--color-sections-bg, #F5F5F5) 100%);
+      }
+    }
+    &__head {
+      display: block;
+      position: relative;
+      background-color: #fff;
+      flex: 0 0 auto;
+      .container {
+        position: relative;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+    &__close {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      .icon {
+        width: 17px;
+        height: 17px;
+        margin: auto;
+        fill: var(--color-accent, #2363D1);
+      }
+    }
+    &__container {
+      position: relative;
+      background-color: var(--color-sections-bg, #F5F5F5);
+      flex: 1 1 100%;
+      padding: 0;
+    }
+    &__inner {
+      padding: 35px 0;
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    &__title {
+      margin: 0;
+      color: inherit;
+    }
+    &__buttons {
+      margin-top: 30px;
+    }
+  }
+  @include media-breakpoint-down(xs) {
+    &__reset {
+      margin-top: 15px;
+    }
+    &__inner {
+      padding-bottom: 30px;
+    }
+  }
+}
+
+.filter-range {
+  padding-top: 16px;
+  padding-bottom: 5px;
+  border-top: 1px solid var(--color-border-1, #D9D9DE);
+  margin-top: 25px;
+  &__inputs {
+    display: flex;
+    margin-top: 20px;
+    margin-left: -3px;
+    margin-right: -3px;
+  }
+  &__input {
+    margin: 0 3px;
+    flex: 1 1 50%;
+    padding: 0 !important;
+  }
+  .input__element {
+    text-align: center;
+  }
+}
