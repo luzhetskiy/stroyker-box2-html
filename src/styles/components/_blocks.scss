@@ -2715,6 +2715,15 @@
   }
 }
 
+.title-index {
+  display: inline-block;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  transform: translateY(-20%);
+  color: var(--color-text-code, #7C8994) !important;
+  font-weight: normal;
+}
+
 .product-card {
   &__container {
     height: 100%;
@@ -2723,15 +2732,27 @@
     border: 1px solid var(--color-border-1, #D9D9DE);
     border-radius: 2px;
     background-color: #fff;
+    position: relative;
+    transition: border-color $trs1;
+    &.touch,
+    &.hover {
+      border-color: var(--color-border-3, #A7A7AB);
+    }
+  }
+  .button, .input {
+    position: relative;
+    z-index: 2;
   }
   &__card-price {
     margin-bottom: 12px;
+    pointer-events: none;
   }
   &__buttons {
     display: flex;
     margin: 0 -4px;
     .button {
       min-width: 0px;
+      position: relative;
     }
     .button_icon {
       flex: 0 0 auto;
@@ -2742,29 +2763,20 @@
   }
   &__image {
     flex: 0 0 170px;
+    pointer-events: none;
     img {
       padding: 20px;
       z-index: 1;
     }
-    &:after {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      transition: opacity $trs1;
-      background: var(--color-product-card-hover, rgba(28, 82, 172, 0.1));
-      z-index: 2;
-      opacity: 0;
-    }
-    &.touch,
-    &.hover {
-      &:after {
-        opacity: 1;
-      }
-    }
+  }
+  &__link-area {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
   }
   &__status {
     position: absolute;
@@ -2812,6 +2824,7 @@
     &-top {
       margin-bottom: 8px;
       position: relative;
+      pointer-events: none;
     }
   }
   &__bottom-item {

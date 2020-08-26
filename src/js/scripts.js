@@ -37,6 +37,20 @@ const brakepoints = {
   lg: 1280
 }
 
+function getParent(elemSelector, parentSelector) {
+  var elem = document.querySelector(elemSelector);
+  var parents = document.querySelectorAll(parentSelector);
+  
+  for (var i = 0; i < parents.length; i++) {
+    var parent = parents[i];
+    
+    if (parent.contains(elem)) {
+      return parent;
+    }
+  }
+  
+  return null;
+}
 
 //hover/touch custom events
 function touchHoverEvents() {
@@ -54,46 +68,74 @@ function touchHoverEvents() {
       timeout;
 
   function event(event) {
-    let $target = event.target!==document?event.target.closest(targets):false;
-    if($target) {
+    let $targets = [];
+    $targets[0] = event.target!==document?event.target.closest(targets):null;
+    let $element = $targets[0], i = 0;
 
-      if(event.type=='touchstart') {
-        touch = true;
-        for(let $this of document.querySelectorAll(targets)) {
-          $this.classList.remove('touch');
+    while($targets[0]) {
+      $element = $element.parentNode;
+      if($element!==document) {
+        if($element.matches(targets)) {
+          i++;
+          $targets[i] = $element;
         }
-        clearTimeout(timeout)
-        $target.classList.add('touch');
-        $($target).trigger('customTouchstart');
-      } else if(event.type=='touchend') {
-        setTimeout(()=>{
+      } 
+      else {
+        break;
+      }
+    }
+
+    if($targets[0]) {
+      //touchstart
+      if(event.type=='touchstart') {
+        clearTimeout(timeout);
+        touch = true;
+        for(let $target of document.querySelectorAll(targets)) {
           $target.classList.remove('touch');
-          $($target).trigger('customTouchend');
+        }
+        for(let $target of $targets) {
+          $target.classList.add('touch');
+          $($target).trigger('customTouchstart');
+        }
+      } 
+      //touchend
+      else if(event.type=='touchend') {
+        setTimeout(()=>{
+          for(let $target of $targets) {
+            $target.classList.remove('touch');
+            $($target).trigger('customTouchend');
+          }
         }, touchEndDelay)
         timeout = setTimeout(()=>{
           touch = false;
         }, 1000)
-      } else if(event.type=='contextmenu') {
-        $target.classList.remove('touch');
-        $($target).trigger('customTouchend');
+      } 
+      //context menu
+      else if(event.type=='contextmenu') {
+        for(let $target of $targets) {
+          $target.classList.remove('touch');
+          $($target).trigger('customTouchend');
+        }
         timeout = setTimeout(()=>{
           touch = false;
         }, 1000)
       }
-
-      if(event.type=='mouseenter' && !touch && $target==event.target) {
-        $target.classList.add('hover');
-        $($target).trigger('customMouseenter');
-      } else if(event.type=='mouseleave' && !touch && $target==event.target) {
-        $target.classList.remove('hover');
-        $target.classList.remove('focus');
-        $($target).trigger('customMouseleave');
+      //mouseenter
+      if(event.type=='mouseenter' && !touch && $targets[0]==event.target) {
+        $targets[0].classList.add('hover');
+        $($targets[0]).trigger('customMouseenter');
       }
-      
+      //mouseleave
+      else if(event.type=='mouseleave' && !touch && $targets[0]==event.target) {
+        $targets[0].classList.remove('hover');
+        $targets[0].classList.remove('focus');
+        $($targets[0]).trigger('customMouseleave');
+      }
+      //mousedown
       if(event.type=='mousedown') {
-        $target.classList.add('focus');
+        $targets[0].classList.add('focus');
       } else if(event.type=='mouseup') {
-        $target.classList.remove('focus');
+        $targets[0].classList.remove('focus');
       }
 
     }
