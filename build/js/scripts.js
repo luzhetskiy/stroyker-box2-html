@@ -658,7 +658,7 @@ var slider = {
           slidesToShow: slideCount,
           slidesToScroll: slideCount,
           autoplay: autoplay,
-          autoplaySpeed: 5000,
+          autoplaySpeed: $target.data('autoplay-timeout') || 5000,
           responsive: [{
             breakpoint: brakepoints.lg,
             settings: {
