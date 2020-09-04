@@ -1151,15 +1151,15 @@ function jsRange() {
         instance,
         min = +$rangeItem.attr('data-min'),
         max = +$rangeItem.attr('data-max'),
-        from,
-        to;
+        from = +$inputFrom.attr('data-from') || min,
+        to = +$inputTo.attr('data-to') || max;
     $rangeItem.ionRangeSlider({
       skin: "round",
       type: "double",
       min: min,
       max: max,
-      from: min,
-      to: max,
+      from: from,
+      to: to,
       onStart: updateInputs,
       onChange: updateInputs,
       onFinish: updateInputs
