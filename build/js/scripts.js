@@ -9,6 +9,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 lazySizes.cfg.init = false;
 customScroll();
 $(document).ready(function () {
+  $('.phone').mask('+0 (000) 000-00-00');
+
   select.init();
   touchHoverEvents();
   inputs();
