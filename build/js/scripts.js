@@ -427,11 +427,13 @@ function inputs() {
     }
 
     $form.on('submit', function (event) {
-      event.preventDefault();
+      // event.preventDefault();
 
       if (validateForm()) {
         /* $inputs.val('').trigger('change');
         popup.open($('#succes'));  */
+      } else {
+          event.preventDefault();
       }
     });
   });
