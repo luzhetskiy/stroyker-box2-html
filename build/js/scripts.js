@@ -1055,10 +1055,12 @@ function calculator() {
     $plus.on('click', function () {
       val++;
       check();
+      $input.trigger('change');
     });
     $minus.on('click', function () {
       val--;
       check();
+      $input.trigger('change');
     });
     $input.on('change input', function () {
       setTimeout(function () {
