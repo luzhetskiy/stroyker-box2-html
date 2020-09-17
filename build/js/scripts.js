@@ -313,7 +313,7 @@ function inputs() {
     },
     email: {
       email: {
-        message: '^Неправильный формат. Попробуйте что-то с @'
+        message: '^Неправильный формат email-адреса' 
       }
     },
     name: {
@@ -322,9 +322,9 @@ function inputs() {
         message: '^Введите ваше имя'
       },
       length: {
-        minimum: 2,
+        minimum: 3,
         tooShort: "^Имя слишком короткое (минимум %{count} символа)",
-        maximum: 20,
+        maximum: 60,
         tooLong: "^Имя слишком длинное (максимум %{count} символов)"
       }
     },
