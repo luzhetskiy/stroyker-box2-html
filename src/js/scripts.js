@@ -216,7 +216,6 @@ function inputs() {
   let $form = $('.js-validation'),
       $input = $('input, textarea');
 
-
   $input.on('focus', function() {
     $(this).addClass('focused');
   })

@@ -9,8 +9,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 lazySizes.cfg.init = false;
 customScroll();
 $(document).ready(function () {
-  $('.phone').mask('+0 (000) 000-00-00');
-
   select.init();
   touchHoverEvents();
   inputs();
@@ -313,7 +311,7 @@ function inputs() {
     },
     email: {
       email: {
-        message: '^Неправильный формат email-адреса' 
+        message: '^Неправильный формат. Попробуйте что-то с @'
       }
     },
     name: {
@@ -322,9 +320,9 @@ function inputs() {
         message: '^Введите ваше имя'
       },
       length: {
-        minimum: 3,
+        minimum: 2,
         tooShort: "^Имя слишком короткое (минимум %{count} символа)",
-        maximum: 60,
+        maximum: 20,
         tooLong: "^Имя слишком длинное (максимум %{count} символов)"
       }
     },
@@ -427,13 +425,11 @@ function inputs() {
     }
 
     $form.on('submit', function (event) {
-      // event.preventDefault();
+      event.preventDefault();
 
       if (validateForm()) {
         /* $inputs.val('').trigger('change');
         popup.open($('#succes'));  */
-      } else {
-          event.preventDefault();
       }
     });
   });
@@ -662,7 +658,7 @@ var slider = {
           slidesToShow: slideCount,
           slidesToScroll: slideCount,
           autoplay: autoplay,
-          autoplaySpeed: $target.data('autoplay-timeout') || 5000,
+          autoplaySpeed: 5000,
           responsive: [{
             breakpoint: brakepoints.lg,
             settings: {
@@ -1057,12 +1053,10 @@ function calculator() {
     $plus.on('click', function () {
       val++;
       check();
-      $input.trigger('change');
     });
     $minus.on('click', function () {
       val--;
       check();
-      $input.trigger('change');
     });
     $input.on('change input', function () {
       setTimeout(function () {
@@ -1157,15 +1151,15 @@ function jsRange() {
         instance,
         min = +$rangeItem.attr('data-min'),
         max = +$rangeItem.attr('data-max'),
-        from = +$inputFrom.attr('data-from') || min,
-        to = +$inputTo.attr('data-to') || max;
+        from,
+        to;
     $rangeItem.ionRangeSlider({
       skin: "round",
       type: "double",
       min: min,
       max: max,
-      from: from,
-      to: to,
+      from: min,
+      to: max,
       onStart: updateInputs,
       onChange: updateInputs,
       onFinish: updateInputs

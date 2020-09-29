@@ -109,4 +109,6 @@
   --color-block-services-bg: #F3F6FB;
   --color-block-services-border: #B7CBE5;
   --color-block-services-hover: #fff;
-  --color-block-services-hover-bg: #2363D1; }
+  --color-block-services-hover-bg: #2363D1;
+  --banner-desktop-percent: 36.5%;
+  --banner-mobile-percent: 59.5%; }

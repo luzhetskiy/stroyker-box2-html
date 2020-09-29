@@ -7953,14 +7953,23 @@ a:not([class]):hover {
 
 /*========== Home ==========*/
 .home-banner {
-  margin-top: -30px; }
-  .home-banner .container {
+  margin-top: -30px;
+  position: relative; }
+  .home-banner:before {
+    content: '';
+    display: block;
+    padding-top: var(--banner-desktop-percent, 36.5%); }
+  .home-banner .slick-list {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0; }
+  .home-banner .slick-track {
     height: 100%; }
   .home-banner__slide {
-    height: 320px; }
-    .home-banner__slide img {
-      -webkit-filter: grayscale(100%);
-              filter: grayscale(100%); }
+    width: 100%;
+    height: 100%; }
     .home-banner__slide:after {
       content: '';
       display: block;
@@ -7994,7 +8003,16 @@ a:not([class]):hover {
   .home-banner__next {
     right: calc(50% - 605px); }
   .home-banner .slick-dots {
-    bottom: 67px; }
+    bottom: 20px; }
+  @media (min-width: 992px) {
+    .home-banner:not(:last-child) .slick-dots {
+      bottom: 67px; } }
+  @media (max-width: 575.98px) {
+    .home-banner img {
+      -o-object-position: right center;
+         object-position: right center; }
+    .home-banner:before {
+      padding-top: var(--banner-mobile-percent, 59.5%); } }
 
 .home-categories {
   margin-top: -47px; }
@@ -8158,8 +8176,6 @@ a:not([class]):hover {
     padding: 20px 60px 24px 20px; } }
 
 @media (max-width: 991.98px) {
-  .home-banner .slick-dots {
-    bottom: 20px; }
   .home-categories {
     margin-top: 24px; }
     .home-categories__block .category-card__title {
@@ -8237,10 +8253,6 @@ a:not([class]):hover {
   .home-categories {
     margin-top: 24px;
     margin-bottom: 41px; }
-  .home-banner__slide {
-    height: 437px; }
-  .home-banner .slick-dots {
-    bottom: 16px; }
   .about-us {
     padding-top: 30px; }
   .about-us-block__button {

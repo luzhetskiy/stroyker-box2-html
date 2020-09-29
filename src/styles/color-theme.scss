@@ -7,7 +7,6 @@
   --color-text-light: #BDBDBD;
   --color-text-code: #7C8994;
 
-
   --color-border-1: #D9D9DE;
   --color-border-2: #BDBDBD;
   --color-border-3: #A7A7AB; 
@@ -148,5 +147,9 @@
   --color-block-services-border: #B7CBE5;
   --color-block-services-hover: #fff;
   --color-block-services-hover-bg: #2363D1;
+
+  //Соотношение сторон для баннера (Высота / Ширина * 100%)
+  --banner-desktop-percent: 36.5%;
+  --banner-mobile-percent: 59.5%;
 }
 
