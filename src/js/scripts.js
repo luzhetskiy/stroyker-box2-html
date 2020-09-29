@@ -23,6 +23,7 @@ $(document).ready(function(){
   jsRange();
   gridToggle();
   comparison();
+  gallery();
   //обработать изображения после инициализации слайдеров
   setTimeout(()=>{
     lazy();
@@ -1329,4 +1330,50 @@ function comparison() {
       $('.comparison-property_difference').show();
     }
   })
+}
+
+//gallery
+function gallery() {
+  let pathToIcons = '../img/icons/icons-sprite.svg'
+
+  $.fancybox.defaults.btnTpl.close = `<button data-fancybox-close class="button button_style-1 button_icon fancybox-button fancybox-button--close" title="{{CLOSE}}">                                      <svg class="icon"><use xlink:href="${pathToIcons}#close-light"></use></svg>   </button>`;
+  $.fancybox.defaults.btnTpl.arrowLeft = `<button data-fancybox-prev class="button button_style-1 button_icon fancybox-button fancybox-button--arrow_left" title="{{PREV}}">                               <svg class="icon"> <use xlink:href="${pathToIcons}#arrow-left"></use> </svg>  </button>`;
+  $.fancybox.defaults.btnTpl.arrowRight = `<button data-fancybox-prev class="button button_style-1 button_icon fancybox-button fancybox-button--arrow_right" title="{{NEXT}}">                             <svg class="icon"> <use xlink:href="${pathToIcons}#arrow-right"></use> </svg> </button>`;
+  $.fancybox.defaults.btnTpl.zoom = `<button data-fancybox-zoom class="button button_style-1 button_icon fancybox-button fancybox-button--zoom" title="{{ZOOM}}">                                          <svg class="icon"> <use xlink:href="${pathToIcons}#search"></use> </svg>      </button>`;
+  $.fancybox.defaults.btnTpl.download = `<a download data-fancybox-download class="button button_style-1 button_icon fancybox-button fancybox-button--download" href="javascript:;" title="{{DOWNLOAD}}">  <svg class="icon"> <use xlink:href="${pathToIcons}#download"></use> </svg>    </a>`;
+  $.fancybox.defaults.btnTpl.thumbs = `<button data-fancybox-thumbs class="button button_style-1 button_icon fancybox-button fancybox-button--thumbs" title="{{THUMBS}}">                                  <svg class="icon"> <use xlink:href="${pathToIcons}#ico-grid"></use> </svg>    </button>`;
+  $.fancybox.defaults.buttons = [
+    "zoom",
+    "close"
+  ];
+  $.fancybox.defaults.i18n.ru = {
+    CLOSE       : 'Закрыть',
+    NEXT        : 'Следующий слайд',
+    PREV        : 'Предидущий слайд',
+    ERROR       : 'Ошибка загрузки, попробуйте позже.',
+    PLAY_START  : 'Запустить слайд-шоу',
+    PLAY_STOP   : 'Остановить слайд-шоу',
+    FULL_SCREEN : 'Полноэкранный режим',
+    THUMBS      : 'Миниатюры',
+    DOWNLOAD    : 'Загрузить',
+    SHARE       : 'Поделиться',
+    ZOOM        : 'Увеличить'
+  };
+  $.fancybox.defaults.lang = 'ru';
+  $.fancybox.defaults.loop = true;
+  $.fancybox.defaults.autoFocus = false;
+  $.fancybox.defaults.backFocus = false;
+  $.fancybox.defaults.animationDuration = 500;
+
+  $('.slide [data-fancybox]').on('click', function() {
+    let $selector = $(this).parents('.slider').find('.slick-slide:not(.slick-cloned) a');
+
+    $.fancybox.open( $selector, {
+        selector : $selector,
+        backFocus : false
+    }, $selector.index( this ) );
+
+    return false;
+  });
+
 }

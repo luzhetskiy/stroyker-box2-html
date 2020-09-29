@@ -6,6 +6,10 @@ block breadcrumbs
   include blocks/breadcrumbs
 block variables
   -var content = 'main_muted'
+block scripts
+  script(src='js/libs/jquery.fancybox.min.js')
+block style
+  link(rel="stylesheet" href="styles/jquery.fancybox.min.css")
 block content
   section.section.section_small-margin.project-head
     .container
@@ -206,7 +210,7 @@ block content
                       mixin block(title)
                         .project-layouts-block.col-sm-6
                           .project-layouts-block__container
-                            .image
+                            a(href="img/9ee29e830635250cb2c413ee8049fe7f 1.png" data-fancybox='images').image
                               img(data-src="img/9ee29e830635250cb2c413ee8049fe7f 1.png", alt="image").lazyload
                             h2.project-layouts-block__title=title
                             p.project-layouts-block__text Предназначена для обшивки стен, потолков, перегородок, в качестве настила под напольные покрытия, для опалубки, для изготовления тары и упаковки, а также в мебельном производстве. 
@@ -330,3 +334,4 @@ block content
   -var formTitle = 'Понравился проект? Оставьте заявку и мы построим его для вас'
   -var formLabel = true;
   include blocks/form
+

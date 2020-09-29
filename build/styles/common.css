@@ -1993,7 +1993,7 @@ a:not([class]):hover {
   align-items: center;
   text-align: center;
   font-size: 0.875rem;
-  transition: color 0.25s ease-out, border-color 0.25s ease-out, background-color 0.25s ease-out;
+  transition: color 0.25s ease-out, border-color 0.25s ease-out, background-color 0.25s ease-out, opacity 0.25s ease-out, visibility 0.25s ease-out;
   height: 40px;
   line-height: 38px;
   padding: 0 15px;
