@@ -1361,7 +1361,8 @@ function comparison() {
 
 function gallery() {
   if ($.fancybox) {
-    var pathToIcons = '../img/icons/icons-sprite.svg';
+    //относительно страницы а не js
+    var pathToIcons = 'img/icons/icons-sprite.svg';
     $.fancybox.defaults.btnTpl.close = "<button data-fancybox-close class=\"button button_style-1 button_icon fancybox-button fancybox-button--close\" title=\"{{CLOSE}}\">                                      <svg class=\"icon\"><use xlink:href=\"".concat(pathToIcons, "#close-light\"></use></svg>   </button>");
     $.fancybox.defaults.btnTpl.arrowLeft = "<button data-fancybox-prev class=\"button button_style-1 button_icon fancybox-button fancybox-button--arrow_left\" title=\"{{PREV}}\">                               <svg class=\"icon\"> <use xlink:href=\"".concat(pathToIcons, "#arrow-left\"></use> </svg>  </button>");
     $.fancybox.defaults.btnTpl.arrowRight = "<button data-fancybox-prev class=\"button button_style-1 button_icon fancybox-button fancybox-button--arrow_right\" title=\"{{NEXT}}\">                             <svg class=\"icon\"> <use xlink:href=\"".concat(pathToIcons, "#arrow-right\"></use> </svg> </button>");
