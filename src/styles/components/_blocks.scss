@@ -410,12 +410,25 @@
 
 .popular-projects {
   &__advertising {
-    padding-top: 54px;
+    padding-top: 56px;
+    .advertising-preview {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
   }
   &__more {
     justify-content: flex-end;
   }
-  @include media-breakpoint-up(lg) {
+  .slick-slide {
+    display: flex;
+    flex-direction: column;
+    &>div:not([class]) {
+      display: flex;
+      flex: 1 1 auto;
+    }
+  }
+  @include media-breakpoint-up(sm) {
     &__slider {
       opacity: 1;
       visibility: visible; 

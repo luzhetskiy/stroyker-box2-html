@@ -486,6 +486,7 @@ let slider = {
           slideCountMd = 1,
           slideCountSm = 1,
           slideCountXs = 1,
+          rows = 1,
           arrows = false,
           dots = false,
           centerMode = false,
@@ -515,14 +516,14 @@ let slider = {
         if($(this).is('.popular-projects__slider_mobile-only')) {
           let initialized=false;
           let check =()=> {
-            if($(window).width()<brakepoints.md && !initialized) {
+            if($(window).width()<brakepoints.xs && !initialized) {
               initialized=true;
               initSlider($(this));
-            } else if($(window).width()>=brakepoints.md && initialized) {
+            } else if($(window).width()>=brakepoints.xs && initialized) {
               initialized=false;
               setTimeout(()=>{
                 $(this).slick('unslick');
-              },500)
+              }, 500)
             }
           }
           check();
@@ -531,6 +532,9 @@ let slider = {
           })
         } 
         else {
+          if($(this).is('.popular-projects__slider_type-2')) {
+            rows = 2;
+          }
           initSlider($(this));
         }
       } 
@@ -599,7 +603,7 @@ let slider = {
 
       function initSlider($target) {
         $target.slick({
-          rows: 0,
+          rows: rows,
           infinite: true,
           dots: dots,
           arrows: arrows,
@@ -636,7 +640,8 @@ let slider = {
               breakpoint: brakepoints.xs,
               settings: {
                 slidesToShow: slideCountXs,
-                slidesToScroll: slideCountXs
+                slidesToScroll: slideCountXs,
+                rows: 1
               }
             }
           ]

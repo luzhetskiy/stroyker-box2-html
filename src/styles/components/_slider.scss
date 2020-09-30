@@ -90,10 +90,6 @@
     .slick-slide {
       flex: 0 0 auto;
     }
-    &.grid,
-    .slick-slide {
-      margin-bottom: 0 !important;
-    }
   }
   &__next,
   &__prev {
@@ -119,6 +115,14 @@
       }
     }
   }
+  .slick-slide {
+    display: flex;
+    flex-direction: column;
+    &>div:not([class]) {
+      display: flex;
+      flex: 1 1 auto;
+    }
+  }
   &_grid {
     .slick-dots {
       display: none !important;
@@ -139,7 +143,34 @@
   &_dots-bottom {
     padding-bottom: 30px;
   }
+  @include media-breakpoint-down(xs) {
+    &_grid {
+      margin-right: -16px;
+      margin-left: -16px;
+      padding-bottom: 35px;
+      &.slick-initialized {
+        &.grid,
+        .grid__block {
+          margin-bottom: 0 !important;
+        }
+      }
+      .slick-list {
+        padding: 0 8px;
+      }
+      .slick-dots {
+        display: flex !important;
+        bottom: 0;
+      }
+      .slider {
+        &__next,
+        &__prev {
+          display: none !important;
+        }
+      }
+    }
+  }
 }
+
 
 .photo-slider {
   &__slide {
@@ -156,30 +187,6 @@
     }
     &__prev {
       left: 16px;
-    }
-  }
-}
-
-
-@include media-breakpoint-down(xs) {
-  .slider {
-    &_grid {
-      margin-right: -16px;
-      margin-left: -16px;
-      padding-bottom: 35px;
-      .slick-list {
-        padding: 0 8px;
-      }
-      .slick-dots {
-        display: flex !important;
-        bottom: 0;
-      }
-      .slider {
-        &__next,
-        &__prev {
-          display: none !important;
-        }
-      }
     }
   }
 }

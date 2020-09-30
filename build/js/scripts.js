@@ -546,6 +546,7 @@ var slider = {
           slideCountMd = 1,
           slideCountSm = 1,
           slideCountXs = 1,
+          rows = 1,
           arrows = false,
           dots = false,
           centerMode = false,
@@ -577,10 +578,10 @@ var slider = {
           var initialized = false;
 
           var check = function check() {
-            if ($(window).width() < brakepoints.md && !initialized) {
+            if ($(window).width() < brakepoints.xs && !initialized) {
               initialized = true;
               initSlider($(_this4));
-            } else if ($(window).width() >= brakepoints.md && initialized) {
+            } else if ($(window).width() >= brakepoints.xs && initialized) {
               initialized = false;
               setTimeout(function () {
                 $(_this4).slick('unslick');
@@ -593,6 +594,10 @@ var slider = {
             check();
           });
         } else {
+          if ($(this).is('.popular-projects__slider_type-2')) {
+            rows = 2;
+          }
+
           initSlider($(this));
         }
       } else if ($(this).is('.home-banner')) {
@@ -648,7 +653,7 @@ var slider = {
 
       function initSlider($target) {
         $target.slick({
-          rows: 0,
+          rows: rows,
           infinite: true,
           dots: dots,
           arrows: arrows,
@@ -682,7 +687,8 @@ var slider = {
             breakpoint: brakepoints.xs,
             settings: {
               slidesToShow: slideCountXs,
-              slidesToScroll: slideCountXs
+              slidesToScroll: slideCountXs,
+              rows: 1
             }
           }]
         });

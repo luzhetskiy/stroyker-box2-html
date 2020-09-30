@@ -64,7 +64,27 @@ block content
           h2.section__title Популярные проекты домов
           .slider.slider_grid.slider_arrows.popular-projects__slider.row
             include blocks/cards
-            -var grid = 'col-md-6 col-12'
+            -var grid = 'col'
+            +card1(true, true, grid)
+            +card1(true, true, grid)
+            +card1(true, true, grid)
+            +card1(true, true, grid)
+            +card1(true, true, grid)
+            +card1(false, false, grid)
+      .section__more.popular-projects__more
+        a(href="#").button.button_style-1.button_xl.section__more-button Смотреть все проекты
+
+  section.section.popular-projects
+    .container
+      .row
+        .col-xl-20pc.col-lg-3.popular-projects__advertising
+          include blocks/advertising
+          include blocks/advertising
+        .col-xl.col-lg-9
+          h2.section__title Популярные проекты домов
+          .slider.slider_grid.slider_arrows.popular-projects__slider.popular-projects__slider_type-2.row.grid
+            include blocks/cards
+            -var grid = 'col grid__block'
             +card1(true, true, grid)
             +card1(true, true, grid)
             +card1(true, true, grid)
