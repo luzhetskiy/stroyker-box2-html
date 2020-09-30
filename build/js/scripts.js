@@ -369,7 +369,7 @@ function inputs() {
     message: '[name="message"]',
     review: '[name="review"]'
   },
-      conditions = {
+  conditions = {
     phone: {
       format: {
         pattern: /^\+7 \d{3}\ \d{3}\-\d{4}$|()/,
@@ -423,7 +423,7 @@ function inputs() {
     }
   },
       mask = Inputmask({
-    mask: "+7 999 999-9999",
+    mask: "+7 (999) 999-99-99",
     showMaskOnHover: false,
     clearIncomplete: false
   }).mask(namspaces.phone); //validation events
