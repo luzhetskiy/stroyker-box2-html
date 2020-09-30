@@ -62,9 +62,9 @@ block content
           include blocks/advertising
         .col-xl.col-lg-9
           h2.section__title Популярные проекты домов
-          .slider.slider_grid.slider_arrows.popular-projects__slider.row
+          .slider.slider_grid.slider_arrows.popular-projects__slider.row.grid
             include blocks/cards
-            -var grid = 'col'
+            -var grid = 'col grid__block'
             +card1(true, true, grid)
             +card1(true, true, grid)
             +card1(true, true, grid)
