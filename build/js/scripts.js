@@ -1,10 +1,80 @@
 "use strict";
 
-function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
+function _createForOfIteratorHelper(o, allowArrayLike) {
+  var it;
 
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+  if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {
+    if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {
+      if (it) o = it;
+      var i = 0;
 
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+      var F = function F() {};
+
+      return {
+        s: F,
+        n: function n() {
+          if (i >= o.length) return {
+            done: true
+          };
+          return {
+            done: false,
+            value: o[i++]
+          };
+        },
+        e: function e(_e) {
+          throw _e;
+        },
+        f: F
+      };
+    }
+
+    throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+  }
+
+  var normalCompletion = true,
+      didErr = false,
+      err;
+  return {
+    s: function s() {
+      it = o[Symbol.iterator]();
+    },
+    n: function n() {
+      var step = it.next();
+      normalCompletion = step.done;
+      return step;
+    },
+    e: function e(_e2) {
+      didErr = true;
+      err = _e2;
+    },
+    f: function f() {
+      try {
+        if (!normalCompletion && it.return != null) it.return();
+      } finally {
+        if (didErr) throw err;
+      }
+    }
+  };
+}
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) {
+    arr2[i] = arr[i];
+  }
+
+  return arr2;
+}
 
 lazySizes.cfg.init = false;
 customScroll();
@@ -29,9 +99,9 @@ $(document).ready(function () {
   stagesToggle();
   jsRange();
   gridToggle();
-  comparison();
-  gallery(); //обработать изображения после инициализации слайдеров
+  comparison(); //обработать изображения после инициализации слайдеров
 
+  gallery();
   setTimeout(function () {
     lazy();
   }, 500);
@@ -293,7 +363,7 @@ function inputs() {
 
   check();
   var namspaces = {
-    phone: '[name="phone"]',
+    phone: '[name="phone"], .phone',
     email: '[name="email"]',
     name: '[name="name"]',
     message: '[name="message"]',
@@ -312,7 +382,7 @@ function inputs() {
     },
     email: {
       email: {
-        message: '^Неправильный формат. Попробуйте что-то с @'
+        message: '^Неправильный формат email-адреса'
       }
     },
     name: {
@@ -321,9 +391,9 @@ function inputs() {
         message: '^Введите ваше имя'
       },
       length: {
-        minimum: 2,
+        minimum: 3,
         tooShort: "^Имя слишком короткое (минимум %{count} символа)",
-        maximum: 20,
+        maximum: 60,
         tooLong: "^Имя слишком длинное (максимум %{count} символов)"
       }
     },
@@ -426,11 +496,12 @@ function inputs() {
     }
 
     $form.on('submit', function (event) {
-      event.preventDefault();
-
+      // event.preventDefault();
       if (validateForm()) {
         /* $inputs.val('').trigger('change');
         popup.open($('#succes'));  */
+      } else {
+        event.preventDefault();
       }
     });
   });
@@ -664,7 +735,7 @@ var slider = {
           slidesToShow: slideCount,
           slidesToScroll: slideCount,
           autoplay: autoplay,
-          autoplaySpeed: 5000,
+          autoplaySpeed: $target.data('autoplay-timeout') || 5000,
           responsive: [{
             breakpoint: brakepoints.lg,
             settings: {
@@ -1060,10 +1131,12 @@ function calculator() {
     $plus.on('click', function () {
       val++;
       check();
+      $input.trigger('change');
     });
     $minus.on('click', function () {
       val--;
       check();
+      $input.trigger('change');
     });
     $input.on('change input', function () {
       setTimeout(function () {
@@ -1158,15 +1231,15 @@ function jsRange() {
         instance,
         min = +$rangeItem.attr('data-min'),
         max = +$rangeItem.attr('data-max'),
-        from,
-        to;
+        from = +$inputFrom.attr('data-from') || min,
+        to = +$inputTo.attr('data-to') || max;
     $rangeItem.ionRangeSlider({
       skin: "round",
       type: "double",
       min: min,
       max: max,
-      from: min,
-      to: max,
+      from: from,
+      to: to,
       onStart: updateInputs,
       onChange: updateInputs,
       onFinish: updateInputs
