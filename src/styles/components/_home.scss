@@ -1,11 +1,7 @@
 .home-banner {
   margin-top: -30px;
   position: relative;
-  &:before {
-    content: '';
-    display: block;
-    padding-top: var(--banner-desktop-percent, 36.5%);
-  }
+  height: 700px;
   .slick-list {
     position: absolute;
     width: 100%;
@@ -74,9 +70,6 @@
   @include media-breakpoint-down(xs) {
     img {
        object-position: right center; 
-    }
-    &:before {
-      padding-top: var(--banner-mobile-percent, 59.5%);
     }
   }
 }

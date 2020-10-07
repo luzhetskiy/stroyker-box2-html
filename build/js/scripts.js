@@ -672,9 +672,26 @@ var slider = {
           initSlider($(this));
         }
       } else if ($(this).is('.home-banner')) {
+        var $this = $(this);
         autoplay = true;
         nextArrow = "<button class=\"home-banner__arrow home-banner__next\" aria-label=\"Next\" type=\"button\">".concat(slider.arrowNext, "</button>");
-        prevArrow = "<button class=\"home-banner__arrow home-banner__prev\" aria-label=\"Previous\" type=\"button\">".concat(slider.arrowPrev, "</button>");
+        prevArrow = "<button class=\"home-banner__arrow home-banner__prev\" aria-label=\"Previous\" type=\"button\">".concat(slider.arrowPrev, "</button>"); //set size
+
+        var res_desktop = $(this).attr('data-desktop-ratio'),
+            res_mobile = $(this).attr('data-mobile-ratio'),
+            w,
+            h;
+
+        var checkSize = function checkSize() {
+          w = $this.width(), h = $(window).width() < brakepoints.xs ? w * res_mobile : w * res_desktop;
+          console.log($(window).width() < brakepoints.xs);
+          $this.height(h);
+        };
+
+        checkSize();
+        $(window).on('resize', function () {
+          checkSize();
+        });
         initSlider($(this));
       } else if ($(this).is('.photo-slider')) {
         initSlider($(this));
