@@ -1255,7 +1255,7 @@ function gridToggle() {
     }
   }
 
-  check();
+  // check();
 }
 
 var tooltips = {
