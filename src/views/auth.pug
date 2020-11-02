@@ -1,0 +1,38 @@
+extends layout/layout
+  
+block title
+  title Вход
+block breadcrumbs 
+  -var title = 'Вход'
+  include blocks/breadcrumbs
+block variables
+  -var content = 'main_muted'
+
+block content
+  section.section.container
+    .row.justify-content-center
+      .col-lg-6.col-md-8
+        .tab-heading
+          a(href="auth.html").tab-heading__link.active Вход
+          a(href="reg.html").tab-heading__link Регистрация
+        .page-container
+          h2.section__title Только для членов клуба
+          form(action="#").form.js-validation
+            .row
+              .col-12.form__group
+                .form__group-content
+                  .input.form__input
+                    input(type="text" name='name' placeholder="Имя*").input__element.required
+                    span.input__label Логин*
+                  .input.form__input
+                    input(type="password" name='pass' placeholder="Пароль*").input__element.required
+                    span.input__label Пароль
+              .col-12.form__bottom
+                .row.align-items-center
+                  .col-sm-auto
+                    button.button.button_style-2.form__submit Войти
+                  .col-sm-auto
+                    a(href="pass-reset.html").form__link.link Забыли пароль?
+                span.form-post-text Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь с политикой конфиденциальности
+
+    

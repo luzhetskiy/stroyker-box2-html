@@ -57,7 +57,6 @@ gulp.task("styles", function () {
     .on("end", browsersync.reload);
 });
 
-
 gulp.task("images", function () {
   return gulp.src($images)
     .pipe(newer("./build/img/"))

@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>ЛК - Персональные данные</title>
+    <title>Вход</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!--favicons-->
     <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
@@ -23,7 +23,6 @@
     <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
     <link rel="stylesheet" href="styles/color-theme.css">
     <link rel="stylesheet" href="styles/common.css">
-    <link rel="stylesheet" href="styles/kabinet.css">
     <!--helper-->
     <link rel="stylesheet" href="styles/js-helper.css">
   </head>
@@ -295,85 +294,37 @@
         <div class="breadcrumbs container">
           <ul class="breadcrumbs__list">
             <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="index.html">главная</a></li>
-            <li class="breadcrumbs__item">Личный кабинет</li>
+            <li class="breadcrumbs__item">Вход</li>
           </ul>
         </div>
         <!--page content-->
         <div class="content">
-          <section class="section kabinet">
-            <div class="container">
-              <h1 class="kabinet__title section__title">Личный кабинет<a class="button button_style-1 kabinet__exit-button" href="index.html">
-                  <svg class="icon">
-                    <use xlink:href="img/icons/icons-sprite.svg#exit"></use>
-                  </svg><span>Выход</span></a></h1>
-              <div class="kabinet-block">
-                <aside class="kabinet-block__aside">
-                  <!--head-->
-                  <div class="kabinet-block__head">
-                    <div class="kabinet-icon kabinet-block__head-icon">
-                      <svg class="icon">
-                        <use xlink:href="img/icons/icons-sprite.svg#user"></use>
-                      </svg>
-                    </div>
-                    <div class="kabinet-block__head-text">
-                      <h3 class="kabinet-block__head-title">ООО “Самарские кровельные материалы”</h3>
-                    </div>
-                  </div>
-                  <!--block-->
-                  <ul class="kabinet-block__nav">
-                    <li class="kabinet-block__nav-item"><a class="kabinet-block__nav-link" href="kabinet-stages.html">
-                        <svg class="icon">
-                          <use xlink:href="img/icons/icons-sprite.svg#step"></use>
-                        </svg><span>Этапы работ</span></a></li>
-                    <li class="kabinet-block__nav-item"><a class="kabinet-block__nav-link" href="kabinet-video.html">
-                        <svg class="icon">
-                          <use xlink:href="img/icons/icons-sprite.svg#video"></use>
-                        </svg><span>Видео</span></a></li>
-                    <li class="kabinet-block__nav-item"><a class="kabinet-block__nav-link active" href="kabinet-personal.html">
-                        <svg class="icon">
-                          <use xlink:href="img/icons/icons-sprite.svg#pencil"></use>
-                        </svg><span>Личные данные</span></a></li>
-                  </ul>
-                </aside><a class="kabinet-block__mobile-toggle" href="kabinet-stages.html"><span>Этапы работы </span>
-                  <svg class="icon">
-                    <use xlink:href="img/icons/icons-sprite.svg#arrow-down-bold"></use>
-                  </svg></a><a class="kabinet-block__mobile-toggle" href="kabinet-video.html"><span>Видео</span>
-                  <svg class="icon">
-                    <use xlink:href="img/icons/icons-sprite.svg#arrow-down-bold"></use>
-                  </svg></a><a class="kabinet-block__mobile-toggle active" href="kabinet-personal.html"><span>Персональные данные</span>
-                  <svg class="icon">
-                    <use xlink:href="img/icons/icons-sprite.svg#arrow-down-bold"></use>
-                  </svg></a>
-                <div class="kabinet-block__content">
-                  <h2 class="kabinet-block__title">Личные данные</h2>
-                  <h3>Аккаунт</h3>
-                  <form class="form kabinet-block__form js-validation" action="#">
-                    <div class="input form__input">
-                      <input class="input__element required" type="text" name="name" placeholder="Имя*" value="Руслан"><span class="input__label">Имя</span>
-                    </div>
-                    <div class="input form__input">
-                      <input class="input__element required" type="text" name="phone" placeholder="Телефон*" value="+7 999 999-9999"><span class="input__label">Телефон</span>
-                    </div>
-                    <div class="input form__input">
-                      <input class="input__element" type="text" name="email" placeholder="Email" value="belozerzevruslan@gmail.com"><span class="input__label">Email</span>
-                    </div>
-                    <div class="form__bottom">
-                      <button class="button button_style-2 form__submit">Сохранить</button>
-                    </div>
-                  </form>
-                  <h3>Пароль</h3>
-                  <form class="form kabinet-block__form js-validation" action="#">
-                    <div class="input order-form__item">
-                      <input class="input__element" type="password" name="pass1" placeholder="Cтарый пароль"><span class="input__label">Cтарый пароль</span>
-                    </div>
-                    <div class="input order-form__item">
-                      <input class="input__element" type="password" name="pass2" placeholder="Новый пароль"><span class="input__label">Новый пароль</span>
-                    </div>
-                    <div class="input order-form__item">
-                      <input class="input__element" type="password" name="pass3" placeholder="Подтвердите новый пароль"><span class="input__label">Подтвердите новый пароль</span>
-                    </div>
-                    <div class="form__bottom">
-                      <button class="button button_style-2 form__submit">Сохранить</button>
+          <section class="section container">
+            <div class="row justify-content-center">
+              <div class="col-lg-6 col-md-8">
+                <div class="tab-heading"><a class="tab-heading__link active" href="auth.html">Вход</a><a class="tab-heading__link" href="reg.html">Регистрация</a></div>
+                <div class="page-container">
+                  <h2 class="section__title">Только для членов клуба</h2>
+                  <form class="form js-validation" action="#">
+                    <div class="row">
+                      <div class="col-12 form__group">
+                        <div class="form__group-content">
+                          <div class="input form__input">
+                            <input class="input__element required" type="text" name="name" placeholder="Имя*"><span class="input__label">Логин*</span>
+                          </div>
+                          <div class="input form__input">
+                            <input class="input__element required" type="password" name="pass" placeholder="Пароль*"><span class="input__label">Пароль</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 form__bottom">
+                        <div class="row align-items-center">
+                          <div class="col-sm-auto">
+                            <button class="button button_style-2 form__submit">Войти</button>
+                          </div>
+                          <div class="col-sm-auto"><a class="form__link link" href="pass-reset.html">Забыли пароль?</a></div>
+                        </div><span class="form-post-text">Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь с политикой конфиденциальности</span>
+                      </div>
                     </div>
                   </form>
                 </div>
@@ -568,7 +519,7 @@
         </div>
         <!--section-->
         <div class="js-helper-module__section"><span class="js-helper-module__section-title">Вход / Регистраиция:</span>
-          <div class="js-helper-module__section-content"></div>
+          <div class="js-helper-module__section-content"><a class="js-helper-module__section-button" href="auth.html">Вход</a><a class="js-helper-module__section-button" href="reg.html">Регистрация</a><a class="js-helper-module__section-button" href="pass-reset.html">Восстановление пароля</a></div>
         </div>
       </div>
     </div>
