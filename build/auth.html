@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>ЛК - Этапы работ</title>
+    <title>Вход</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!--favicons-->
     <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
@@ -23,7 +23,6 @@
     <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
     <link rel="stylesheet" href="styles/color-theme.css">
     <link rel="stylesheet" href="styles/common.css">
-    <link rel="stylesheet" href="styles/kabinet.css">
     <!--helper-->
     <link rel="stylesheet" href="styles/js-helper.css">
   </head>
@@ -295,107 +294,40 @@
         <div class="breadcrumbs container">
           <ul class="breadcrumbs__list">
             <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="index.html">главная</a></li>
-            <li class="breadcrumbs__item">Личный кабинет</li>
+            <li class="breadcrumbs__item">Вход</li>
           </ul>
         </div>
         <!--page content-->
         <div class="content">
-          <section class="section kabinet">
-            <div class="container">
-              <h1 class="kabinet__title section__title">
-                 Личный кабинет<a class="button button_style-1 kabinet__exit-button" href="index.html">
-                  <svg class="icon">
-                    <use xlink:href="img/icons/icons-sprite.svg#exit"></use>
-                  </svg><span>Выход</span></a></h1>
-              <div class="kabinet-block">
-                <aside class="kabinet-block__aside">
-                  <!--head-->
-                  <div class="kabinet-block__head">
-                    <div class="kabinet-icon kabinet-block__head-icon">
-                      <svg class="icon">
-                        <use xlink:href="img/icons/icons-sprite.svg#user"></use>
-                      </svg>
+          <section class="section container">
+            <div class="row justify-content-center">
+              <div class="col-lg-6 col-md-8">
+                <div class="tab-heading"><a class="tab-heading__link active" href="auth.html">Вход</a><a class="tab-heading__link" href="reg.html">Регистрация</a></div>
+                <div class="page-container">
+                  <h2 class="section__title">Только для членов клуба</h2>
+                  <form class="form js-validation" action="#">
+                    <div class="row">
+                      <div class="col-12 form__group">
+                        <div class="form__group-content">
+                          <div class="input form__input">
+                            <input class="input__element required" type="text" name="name" placeholder="Имя*"><span class="input__label">Логин*</span>
+                          </div>
+                          <div class="input form__input">
+                            <input class="input__element required" type="password" name="pass" placeholder="Пароль*"><span class="input__label">Пароль</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 form__bottom">
+                        <div class="row align-items-center">
+                          <div class="col-sm-auto">
+                            <button class="button button_style-2 form__submit">Войти</button>
+                          </div>
+                          <div class="col-sm-auto"><a class="form__link link" href="pass-reset.html">Забыли пароль?</a></div>
+                        </div><span class="form-post-text">Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь с политикой конфиденциальности</span>
+                      </div>
                     </div>
-                    <div class="kabinet-block__head-text">
-                      <h3 class="kabinet-block__head-title">ООО “Самарские кровельные материалы”</h3><span class="profile-label">Золотой партнёр</span>
-                    </div>
-                  </div>
-                  <!--block-->
-                  <ul class="kabinet-block__nav">
-                    <li class="kabinet-block__nav-item"><a class="kabinet-block__nav-link active" href="kabinet-stages.html">
-                        <svg class="icon">
-                          <use xlink:href="img/icons/icons-sprite.svg#step"></use>
-                        </svg><span>Этапы работ</span></a></li>
-                    <li class="kabinet-block__nav-item"><a class="kabinet-block__nav-link" href="kabinet-video.html">
-                        <svg class="icon">
-                          <use xlink:href="img/icons/icons-sprite.svg#video"></use>
-                        </svg><span>Видео</span></a></li>
-                    <li class="kabinet-block__nav-item"><a class="kabinet-block__nav-link" href="kabinet-personal.html">
-                        <svg class="icon">
-                          <use xlink:href="img/icons/icons-sprite.svg#pencil"></use>
-                        </svg><span>Личные данные</span></a></li>
-                  </ul>
-                </aside><a class="kabinet-block__mobile-toggle active" href="kabinet-stages.html"><span>Этапы работы </span>
-                  <svg class="icon">
-                    <use xlink:href="img/icons/icons-sprite.svg#arrow-down-bold"></use>
-                  </svg></a>
-                <div class="kabinet-block__content">
-                  <!--если пусто-->
-                  <h2 class="kabinet-block__title">Этапы работ (Если пусто)</h2>
-                  <svg class="icon kabinet-block__icon">
-                    <use xlink:href="img/icons/icons-sprite.svg#smile"></use>
-                  </svg>
-                  <p class="kabinet-block__text">Заказывая у нас услуги, вы получите инструмент для отслеживания всех этапов онлайн.</p>
-                  <p class="kabinet-block__text">Документы, фото, все в одном месте и под контролем.</p>
-                  <!--если есть контент-->
-                  <h2 class="kabinet-block__title">Этапы работ (Если не пусто)</h2>
-                  <ul class="kabinet-stages-nav">
-                    <li class="kabinet-stages-nav__item"><a class="kabinet-stages-nav__link" href="javascript:void(0);" data-stage-toggle="all">Все</a></li>
-                    <li class="kabinet-stages-nav__item"><a class="kabinet-stages-nav__link kabinet-stages-nav__link_stage-1" href="javascript:void(0);" data-stage-toggle="1">Текущие</a></li>
-                    <li class="kabinet-stages-nav__item"><a class="kabinet-stages-nav__link kabinet-stages-nav__link_stage-2" hhref="javascript:void(0);" data-stage-toggle="2">Завершенные</a></li>
-                    <li class="kabinet-stages-nav__item"><a class="kabinet-stages-nav__link kabinet-stages-nav__link_stage-3" href="javascript:void(0);" data-stage-toggle="3">Предстоящие</a></li>
-                  </ul>
-                  <div class="table kabinet-stages-table">
-                    <table>
-                      <tr class="kabinet-stages-table__head">
-                        <th>Название этапа</th>
-                        <th>Текущий статус</th>
-                        <th>Дата изменения</th>
-                      </tr>
-                      <tr data-stage="1">
-                        <td> <a class="kabinet-stages-table__link kabinet-stages-table__link_stage-1" href="kabinet-stage.html">Подшивка кровли</a></td>
-                        <td> <span>Текущий статус</span><span>Завозим материалы</span></td>
-                        <td> <span>Дата изменения</span><span>02.03.2020</span></td>
-                      </tr>
-                      <tr data-stage="2">
-                        <td> <a class="kabinet-stages-table__link kabinet-stages-table__link_stage-2" href="kabinet-stage.html">Укладка плитки</a></td>
-                        <td> <span>Текущий статус</span><span>Завершено</span></td>
-                        <td> <span>Дата изменения</span><span>02.03.2020</span></td>
-                      </tr>
-                      <tr data-stage="3">
-                        <td> <a class="kabinet-stages-table__link kabinet-stages-table__link_stage-3" href="kabinet-stage.html">Постройка гаража</a></td>
-                        <td> <span>Текущий статус</span><span>Согласуем договор</span></td>
-                        <td> <span>Дата изменения</span><span>02.03.2020</span></td>
-                      </tr>
-                      <tr data-stage="2">
-                        <td> <a class="kabinet-stages-table__link kabinet-stages-table__link_stage-2" href="kabinet-stage.html">Укладка плитки</a></td>
-                        <td> <span>Текущий статус</span><span>Завершено</span></td>
-                        <td> <span>Дата изменения</span><span>02.03.2020</span></td>
-                      </tr>
-                      <tr data-stage="3">
-                        <td> <a class="kabinet-stages-table__link kabinet-stages-table__link_stage-3" href="kabinet-stage.html">Постройка гаража</a></td>
-                        <td> <span>Текущий статус</span><span>Согласуем договор</span></td>
-                        <td> <span>Дата изменения</span><span>02.03.2020</span></td>
-                      </tr>
-                    </table>
-                  </div>
-                </div><a class="kabinet-block__mobile-toggle" href="kabinet-video.html"><span>Видео</span>
-                  <svg class="icon">
-                    <use xlink:href="img/icons/icons-sprite.svg#arrow-down-bold"></use>
-                  </svg></a><a class="kabinet-block__mobile-toggle" href="kabinet-personal.html"><span>Персональные данные</span>
-                  <svg class="icon">
-                    <use xlink:href="img/icons/icons-sprite.svg#arrow-down-bold"></use>
-                  </svg></a>
+                  </form>
+                </div>
               </div>
             </div>
           </section>

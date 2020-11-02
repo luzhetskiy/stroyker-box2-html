@@ -1,0 +1,34 @@
+extends layout/layout
+  
+block title
+  title Восстановление пароля
+block breadcrumbs 
+  -var title = 'Восстановление пароля'
+  include blocks/breadcrumbs
+block variables
+  -var content = 'main_muted'
+
+block content
+  section.section.container
+    .row.justify-content-center
+      .col-lg-6.col-md-8
+        .tab-heading
+          a(href="auth.html").tab-heading__link.active Вход
+          a(href="reg.html").tab-heading__link Регистрация
+        .page-container
+          h2.section__title Восстановление пароля
+          form(action="#").form.js-validation
+            p После заполнения формы мы отправим специальную ссылку на указанный электронный адрес, перейдя по которой вы сможете задать новый пароль
+            .row
+              .col-12.form__group
+                .form__group-content
+                  .input.form__input
+                    input(type="text" name='email' placeholder="Email").input__element.required
+                    span.input__label Email
+              .col-12.form__bottom
+                .row.align-items-center
+                  .col-sm-auto
+                    button.button.button_style-2.form__submit Отправить
+                  .col-sm-auto
+                    a(href="auth.html").form__link.link Вспомнили?
+                span.form-post-text Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь с политикой конфиденциальности
