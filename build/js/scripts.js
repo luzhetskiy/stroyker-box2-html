@@ -1322,8 +1322,9 @@ function gridToggle() {
     } else {
       $('.line-sorting__view-toggle_grid').addClass('active');
     }
-  } // check();
+  }
 
+  // check();
 }
 
 var tooltips = {

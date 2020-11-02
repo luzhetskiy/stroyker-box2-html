@@ -159,11 +159,8 @@
 }
 
 .form {
-  &__input, &__upload {
+  &__input {
     margin-bottom: 20px;
-  }
-  p {
-    margin: 0 0 28px 0;
   }
   &__group {
     margin-bottom: 20px;
@@ -577,15 +574,8 @@
 }
 @include media-breakpoint-down(xs) {
   .form {
-    &__input, &__upload {
+    &__input {
       margin-bottom: 16px;
-    }
-    p {
-      margin: 0 0 20px 0;
-    }
-    &__link {
-      display: inline-block;
-      margin-top: 16px;
     }
     &__group {
       margin-bottom: 16px;
@@ -595,6 +585,9 @@
     }
     &__submit {
       width: 100%;
+    }
+    &__bottom {
+      margin-top: 20px;
     }
     &__upload {
       display: flex;
@@ -607,7 +600,9 @@
     }
   }
   .form-post-text {
-    margin-top: 16px;
+    padding: 0 10px;
+    text-align: center;
+    margin-top: 12px;
   }
   .form-section {
     &__title {
