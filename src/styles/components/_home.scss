@@ -12,6 +12,12 @@
   .slick-track {
     height: 100%;
   }
+  .slick-slide {
+    height: 100%;
+    &>div {
+      height: 100%;
+    }
+  }
   &__slide {
     width: 100%;
     height: 100%;
