@@ -25,7 +25,7 @@ block content
           +card2('Проектирование', 'img/e79cec4f0a120d2e96a1701cf4ef8db3.png', grid)
   
   section.section.about-us
-    .background(data-src='img/about.png').lazyload.about-us__background
+    .background(data-src='https://placehold.co/600x600').lazyload.about-us__background
     .container
       .row.about-us__container
         .about-us-block.col-lg-6.col-md-12
@@ -50,10 +50,6 @@ block content
                 span.d-none.d-lg-inline Успей 
                 span забронировать 
                 span.d-none.d-lg-inline бригаду
-  
-  section.section.d-sm-none
-    .container
-      include blocks/advertising
 
   section.section.popular-projects
     .container
@@ -73,7 +69,7 @@ block content
             +card1(false, false, grid)
       .section__more.popular-projects__more
         a(href="#").button.button_style-1.button_xl.section__more-button Смотреть все проекты
-
+  
   section.section.popular-projects
     .container
       .row
@@ -94,19 +90,53 @@ block content
       .section__more.popular-projects__more
         a(href="#").button.button_style-1.button_xl.section__more-button Смотреть все проекты
 
-          
+  include blocks/mobile-advertising    
+  
+  section.section.bid-section
+    .container
+      .row.align-items-center
+        .bid-section__form.col-lg-5
+          h2.h1.section__title Нужен проект дома?
+          h2 Скачайте полный проект дома бесплатно
+          p Заполните форму ниже и нажмите на кнопку "Скачать проект". Загрузка начнется автоматически.
+          form(action="#").form.js-validation
+            .form__group
+              .form__group-content.row
+                .form__input.col-lg-6.col-sm-5
+                  .input
+                    input(type="text" name='phone' placeholder="Телефон*").input__element.required.phone
+                    span.input__label Телефон
+                .form__input.col-sm-auto
+                  button.button.button_style-2.form__submit 
+                    svg.icon
+                      use(xlink:href="img/icons/icons-sprite.svg#download")
+                    span Скачать проект
+            span.form-post-text Нажимая на кнопку «Отправить», вы подтверждаете согласие на обработку 
+              a(href="#ddd") персональных данных
+        
+        .bid-section__slider.col-lg-7
+          .photo-slider.slider.slider_arrows
+            .photo-slider__slide.image.image_cover
+              img(data-src="img/image 28.jpg", alt="image").lazyload
+            .photo-slider__slide.image.image_cover
+              img(data-src="img/image 28.jpg", alt="image").lazyload
+            .photo-slider__slide.image.image_cover
+              img(data-src="img/image 28.jpg", alt="image").lazyload
+            .photo-slider__slide.image.image_cover
+              img(data-src="img/image 28.jpg", alt="image").lazyload
+            .photo-slider__slide.image.image_cover
+              img(data-src="img/image 28.jpg", alt="image").lazyload
+
+
+
   section.section.additionalLinks-section
     .container
       .row
+        //image block
         .additionalLinks-block.col-md-6
-          .additionalLinks-block__container
-            .background.background_left.additionalLinks-block__background.lazyload(data-src='img/dce9a60f2d0bb6ee08ce43af9bc71557 1.png')
-            h2.additionalLinks-block__title Калькулятор проектов
-            p.additionalLinks-block__text Рассчитайте орентировочную стоимость своего<br> проекта самостоятельно
-            a(href="#").button.button_style-2.button_xl.additionalLinks-block__button
-              svg.icon
-                use(xlink:href="img/icons/icons-sprite.svg#box")
-              span Рассчитать
+          .image.additionalLinks-block__image
+            img(data-src="./img/Frame_1_6.jpg", alt="image").lazyload
+        
         .additionalLinks-block.col-md-6
           .additionalLinks-block__container
             .background.background_right.additionalLinks-block__background.lazyload(data-src='img/dsddddd.png')

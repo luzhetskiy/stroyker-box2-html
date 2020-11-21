@@ -9,18 +9,6 @@
       fill: var(--color-footer-logo, #fff);
     }
   }
-  &__bottom-logo {
-    .logo {
-      &__link {
-        width: 115px;
-        opacity: 0.3;
-      }
-    }
-    svg {
-      height: 16px;
-      fill: var(--color-footer-logo, #fff);
-    }
-  }
   &__container {
     display: flex;
     flex-wrap: wrap;
@@ -30,8 +18,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    margin-top: 30px;
+    align-items: center;
   }
   &__contact-list {
     margin: 0;
@@ -66,6 +53,7 @@
     }
   }
   &__section {
+    margin-bottom: 30px;
     &-title {
       font-size: 0.875rem;
       font-weight: 700;
@@ -75,7 +63,6 @@
   &__section-contact {
     display: flex;
     flex-direction: column;
-    justify-content: center;
   }
   &__nav-list {
     padding: 0;
@@ -178,21 +165,31 @@
 
 @include media-breakpoint-down(lg) {
   .footer {
-    &__section-contact {
-      margin-top: 32px;
-    }
     &-socials {
       justify-content: flex-start;
       margin-top: 32px;
     }
   }
 }
+@include media-breakpoint-down(sm) {
+  .footer {
+    &__bottom {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .copy {
+      order: 2;
+      margin-bottom: 10px;
+    }
+    &__link {
+      order: 3;
+    }
+  }
+}
 @include media-breakpoint-down(xs) {
   .footer {
-    padding: 47px 0 32px 0;
-    &__bottom {
-      display: none;
-    }
+    padding: 50px 0;
+    text-align: center;
     &__subscription {
       width: 100%;
     }
@@ -201,12 +198,11 @@
       .logo__link {
         width: 210px;
         margin: 0 auto;
-        opacity: 0.5;
       }
     }
     &-socials {
       justify-content: space-between;
-      max-width: 270px;
+      max-width: 240px;
       width: 100%;
       margin: 0 auto;
       margin-top: 32px;
@@ -220,26 +216,33 @@
       }
     }
     &__section {
-      width: 100%;
-    }
-    &__section-contact {
-      margin-top: 16px;
+      flex: 1 1 100%;
+      margin-bottom: 40px;
     }
     &__section-nav {
-      display: none;
-    }
-    &__bottom-logo {
-      display: none;
+      flex: 1 1 50%;
     }
     &__bottom {
-      flex-direction: column;
+      align-items: center;
     }
-    .copy {
-      display: block;
-      margin-bottom: 8px;
-      br {
-        display: none;
-      }
-    }
+  }
+}
+
+.dev-link {
+  display: block;
+  width: 200px;
+  color: #fff;
+  opacity: 0.3;
+  transition: opacity $trs1;
+  &__image {
+    display: block;
+    width: 100%;
+  }
+  &.touch, &.hover {
+    opacity: 0.6;
+  }
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 20px;
+    order: 1;
   }
 }

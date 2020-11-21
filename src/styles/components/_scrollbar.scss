@@ -35,7 +35,7 @@
     }
   }
   &_mobile {
-    .scrollbar__content {
+    & > .scrollbar__content {
       position: relative;
       z-index: 1;
       overflow: scroll;

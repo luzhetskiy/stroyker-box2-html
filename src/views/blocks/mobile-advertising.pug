@@ -1,0 +1,11 @@
+.section.mobile-advertising.d-block.d-sm-none
+  .container
+    .slider.slider_grid.mobile-advertising__slider.row
+      mixin slide()
+        .mobile-advertising__slide.col
+          a(href="javascript:void(0);").advertising-preview.image.image_cover
+            img(data-src="img/banner.jpg", alt="banner").lazyload
+      +slide()
+      +slide()
+      +slide()
+      +slide()
