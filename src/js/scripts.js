@@ -675,29 +675,27 @@ var slider = {
         initSlider($(this));
       }
       else if($(this).is('.mobile-advertising__slider')) {
+        slideCountLg = 4;
+        slideCountMd = 3;
+        slideCountSm = 2;
         slideCountXs = 2;
-        let initialized = false,
-            $slides = $(this).find('.mobile-advertising__slide');
-        if($slides.length>1) {
-          let check = function check() {
-            if ($(window).width() < brakepoints.xs && !initialized) {
-              initialized = true;
-              initSlider($(_this4));
-            } 
-            else if ($(window).width() >= brakepoints.xs && initialized) {
-              initialized = false;
-              setTimeout(function () {
-                $(_this4).slick('unslick');
-              }, 500);
-            }
-          };
+        let initialized = false;
+        let check = function check() {
+          if ($(window).width() < brakepoints.lg && !initialized) {
+            initialized = true;
+            initSlider($(_this4));
+          } 
+          else if ($(window).width() >= brakepoints.lg && initialized) {
+            initialized = false;
+            setTimeout(function () {
+              $(_this4).slick('unslick');
+            }, 500);
+          }
+        };
+        check();
+        $(window).on('resize', function () {
           check();
-          $(window).on('resize', function () {
-            check();
-          });
-        } else {
-          $(this).addClass('slick-initialized');
-        }
+        });
       }
 
       function initSlider($target) {

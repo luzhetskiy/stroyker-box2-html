@@ -737,31 +737,29 @@ var slider = {
         slideCountXs = 1;
         initSlider($(this));
       } else if ($(this).is('.mobile-advertising__slider')) {
+        slideCountLg = 4;
+        slideCountMd = 3;
+        slideCountSm = 2;
         slideCountXs = 2;
-        var _initialized = false,
-            $slides = $(this).find('.mobile-advertising__slide');
+        var _initialized = false;
 
-        if ($slides.length > 1) {
-          var _check2 = function check() {
-            if ($(window).width() < brakepoints.xs && !_initialized) {
-              _initialized = true;
-              initSlider($(_this4));
-            } else if ($(window).width() >= brakepoints.xs && _initialized) {
-              _initialized = false;
-              setTimeout(function () {
-                $(_this4).slick('unslick');
-              }, 500);
-            }
-          };
+        var _check2 = function check() {
+          if ($(window).width() < brakepoints.lg && !_initialized) {
+            _initialized = true;
+            initSlider($(_this4));
+          } else if ($(window).width() >= brakepoints.lg && _initialized) {
+            _initialized = false;
+            setTimeout(function () {
+              $(_this4).slick('unslick');
+            }, 500);
+          }
+        };
 
+        _check2();
+
+        $(window).on('resize', function () {
           _check2();
-
-          $(window).on('resize', function () {
-            _check2();
-          });
-        } else {
-          $(this).addClass('slick-initialized');
-        }
+        });
       }
 
       function initSlider($target) {

@@ -173,6 +173,22 @@
   }
 }
 
+.mobile-advertising__slider {
+  .slick-arrow {
+    display: none !important;
+  }
+  .slick-track {
+    min-width: 100%;
+    justify-content: center;
+  }
+  &.slick-dotted {
+    padding-bottom: 35px;
+    .slick-dots {
+      display: flex !important;
+      bottom: 0;
+    }
+  }
+}
 
 .photo-slider {
   &__slide {
