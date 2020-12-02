@@ -34,18 +34,20 @@
       opacity: 0;
     }
   }
-  &_mobile {
-    & > .scrollbar__content {
-      position: relative;
-      z-index: 1;
-      overflow: scroll;
-      -webkit-overflow-scrolling: touch;
-      max-height: inherit;
-      height: 100%;
-    }
-    &::after, &::before {
-      width: 100% !important;
-      height: 30px;
+  @include media-breakpoint-down(md) {
+    &_mobile {
+      & > .scrollbar__content {
+        position: relative;
+        z-index: 1;
+        overflow: scroll;
+        -webkit-overflow-scrolling: touch;
+        max-height: inherit;
+        height: 100%;
+      }
+      &::after, &::before {
+        width: 100% !important;
+        height: 30px;
+      }
     }
   }
 

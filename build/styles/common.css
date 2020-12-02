@@ -3533,16 +3533,17 @@ a:not([class]):hover {
     opacity: 0; }
   .scrollbar_end:after {
     opacity: 0; }
-  .scrollbar_mobile > .scrollbar__content {
-    position: relative;
-    z-index: 1;
-    overflow: scroll;
-    -webkit-overflow-scrolling: touch;
-    max-height: inherit;
-    height: 100%; }
-  .scrollbar_mobile::after, .scrollbar_mobile::before {
-    width: 100% !important;
-    height: 30px; }
+  @media (max-width: 991.98px) {
+    .scrollbar_mobile > .scrollbar__content {
+      position: relative;
+      z-index: 1;
+      overflow: scroll;
+      -webkit-overflow-scrolling: touch;
+      max-height: inherit;
+      height: 100%; }
+    .scrollbar_mobile::after, .scrollbar_mobile::before {
+      width: 100% !important;
+      height: 30px; } }
   .scrollbar_style-2 .simplebar-track {
     background-color: var(--color-sections-bg, #F5F5F5);
     border: none;
@@ -4397,6 +4398,8 @@ a:not([class]):hover {
   .popular-projects .slick-slide > div:not([class]) {
     display: flex;
     flex: 1 1 auto; }
+  .popular-projects .slick-slide > div:not(:last-child) {
+    max-height: 50%; }
 
 @media (min-width: 576px) {
   .popular-projects__slider {
