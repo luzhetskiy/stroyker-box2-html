@@ -423,7 +423,7 @@ function inputs() {
     }
   },
       mask = Inputmask({
-    mask: "+7 (999) 999-99-99",
+    mask: "+9 (999) 999-99-99",
     showMaskOnHover: false,
     clearIncomplete: false
   }).mask(namspaces.phone); //validation events
