@@ -1,80 +1,10 @@
 "use strict";
 
-function _createForOfIteratorHelper(o, allowArrayLike) {
-  var it;
+function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
 
-  if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {
-    if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {
-      if (it) o = it;
-      var i = 0;
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
-      var F = function F() {};
-
-      return {
-        s: F,
-        n: function n() {
-          if (i >= o.length) return {
-            done: true
-          };
-          return {
-            done: false,
-            value: o[i++]
-          };
-        },
-        e: function e(_e) {
-          throw _e;
-        },
-        f: F
-      };
-    }
-
-    throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-  }
-
-  var normalCompletion = true,
-      didErr = false,
-      err;
-  return {
-    s: function s() {
-      it = o[Symbol.iterator]();
-    },
-    n: function n() {
-      var step = it.next();
-      normalCompletion = step.done;
-      return step;
-    },
-    e: function e(_e2) {
-      didErr = true;
-      err = _e2;
-    },
-    f: function f() {
-      try {
-        if (!normalCompletion && it.return != null) it.return();
-      } finally {
-        if (didErr) throw err;
-      }
-    }
-  };
-}
-
-function _unsupportedIterableToArray(o, minLen) {
-  if (!o) return;
-  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
-  var n = Object.prototype.toString.call(o).slice(8, -1);
-  if (n === "Object" && o.constructor) n = o.constructor.name;
-  if (n === "Map" || n === "Set") return Array.from(o);
-  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
-}
-
-function _arrayLikeToArray(arr, len) {
-  if (len == null || len > arr.length) len = arr.length;
-
-  for (var i = 0, arr2 = new Array(len); i < len; i++) {
-    arr2[i] = arr[i];
-  }
-
-  return arr2;
-}
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 lazySizes.cfg.init = false;
 customScroll();
@@ -99,8 +29,7 @@ $(document).ready(function () {
   stagesToggle();
   jsRange();
   gridToggle();
-  comparison(); //обработать изображения после инициализации слайдеров
-
+  comparison();
   gallery();
   setTimeout(function () {
     lazy();
@@ -140,7 +69,7 @@ function touchHoverEvents() {
   var targets = 'a[class], button, label, input, textarea, tr, .js-touch-hover, .selectric-items li, .selectric .label, .button, .comparison-property',
       touchEndDelay = 250,
       //ms    
-  touch,
+      touch,
       timeout;
 
   function event(event) {
@@ -324,10 +253,9 @@ window.popup = {
   },
   close: function close($popup, callback) {
     var _this2 = this;
-
-    scrollLock.enablePageScroll();
     $popup.removeClass('active');
     setTimeout(function () {
+      scrollLock.enablePageScroll();
       _this2.active = undefined;
       typeof callback === 'function' && callback();
     }, 250);
@@ -382,7 +310,7 @@ function inputs() {
     },
     email: {
       email: {
-        message: '^Неправильный формат email-адреса'
+        message: '^Неправильный формат email-адреса' 
       }
     },
     name: {
@@ -422,7 +350,7 @@ function inputs() {
       }
     }
   },
-      mask = Inputmask({
+  mask = Inputmask({
     mask: "+9 (999) 999-99-99",
     showMaskOnHover: false,
     clearIncomplete: false
@@ -497,11 +425,12 @@ function inputs() {
 
     $form.on('submit', function (event) {
       // event.preventDefault();
+
       if (validateForm()) {
         /* $inputs.val('').trigger('change');
         popup.open($('#succes'));  */
       } else {
-        event.preventDefault();
+          event.preventDefault();
       }
     });
   });
@@ -521,13 +450,13 @@ function search() {
           mouseenter = true;
         } else {
           mouseenter = false;
-           if (!focus) {
+
+          if (!focus) {
             $this.removeClass('active-content');
           }
         }
       }
     }); */
-
     $input.on('blur focus input', function (event) {
       if (event.type == 'blur') {
         focus = false;
@@ -540,16 +469,19 @@ function search() {
         var val = $(this).val();
 
         if (val !== '') {
-          $this.addClass('active'); //$this.addClass('active-content');
+          $this.addClass('active');
+          //$this.addClass('active-content');
         } else {
-          $this.removeClass('active'); //$this.removeClass('active-content');
+          $this.removeClass('active');
+          //$this.removeClass('active-content');
         }
       }
     });
     /* 
     $(document).on('touchstart', function (event) {
       var $target = $(event.target);
-       if ($target.closest($this).length == 0) {
+
+      if ($target.closest($this).length == 0) {
         $this.removeClass('active-content');
       }
     }); */
@@ -562,12 +494,10 @@ function customScroll() {
     var $this = $($element),
         $container,
         $content;
-
     if (device.desktop() && !$this.is('.scrollbar_mobile-only')) {
       var simpleBar = new SimpleBar($element);
       $container = $this;
       $content = $this.find('.scrollbar__content'); //event
-
       simpleBar.getScrollElement().addEventListener('scroll', function () {
         gradientCheck();
       });
@@ -575,7 +505,6 @@ function customScroll() {
       $this.addClass('scrollbar_mobile');
       $container = $this.find('.scrollbar__content');
       $content = $this.find('.scrollbar__inner'); //event
-
       $container.on('scroll', function () {
         gradientCheck();
       });
@@ -637,6 +566,10 @@ var slider = {
         dots = true;
       }
 
+      if($(this).is('.slider_2v')) {
+        rows = 2;
+      }
+
       if ($(this).is('.popular-projects__slider')) {
         slideCount = 2;
         slideCountLg = 2;
@@ -645,7 +578,7 @@ var slider = {
         slideCountXs = 1;
 
         if ($(this).is('.popular-projects__slider_mobile-only')) {
-          var initialized = false;
+          let initialized = false;
 
           var check = function check() {
             if ($(window).width() < brakepoints.xs && !initialized) {
@@ -664,44 +597,48 @@ var slider = {
             check();
           });
         } else {
-          if ($(this).is('.popular-projects__slider_type-2')) {
+          if($(this).is('.popular-projects__slider_type-2')) {
             rows = 2;
           }
-
           initSlider($(this));
         }
-      } else if ($(this).is('.home-banner')) {
-        var $this = $(this);
+      } 
+      else if ($(this).is('.home-banner')) {
+        let $this = $(this);
         autoplay = true;
         nextArrow = "<button class=\"home-banner__arrow home-banner__next\" aria-label=\"Next\" type=\"button\">".concat(slider.arrowNext, "</button>");
-        prevArrow = "<button class=\"home-banner__arrow home-banner__prev\" aria-label=\"Previous\" type=\"button\">".concat(slider.arrowPrev, "</button>"); //set size
-
-        var res_desktop = $(this).attr('data-desktop-ratio'),
+        prevArrow = "<button class=\"home-banner__arrow home-banner__prev\" aria-label=\"Previous\" type=\"button\">".concat(slider.arrowPrev, "</button>");
+        
+        //set size
+        let res_desktop = $(this).attr('data-desktop-ratio'),
             res_mobile = $(this).attr('data-mobile-ratio'),
-            w,
-            h;
+            w, h;
 
-        var checkSize = function checkSize() {
-          w = $this.width(), h = $(window).width() < brakepoints.xs ? w * res_mobile : w * res_desktop;
-          console.log($(window).width() < brakepoints.xs);
+        let checkSize = function() {
+          w = $this.width(),
+          h = $(window).width()<brakepoints.xs?w*res_mobile:w*res_desktop;
+          console.log($(window).width()<brakepoints.xs)
           $this.height(h);
-        };
+        }
 
         checkSize();
-        $(window).on('resize', function () {
+        $(window).on('resize', function() {
           checkSize();
-        });
+        })
         initSlider($(this));
-      } else if ($(this).is('.photo-slider')) {
+      } 
+      else if ($(this).is('.photo-slider')) {
         initSlider($(this));
-      } else if ($(this).is('.news-preview-section__slider')) {
+      } 
+      else if ($(this).is('.news-preview-section__slider')) {
         slideCount = 3;
         slideCountLg = 3;
         slideCountMd = 2;
         slideCountSm = 2;
         slideCountXs = 1;
         initSlider($(this));
-      } else if ($(this).is('.section-partners__slider')) {
+      } 
+      else if ($(this).is('.section-partners__slider')) {
         autoplay = true;
         slideCount = 6;
         slideCountLg = 5;
@@ -709,14 +646,16 @@ var slider = {
         slideCountSm = 3;
         slideCountXs = 1;
         initSlider($(this));
-      } else if ($(this).is('.projects-slider') || $(this).is('.progress-projects-slider')) {
+      } 
+      else if ($(this).is('.projects-slider') || $(this).is('.progress-projects-slider')) {
         slideCount = 4;
         slideCountLg = 3;
         slideCountMd = 2;
         slideCountSm = 2;
         slideCountXs = 1;
         initSlider($(this));
-      } else if ($(this).is('.product-slider')) {
+      } 
+      else if ($(this).is('.product-slider')) {
         if ($(this).is('.product-slider_style-2')) {
           slideCount = 4;
           slideCountLg = 3;
@@ -729,37 +668,53 @@ var slider = {
         slideCountSm = 2;
         slideCountXs = 1;
         initSlider($(this));
-      } else if ($(this).is('.wiki-slider')) {
+      } 
+      else if ($(this).is('.wiki-slider')) {
         slideCount = 4;
         slideCountLg = 3;
         slideCountMd = 3;
         slideCountSm = 2;
         slideCountXs = 1;
         initSlider($(this));
-      } else if ($(this).is('.mobile-advertising__slider')) {
+      }
+      else if($(this).is('.mobile-advertising__slider')) {
         slideCountLg = 4;
         slideCountMd = 3;
         slideCountSm = 2;
         slideCountXs = 2;
-        var _initialized = false;
-
-        var _check2 = function check() {
-          if ($(window).width() < brakepoints.lg && !_initialized) {
-            _initialized = true;
+        let initialized = false;
+        let check = function check() {
+          if ($(window).width() < brakepoints.lg && !initialized) {
+            initialized = true;
             initSlider($(_this4));
-          } else if ($(window).width() >= brakepoints.lg && _initialized) {
-            _initialized = false;
+          } 
+          else if ($(window).width() >= brakepoints.lg && initialized) {
+            initialized = false;
             setTimeout(function () {
               $(_this4).slick('unslick');
             }, 500);
           }
         };
-
-        _check2();
-
+        check();
         $(window).on('resize', function () {
-          _check2();
+          check();
         });
+      }
+      else if ($(this).is('.slider_4h')) {
+        slideCount = 4;
+        slideCountLg = 3;
+        slideCountMd = 3;
+        slideCountSm = 2;
+        slideCountXs = 1;
+        initSlider($(this));
+      }
+      else if ($(this).is('.slider_3h')) {
+        slideCount = 3;
+        slideCountLg = 3;
+        slideCountMd = 2;
+        slideCountSm = 2;
+        slideCountXs = 1;
+        initSlider($(this));
       }
 
       function initSlider($target) {
@@ -774,7 +729,7 @@ var slider = {
           centerMode: centerMode,
           slidesToShow: slideCount,
           slidesToScroll: slideCount,
-          autoplay: autoplay,
+          //autoplay: autoplay,
           autoplaySpeed: $target.data('autoplay-timeout') || 5000,
           responsive: [{
             breakpoint: brakepoints.lg,
@@ -1006,7 +961,6 @@ function toggle() {
   });
 } //tabs
 
-
 function tabs() {
   var $tabs = $('.tabs');
   $tabs.each(function () {
@@ -1026,7 +980,6 @@ function tabs() {
   });
 } //scroll
 
-
 function scrollTo() {
   var $scrollbtn = $('[data-scroll]'),
       speed = 500; //ms
@@ -1043,7 +996,6 @@ function scrollTo() {
     }
   });
 } //scroll to reviews
-
 
 function scrollToTab() {
   var $link = $('[data-go-tab]'),
@@ -1090,7 +1042,6 @@ function fixedBlocks() {
     }
   });
 } //rate
-
 
 function rating() {
   $(document).on('click', '.js-rating__star', function (event) {
@@ -1345,8 +1296,9 @@ function gridToggle() {
     } else {
       $('.line-sorting__view-toggle_grid').addClass('active');
     }
-  } // check();
+  }
 
+  // check();
 }
 
 var tooltips = {
@@ -1474,49 +1426,58 @@ function comparison() {
       $('.comparison-property_difference').show();
     }
   });
-} //gallery
+}
 
-
+//gallery
 function gallery() {
-  if ($.fancybox) {
+  if($.fancybox) {
     //относительно страницы а не js
-    var close = '<svg class="icon" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.71 1.71004L16.29 0.290039L9.00004 7.59004L1.71004 0.290039L0.290039 1.71004L7.59004 9.00004L0.290039 16.29L1.71004 17.71L9.00004 10.41L16.29 17.71L17.71 16.29L10.41 9.00004L17.71 1.71004Z"/></svg>',
-        arrow = '<svg class="icon" width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.18002 19.0499L0.77002 17.6399L8.40002 9.99995L0.77002 2.35995L2.18002 0.949951L11.23 9.99995L2.18002 19.0499Z"/></svg>',
-        zoom = '<svg class="icon" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M20.21 18.79L14.31 12.9C15.4084 11.5032 16.0038 9.77692 16 8C16 6.41775 15.5308 4.87103 14.6518 3.55544C13.7727 2.23985 12.5233 1.21447 11.0615 0.608967C9.59966 0.00346625 7.99113 -0.15496 6.43928 0.153721C4.88743 0.462403 3.46197 1.22433 2.34315 2.34315C1.22433 3.46197 0.462403 4.88743 0.153721 6.43928C-0.15496 7.99113 0.00346625 9.59966 0.608967 11.0615C1.21447 12.5233 2.23985 13.7727 3.55544 14.6518C4.87103 15.5308 6.41775 16 8 16C9.77692 16.0038 11.5032 15.4084 12.9 14.31L18.79 20.21L20.21 18.79ZM8 14C6.81332 14 5.65328 13.6481 4.66658 12.9888C3.67989 12.3295 2.91085 11.3925 2.45673 10.2961C2.0026 9.19975 1.88378 7.99335 2.11529 6.82946C2.3468 5.66558 2.91825 4.59648 3.75736 3.75736C4.59648 2.91825 5.66558 2.3468 6.82946 2.11529C7.99335 1.88378 9.19975 2.0026 10.2961 2.45673C11.3925 2.91085 12.3295 3.67989 12.9888 4.66658C13.6481 5.65328 14 6.81332 14 8C14 9.5913 13.3679 11.1174 12.2426 12.2426C11.1174 13.3679 9.5913 14 8 14Z"></path></svg>',
-        downlaod = '<svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.71 9.48531L13.29 8.06531L10 11.3553V0.695312H8V11.3553L4.71 8.06531L3.29 9.48531L9 15.1853L14.71 9.48531ZM0 17.6953V19.6953H18V17.6953H0Z"/></svg>',
-        thumbs = '<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 14H18V18H14V14Z"/><path d="M7 14H11V18H7V14Z"/><path d="M0 14H4V18H0V14Z"/><path d="M14 7H18V11H14V7Z"/><path d="M7 7H11V11H7V7Z"/><path d="M0 7H4V11H0V7Z"/><path d="M14 0H18V4H14V0Z"/><path d="M7 0H11V4H7V0Z"/><path d="M0 0H4V4H0V0Z"/></svg>';
-    $.fancybox.defaults.btnTpl.close = "<button data-fancybox-close class=\"button button_style-1 button_icon fancybox-button fancybox-button--close\" title=\"{{CLOSE}}\">".concat(close, "</button>");
-    $.fancybox.defaults.btnTpl.arrowLeft = "<button data-fancybox-prev class=\"button button_style-1 button_icon fancybox-button fancybox-button--arrow_left\" title=\"{{PREV}}\">".concat(arrow, "</button>");
-    $.fancybox.defaults.btnTpl.arrowRight = "<button data-fancybox-prev class=\"button button_style-1 button_icon fancybox-button fancybox-button--arrow_right\" title=\"{{NEXT}}\">".concat(arrow, "</button>");
-    $.fancybox.defaults.btnTpl.zoom = "<button data-fancybox-zoom class=\"button button_style-1 button_icon fancybox-button fancybox-button--zoom\" title=\"{{ZOOM}}\">".concat(zoom, "</button>");
-    $.fancybox.defaults.btnTpl.download = "<a download data-fancybox-download class=\"button button_style-1 button_icon fancybox-button fancybox-button--download\" href=\"javascript:;\" title=\"{{DOWNLOAD}}\">".concat(downlaod, "</a>");
-    $.fancybox.defaults.btnTpl.thumbs = "<button data-fancybox-thumbs class=\"button button_style-1 button_icon fancybox-button fancybox-button--thumbs\" title=\"{{THUMBS}}\">".concat(thumbs, "</button>");
-    $.fancybox.defaults.buttons = ["zoom", "close"];
+    let close =     '<svg class="icon" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.71 1.71004L16.29 0.290039L9.00004 7.59004L1.71004 0.290039L0.290039 1.71004L7.59004 9.00004L0.290039 16.29L1.71004 17.71L9.00004 10.41L16.29 17.71L17.71 16.29L10.41 9.00004L17.71 1.71004Z"/></svg>',
+        arrow =     '<svg class="icon" width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.18002 19.0499L0.77002 17.6399L8.40002 9.99995L0.77002 2.35995L2.18002 0.949951L11.23 9.99995L2.18002 19.0499Z"/></svg>',
+        zoom =      '<svg class="icon" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M20.21 18.79L14.31 12.9C15.4084 11.5032 16.0038 9.77692 16 8C16 6.41775 15.5308 4.87103 14.6518 3.55544C13.7727 2.23985 12.5233 1.21447 11.0615 0.608967C9.59966 0.00346625 7.99113 -0.15496 6.43928 0.153721C4.88743 0.462403 3.46197 1.22433 2.34315 2.34315C1.22433 3.46197 0.462403 4.88743 0.153721 6.43928C-0.15496 7.99113 0.00346625 9.59966 0.608967 11.0615C1.21447 12.5233 2.23985 13.7727 3.55544 14.6518C4.87103 15.5308 6.41775 16 8 16C9.77692 16.0038 11.5032 15.4084 12.9 14.31L18.79 20.21L20.21 18.79ZM8 14C6.81332 14 5.65328 13.6481 4.66658 12.9888C3.67989 12.3295 2.91085 11.3925 2.45673 10.2961C2.0026 9.19975 1.88378 7.99335 2.11529 6.82946C2.3468 5.66558 2.91825 4.59648 3.75736 3.75736C4.59648 2.91825 5.66558 2.3468 6.82946 2.11529C7.99335 1.88378 9.19975 2.0026 10.2961 2.45673C11.3925 2.91085 12.3295 3.67989 12.9888 4.66658C13.6481 5.65328 14 6.81332 14 8C14 9.5913 13.3679 11.1174 12.2426 12.2426C11.1174 13.3679 9.5913 14 8 14Z"></path></svg>',
+        downlaod =  '<svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.71 9.48531L13.29 8.06531L10 11.3553V0.695312H8V11.3553L4.71 8.06531L3.29 9.48531L9 15.1853L14.71 9.48531ZM0 17.6953V19.6953H18V17.6953H0Z"/></svg>',
+        thumbs =    '<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 14H18V18H14V14Z"/><path d="M7 14H11V18H7V14Z"/><path d="M0 14H4V18H0V14Z"/><path d="M14 7H18V11H14V7Z"/><path d="M7 7H11V11H7V7Z"/><path d="M0 7H4V11H0V7Z"/><path d="M14 0H18V4H14V0Z"/><path d="M7 0H11V4H7V0Z"/><path d="M0 0H4V4H0V0Z"/></svg>';
+
+
+    $.fancybox.defaults.btnTpl.close = `<button data-fancybox-close class="button button_style-1 button_icon fancybox-button fancybox-button--close" title="{{CLOSE}}">${close}</button>`;
+    $.fancybox.defaults.btnTpl.arrowLeft = `<button data-fancybox-prev class="button button_style-1 button_icon fancybox-button fancybox-button--arrow_left" title="{{PREV}}">${arrow}</button>`;
+    $.fancybox.defaults.btnTpl.arrowRight = `<button data-fancybox-prev class="button button_style-1 button_icon fancybox-button fancybox-button--arrow_right" title="{{NEXT}}">${arrow}</button>`;
+    $.fancybox.defaults.btnTpl.zoom = `<button data-fancybox-zoom class="button button_style-1 button_icon fancybox-button fancybox-button--zoom" title="{{ZOOM}}">${zoom}</button>`;
+    $.fancybox.defaults.btnTpl.download = `<a download data-fancybox-download class="button button_style-1 button_icon fancybox-button fancybox-button--download" href="javascript:;" title="{{DOWNLOAD}}">${downlaod}</a>`;
+    $.fancybox.defaults.btnTpl.thumbs = `<button data-fancybox-thumbs class="button button_style-1 button_icon fancybox-button fancybox-button--thumbs" title="{{THUMBS}}">${thumbs}</button>`;
+    $.fancybox.defaults.buttons = [
+      "zoom",
+      "close"
+    ];
     $.fancybox.defaults.i18n.ru = {
-      CLOSE: 'Закрыть',
-      NEXT: 'Следующий слайд',
-      PREV: 'Предидущий слайд',
-      ERROR: 'Ошибка загрузки, попробуйте позже.',
-      PLAY_START: 'Запустить слайд-шоу',
-      PLAY_STOP: 'Остановить слайд-шоу',
-      FULL_SCREEN: 'Полноэкранный режим',
-      THUMBS: 'Миниатюры',
-      DOWNLOAD: 'Загрузить',
-      SHARE: 'Поделиться',
-      ZOOM: 'Увеличить'
+      CLOSE       : 'Закрыть',
+      NEXT        : 'Следующий слайд',
+      PREV        : 'Предидущий слайд',
+      ERROR       : 'Ошибка загрузки, попробуйте позже.',
+      PLAY_START  : 'Запустить слайд-шоу',
+      PLAY_STOP   : 'Остановить слайд-шоу',
+      FULL_SCREEN : 'Полноэкранный режим',
+      THUMBS      : 'Миниатюры',
+      DOWNLOAD    : 'Загрузить',
+      SHARE       : 'Поделиться',
+      ZOOM        : 'Увеличить'
     };
     $.fancybox.defaults.lang = 'ru';
     $.fancybox.defaults.loop = true;
     $.fancybox.defaults.autoFocus = false;
     $.fancybox.defaults.backFocus = false;
     $.fancybox.defaults.animationDuration = 500;
-    $('.slide [data-fancybox]').on('click', function () {
-      var $selector = $(this).parents('.slider').find('.slick-slide:not(.slick-cloned) a');
-      $.fancybox.open($selector, {
-        selector: $selector,
-        backFocus: false
-      }, $selector.index(this));
+
+    $('.slide [data-fancybox]').on('click', function() {
+      let $selector = $(this).parents('.slider').find('.slick-slide:not(.slick-cloned) a');
+
+      $.fancybox.open( $selector, {
+          selector : $selector,
+          backFocus : false
+      }, $selector.index( this ) );
+
       return false;
     });
+    
   }
 }

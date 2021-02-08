@@ -1,20 +1,23 @@
-h1,h2,h3,h4,h5,h6 {
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   color: #000;
   &:not([class]) {
-    & + h2,
-    & + h3,
-    & + h4,
-    & + h5,
-    & + h6 {
+    & + h2, .h2,
+    & + h3, .h3,
+    & + h4, .h4,
+    & + h5, .h5,
+    & + h6, .h6 {
       margin-top: 1.5rem;
     }
+  }
+  &.font2 {
+    font-weight: 400;
   }
 }
 mark {
   background-color: transparent;
   color: var(--color-accent, #2363D1);
 }
-h2,h3,h4,h5,h6 {
+h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   margin: 1.875rem 0 1rem 0;
   &:not([class]) {
     &:first-child {
@@ -118,7 +121,7 @@ ol:not([class]) {
     display: flex;
     align-items: center;
     &:not(:last-child) {
-      margin-bottom: 0.375rem;
+      margin-bottom: 1rem;
     }
     &:before {
       counter-increment: section;
@@ -230,7 +233,12 @@ a:not([class]) {
 }
 
 @include media-breakpoint-down(xs) {
-  h2,h3,h4,h5,h6 {
+  h1, .h1 {
+    font-size: 1.625rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+  h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     margin: 1.5rem 0 1rem 0;
     &:not([class]) {
       &:first-child {
@@ -240,10 +248,6 @@ a:not([class]) {
         margin-bottom: 0;
       }
     }
-  }
-  h1, .h1 {
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
   }
   img:not([class]) {
     margin-left: -16px;
@@ -261,20 +265,10 @@ a:not([class]) {
     margin-left: -16px;
     margin-right: -16px;
   }
-  ul:not([class]) {
-    li:not([class]) {
-      &:not(:last-child) {
-        margin-bottom: 0.5rem;
-      }
-    }
-  }
   ol:not([class]) {
     li:not([class]) {
       min-height: 24px;
       padding-left: 40px;
-      &:not(:last-child) {
-        margin-bottom: 0.5rem;
-      }
       &:before {
         width: 24px;
         height: 24px;

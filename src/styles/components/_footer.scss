@@ -79,6 +79,7 @@
   &__subscription {
     margin-top: 4px;
     width: 280px;
+    margin-bottom: 13px;
     &-head {
       font-size: 0.75rem;
       color: var(--color-text-muted, #767676);
@@ -92,19 +93,19 @@
   display: flex;
   background-color: #fff;
   border-radius: 2px;
-  margin-bottom: 13px;
   &__input {
     flex: 1 1 100%;
     padding: 0 !important;
     &-element {
-      padding: 9px 16px;
       box-shadow: none !important;
-      border: 0 !important;
+      border-radius: 2px 0 0 2px;
+      border-width: 1px 0 1px 1px;
     }
   }
   &__button {
-    flex: 0 0 80px;
-    min-width: 0px;
+    flex: 0 0 auto;
+    min-width: 80px;
+    border-radius: 0 2px 2px 0;
   }
 }
 

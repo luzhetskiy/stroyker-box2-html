@@ -25,12 +25,12 @@
     <link rel="stylesheet" href="./styles/jquery.fancybox.css">
     <link rel="stylesheet" href="styles/common.css">
     <!--helper-->
-    <link rel="stylesheet" href="styles/js-helper.css">
+    <link rel="stylesheet" href="styles/helper.css">
   </head>
   <body>
     <div class="wrapper">
       <!--header-->
-      <header class="header">
+      <header class="header" data-scroll-lock-fill-gap>
         <div class="header__top">
           <div class="container">
             <div class="header__nav-group">
@@ -67,7 +67,7 @@
                   </div>
                 </div>
               </div>
-              <div class="header__contact-items"><a class="header__phone" href="tel:+79874433777">+7 987 443-37-77</a><a class="button button_style-1" href="#feedback" data-popup-open>Заказать звонок</a></div>
+              <div class="header__contact-items"><a class="header__phone" href="tel:+79874433777">+7 987 443-37-77</a><a class="button button_style-1" href="#feedback" data-popup-open>Заказать звонок</a></div>
               <!--nav toggle--><a class="nav-toggle" href="javascript:void(0);"><span></span><span></span><span></span></a>
             </div>
           </div>
@@ -89,19 +89,19 @@
                     <li class="search-content-window__item"><span class="search-content-window__item-title"><a href="#">Фанера влагостойкая </a><span class="search-content-window__item-label search-content-window__item-label_style-1">группа товаров</span></span>
                       <div class="search-content-window__item-value">63 товара</div>
                     </li>
-                    <li class="search-content-window__item"><span class="search-content-window__item-title"><a href="#">Фанера влагостойкая Плита OSB-3 12x2500х1250 мм длинное название на две строчки </a><span class="search-content-window__item-label search-content-window__item-label_style-2">товар</span></span>
+                    <li class="search-content-window__item"><span class="search-content-window__item-title"><a href="#">Фанера влагостойкая Плита OSB-3 12×2500×1250 мм длинное название на две строчки </a><span class="search-content-window__item-label search-content-window__item-label_style-2">товар</span></span>
                       <div class="search-content-window__item-value">1234.50 ₽/шт. </div>
                     </li>
                     <li class="search-content-window__item"><span class="search-content-window__item-title"><a href="#">Фанера влагостойкая </a><span class="search-content-window__item-label search-content-window__item-label_style-1">группа товаров</span></span>
                       <div class="search-content-window__item-value">63 товара</div>
                     </li>
-                    <li class="search-content-window__item"><span class="search-content-window__item-title"><a href="#">Фанера влагостойкая Плита OSB-3 12x2500х1250 мм длинное название на две строчки </a><span class="search-content-window__item-label search-content-window__item-label_style-2">товар</span></span>
+                    <li class="search-content-window__item"><span class="search-content-window__item-title"><a href="#">Фанера влагостойкая Плита OSB-3 12×2500×1250 мм длинное название на две строчки </a><span class="search-content-window__item-label search-content-window__item-label_style-2">товар</span></span>
                       <div class="search-content-window__item-value">1234.50 ₽/шт. </div>
                     </li>
                     <li class="search-content-window__item"><span class="search-content-window__item-title"><a href="#">Фанера влагостойкая </a><span class="search-content-window__item-label search-content-window__item-label_style-1">группа товаров</span></span>
                       <div class="search-content-window__item-value">63 товара</div>
                     </li>
-                    <li class="search-content-window__item"><span class="search-content-window__item-title"><a href="#">Фанера влагостойкая Плита OSB-3 12x2500х1250 мм длинное название на две строчки </a><span class="search-content-window__item-label search-content-window__item-label_style-2">товар</span></span>
+                    <li class="search-content-window__item"><span class="search-content-window__item-title"><a href="#">Фанера влагостойкая Плита OSB-3 12×2500×1250 мм длинное название на две строчки </a><span class="search-content-window__item-label search-content-window__item-label_style-2">товар</span></span>
                       <div class="search-content-window__item-value">1234.50 ₽/шт. </div>
                     </li>
                   </div>
@@ -112,12 +112,12 @@
               <!--btn--><a class="header__small-button header__small-button_auth" href="#">
                 <svg class="icon">
                   <use xlink:href="img/icons/icons-sprite.svg#user"></use>
-                </svg><span>“Строймонтаж”</span></a>
+                </svg><span>«Строймонтаж»</span></a>
               <!--btn--><a class="header__small-button header__small-button_comparison" href="#">
                 <svg class="icon">
                   <use xlink:href="img/icons/icons-sprite.svg#comparison"></use>
                 </svg><span>0</span></a>
-              <!--btn--><a class="header__small-button header__small-button_cart" href="#"> 
+              <!--btn--><a class="header__small-button header__small-button_cart" href="#">
                 <svg class="icon">
                   <use xlink:href="img/icons/icons-sprite.svg#subtract"></use>
                 </svg><span>12</span></a>
@@ -142,8 +142,8 @@
                   <div class="toggle-section__content mobile-nav__dropdown-content mobile-nav__dropdown-content_style-1">
                     <div class="mobile-nav__sub-nav-container">
                       <ul class="mobile-nav__sub-nav-list container">
-                        <li class="mobile-nav__sub-nav-item"><a class="mobile-nav__sub-nav-link mobile-nav__sub-nav-link_style-1" href="#">Не отрисовано</a></li>
-                        <li class="mobile-nav__sub-nav-item"><a class="mobile-nav__sub-nav-link mobile-nav__sub-nav-link_style-1" href="#">Не отрисовано</a></li>
+                        <li class="mobile-nav__sub-nav-item"><a class="mobile-nav__sub-nav-link mobile-nav__sub-nav-link_style-1" href="#">Не отрисовано</a></li>
+                        <li class="mobile-nav__sub-nav-item"><a class="mobile-nav__sub-nav-link mobile-nav__sub-nav-link_style-1" href="#">Не отрисовано</a></li>
                       </ul>
                     </div>
                   </div>
@@ -162,7 +162,7 @@
                             <svg class="icon">
                               <use xlink:href="img/icons/icons-sprite.svg#check"></use>
                             </svg></a></li>
-                        <li class="mobile-nav__sub-nav-item"><a class="mobile-nav__sub-nav-link mobile-nav__sub-nav-link_style-1" href="#">Москва 
+                        <li class="mobile-nav__sub-nav-item"><a class="mobile-nav__sub-nav-link mobile-nav__sub-nav-link_style-1" href="#">Москва
                             <svg class="icon">
                               <use xlink:href="img/icons/icons-sprite.svg#check"></use>
                             </svg></a></li>
@@ -170,7 +170,7 @@
                             <svg class="icon">
                               <use xlink:href="img/icons/icons-sprite.svg#check"></use>
                             </svg></a></li>
-                        <li class="mobile-nav__sub-nav-item"> <a class="mobile-nav__sub-nav-link mobile-nav__sub-nav-link_style-1 active" href="#">Нижний Новгород 
+                        <li class="mobile-nav__sub-nav-item"> <a class="mobile-nav__sub-nav-link mobile-nav__sub-nav-link_style-1 active" href="#">Нижний Новгород
                             <svg class="icon">
                               <use xlink:href="img/icons/icons-sprite.svg#check"></use>
                             </svg></a></li>
@@ -199,19 +199,19 @@
                       <li class="search-content-window__item"><span class="search-content-window__item-title"><a href="#">Фанера влагостойкая </a><span class="search-content-window__item-label search-content-window__item-label_style-1">группа товаров</span></span>
                         <div class="search-content-window__item-value">63 товара</div>
                       </li>
-                      <li class="search-content-window__item"><span class="search-content-window__item-title"><a href="#">Фанера влагостойкая Плита OSB-3 12x2500х1250 мм длинное название на две строчки </a><span class="search-content-window__item-label search-content-window__item-label_style-2">товар</span></span>
+                      <li class="search-content-window__item"><span class="search-content-window__item-title"><a href="#">Фанера влагостойкая Плита OSB-3 12×2500×1250 мм длинное название на две строчки </a><span class="search-content-window__item-label search-content-window__item-label_style-2">товар</span></span>
                         <div class="search-content-window__item-value">1234.50 ₽/шт. </div>
                       </li>
                       <li class="search-content-window__item"><span class="search-content-window__item-title"><a href="#">Фанера влагостойкая </a><span class="search-content-window__item-label search-content-window__item-label_style-1">группа товаров</span></span>
                         <div class="search-content-window__item-value">63 товара</div>
                       </li>
-                      <li class="search-content-window__item"><span class="search-content-window__item-title"><a href="#">Фанера влагостойкая Плита OSB-3 12x2500х1250 мм длинное название на две строчки </a><span class="search-content-window__item-label search-content-window__item-label_style-2">товар</span></span>
+                      <li class="search-content-window__item"><span class="search-content-window__item-title"><a href="#">Фанера влагостойкая Плита OSB-3 12×2500×1250 мм длинное название на две строчки </a><span class="search-content-window__item-label search-content-window__item-label_style-2">товар</span></span>
                         <div class="search-content-window__item-value">1234.50 ₽/шт. </div>
                       </li>
                       <li class="search-content-window__item"><span class="search-content-window__item-title"><a href="#">Фанера влагостойкая </a><span class="search-content-window__item-label search-content-window__item-label_style-1">группа товаров</span></span>
                         <div class="search-content-window__item-value">63 товара</div>
                       </li>
-                      <li class="search-content-window__item"><span class="search-content-window__item-title"><a href="#">Фанера влагостойкая Плита OSB-3 12x2500х1250 мм длинное название на две строчки </a><span class="search-content-window__item-label search-content-window__item-label_style-2">товар</span></span>
+                      <li class="search-content-window__item"><span class="search-content-window__item-title"><a href="#">Фанера влагостойкая Плита OSB-3 12×2500×1250 мм длинное название на две строчки </a><span class="search-content-window__item-label search-content-window__item-label_style-2">товар</span></span>
                         <div class="search-content-window__item-value">1234.50 ₽/шт. </div>
                       </li>
                     </ul>
@@ -228,11 +228,11 @@
                     <div class="toggle-section__content mobile-nav__dropdown-content mobile-nav__dropdown-content_style-2">
                       <div class="mobile-nav__sub-nav-container">
                         <ul class="mobile-nav__sub-nav-list container">
-                          <li class="mobile-nav__sub-nav-item"><a class="mobile-nav__sub-nav-link mobile-nav__sub-nav-link_style-2" href="#">Дома из бруса
+                          <li class="mobile-nav__sub-nav-item"><a class="mobile-nav__sub-nav-link mobile-nav__sub-nav-link_style-2" href="#">Дома из бруса
                               <svg class="icon">
                                 <use xlink:href="img/icons/icons-sprite.svg#arrow-right"></use>
                               </svg></a></li>
-                          <li class="mobile-nav__sub-nav-item"><a class="mobile-nav__sub-nav-link mobile-nav__sub-nav-link_style-2" href="#">Дома из газобетона
+                          <li class="mobile-nav__sub-nav-item"><a class="mobile-nav__sub-nav-link mobile-nav__sub-nav-link_style-2" href="#">Дома из газобетона
                               <svg class="icon">
                                 <use xlink:href="img/icons/icons-sprite.svg#arrow-right"></use>
                               </svg></a></li>
@@ -244,15 +244,15 @@
                               <svg class="icon">
                                 <use xlink:href="img/icons/icons-sprite.svg#arrow-right"></use>
                               </svg></a></li>
-                          <li class="mobile-nav__sub-nav-item"><a class="mobile-nav__sub-nav-link mobile-nav__sub-nav-link_style-2" href="#">Дома из бруса
+                          <li class="mobile-nav__sub-nav-item"><a class="mobile-nav__sub-nav-link mobile-nav__sub-nav-link_style-2" href="#">Дома из бруса
                               <svg class="icon">
                                 <use xlink:href="img/icons/icons-sprite.svg#arrow-right"></use>
                               </svg></a></li>
-                          <li class="mobile-nav__sub-nav-item"><a class="mobile-nav__sub-nav-link mobile-nav__sub-nav-link_style-2" href="#">Дома из бруса
+                          <li class="mobile-nav__sub-nav-item"><a class="mobile-nav__sub-nav-link mobile-nav__sub-nav-link_style-2" href="#">Дома из бруса
                               <svg class="icon">
                                 <use xlink:href="img/icons/icons-sprite.svg#arrow-right"></use>
                               </svg></a></li>
-                          <li class="mobile-nav__sub-nav-item"><a class="mobile-nav__sub-nav-link mobile-nav__sub-nav-link_style-2" href="#">Дома из газобетона
+                          <li class="mobile-nav__sub-nav-item"><a class="mobile-nav__sub-nav-link mobile-nav__sub-nav-link_style-2" href="#">Дома из газобетона
                               <svg class="icon">
                                 <use xlink:href="img/icons/icons-sprite.svg#arrow-right"></use>
                               </svg></a></li>
@@ -264,7 +264,7 @@
                               <svg class="icon">
                                 <use xlink:href="img/icons/icons-sprite.svg#arrow-right"></use>
                               </svg></a></li>
-                          <li class="mobile-nav__sub-nav-item"><a class="mobile-nav__sub-nav-link mobile-nav__sub-nav-link_style-2" href="#">Дома из бруса
+                          <li class="mobile-nav__sub-nav-item"><a class="mobile-nav__sub-nav-link mobile-nav__sub-nav-link_style-2" href="#">Дома из бруса
                               <svg class="icon">
                                 <use xlink:href="img/icons/icons-sprite.svg#arrow-right"></use>
                               </svg></a></li>
@@ -280,10 +280,10 @@
                 </ul>
               </div>
             </div>
-            <div class="mobile-nav__contact-section"><a class="mobile-nav__contact-phone" href="tel:79874433777"> 
+            <div class="mobile-nav__contact-section"><a class="mobile-nav__contact-phone" href="tel:79874433777">
                 <svg class="icon">
                   <use xlink:href="img/icons/icons-sprite.svg#smartphone"></use>
-                </svg><span>+7 987 443-37-77</span></a>
+                </svg><span>+7 987 443-37-77</span></a>
               <div class="mobile-nav__contact-button"><a class="button button_style-2 button_xl" href="#feedback" data-popup-open>Заказать звонок</a></div>
             </div>
           </div>
@@ -303,7 +303,7 @@
           <section class="section section_small-margin project-head">
             <div class="container">
               <div class="project-head__container display-container">
-                <h1 class="section__title">Модель дома кд 25 180 м2 с террасой три спальни гардероб и санузел</h1>
+                <h1 class="section__title">Модель дома кд 25 180 м² с террасой три спальни гардероб и санузел</h1>
                 <div class="review-line project-head__review-line"><img class="review-line__rating" src="img/icons/rating_3.5.svg" alt="image"><a class="link review-line__link" href="#reviews" data-go-tab>Отзывы (6)</a></div>
                 <div class="project-head__content row">
                   <div class="col-xl-6 col-lg-8 col-md-7">
@@ -324,17 +324,17 @@
                     </div><a class="button button_style-2 project-head__button" href="#">
                       <svg class="icon">
                         <use xlink:href="img/icons/icons-sprite.svg#subtract"></use>
-                      </svg><span>Добавить в заказ</span></a>
+                      </svg><span>Добавить в заказ</span></a>
                     <div class="product-links"><a class="button button_style-3 product-links__item" href="#">
                         <svg class="icon">
                           <use xlink:href="img/icons/icons-sprite.svg#comparison"></use>
                         </svg><span>Сравнить</span></a>
-                      <div class="product-links__item product-links__share toggle-section" data-out-hide data-class-only><a class="button button_style-3 toggle-section__head" href="javascript:void(0);"> 
+                      <div class="product-links__item product-links__share toggle-section" data-out-hide data-class-only><a class="button button_style-3 toggle-section__head" href="javascript:void(0);">
                           <svg class="icon">
                             <use xlink:href="img/icons/icons-sprite.svg#share"></use>
                           </svg><span>Поделиться</span></a>
                         <div class="small-popup share-popup toggle-section__content product-links__share-popup">
-                          <div class="share-popup__text">Чтобы поделиться ссылкой, нажмите на иконку вашей соцсети</div>
+                          <div class="share-popup__text">Чтобы поделиться ссылкой, нажмите на иконку вашей соцсети</div>
                           <div class="socials">
                             <ul class="socials__list">
                               <li class="socials__item"><a class="socials__link" href="#">
@@ -373,7 +373,7 @@
                   </div>
                   <div class="col-xl col-lg-12 project-head__info">
                     <div class="project-head-info">
-                      <p>Предназначена для обшивки стен, потолков, перегородок, в качестве настила под напольные покрытия, для опалубки, для изготовления тары и упаковки, а также в мебельном производстве. </p>
+                      <p>Предназначена для обшивки стен, потолков, перегородок, в качестве настила под напольные покрытия, для опалубки, для изготовления тары и упаковки, а также в мебельном производстве. </p>
                       <ul class="project-head-info__list">
                         <!---->
                         <li class="project-head-info__item">
@@ -391,7 +391,7 @@
                               <use xlink:href="img/icons/icons-sprite.svg#size"></use>
                             </svg>Общая площадь
                           </div>
-                          <div class="project-head-info__item-text">239 м2</div>
+                          <div class="project-head-info__item-text">239 м²</div>
                         </li>
                         <!---->
                         <li class="project-head-info__item">
@@ -425,26 +425,26 @@
                           <div class="item-info__block-container">
                             <section class="section">
                               <h2>Основные характеристики</h2>
-                              <p>Предназначена для обшивки стен, потолков, перегородок, в качестве настила под напольные покрытия, для опалубки, для изготовления тары и упаковки, а также в мебельном производстве.</p>
-                              <p>В зависимости от внешнего вида <a href="service.html">наружных слоев</a> на сорта: Е (элита), I, II, III, IV</p>
+                              <p>Предназначена для обшивки стен, потолков, перегородок, в качестве настила под напольные покрытия, для опалубки, для изготовления тары и упаковки, а также в мебельном производстве.</p>
+                              <p>В зависимости от внешнего вида <a href="service.html">наружных слоев</a> на сорта: Е (элита), I, II, III, IV</p>
                               <h3>Заголовок группы</h3>
-                              <p>Предназначена для обшивки стен, потолков, перегородок, в качестве настила под напольные покрытия, для опалубки, для изготовления тары и упаковки, а также в мебельном производстве. </p>
-                              <p>В зависимости от внешнего вида наружных слоев на сорта: </p>
-                              <ul> 
-                                <li>Сорт Е (элита)</li>
+                              <p>Предназначена для обшивки стен, потолков, перегородок, в качестве настила под напольные покрытия, для опалубки, для изготовления тары и упаковки, а также в мебельном производстве. </p>
+                              <p>В зависимости от внешнего вида наружных слоев на сорта: </p>
+                              <ul>
+                                <li>Сорт Е (элита)</li>
                                 <li>Сорт I</li>
                                 <li>Сорт II</li>
                                 <li>Сорт III</li>
                                 <li>Сорт IV</li>
                               </ul>
-                              <p>В зависимости от внешнего вида наружных слоев на сорта: </p>
+                              <p>В зависимости от внешнего вида наружных слоев на сорта: </p>
                               <ol>
-                                <li>Сорт Е (элита)</li>
-                                <li>Сорт I, потолков, перегородок, в качестве настила под напольные покрытия, для опалубки, для изготовления тары и упаковки, а также в мебельном производстве.</li>
+                                <li>Сорт Е (элита)</li>
+                                <li>Сорт I, потолков, перегородок, в качестве настила под напольные покрытия, для опалубки, для изготовления тары и упаковки, а также в мебельном производстве.</li>
                                 <li>Сорт III</li>
                                 <li>Сорт IV</li>
                               </ol>
-                              <h3>Таблица №1. Технические характеристики</h3>
+                              <h3>Таблица № 1. Технические характеристики</h3>
                               <div class="table">
                                 <table>
                                   <tr>
@@ -456,31 +456,31 @@
                                   <tr>
                                     <td>28.03.2019</td>
                                     <td>Самовывоз</td>
-                                    <td>3&nbsp;256,00&nbsp;₽</td>
+                                    <td>3 256,00 ₽</td>
                                     <td>Да</td>
                                   </tr>
                                   <tr>
                                     <td>28.03.2019</td>
                                     <td>Самовывоз</td>
-                                    <td>50 136,00&nbsp;₽</td>
+                                    <td>50 136,00 ₽</td>
                                     <td>Нет</td>
                                   </tr>
                                   <tr>
                                     <td>28.03.2019</td>
                                     <td>Доставка</td>
-                                    <td>36,00&nbsp;₽</td>
+                                    <td>36,00 ₽</td>
                                     <td>Да</td>
                                   </tr>
                                   <tr>
                                     <td>28.03.2019</td>
                                     <td>Самовывоз</td>
-                                    <td>50&nbsp;136,00&nbsp;₽</td>
+                                    <td>50 136,00 ₽</td>
                                     <td>Нет</td>
                                   </tr>
                                   <tr>
                                     <td>28.03.2019</td>
                                     <td>Доставка</td>
-                                    <td>36,00&nbsp;₽</td>
+                                    <td>36,00 ₽</td>
                                     <td>Да</td>
                                   </tr>
                                 </table>
@@ -500,7 +500,7 @@
                               <div class="reviews-head">
                                 <form class="reviews__form js-validation" action="#">
                                   <!--rating-->
-                                  <div class="js-rating reviews-head__rating"> 
+                                  <div class="js-rating reviews-head__rating">
                                     <h4 class="js-rating__title">Пожалуйста, оцените:</h4>
                                     <ul class="js-rating__list">
                                                                             <li class="js-rating__item"><a class="js-rating__star" href="javascript:void(0);" data-index="1">
@@ -552,17 +552,17 @@
                                   </div>
                                 </form>
                               </div>
-                              <div class="reviews__content"> 
-                                <h2 class="reviews__title">Отзывы на товар</h2>
+                              <div class="reviews__content">
+                                <h2 class="reviews__title">Отзывы на товар</h2>
                                 <div class="reviews__items">
                                                                     <div class="review-item">
                                                                       <div class="review-block">
-                                                                        <div class="review-block__head"> 
+                                                                        <div class="review-block__head">
                                                                           <div class="review-block__user-icon">k k</div>
-                                                                          <div class="review-block__head-container"><span class="review-block__name">Константин Константинович Константинопольский </span><img class="review-block__rating" src="img/icons/rating_3.5.svg" alt="stars"><span class="review-block__date">4 Фев, 2020</span></div>
+                                                                          <div class="review-block__head-container"><span class="review-block__name">Константин Константинович Константинопольский </span><img class="review-block__rating" src="img/icons/rating_3.5.svg" alt="stars"><span class="review-block__date">4 Фев, 2020</span></div>
                                                                         </div>
                                                                         <div class="review-block__content">
-                                                                          <p>Взял в у них и не пожалел материал от ведущего производителя компании «КНАУФ Инсулейшн» отличается наличием поистине уникальных свойств. Которые позволили заметно повысить эксплуатационные характеристики.</p>
+                                                                          <p>Взял в у них и не пожалел материал от ведущего производителя компании «КНАУФ Инсулейшн» отличается наличием поистине уникальных свойств. Которые позволили заметно повысить эксплуатационные характеристики.</p>
                                                                         </div>
                                                                         <div class="review-block__buttons"><a class="review-block__button review-block__button-heart" href="javascript:void(0)">
                                                                             <svg class="icon">
@@ -576,16 +576,16 @@
                                                                         </div>
                                                                       </div>
                                                                       <div class="review-block review-block_admin-style">
-                                                                        <div class="review-block__head"> 
-                                                                          <div class="review-block__user-icon"> 
+                                                                        <div class="review-block__head">
+                                                                          <div class="review-block__user-icon">
                                                                             <svg class="icon">
                                                                               <use xlink:href="img/icons/icons-sprite.svg#shield"></use>
                                                                             </svg>
                                                                           </div>
-                                                                          <div class="review-block__head-container"><span class="review-block__name">Администрация</span><span class="review-block__date">4 Фев, 2020</span></div>
+                                                                          <div class="review-block__head-container"><span class="review-block__name">Администрация</span><span class="review-block__date">4 Фев, 2020</span></div>
                                                                         </div>
                                                                         <div class="review-block__content">
-                                                                          <p>Спасибо за отзыв! Вы правы и не пожалели материал от ведущего производителя <br> Позволили заметно повысить эксплуатационные характеристики.</p>
+                                                                          <p>Спасибо за отзыв! Вы правы и не пожалели материал от ведущего производителя <br> Позволили заметно повысить эксплуатационные характеристики.</p>
                                                                         </div>
                                                                         <div class="review-block__buttons"><a class="review-block__button review-block__button-heart" href="javascript:void(0)">
                                                                             <svg class="icon">
@@ -595,12 +595,12 @@
                                                                     </div>
                                                                     <div class="review-item">
                                                                       <div class="review-block">
-                                                                        <div class="review-block__head"> 
+                                                                        <div class="review-block__head">
                                                                           <div class="review-block__user-icon">k k</div>
-                                                                          <div class="review-block__head-container"><span class="review-block__name">Константин Константинович Константинопольский </span><img class="review-block__rating" src="img/icons/rating_3.5.svg" alt="stars"><span class="review-block__date">4 Фев, 2020</span></div>
+                                                                          <div class="review-block__head-container"><span class="review-block__name">Константин Константинович Константинопольский </span><img class="review-block__rating" src="img/icons/rating_3.5.svg" alt="stars"><span class="review-block__date">4 Фев, 2020</span></div>
                                                                         </div>
                                                                         <div class="review-block__content">
-                                                                          <p>Взял в у них и не пожалел материал от ведущего производителя компании «КНАУФ Инсулейшн» отличается наличием поистине уникальных свойств. Которые позволили заметно повысить эксплуатационные характеристики.</p>
+                                                                          <p>Взял в у них и не пожалел материал от ведущего производителя компании «КНАУФ Инсулейшн» отличается наличием поистине уникальных свойств. Которые позволили заметно повысить эксплуатационные характеристики.</p>
                                                                         </div>
                                                                         <div class="review-block__buttons"><a class="review-block__button review-block__button-heart active" href="javascript:void(0)">
                                                                             <svg class="icon">
@@ -611,12 +611,12 @@
                                                                     </div>
                                                                     <div class="review-item">
                                                                       <div class="review-block">
-                                                                        <div class="review-block__head"> 
+                                                                        <div class="review-block__head">
                                                                           <div class="review-block__user-icon">k k</div>
-                                                                          <div class="review-block__head-container"><span class="review-block__name">Константин Константинович Константинопольский </span><img class="review-block__rating" src="img/icons/rating_3.5.svg" alt="stars"><span class="review-block__date">4 Фев, 2020</span></div>
+                                                                          <div class="review-block__head-container"><span class="review-block__name">Константин Константинович Константинопольский </span><img class="review-block__rating" src="img/icons/rating_3.5.svg" alt="stars"><span class="review-block__date">4 Фев, 2020</span></div>
                                                                         </div>
                                                                         <div class="review-block__content">
-                                                                          <p>Взял в у них и не пожалел материал от ведущего производителя компании «КНАУФ Инсулейшн» отличается наличием поистине уникальных свойств. Которые позволили заметно повысить эксплуатационные характеристики.</p>
+                                                                          <p>Взял в у них и не пожалел материал от ведущего производителя компании «КНАУФ Инсулейшн» отличается наличием поистине уникальных свойств. Которые позволили заметно повысить эксплуатационные характеристики.</p>
                                                                         </div>
                                                                         <div class="review-block__buttons"><a class="review-block__button review-block__button-heart active" href="javascript:void(0)">
                                                                             <svg class="icon">
@@ -642,29 +642,29 @@
                           </svg></a>
                         <div class="item-info__block-content page-container toggle-section__content">
                           <div class="item-info__block-container">
-                            <div class="project-layouts row"> 
+                            <div class="project-layouts row">
                                                             <div class="project-layouts-block col-sm-6">
                                                               <div class="project-layouts-block__container"><a class="image" href="img/9ee29e830635250cb2c413ee8049fe7f 1.png" data-fancybox="images"><img class="lazyload" data-src="img/9ee29e830635250cb2c413ee8049fe7f 1.png" alt="image"></a>
                                                                 <h2 class="project-layouts-block__title">Планировка 1</h2>
-                                                                <p class="project-layouts-block__text">Предназначена для обшивки стен, потолков, перегородок, в качестве настила под напольные покрытия, для опалубки, для изготовления тары и упаковки, а также в мебельном производстве. </p>
+                                                                <p class="project-layouts-block__text">Предназначена для обшивки стен, потолков, перегородок, в качестве настила под напольные покрытия, для опалубки, для изготовления тары и упаковки, а также в мебельном производстве. </p>
                                                               </div>
                                                             </div>
                                                             <div class="project-layouts-block col-sm-6">
                                                               <div class="project-layouts-block__container"><a class="image" href="img/9ee29e830635250cb2c413ee8049fe7f 1.png" data-fancybox="images"><img class="lazyload" data-src="img/9ee29e830635250cb2c413ee8049fe7f 1.png" alt="image"></a>
                                                                 <h2 class="project-layouts-block__title">Планировка 2</h2>
-                                                                <p class="project-layouts-block__text">Предназначена для обшивки стен, потолков, перегородок, в качестве настила под напольные покрытия, для опалубки, для изготовления тары и упаковки, а также в мебельном производстве. </p>
+                                                                <p class="project-layouts-block__text">Предназначена для обшивки стен, потолков, перегородок, в качестве настила под напольные покрытия, для опалубки, для изготовления тары и упаковки, а также в мебельном производстве. </p>
                                                               </div>
                                                             </div>
                                                             <div class="project-layouts-block col-sm-6">
                                                               <div class="project-layouts-block__container"><a class="image" href="img/9ee29e830635250cb2c413ee8049fe7f 1.png" data-fancybox="images"><img class="lazyload" data-src="img/9ee29e830635250cb2c413ee8049fe7f 1.png" alt="image"></a>
                                                                 <h2 class="project-layouts-block__title">Планировка 3</h2>
-                                                                <p class="project-layouts-block__text">Предназначена для обшивки стен, потолков, перегородок, в качестве настила под напольные покрытия, для опалубки, для изготовления тары и упаковки, а также в мебельном производстве. </p>
+                                                                <p class="project-layouts-block__text">Предназначена для обшивки стен, потолков, перегородок, в качестве настила под напольные покрытия, для опалубки, для изготовления тары и упаковки, а также в мебельном производстве. </p>
                                                               </div>
                                                             </div>
                                                             <div class="project-layouts-block col-sm-6">
                                                               <div class="project-layouts-block__container"><a class="image" href="img/9ee29e830635250cb2c413ee8049fe7f 1.png" data-fancybox="images"><img class="lazyload" data-src="img/9ee29e830635250cb2c413ee8049fe7f 1.png" alt="image"></a>
                                                                 <h2 class="project-layouts-block__title">Планировка 4</h2>
-                                                                <p class="project-layouts-block__text">Предназначена для обшивки стен, потолков, перегородок, в качестве настила под напольные покрытия, для опалубки, для изготовления тары и упаковки, а также в мебельном производстве. </p>
+                                                                <p class="project-layouts-block__text">Предназначена для обшивки стен, потолков, перегородок, в качестве настила под напольные покрытия, для опалубки, для изготовления тары и упаковки, а также в мебельном производстве. </p>
                                                               </div>
                                                             </div>
                             </div>
@@ -683,7 +683,7 @@
                                 <h2 class="documents__title">Сертификаты</h2>
                                 <table class="documents__table">
                                   <tr class="documents__item">
-                                    <td class="documents__item-title"> <a class="documents__item-link link link_without-border" href="#">Сертификат и технические условия на Фанеру Хвойную Сорт 1 от 20 мая 2001 года</a></td>
+                                    <td class="documents__item-title"> <a class="documents__item-link link link_without-border" href="#">Сертификат и технические условия на Фанеру Хвойную Сорт 1 от 20 мая 2001 года</a></td>
                                     <td class="documents__item-icon">
                                       <div class="documents__item-icon-item">
                                         <svg class="icon">
@@ -692,13 +692,13 @@
                                       </div>
                                     </td>
                                     <td class="documents__item-size">7.30 mb</td>
-                                    <td class="documents__item-button"><a class="button button_style-1 documents__button" href="#" download> 
+                                    <td class="documents__item-button"><a class="button button_style-1 documents__button" href="#" download>
                                         <svg class="icon">
                                           <use xlink:href="img/icons/icons-sprite.svg#download"></use>
                                         </svg><span>Скачать</span></a></td>
                                   </tr>
                                   <tr class="documents__item">
-                                    <td class="documents__item-title"> <a class="documents__item-link link link_without-border" href="#">Сертификат и технические условия на Фанеру Хвойную Сорт 1 от 20 мая 2001 года</a></td>
+                                    <td class="documents__item-title"> <a class="documents__item-link link link_without-border" href="#">Сертификат и технические условия на Фанеру Хвойную Сорт 1 от 20 мая 2001 года</a></td>
                                     <td class="documents__item-icon">
                                       <div class="documents__item-icon-item">
                                         <svg class="icon">
@@ -707,13 +707,13 @@
                                       </div>
                                     </td>
                                     <td class="documents__item-size">7.30 mb</td>
-                                    <td class="documents__item-button"><a class="button button_style-1 documents__button" href="#" download> 
+                                    <td class="documents__item-button"><a class="button button_style-1 documents__button" href="#" download>
                                         <svg class="icon">
                                           <use xlink:href="img/icons/icons-sprite.svg#download"></use>
                                         </svg><span>Скачать</span></a></td>
                                   </tr>
                                   <tr class="documents__item">
-                                    <td class="documents__item-title"> <a class="documents__item-link link link_without-border" href="#">Сертификат и технические условия на Фанеру Хвойную Сорт 1 от 20 мая 2001 года</a></td>
+                                    <td class="documents__item-title"> <a class="documents__item-link link link_without-border" href="#">Сертификат и технические условия на Фанеру Хвойную Сорт 1 от 20 мая 2001 года</a></td>
                                     <td class="documents__item-icon">
                                       <div class="documents__item-icon-item">
                                         <svg class="icon">
@@ -722,13 +722,13 @@
                                       </div>
                                     </td>
                                     <td class="documents__item-size">7.30 mb</td>
-                                    <td class="documents__item-button"><a class="button button_style-1 documents__button" href="#" download> 
+                                    <td class="documents__item-button"><a class="button button_style-1 documents__button" href="#" download>
                                         <svg class="icon">
                                           <use xlink:href="img/icons/icons-sprite.svg#download"></use>
                                         </svg><span>Скачать</span></a></td>
                                   </tr>
                                   <tr class="documents__item">
-                                    <td class="documents__item-title"> <a class="documents__item-link link link_without-border" href="#">Сертификат и технические условия на Фанеру Хвойную Сорт 1 от 20 мая 2001 года</a></td>
+                                    <td class="documents__item-title"> <a class="documents__item-link link link_without-border" href="#">Сертификат и технические условия на Фанеру Хвойную Сорт 1 от 20 мая 2001 года</a></td>
                                     <td class="documents__item-icon">
                                       <div class="documents__item-icon-item">
                                         <svg class="icon">
@@ -737,7 +737,7 @@
                                       </div>
                                     </td>
                                     <td class="documents__item-size">7.30 mb</td>
-                                    <td class="documents__item-button"><a class="button button_style-1 documents__button" href="#" download> 
+                                    <td class="documents__item-button"><a class="button button_style-1 documents__button" href="#" download>
                                         <svg class="icon">
                                           <use xlink:href="img/icons/icons-sprite.svg#download"></use>
                                         </svg><span>Скачать</span></a></td>
@@ -748,7 +748,7 @@
                                 <h2 class="documents__title">Инструкции</h2>
                                 <table class="documents__table">
                                   <tr class="documents__item">
-                                    <td class="documents__item-title"> <a class="documents__item-link link link_without-border" href="#">Сертификат и технические условия на Фанеру Хвойную Сорт 1 от 20 мая 2001 года</a></td>
+                                    <td class="documents__item-title"> <a class="documents__item-link link link_without-border" href="#">Сертификат и технические условия на Фанеру Хвойную Сорт 1 от 20 мая 2001 года</a></td>
                                     <td class="documents__item-icon">
                                       <div class="documents__item-icon-item">
                                         <svg class="icon">
@@ -757,13 +757,13 @@
                                       </div>
                                     </td>
                                     <td class="documents__item-size">7.30 mb</td>
-                                    <td class="documents__item-button"><a class="button button_style-1 documents__button" href="#" download> 
+                                    <td class="documents__item-button"><a class="button button_style-1 documents__button" href="#" download>
                                         <svg class="icon">
                                           <use xlink:href="img/icons/icons-sprite.svg#download"></use>
                                         </svg><span>Скачать</span></a></td>
                                   </tr>
                                   <tr class="documents__item">
-                                    <td class="documents__item-title"> <a class="documents__item-link link link_without-border" href="#">Сертификат и технические условия на Фанеру Хвойную Сорт 1 от 20 мая 2001 года</a></td>
+                                    <td class="documents__item-title"> <a class="documents__item-link link link_without-border" href="#">Сертификат и технические условия на Фанеру Хвойную Сорт 1 от 20 мая 2001 года</a></td>
                                     <td class="documents__item-icon">
                                       <div class="documents__item-icon-item">
                                         <svg class="icon">
@@ -772,7 +772,7 @@
                                       </div>
                                     </td>
                                     <td class="documents__item-size">7.30 mb</td>
-                                    <td class="documents__item-button"><a class="button button_style-1 documents__button" href="#" download> 
+                                    <td class="documents__item-button"><a class="button button_style-1 documents__button" href="#" download>
                                         <svg class="icon">
                                           <use xlink:href="img/icons/icons-sprite.svg#download"></use>
                                         </svg><span>Скачать</span></a></td>
@@ -796,7 +796,7 @@
                 <div class="col-xl-80pc col-lg-9">
                   <section class="section project-calculator page-container">
                     <h2>Калькулятор стоимости проекта</h2>
-                    <p>Знаете где купить строиматериалы дешевле? Рассчитайте стоимоть прокекта по этим ценам</p>
+                    <p>Знаете где купить строиматериалы дешевле? Рассчитайте стоимоть прокекта по этим ценам</p>
                     <div class="project-calculator-block toggle-section">
                       <div class="project-calculator-block__head toggle-section__head">
                         <h3 class="project-calculator-block__title">Фундамент</h3>
@@ -816,14 +816,14 @@
                             <th class="project-calculator-table__head-title">Сумма, ₽</th>
                           </tr>
                           <tr class="project-calculator-table__section">
-                            <td class="project-calculator-table__item"><span class="project-calculator-table__item-label">Наимен., ед.изм.</span>
+                            <td class="project-calculator-table__item"><span class="project-calculator-table__item-label">Наимен., ед. изм.</span>
                               <div class="project-calculator-table__item-content project-calculator-table__item-title">Бетон, тонн</div>
                             </td>
                             <td class="project-calculator-table__item"> <span class="project-calculator-table__item-label">кол-во</span>
                               <div class="project-calculator-table__item-content project-calculator-table__item-count">20 </div>
                             </td>
                             <td class="project-calculator-table__item"> <span class="project-calculator-table__item-label">Цена единицы</span>
-                              <div class="project-calculator-table__item-content"> 
+                              <div class="project-calculator-table__item-content">
                                 <div class="input project-calculator-table__input">
                                   <input class="input__element" type="text" value="5 000">
                                 </div>
@@ -834,14 +834,14 @@
                             </td>
                           </tr>
                           <tr class="project-calculator-table__section">
-                            <td class="project-calculator-table__item"><span class="project-calculator-table__item-label">Наимен., ед.изм.</span>
+                            <td class="project-calculator-table__item"><span class="project-calculator-table__item-label">Наимен., ед. изм.</span>
                               <div class="project-calculator-table__item-content project-calculator-table__item-title">Бетон, тонн</div>
                             </td>
                             <td class="project-calculator-table__item"> <span class="project-calculator-table__item-label">кол-во</span>
                               <div class="project-calculator-table__item-content project-calculator-table__item-count">20 </div>
                             </td>
                             <td class="project-calculator-table__item"> <span class="project-calculator-table__item-label">Цена единицы</span>
-                              <div class="project-calculator-table__item-content"> 
+                              <div class="project-calculator-table__item-content">
                                 <div class="input project-calculator-table__input">
                                   <input class="input__element" type="text" value="5 000">
                                 </div>
@@ -852,14 +852,14 @@
                             </td>
                           </tr>
                           <tr class="project-calculator-table__section">
-                            <td class="project-calculator-table__item"><span class="project-calculator-table__item-label">Наимен., ед.изм.</span>
-                              <div class="project-calculator-table__item-content project-calculator-table__item-title">Работы по заливке, шт</div>
+                            <td class="project-calculator-table__item"><span class="project-calculator-table__item-label">Наимен., ед. изм.</span>
+                              <div class="project-calculator-table__item-content project-calculator-table__item-title">Работы по заливке, шт</div>
                             </td>
                             <td class="project-calculator-table__item"> <span class="project-calculator-table__item-label">кол-во</span>
                               <div class="project-calculator-table__item-content project-calculator-table__item-count">1 </div>
                             </td>
                             <td class="project-calculator-table__item"> <span class="project-calculator-table__item-label">Цена единицы</span>
-                              <div class="project-calculator-table__item-content"> 
+                              <div class="project-calculator-table__item-content">
                                 <div class="input project-calculator-table__input">
                                   <input class="input__element" type="text" value="50 000">
                                 </div>
@@ -891,14 +891,14 @@
                             <th class="project-calculator-table__head-title">Сумма, ₽</th>
                           </tr>
                           <tr class="project-calculator-table__section">
-                            <td class="project-calculator-table__item"><span class="project-calculator-table__item-label">Наимен., ед.изм.</span>
+                            <td class="project-calculator-table__item"><span class="project-calculator-table__item-label">Наимен., ед. изм.</span>
                               <div class="project-calculator-table__item-content project-calculator-table__item-title">Бетон, тонн</div>
                             </td>
                             <td class="project-calculator-table__item"> <span class="project-calculator-table__item-label">кол-во</span>
                               <div class="project-calculator-table__item-content project-calculator-table__item-count">20 </div>
                             </td>
                             <td class="project-calculator-table__item"> <span class="project-calculator-table__item-label">Цена единицы</span>
-                              <div class="project-calculator-table__item-content"> 
+                              <div class="project-calculator-table__item-content">
                                 <div class="input project-calculator-table__input">
                                   <input class="input__element" type="text" value="5 000">
                                 </div>
@@ -909,14 +909,14 @@
                             </td>
                           </tr>
                           <tr class="project-calculator-table__section">
-                            <td class="project-calculator-table__item"><span class="project-calculator-table__item-label">Наимен., ед.изм.</span>
+                            <td class="project-calculator-table__item"><span class="project-calculator-table__item-label">Наимен., ед. изм.</span>
                               <div class="project-calculator-table__item-content project-calculator-table__item-title">Бетон, тонн</div>
                             </td>
                             <td class="project-calculator-table__item"> <span class="project-calculator-table__item-label">кол-во</span>
                               <div class="project-calculator-table__item-content project-calculator-table__item-count">20 </div>
                             </td>
                             <td class="project-calculator-table__item"> <span class="project-calculator-table__item-label">Цена единицы</span>
-                              <div class="project-calculator-table__item-content"> 
+                              <div class="project-calculator-table__item-content">
                                 <div class="input project-calculator-table__input">
                                   <input class="input__element" type="text" value="5 000">
                                 </div>
@@ -927,14 +927,14 @@
                             </td>
                           </tr>
                           <tr class="project-calculator-table__section">
-                            <td class="project-calculator-table__item"><span class="project-calculator-table__item-label">Наимен., ед.изм.</span>
-                              <div class="project-calculator-table__item-content project-calculator-table__item-title">Работы по заливке, шт</div>
+                            <td class="project-calculator-table__item"><span class="project-calculator-table__item-label">Наимен., ед. изм.</span>
+                              <div class="project-calculator-table__item-content project-calculator-table__item-title">Работы по заливке, шт</div>
                             </td>
                             <td class="project-calculator-table__item"> <span class="project-calculator-table__item-label">кол-во</span>
                               <div class="project-calculator-table__item-content project-calculator-table__item-count">1 </div>
                             </td>
                             <td class="project-calculator-table__item"> <span class="project-calculator-table__item-label">Цена единицы</span>
-                              <div class="project-calculator-table__item-content"> 
+                              <div class="project-calculator-table__item-content">
                                 <div class="input project-calculator-table__input">
                                   <input class="input__element" type="text" value="50 000">
                                 </div>
@@ -959,8 +959,8 @@
             <div class="container">
               <div class="row justify-content-center">
                 <div class="col-xl-10">
-                  <h2>Почему мы лучше продаем стройматериалы</h2>
-                  <p>Инвестируем в заводы, производящие листовые строительные материалы (ДСП ЦСП ФАНЕРА, ОСБ и т.д.) заключаем договора, выкупаем партии продукции, везем вагонами или фурами на склад и после поставляют постоянным клиентам типа “Красной цены”, “Сатурна”, “Центр строя” и т.д. Если есть товар в наличии и их цена ниже, то мы продаем, если нет — то продают конкуренты.</p>
+                  <h2>Почему мы лучше продаем стройматериалы</h2>
+                  <p>Инвестируем в заводы, производящие листовые строительные материалы (ДСП ЦСП ФАНЕРА, ОСБ и т. д.) заключаем договора, выкупаем партии продукции, везем вагонами или фурами на склад и после поставляют постоянным клиентам типа «Красной цены», «Сатурна», «Центр строя» и т. д. Если есть товар в наличии и их цена ниже, то мы продаем, если нет — то продают конкуренты.</p>
                 </div>
               </div>
             </div>
@@ -970,8 +970,8 @@
               <div class="row justify-content-center">
                 <div class="col-xl-10">
                   <div class="form-section__content">
-                    <h2 class="section__title form-section__title">Понравился проект? Оставьте заявку и мы построим его для вас</h2>
-                    <div class="form-section__label"> <span>Проект:</span><span>Модель дома кд25 180 м2 с террасой три спальни гардероб и санузел</span></div>
+                    <h2 class="section__title form-section__title">Понравился проект? Оставьте заявку и мы построим его для вас</h2>
+                    <div class="form-section__label"> <span>Проект:</span><span>Модель дома кд25 180 м² с террасой три спальни гардероб и санузел</span></div>
                     <form class="form js-validation" action="#">
                       <div class="row">
                         <div class="col-md-6 form__group">
@@ -1003,7 +1003,7 @@
                           </div>
                         </div>
                         <div class="col-md-12 form__bottom">
-                          <button class="button button_style-2 form__submit">Отправить</button><span class="form-post-text">Нажимая на кнопку «Отправить», вы подтверждаете согласие на обработку персональных данных</span>
+                          <button class="button button_style-2 form__submit">Отправить</button><span class="form-post-text">Нажимая на кнопку «Отправить», вы подтверждаете согласие на обработку персональных данных</span>
                         </div>
                       </div>
                     </form>
@@ -1031,8 +1031,8 @@
                   </svg>
                   <!--img(src="http://s30.stroyker.pro/media/Frame 6.svg", alt="logo")--></a></div>
               <ul class="footer__contact-list">
-                <li><a class="footer__phone" href="tel:+79874433777">+7 987 443-37-77</a></li>
-                <li>г. Самара, ул. Ново-Вокзальная,<br> д. 17, офис 134</li>
+                <li><a class="footer__phone" href="tel:+79874433777">+7 987 443-37-77</a></li>
+                <li>г. Самара, ул. Ново-Вокзальная,<br> д. 17, офис 134</li>
                 <li> <a href="mailto:info@mail.ru">info@mail.ru</a></li>
               </ul>
             </div>
@@ -1049,13 +1049,13 @@
             </div>
             <div class="footer__section footer__section-nav"><span class="footer__section-title">Покупателям</span>
               <ul class="footer__nav-list">
-                <li class="footer__nav-item"><a class="footer__link" href="#">О компании</a></li>
+                <li class="footer__nav-item"><a class="footer__link" href="#">О компании</a></li>
                 <li class="footer__nav-item"><a class="footer__link" href="#">Оплата</a></li>
                 <li class="footer__nav-item"><a class="footer__link" href="#">Личный кабинет</a></li>
                 <li class="footer__nav-item"><a class="footer__link" href="#">Контакты</a></li>
               </ul>
             </div>
-            <div class="footer__section footer__section-contact"><span class="footer__section-title">Оставайтесь на связи!</span>
+            <div class="footer__section footer__section-contact"><span class="footer__section-title">Оставайтесь на связи!</span>
               <div class="footer__subscription"><span class="footer__subscription-head">Подписка: Новинки, скидки, предложения</span>
                 <form class="subscription" action="#">
                   <div class="input subscription__input">
@@ -1083,7 +1083,7 @@
                     </svg></a></li>
               </ul>
             </div>
-            <div class="footer__bottom"><span class="copy">&copy; 2019 Стройкер. Все права защищены</span><a class="footer__link" href="#">Политика обработки данных</a><a class="dev-link" href="http://stroyker.pro/" rel="noopener" target="_blank">
+            <div class="footer__bottom"><span class="copy">© 2019 Стройкер. Все права защищены</span><a class="footer__link" href="#">Политика обработки данных</a><a class="dev-link" href="http://stroyker.pro/" rel="noopener" target="_blank">
                 <svg class="dev-link__image" viewBox="0 0 336 45" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                   <path d="M87.027 34.632c12.732 0 15.011-4.175 15.011-8.231v-.459c0-4.885-3.582-7.032-12.79-7.298l-4.367-.09c-4.56-.103-5.27-.887-5.27-1.864v-.03c0-.947.488-1.791 5.344-1.791h.325c5.241 0 5.76 1.687 5.848 2.576h10.067v-.267c0-3.834-2.74-7.654-14.715-7.654h-2.902c-11.296 0-13.93 3.45-13.93 7.402v.282c0 3.745 2.501 7.032 11.887 7.298l4.486.133c5.077.163 5.7.948 5.7 2.177v.03c0 1.169-.756 2.279-5.922 2.279h-.297c-5.27 0-5.95-2.117-6.054-3.42H69.292v.326c0 3.168 1.392 8.601 14.774 8.601h2.961zm26.04-.458h9.253V16.557h10.452V9.954h-30.156v6.603h10.451v17.617zm31.341-18.328h10.614c2.088 0 2.798.918 2.798 2.058v.03c0 1.17-.74 2.072-2.798 2.072h-10.614v-4.16zm0 10.023h8.853c3.656 0 4.915 1.436 4.915 4.204V32.9c0 .695.074 1.02.296 1.273h9.445v-.163c-.237-.415-.459-1.037-.459-2.739v-3.583c0-3.123-1.984-5.077-4.974-5.758 1.82-.415 4.87-1.88 4.87-5.404v-.355c0-3.938-3.124-6.218-10.185-6.218h-22.014v24.22h9.253v-8.305zm42.339-16.374c-15.692 0-17.676 7.461-17.676 12.021v.977c0 4.515 1.984 12.14 17.676 12.14h1.465c15.663 0 17.647-7.625 17.647-12.14v-.977c0-4.56-2.014-12.02-17.647-12.02h-1.465zm9.534 12.702c0 2.606-1.658 5.892-8.824 5.892-7.15 0-8.823-3.42-8.823-5.966v-.385c0-2.576 1.54-5.729 8.823-5.729 7.166 0 8.824 3.153 8.824 5.73v.458z"></path>
                   <path d="M215.897 34.174h9.237v-9.046l12.969-15.174h-10.126l-7.195 8.364-7.076-8.364h-11.059l13.25 15.1v9.12zm32.346 0V23.337l11.828 10.837h12.036l-14.552-13.22 14.108-11H260.16l-11.917 9.564V9.954h-9.238v24.22h9.238zm24.811-24.22v24.22h27.062v-6.055h-17.943v-3.316h17.321V18.91h-17.321v-3.035h17.676V9.954h-26.795zm38.98 5.892h10.614c2.073 0 2.798.918 2.798 2.058v.03c0 1.17-.755 2.072-2.798 2.072h-10.614v-4.16zm0 10.023h8.853c3.641 0 4.915 1.436 4.915 4.204V32.9c0 .695.059 1.02.296 1.273h9.445v-.163c-.237-.415-.459-1.037-.459-2.739v-3.583c0-3.123-1.984-5.077-4.989-5.758 1.821-.415 4.885-1.88 4.885-5.404v-.355c0-3.938-3.124-6.218-10.185-6.218h-22.014v24.22h9.253v-8.305z"></path>
@@ -1143,7 +1143,7 @@
               <div class="popup-feedback__form-buttons">
                 <button class="button button_style-2 popup-feedback__form-submit" type="submit">Отправить</button><a href="javascript:void(0);" data-popup-close>Закрыть</a>
               </div>
-            </form><span class="form-post-text">Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь с политикой конфиденциальности</span>
+            </form><span class="form-post-text">Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь с политикой конфиденциальности</span>
           </div>
         </div>
       </div>
@@ -1172,34 +1172,6 @@
         </div>
       </div>
     </div>
-    <!--helper(ONLY for dev)-->
-    <div class="js-helper-module"><a class="js-helper-module__trigger" href="javascript:void(0);"> 
-        <svg class="icon">
-          <use xlink:href="img/icons/icons-sprite.svg#arrow-right"></use>
-        </svg></a>
-      <div class="js-helper-module__container">
-        <!--section-->
-        <div class="js-helper-module__section"><span class="js-helper-module__section-title">Всплывающие окна:</span>
-          <div class="js-helper-module__section-content"><a class="js-helper-module__section-button" href="#feedback" data-popup-open>Обратный звонок</a><a class="js-helper-module__section-button" href="#succes" data-popup-open>Успешно</a><a class="js-helper-module__section-button" href="#cities" data-popup-open>Выбор города</a><a class="js-helper-module__section-button" href="#error" data-popup-open>Ошибка</a><a class="js-helper-module__section-button js-helper-module__city-toggle" href="javascript:void(0);">Уточнение местоположения</a></div>
-        </div>
-        <!--section-->
-        <div class="js-helper-module__section"><span class="js-helper-module__section-title">Контент:</span>
-          <div class="js-helper-module__section-content"><a class="js-helper-module__section-button" href="index.html">Главная</a><a class="js-helper-module__section-button" href="projects1.html">Проекты (тип 1)</a><a class="js-helper-module__section-button" href="projects2.html">Проекты (тип 2)</a><a class="js-helper-module__section-button" href="services1.html">Услуги (тип 1)</a><a class="js-helper-module__section-button" href="services2.html">Услуги (тип 2)</a><a class="js-helper-module__section-button" href="service.html">Услугa</a><a class="js-helper-module__section-button" href="project.html">Проект</a><a class="js-helper-module__section-button" href="zakaz.html">Заказ</a><a class="js-helper-module__section-button" href="zakaz-final.html">Заказ (финал)</a><a class="js-helper-module__section-button" href="portfolio.html">Портфолио</a><a class="js-helper-module__section-button" href="portfolio-project.html">Портфолио - проект</a><a class="js-helper-module__section-button" href="404.html">404</a><a class="js-helper-module__section-button" href="email.html">Письмо</a><a class="js-helper-module__section-button" href="text.html">Текстовая страница</a><a class="js-helper-module__section-button" href="text2.html">Текстовая страница (вариант 2)</a><a class="js-helper-module__section-button" href="clients.html">Клиентам</a><a class="js-helper-module__section-button" href="contacts.html">Контакты</a><a class="js-helper-module__section-button" href="news.html">Новости и акции</a><a class="js-helper-module__section-button" href="wiki.html">Вики — база знаний</a><a class="js-helper-module__section-button" href="brigada.html">Занятость бригад</a></div>
-        </div>
-        <!--section-->
-        <div class="js-helper-module__section"><span class="js-helper-module__section-title">Лк:</span>
-          <div class="js-helper-module__section-content"><a class="js-helper-module__section-button" href="kabinet-start.html">ЛК - Старт</a><a class="js-helper-module__section-button" href="kabinet-stages.html">ЛК - Этапы работ</a><a class="js-helper-module__section-button" href="kabinet-stage.html">ЛК - Этап</a><a class="js-helper-module__section-button" href="kabinet-video.html">ЛК - Видео</a><a class="js-helper-module__section-button" href="kabinet-personal.html">ЛК - Персональные данные</a></div>
-        </div>
-        <!--section-->
-        <div class="js-helper-module__section"><span class="js-helper-module__section-title">Каталог, товары:</span>
-          <div class="js-helper-module__section-content"><a class="js-helper-module__section-button" href="catalogue1.html">Каталог (тип 1)</a><a class="js-helper-module__section-button" href="catalogue2.html">Каталог (тип 2)</a><a class="js-helper-module__section-button" href="catalogue.html">Каталог с фильтром</a><a class="js-helper-module__section-button" href="poisk.html">Поиск - выдача</a><a class="js-helper-module__section-button" href="tovar.html">Карточка товара</a><a class="js-helper-module__section-button" href="comparison.html">Сравнение</a></div>
-        </div>
-        <!--section-->
-        <div class="js-helper-module__section"><span class="js-helper-module__section-title">Вход / Регистраиция:</span>
-          <div class="js-helper-module__section-content"><a class="js-helper-module__section-button" href="auth.html">Вход</a><a class="js-helper-module__section-button" href="reg.html">Регистрация</a><a class="js-helper-module__section-button" href="pass-reset.html">Восстановление пароля</a></div>
-        </div>
-      </div>
-    </div>
     <!--jquery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!--libs-->
@@ -1217,7 +1189,40 @@
     <script src="js/libs/jquery.fancybox.min.js"></script>
     <!--scripts-->
     <script src="js/scripts.js"></script>
-    <!--helper-->
-    <script src="js/js-helper.js"></script>
+    <!--preview only-->
+    <link rel="stylesheet" href="./styles/helper.css">
+    <div class="helper"><a class="helper__trigger" href="javascript:void(0);">
+        <svg class="icon" viewBox="0 0 100 100" fill="currentColor">
+          <g transform="translate(50 50)">
+            <g>
+              <animatetransform attributeName="transform" type="rotate" values="0;51.42857142857143" keyTimes="0;1" dur="0.6s" repeatCount="indefinite"></animatetransform>
+              <path d="M31.448370387032774 -10 L46.448370387032774 -10 L46.448370387032774 10 L31.448370387032774 10 A33 33 0 0 1 27.42605304607143 18.352428022310185 L27.42605304607143 18.352428022310185 L36.77840007395243 30.079900259330632 L21.141770424591833 42.5496962965053 L11.789423396710829 30.82222405948486 A33 33 0 0 1 2.7513583718916075 32.885103422513694 L2.7513583718916075 32.885103422513694 L-0.5864556374531071 47.509022105241044 L-20.085013881089584 43.05860342611476 L-16.74719987174487 28.434684743387407 A33 33 0 0 1 -23.995165273805295 22.654625211703866 L-23.995165273805295 22.654625211703866 L-37.50969829234158 29.16288129846724 L-46.18737307469275 11.143503940418853 L-32.67284005615647 4.635247853655478 A33 33 0 0 1 -32.67284005615647 -4.63524785365547 L-32.67284005615647 -4.63524785365547 L-46.18737307469276 -11.143503940418839 L-37.50969829234159 -29.162881298467227 L-23.995165273805302 -22.654625211703856 A33 33 0 0 1 -16.747199871744876 -28.434684743387404 L-16.747199871744876 -28.434684743387404 L-20.085013881089594 -43.05860342611476 L-0.5864556374531196 -47.509022105241044 L2.751358371891599 -32.885103422513694 A33 33 0 0 1 11.78942339671082 -30.82222405948486 L11.78942339671082 -30.82222405948486 L21.141770424591822 -42.54969629650531 L36.778400073952426 -30.079900259330635 L27.426053046071427 -18.35242802231019 A33 33 0 0 1 31.448370387032774 -10.000000000000009 M0 -20A20 20 0 1 0 0 20 A20 20 0 1 0 0 -20"></path>
+            </g>
+          </g>
+        </svg></a>
+      <div class="helper__container">
+        <!--section-->
+        <div class="helper__section"><span class="helper__section-title">Всплывающие окна:</span>
+          <div class="helper__section-content"><a class="helper__section-button" href="#feedback" data-popup-open>Обратный звонок</a><a class="helper__section-button" href="#succes" data-popup-open>Успешно</a><a class="helper__section-button" href="#cities" data-popup-open>Выбор города</a><a class="helper__section-button" href="#error" data-popup-open>Ошибка</a><a class="helper__section-button helper__city-toggle" href="javascript:void(0);">Уточнение местоположения</a></div>
+        </div>
+        <!--section-->
+        <div class="helper__section"><span class="helper__section-title">Контент:</span>
+          <div class="helper__section-content"><a class="helper__section-button" href="index.html">Главная</a><a class="helper__section-button" href="projects1.html">Проекты (тип 1)</a><a class="helper__section-button" href="projects2.html">Проекты (тип 2)</a><a class="helper__section-button" href="services1.html">Услуги (тип 1)</a><a class="helper__section-button" href="services2.html">Услуги (тип 2)</a><a class="helper__section-button" href="service.html">Услугa</a><a class="helper__section-button" href="project.html">Проект</a><a class="helper__section-button" href="zakaz.html">Заказ</a><a class="helper__section-button" href="zakaz-final.html">Заказ (финал)</a><a class="helper__section-button" href="portfolio.html">Портфолио</a><a class="helper__section-button" href="portfolio-project.html">Портфолио — проект</a><a class="helper__section-button" href="404.html">404</a><a class="helper__section-button" href="email.html">Письмо</a><a class="helper__section-button" href="text.html">Текстовая страница</a><a class="helper__section-button" href="text2.html">Текстовая страница (вариант 2)</a><a class="helper__section-button" href="clients.html">Клиентам</a><a class="helper__section-button" href="contacts.html">Контакты</a><a class="helper__section-button" href="news.html">Новости и акции</a><a class="helper__section-button" href="wiki.html">Вики — база знаний</a><a class="helper__section-button" href="brigada.html">Занятость бригад</a><a class="helper__section-button" href="landing.html">Лендинг</a></div>
+        </div>
+        <!--section-->
+        <div class="helper__section"><span class="helper__section-title">Лк:</span>
+          <div class="helper__section-content"><a class="helper__section-button" href="kabinet-start.html">ЛК — Старт</a><a class="helper__section-button" href="kabinet-stages.html">ЛК — Этапы работ</a><a class="helper__section-button" href="kabinet-stage.html">ЛК — Этап</a><a class="helper__section-button" href="kabinet-video.html">ЛК — Видео</a><a class="helper__section-button" href="kabinet-personal.html">ЛК — Персональные данные</a></div>
+        </div>
+        <!--section-->
+        <div class="helper__section"><span class="helper__section-title">Каталог, товары:</span>
+          <div class="helper__section-content"><a class="helper__section-button" href="catalogue1.html">Каталог (тип 1)</a><a class="helper__section-button" href="catalogue2.html">Каталог (тип 2)</a><a class="helper__section-button" href="catalogue.html">Каталог с фильтром</a><a class="helper__section-button" href="poisk.html">Поиск — выдача</a><a class="helper__section-button" href="tovar.html">Карточка товара</a><a class="helper__section-button" href="comparison.html">Сравнение</a></div>
+        </div>
+        <!--section-->
+        <div class="helper__section"><span class="helper__section-title">Вход / Регистраиция:</span>
+          <div class="helper__section-content"><a class="helper__section-button" href="auth.html">Вход</a><a class="helper__section-button" href="reg.html">Регистрация</a><a class="helper__section-button" href="pass-reset.html">Восстановление пароля</a></div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/helper.js"></script>
   </body>
 </html>

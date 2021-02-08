@@ -29,7 +29,7 @@ $(document).ready(function () {
   stagesToggle();
   jsRange();
   gridToggle();
-  comparison(); //обработать изображения после инициализации слайдеров
+  comparison();
   gallery();
   setTimeout(function () {
     lazy();
@@ -253,10 +253,9 @@ window.popup = {
   },
   close: function close($popup, callback) {
     var _this2 = this;
-
-    scrollLock.enablePageScroll();
     $popup.removeClass('active');
     setTimeout(function () {
+      scrollLock.enablePageScroll();
       _this2.active = undefined;
       typeof callback === 'function' && callback();
     }, 250);
@@ -567,6 +566,10 @@ var slider = {
         dots = true;
       }
 
+      if($(this).is('.slider_2v')) {
+        rows = 2;
+      }
+
       if ($(this).is('.popular-projects__slider')) {
         slideCount = 2;
         slideCountLg = 2;
@@ -697,6 +700,22 @@ var slider = {
           check();
         });
       }
+      else if ($(this).is('.slider_4h')) {
+        slideCount = 4;
+        slideCountLg = 3;
+        slideCountMd = 3;
+        slideCountSm = 2;
+        slideCountXs = 1;
+        initSlider($(this));
+      }
+      else if ($(this).is('.slider_3h')) {
+        slideCount = 3;
+        slideCountLg = 3;
+        slideCountMd = 2;
+        slideCountSm = 2;
+        slideCountXs = 1;
+        initSlider($(this));
+      }
 
       function initSlider($target) {
         $target.slick({
@@ -710,7 +729,7 @@ var slider = {
           centerMode: centerMode,
           slidesToShow: slideCount,
           slidesToScroll: slideCount,
-          autoplay: autoplay,
+          //autoplay: autoplay,
           autoplaySpeed: $target.data('autoplay-timeout') || 5000,
           responsive: [{
             breakpoint: brakepoints.lg,
@@ -942,7 +961,6 @@ function toggle() {
   });
 } //tabs
 
-
 function tabs() {
   var $tabs = $('.tabs');
   $tabs.each(function () {
@@ -962,7 +980,6 @@ function tabs() {
   });
 } //scroll
 
-
 function scrollTo() {
   var $scrollbtn = $('[data-scroll]'),
       speed = 500; //ms
@@ -979,7 +996,6 @@ function scrollTo() {
     }
   });
 } //scroll to reviews
-
 
 function scrollToTab() {
   var $link = $('[data-go-tab]'),
@@ -1026,7 +1042,6 @@ function fixedBlocks() {
     }
   });
 } //rate
-
 
 function rating() {
   $(document).on('click', '.js-rating__star', function (event) {
@@ -1412,7 +1427,6 @@ function comparison() {
     }
   });
 }
-
 
 //gallery
 function gallery() {

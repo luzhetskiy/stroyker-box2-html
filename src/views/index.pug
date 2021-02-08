@@ -126,8 +126,6 @@ block content
             .photo-slider__slide.image.image_cover
               img(data-src="img/image 28.jpg", alt="image").lazyload
 
-
-
   section.section.additionalLinks-section
     .container
       .row
@@ -151,10 +149,10 @@ block content
       h2.section__title.services__title Основные услуги
       .services__container.row.grid
         include blocks/cards
-        +card6('Доставка и оплата и далее на две строчки')
-        +card6('Доставка')
-        +card6('Расчет доставки')
-        +card6('Политика обработки персональных данных')
+        +card6('Доставка и оплата и далее на две строчки', 'grid__block col-lg-3 col-sm-6')
+        +card6('Доставка', 'grid__block col-lg-3 col-sm-6')
+        +card6('Расчет доставки', 'grid__block col-lg-3 col-sm-6')
+        +card6('Политика обработки персональных данных', 'grid__block col-lg-3 col-sm-6')
       .services__more.section__more
         a(href="#").button.button_style-1.button_xl.section__more-button Смотреть все услуги
 

@@ -1,5 +1,5 @@
 //header
-header.header
+header.header(data-scroll-lock-fill-gap)
   .header__top
     .container
       .header__nav-group
@@ -36,61 +36,63 @@ header.header
           span
           span
           span
-  .header__bottom
-    .container
-      .search.header__search
-        form(action="#").search__form
-          input(type="text" placeholder="Введите название, бренд...").search__input
-          button.search__button
-            svg.icon
-              use(xlink:href="img/icons/icons-sprite.svg#search")
-        .search-content-window.scrollbar.search__content
-          ul.search-content-window__list.scrollbar__content
-            .scrollbar__inner
-              li.search-content-window__item
-                span.search-content-window__item-title
-                  a(href="#") Фанера влагостойкая 
-                  span.search-content-window__item-label.search-content-window__item-label_style-1 группа товаров
-                .search-content-window__item-value 63 товара
-              li.search-content-window__item
-                span.search-content-window__item-title
-                  a(href="#") Фанера влагостойкая Плита OSB-3 12x2500х1250 мм длинное название на две строчки 
-                  span.search-content-window__item-label.search-content-window__item-label_style-2 товар
-                .search-content-window__item-value 1234.50 ₽/шт. 
-              li.search-content-window__item
-                span.search-content-window__item-title
-                  a(href="#") Фанера влагостойкая 
-                  span.search-content-window__item-label.search-content-window__item-label_style-1 группа товаров
-                .search-content-window__item-value 63 товара
-              li.search-content-window__item
-                span.search-content-window__item-title
-                  a(href="#") Фанера влагостойкая Плита OSB-3 12x2500х1250 мм длинное название на две строчки 
-                  span.search-content-window__item-label.search-content-window__item-label_style-2 товар
-                .search-content-window__item-value 1234.50 ₽/шт. 
-              li.search-content-window__item
-                span.search-content-window__item-title
-                  a(href="#") Фанера влагостойкая 
-                  span.search-content-window__item-label.search-content-window__item-label_style-1 группа товаров
-                .search-content-window__item-value 63 товара
-              li.search-content-window__item
-                span.search-content-window__item-title
-                  a(href="#") Фанера влагостойкая Плита OSB-3 12x2500х1250 мм длинное название на две строчки 
-                  span.search-content-window__item-label.search-content-window__item-label_style-2 товар
-                .search-content-window__item-value 1234.50 ₽/шт. 
+  
+  if header_style !== 'landing'
+    .header__bottom
+      .container
+        .search.header__search
+          form(action="#").search__form
+            input(type="text" placeholder="Введите название, бренд...").search__input
+            button.search__button
+              svg.icon
+                use(xlink:href="img/icons/icons-sprite.svg#search")
+          .search-content-window.scrollbar.search__content
+            ul.search-content-window__list.scrollbar__content
+              .scrollbar__inner
+                li.search-content-window__item
+                  span.search-content-window__item-title
+                    a(href="#") Фанера влагостойкая 
+                    span.search-content-window__item-label.search-content-window__item-label_style-1 группа товаров
+                  .search-content-window__item-value 63 товара
+                li.search-content-window__item
+                  span.search-content-window__item-title
+                    a(href="#") Фанера влагостойкая Плита OSB-3 12x2500х1250 мм длинное название на две строчки 
+                    span.search-content-window__item-label.search-content-window__item-label_style-2 товар
+                  .search-content-window__item-value 1234.50 ₽/шт. 
+                li.search-content-window__item
+                  span.search-content-window__item-title
+                    a(href="#") Фанера влагостойкая 
+                    span.search-content-window__item-label.search-content-window__item-label_style-1 группа товаров
+                  .search-content-window__item-value 63 товара
+                li.search-content-window__item
+                  span.search-content-window__item-title
+                    a(href="#") Фанера влагостойкая Плита OSB-3 12x2500х1250 мм длинное название на две строчки 
+                    span.search-content-window__item-label.search-content-window__item-label_style-2 товар
+                  .search-content-window__item-value 1234.50 ₽/шт. 
+                li.search-content-window__item
+                  span.search-content-window__item-title
+                    a(href="#") Фанера влагостойкая 
+                    span.search-content-window__item-label.search-content-window__item-label_style-1 группа товаров
+                  .search-content-window__item-value 63 товара
+                li.search-content-window__item
+                  span.search-content-window__item-title
+                    a(href="#") Фанера влагостойкая Плита OSB-3 12x2500х1250 мм длинное название на две строчки 
+                    span.search-content-window__item-label.search-content-window__item-label_style-2 товар
+                  .search-content-window__item-value 1234.50 ₽/шт. 
 
-      .header__buttons-group
-        //btn
-        a(href="#").header__small-button.header__small-button_auth
-          svg.icon
-            use(xlink:href="img/icons/icons-sprite.svg#user")
-          span “Строймонтаж”
-        //btn
-        a(href="#").header__small-button.header__small-button_comparison
-          svg.icon
-            use(xlink:href="img/icons/icons-sprite.svg#comparison")
-          span 0
-        //btn
-        a(href="#").header__small-button.header__small-button_cart 
-          svg.icon
-            use(xlink:href="img/icons/icons-sprite.svg#subtract")
-          span 12
+        .header__buttons-group
+          //btn
+          a(href="#").header__small-button.header__small-button_auth
+            svg.icon
+              use(xlink:href="img/icons/icons-sprite.svg#user")
+            span “Строймонтаж”
+          //btn
+          a(href="#").header__small-button.header__small-button_comparison
+            svg.icon
+              use(xlink:href="img/icons/icons-sprite.svg#comparison")
+            span 0
+          //btn
+          a(href="#").header__small-button.header__small-button_cart 
+            svg.icon
+              use(xlink:href="img/icons/icons-sprite.svg#subtract")
+            span 12

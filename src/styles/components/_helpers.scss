@@ -24,3 +24,11 @@
 .color-text-4 {
   color: var(--color-card-accent-4, #30C2FF);
 }
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.font2 {
+  font-family: $font2;
+}

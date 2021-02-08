@@ -1,5 +1,22 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1280px
+);
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1212px
+);
+$grid-gutter-width: 20px;
+
 $trs1: .25s ease-out;
 $trs2: .5s ease-out;
 $trs3: 1s ease-out;
 
 $shadow: 0px 2px 25px rgba(118, 118, 118, 0.15);
+
+$font2: 'Russo One';

@@ -143,6 +143,16 @@
   &_dots-bottom {
     padding-bottom: 30px;
   }
+  &_2v {
+    .slick-slide > div {
+      &:not([class]) {
+        max-height: calc(50% - 10px);
+      }
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
   @include media-breakpoint-down(xs) {
     &_grid {
       margin-right: -16px;

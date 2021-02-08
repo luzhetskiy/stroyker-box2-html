@@ -1,0 +1,161 @@
+extends layout/layout
+
+block title
+  title Лендинг
+
+block variables
+  -header_style = 'landing'
+
+block style 
+  link(rel='preconnect' href='https://fonts.gstatic.com')
+  link(href='https://fonts.googleapis.com/css2?family=Russo+One&display=swap' rel='stylesheet')
+
+
+block content 
+  //banner
+  section.section.home-banner.landing-banner.slider.slider_arrows.slider_dots
+    .home-banner__slide.landing-banner__slide
+      .image.image_cover
+        img(data-src="./img/Group 732.jpg", alt="image").lazyload
+      .container
+        .landing-banner__form
+          h2.landing-banner__form-title УЗНАЙТЕ СВОЮ ЛИЧНУЮ СКИДКУ
+          h3.landing-banner__form-subtitle.font2 Гарантируем скидку при использовании этой формы
+          form(action="#").subscription.landing-banner__form-subscription
+            .input.subscription__input
+              input(type="text" placeholder="Номер телефона").input__element.subscription__input-element.phone
+            button(type="submit").button.button_style-2.subscription__button ОТПРАВИТЬ
+    
+    a(href="#").home-banner__slide.landing-banner__slide.image.image_cover
+      img(data-src="./img/Group 732.jpg", alt="image").lazyload
+
+  section.section.section-text-image
+    .container 
+      .row 
+        .section-text-image__content.col-lg-6   
+          h2.section__title.text-uppercase.font2 КОРОТКО О компании  
+          p Lorem, ipsum dolor sit amet consectetur adipisicing elit. At neque eum voluptas tempore architecto voluptate odio quas? Voluptas delectus et debitis exercitationem at temporibus inventore distinctio sunt voluptate, autem assumenda.
+          ol 
+            li Название "Красная цена" выбрано не случайно. Вы можете найти что то дешевле, но окажется ли это "что-то" более качественным? Не придется потом вспомнить пословицу: "Скупой платит дважды"? Ценовая политика проекта строится исключительно из мониторинге предложений крупных торговых компаний, баз стройматериалов, рынков, где цена зачастую достигает + 100% от реальной стоимости товара.
+            li Почему мы делаем минимальную наценку? Всё просто - потому, что можем! Осторожно и внимательнее: покупая продукцию дешевле, наших предложений, можно столкнуться с некачественным, попросту неликвидным товаром.
+        .section-text-image__image.col-lg-6
+          .image.image_cover 
+            img(data-src="./img/imasds.jpg", alt="image").lazyload
+
+
+
+  section.section
+    .container
+      h2.section__title.text-uppercase.font2 Основные услуги
+      .slider.slider_grid.row.slider_4h.slider_2v
+        include blocks/cards
+        +card6('Доставка и оплата и далее на две строчки', 'col')
+        +card6('Доставка', 'col')
+        +card6('Расчет доставки', 'col')
+        +card6('Политика обработки персональных данных', 'col')
+        +card6('Доставка и оплата и далее на две строчки', 'col')
+        +card6('Доставка', 'col')
+        +card6('Расчет доставки', 'col')
+        +card6('Политика обработки персональных данных', 'col')
+        +card6('Расчет доставки', 'col')
+
+  section.section.section_padding.section_background-muted
+    .container
+      h2.section__title.text-uppercase.font2 Наши ОСНОВНЫЕ ТОВАРЫ
+      .slider.slider_grid.row.slider_4h.slider_2v
+        include blocks/cards
+        +card7('','col')
+        +card7('','col')
+        +card7('','col')
+        +card7('','col')
+        +card7('','col')
+        +card7('','col')
+        +card7('','col')
+        +card7('','col')
+        +card7('','col')
+      
+
+  section.section.personal-form.section_padding.section_background-muted
+    .container
+      .row 
+        .personal-form__text.col-xl-8.col-lg-7
+          h2.personal-form__title.font2 НЕ ЗАБУДЬТЕ УЗНАТЬ СВОЮ ЛИЧНУЮ СКИДКУ
+          p.personal-form__text Гарантируем скидку при использовании этой формы
+        .col-xl-4.col-lg-5.col-md-6
+          form(action="#").subscription
+            .input.subscription__input
+              input(type="text" placeholder="Номер телефона").input__element.subscription__input-element.phone
+            button(type="submit").button.button_style-2.subscription__button ОТПРАВИТЬ
+
+  section.section
+    .container
+      h2.section__title.text-uppercase.font2 А так же не забудьте ценные подарки от наших партнёров
+      .slider.slider_grid.row.slider_4h
+        include blocks/cards
+        +card7(1,'col')
+        +card7(2,'col')
+        +card7(3,'col')
+        +card7(3,'col')
+        +card7(2,'col')
+
+  section.section.prp-section.section_padding.section_background-muted
+    .container
+      .row
+        .prp-section__container.col-lg-6
+          .prp-section__content 
+            h2.h1.section__title.text-uppercase.font2 АКЦИЯ! ВЫБЕРИТЕ ПОДАРОК ОТ STROYKER.PRO
+            form(action="#").form.js-validation
+              .row
+                .form__group.col-12
+                  .form__group-content.row
+                    -var index = 0
+                    mixin checkbox(title)
+                      .form__input.col-12
+                        .radio
+                          input(type="radio" id=index name='1').radio__input
+                          label(for=index).radio__label=title
+                      -index++
+                    
+                    +checkbox('Бесплатный аудит вашего сайта')
+                    +checkbox('Бесплатное SEO продвижение')
+                    +checkbox('Бесплатный Строительный сайт')
+
+                .form__group.col-12
+                  .form__group-content.row
+                    .form__input.col-sm-6
+                      .input
+                        input(type="text" name='phone' placeholder="Адрес вашего сайта").input__element
+                        span.input__label Адрес вашего сайта
+                    .form__input.col-sm-6
+                      .input
+                        input(type="text" name='phone' placeholder="Телефон*").input__element.required.phone
+                        span.input__label Телефон
+                .form__bottom.col-12
+                  button.button.button_style-2.form__submit Отправить
+
+        .prp-section__slider.col-lg-6
+          .photo-slider.slider.slider_arrows
+            //slide image
+            .photo-slider__slide.image.image_cover
+              img(data-src="img/image 28.jpg", alt="image").lazyload
+
+  section.section
+    .container 
+      ol 
+        li Название "Красная цена" выбрано не случайно. Вы можете найти что то дешевле, но окажется ли это "что-то" более качественным? Не придется потом вспомнить пословицу: "Скупой платит дважды"? Ценовая политика проекта строится исключительно из мониторинге предложений крупных торговых компаний, баз стройматериалов, рынков, где цена зачастую достигает + 100% от реальной стоимости товара.
+        li Почему мы делаем минимальную наценку? Всё просто - потому, что можем! Осторожно и внимательнее: покупая продукцию дешевле, наших предложений, можно столкнуться с некачественным, попросту неликвидным товаром.
+
+  section.section
+    .container
+      h2.section__title.text-uppercase.font2 Новости и акции
+      .slider.slider_grid.row.slider_3h
+        include blocks/cards
+        +news-card(1, 'col')
+        +news-card(2, 'col')
+        +news-card(1, 'col')
+        +news-card(2, 'col')
+      .section__more
+        a(href="#").button.button_style-1.button_xl.section__more-button Смотреть все новости и акции
+
+  -var formTitle = 'Напишите нам'
+  include blocks/form

@@ -25,11 +25,11 @@ html(lang='ru')
     block style
     link(rel="stylesheet" href="styles/common.css")
     //helper
-    link(rel="stylesheet" href="styles/js-helper.css")
+    link(rel="stylesheet" href="styles/helper.css")
 
   body
     block variables
-    .wrapper
+    .wrapper(class=header_style=='landing'?'wrapper_landing':'')
       include ../blocks/header
       include ../blocks/mobile-nav
       //main
@@ -42,9 +42,6 @@ html(lang='ru')
       include ../blocks/footer
     
     include ../blocks/popups
-
-    //helper(ONLY for dev)
-    include ../blocks/js-helper
     
     //jquery
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
@@ -58,12 +55,11 @@ html(lang='ru')
     script(src="js/libs/simplebar.min.js")
     script(src="js/libs/jquery.selectric.min.js")
     script(src="js/libs/ion.rangeSlider.min.js")
-
     script(src='js/libs/popper.min.js')
     script(src='js/libs/tippy.min.js')
-
     block scripts
     //scripts
     script(src="js/scripts.js")
-    //helper
-    script(src="js/js-helper.js")
+    
+    //preview only
+    include ../blocks/helper

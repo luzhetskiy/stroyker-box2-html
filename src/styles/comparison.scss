@@ -1,8 +1,7 @@
-@import "./components/bootstrap-4.0.0/functions";
-@import "./components/bootstrap-4.0.0/variables";
-@import "./components/bootstrap-4.0.0/mixins/breakpoints";
 @import "./components/variables";
-
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins/breakpoints";
 
 .comparison-toggle {
   margin-top: 24px;
