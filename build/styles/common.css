@@ -6955,7 +6955,8 @@ a:not([class]):hover {
     display: block !important;
     padding: 0 !important;
     border: 0 !important;
-    border-radius: 0 !important; } }
+    border-radius: 0 !important;
+    background-color: transparent !important; } }
 
 @media (max-width: 991.98px) {
   .item-info__tab-head {
@@ -7239,6 +7240,18 @@ a:not([class]):hover {
     .project-layouts-block .image {
       width: 100%;
       margin-bottom: 20px; }
+      .project-layouts-block .image::before {
+        content: '';
+        display: block;
+        padding-top: 100%; }
+      .project-layouts-block .image img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        display: block;
+        -o-object-fit: contain;
+           object-fit: contain; }
     .project-layouts-block__title {
       margin: 0 0 20px 0; }
     .project-layouts-block:nth-child(odd) .project-layouts-block__container {
