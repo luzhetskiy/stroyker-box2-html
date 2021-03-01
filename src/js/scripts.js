@@ -31,9 +31,7 @@ $(document).ready(function () {
   gridToggle();
   comparison();
   gallery();
-  setTimeout(function () {
-    lazy();
-  }, 500);
+  lazy();
 });
 var brakepoints = {
   xs: 576,

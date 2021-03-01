@@ -1284,6 +1284,7 @@
     @include media-breakpoint-up(lg) {
       .model-block {
         &__container {
+          min-height: 420px;
           height: 100%;
         }
       }

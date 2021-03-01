@@ -6563,6 +6563,7 @@ a:not([class]):hover {
         top: 2px; } }
   @media (min-width: 992px) {
     .model-block_xl .model-block__container {
+      min-height: 420px;
       height: 100%; } }
   .model-block__container {
     display: block;

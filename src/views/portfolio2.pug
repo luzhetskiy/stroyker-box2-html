@@ -1,0 +1,38 @@
+extends layout/layout
+block title
+  title Портфолио
+block breadcrumbs 
+  -var title = 'Портфолио'
+  include blocks/breadcrumbs
+block content
+  section.section
+    .container
+      h1.section__title Портфолио
+      .sorting-heading
+        .select-sorting
+          .select-sorting__container
+            span.sorting-heading__title.select-sorting__title Сортировка:
+            .row
+              .col-xl-20pc.col-lg-3.col-sm-6.col
+                select.select.select_style-1
+                  option(value="1") Дома из бруса
+                  option(value="2") Дома из бруса
+                  option(value="3" selected) Дома из бруса
+                  option(value="4") Дома из бруса
+      .section__container.row.grid
+        include blocks/cards
+        +card3('img/image 28.jpg', 'model-block_xl col-lg-6 grid__block') 
+        +card3('img/image 28.jpg', 'model-block_xl col-lg-6 grid__block')
+        +card3('img/image 28.jpg', 'model-block_xl col-lg-6 grid__block')
+        +card3('img/image 28.jpg', 'model-block_xl col-lg-6 grid__block')
+        +card3('img/image 28.jpg', 'model-block_xl col-lg-6 grid__block')
+        +card3('img/image 28.jpg', 'model-block_xl col-lg-6 grid__block')
+      
+      include blocks/pagination
+  section.section.map-section
+    .container
+      h2.section__title Наши объекты на карте
+      .row.justify-content-around
+        .col-xl-10
+          include blocks/map
+          
