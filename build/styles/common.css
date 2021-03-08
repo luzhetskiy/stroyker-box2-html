@@ -2872,6 +2872,62 @@ html {
   .mx-xl-auto {
     margin-left: auto !important; } }
 
+.col-20pc,
+.col-sm-20pc,
+.col-md-20pc,
+.col-lg-20pc,
+.col-xl-20pc,
+.col-80pc,
+.col-sm-80pc,
+.col-md-80pc,
+.col-lg-80pc,
+.col-xl-80pc {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 10px;
+  padding-left: 10px; }
+
+.col-20pc {
+  flex: 0 0 20%;
+  max-width: 20%; }
+
+.col-80pc {
+  flex: 0 0 80%;
+  max-width: 80%; }
+
+@media (min-width: 576px) {
+  .col-sm-20pc {
+    flex: 0 0 20%;
+    max-width: 20%; }
+  .col-sm-80pc {
+    flex: 0 0 80%;
+    max-width: 80%; } }
+
+@media (min-width: 768px) {
+  .col-md-20pc {
+    flex: 0 0 20%;
+    max-width: 20%; }
+  .col-md-80pc {
+    flex: 0 0 80%;
+    max-width: 80%; } }
+
+@media (min-width: 992px) {
+  .col-lg-20pc {
+    flex: 0 0 20%;
+    max-width: 20%; }
+  .col-lg-80pc {
+    flex: 0 0 80%;
+    max-width: 80%; } }
+
+@media (min-width: 1280px) {
+  .col-xl-20pc {
+    flex: 0 0 20%;
+    max-width: 20%; }
+  .col-xl-80pc {
+    flex: 0 0 80%;
+    max-width: 80%; } }
+
 @font-face {
   font-display: swap;
   font-family: "Golos";
@@ -5875,9 +5931,6 @@ a:not([class]):hover {
   width: 100%;
   height: 380px;
   overflow: hidden; }
-  .advertising-preview img {
-    -o-object-fit: initial;
-       object-fit: initial; }
   @media (max-width: 1279.98px) {
     .advertising-preview {
       height: auto; }

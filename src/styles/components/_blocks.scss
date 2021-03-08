@@ -400,9 +400,6 @@
   width: 100%;
   height: 380px;
   overflow: hidden;
-  img {
-    object-fit: initial;
-  }
   @include media-breakpoint-down(lg) {
     height: auto;
     &:before {
