@@ -6,7 +6,6 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-lazySizes.cfg.init = false;
 customScroll();
 $(document).ready(function () {
   select.init();
@@ -53,7 +52,7 @@ function getParent(elemSelector, parentSelector) {
   }
 
   return null;
-} //hover/touch custom events
+} 
 
 
 function touchHoverEvents() {
@@ -191,7 +190,7 @@ function touchHoverEvents() {
       }
     }
   }
-} //lazyload
+}
 
 
 function lazy() {
