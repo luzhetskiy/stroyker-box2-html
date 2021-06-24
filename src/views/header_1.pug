@@ -1,0 +1,34 @@
+extends layout/layout
+
+block title
+  title Шапка
+
+block variables
+   -var content = 'main_muted'
+
+block content 
+  section.section
+    .container 
+      .page-container
+        p Здесь шаблон шапки по умолчанию. Шапка состоит из 2 частей: <mark>.header__top</mark> и <mark>.header__bottom</mark>. 
+          | Есть 3 типа шаблона для <mark>.header__top</mark> и 4 для <mark>.header__bottom</mark>. 
+          | Так же есть стиль прозрачности/непрозрачности для <mark>.header__bottom</mark> со смещением контента страницы вверх. 
+          br
+          | Шаблоны для <mark>.header__top</mark> и  <mark>.header__bottom</mark> не конфликтуют между собой, их можно комбинировать. 
+          | В итоге у нас получается 3 переключателя для шапки:
+          br
+          | 1 из 3 типов <mark>.header__top</mark>,
+          br
+          | 1 из 4 типов <mark>.header__bottom</mark>,
+          br
+          | 1 из 2 типов по прозрачности <mark>.header__bottom</mark>
+
+        p Шаблон сформирован таким образом, что для изменения стиля нужно будет просто добавлять к стандартному шаблону шапки классы-модификаторы, внутри шапки больше ничего и нигде не меняется.
+
+        h4 Изменения стандартного шаблона относительно прошлой версии: 
+
+        p Удалена обертка <mark>.header__nav-group</mark> из <mark>.header__top</mark>.<br>
+          | Теперь <mark>.logo</mark>, <mark>.header-nav</mark> и <mark>.header__contact-group</mark> находятся на одном уровне.
+        p Добавить для <mark>.logo</mark> класс <mark>.header__logo</mark>
+        p Добавить для <mark>header__bottom</mark> атрибут <mark>data-scroll-lock-fill-gap</mark>
+        

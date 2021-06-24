@@ -6,13 +6,11 @@ block title
 block content
   .home-banner-wrapper
     //banner
-    .home-banner.slider.slider_arrows.slider_dots(data-desktop-ratio='0.365' data-mobile-ratio='0.595')
+    .home-banner.slider.slider_arrows.slider_dots(data-desktop-ratio='0.35' data-mobile-ratio='0.7')
       a(href="#").home-banner__slide.image.image_cover
-        img(data-src="./img/banner-preview.jpg", alt="image").lazyload
+        img(data-src="./img/26128 1.jpg", alt="image").lazyload
       a(href="#").home-banner__slide.image.image_cover
-        img(data-src="./img/banner-preview.jpg", alt="image").lazyload
-      a(href="#").home-banner__slide.image.image_cover
-        img(data-src="./img/banner-preview.jpg", alt="image").lazyload
+        img(data-src="./img/26128 1.jpg", alt="image").lazyload
     //categories
     section.section.home-categories
       .container
@@ -81,7 +79,7 @@ block content
           .slider.slider_grid.slider_arrows.popular-projects__slider.popular-projects__slider_type-2.row.grid
             include blocks/cards
             -var grid = 'col grid__block'
-            +card1(true, true, grid)
+            +card1(false, true, grid)
             +card1(true, true, grid)
             +card1(true, true, grid)
             +card1(true, true, grid)
@@ -89,6 +87,46 @@ block content
       .section__more.popular-projects__more
         a(href="#").button.button_style-1.button_xl.section__more-button Смотреть все проекты
 
+  section.section.section_custom-background.popular-projects(style='background-color:#F5F5F5;')
+    .container
+      .row
+        .col-xl-20pc.col-lg-3.popular-projects__advertising
+          include blocks/advertising
+        .col-xl.col-lg-9
+          h2.section__title Популярные услуги
+          .slider.slider_grid.slider_arrows.popular-projects__slider-2.row.grid
+            include blocks/cards
+            -var grid = 'col grid__block'
+            +wide-card('', grid)
+            +wide-card('', grid)
+            +wide-card('', grid)
+            +wide-card('', grid)
+            +wide-card('', grid)
+      .section__more.popular-projects__more
+        a(href="#").button.button_style-1.button_xl.section__more-button Смотреть все услуги
+
+  section.section.section_custom-background.popular-projects(style='background-image: url("./img/image 6.jpg");')
+    .container
+      .row
+        .col-xl-20pc.col-lg-3.popular-projects__advertising
+          include blocks/advertising
+          include blocks/advertising
+        .col-xl.col-lg-9
+          h2.section__title Популярные услуги
+          .slider.slider_grid.slider_arrows.popular-projects__slider-2.popular-projects__slider-2_type-2.row.grid
+            include blocks/cards
+            -var grid = 'col grid__block'
+            +wide-card('', grid)
+            +wide-card('', grid)
+            +wide-card('', grid)
+            +wide-card('', grid)
+            +wide-card('', grid)
+            +wide-card('', grid)
+            +wide-card('', grid)
+            +wide-card('', grid)
+      .section__more.popular-projects__more
+        a(href="#").button.button_style-1.button_xl.section__more-button Смотреть все услуги
+  
   include blocks/mobile-advertising    
   
   section.section.bid-section
@@ -214,6 +252,38 @@ block content
       .section-articles__more.section__more
         a(href="#").button.button_style-1.button_xl.section__more-button Смотреть все статьи
   
+  section.section.faq-section
+    .container
+      .row.justify-content-center 
+        .col-xl-10 
+          h2.section__title.services__title Вопрос - ответ
+          .faq-section__elements
+            .faq-element.toggle-section
+              .faq-element__head.toggle-section__head.js-touch-hover
+                h4.faq-element__head-title Что такое SEO?
+                span.faq-element__trigger
+                  svg.icon
+                    use(xlink:href="./img/icons/icons-sprite.svg#arrow-down")
+              .faq-element__content.toggle-section__content
+                p Это оптимизация для продвижения Вашего сайта в поисковиках.
+            .faq-element.toggle-section
+              .faq-element__head.toggle-section__head.js-touch-hover
+                h4.faq-element__head-title Где заполняется данный текст? 
+                span.faq-element__trigger
+                  svg.icon
+                    use(xlink:href="./img/icons/icons-sprite.svg#arrow-down")
+              .faq-element__content.toggle-section__content
+                p Для редакции  - зайдите в панель администрирования, после этого найдите пунтк "Статичные тексты". Из открытого списка выберите "SEP-Текст для главной страницы сайта". Перед Вами откроется понятный и простой текстовый редактор, в котором Вы сможете отредактировать/заменить всю необходимую информацию и максимально поможете своему сайту в продвижении.
+            .faq-element.toggle-section
+              .faq-element__head.toggle-section__head.js-touch-hover
+                h4.faq-element__head-title Какие рекомендации к заполнению?
+                span.faq-element__trigger
+                  svg.icon
+                    use(xlink:href="./img/icons/icons-sprite.svg#arrow-down")
+              .faq-element__content.toggle-section__content
+                p Тексто должен быть минимум 3000 символов, необходимо использовать только один заголовок H1!
+
+
   -var formTitle = 'Напишите нам'
   include blocks/form
 

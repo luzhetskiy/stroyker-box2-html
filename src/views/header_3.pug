@@ -1,0 +1,16 @@
+extends layout/layout
+
+block title
+  title Шапка
+
+block variables
+  -var content = 'main_muted'
+  -var header_top = 'header__top_type-3'
+  -var header_bottom = 'header__bottom_type-3'
+
+block content 
+  section.section
+    .container 
+      .page-container
+        p Для <mark>.header__top</mark> добавляется класс-модификатор <mark>.header__top_type-3</mark>
+        p Для <mark>.header__bottom</mark> добавляется класс-модификатор <mark>.header__bottom_type-3</mark>  

@@ -1,21 +1,24 @@
 //header
 header.header(data-scroll-lock-fill-gap)
-  .header__top
+  
+  .header__top(class=header_top?header_top:'')
     .container
-      .header__nav-group
-        .logo 
-          a(href="index.html").logo__link
-            include logo
-        .header-nav
-          ul.header-nav__list
-            mixin item(title)
-              li.header-nav__item
-                a(href="#").header-nav__link=title
-            +item('Сотрудничество')
-            +item('Доставка')
-            +item('Акции')
-            +item('Партнеры')
-            +item('Контакты')
+      //logo
+      .logo.header__logo 
+        a(href="index.html").logo__link
+          include logo
+      //nav
+      .header-nav
+        ul.header-nav__list
+          mixin item(title)
+            li.header-nav__item
+              a(href="#").header-nav__link=title
+          +item('Сотрудничество')
+          +item('Доставка')
+          +item('Акции')
+          +item('Партнеры')
+          +item('Контакты')
+      //else
       .header__contact-group
         .header__city
           a(href="#cities" data-popup-open).header__city-link Самара
@@ -37,8 +40,9 @@ header.header(data-scroll-lock-fill-gap)
           span
           span
   
+  
   if header_style !== 'landing'
-    .header__bottom
+    .header__bottom(class=header_bottom?header_bottom:'' class=header_transparent?'header__bottom_transparent':'' data-scroll-lock-fill-gap)
       .container
         .search.header__search
           form(action="#").search__form

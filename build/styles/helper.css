@@ -10,11 +10,15 @@
   transition: transform 0.25s ease-in-out;
   width: 100%;
   max-width: 420px;
-  color: #000; }
+  max-height: 100%;
+  color: #000;
+  display: flex; }
   .helper__trigger {
     display: block;
     position: absolute;
     left: calc(100% - 1px);
+    top: 50%;
+    transform: translateY(-50%);
     width: 40px;
     height: 40px;
     border-radius: 0 2px 2px 0;
@@ -38,6 +42,7 @@
     .helper__trigger.touch, .helper__trigger.hover {
       color: #ca2323; }
   .helper__container {
+    overflow: auto;
     position: relative;
     z-index: 1;
     padding: 20px 15px;

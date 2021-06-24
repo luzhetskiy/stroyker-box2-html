@@ -3,16 +3,6 @@
   flex-direction: column;
   min-height: 100vh;
   overflow: hidden;
-  padding-top: 158px;
-  &_landing {
-    padding-top: 78px;
-  }
-  @include media-breakpoint-down(md) {
-    padding-top: 130px;
-    &_landing {
-      padding-top: 50px;
-    }
-  }
 }
 .container {
   padding: 0 16px;
@@ -34,6 +24,14 @@
 .section {
   position: relative;
   margin-bottom: 72px;
+  &_custom-background {
+    padding: 60px 0;
+    background-size: cover;
+    background-position: center;
+    & ~ .section_custom-background {
+      margin-top: -72px;
+    }
+  }
   &_small-margin {
     margin-bottom: 60px;
   }
@@ -62,6 +60,11 @@
   }
   @include media-breakpoint-up(sm) {
     margin-bottom: 60px;
+    &_custom-background {
+      & ~ .section_custom-background {
+        margin-top: -60px;
+      }
+    }
     &_no-margin {
       margin: 0 !important;
     }

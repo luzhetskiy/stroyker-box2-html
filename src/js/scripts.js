@@ -6,6 +6,15 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
+
+const brakepoints = {
+  xs: 576,
+  sm: 768,
+  md: 992,
+  lg: 1280
+};
+const $wrapper = document.querySelector('.wrapper');
+
 customScroll();
 $(document).ready(function () {
   select.init();
@@ -21,7 +30,8 @@ $(document).ready(function () {
   fixedBlocks();
   tabs();
   scrollToTab();
-  header();
+  Header.init();
+  ScrollTop.init();
   diagram();
   rating();
   calculator();
@@ -32,12 +42,9 @@ $(document).ready(function () {
   gallery();
   lazy();
 });
-var brakepoints = {
-  xs: 576,
-  sm: 768,
-  md: 992,
-  lg: 1280
-};
+
+
+
 
 function getParent(elemSelector, parentSelector) {
   var elem = document.querySelector(elemSelector);
@@ -191,7 +198,6 @@ function touchHoverEvents() {
     }
   }
 }
-
 
 function lazy() {
   //add lazy backgrounds
@@ -467,13 +473,15 @@ function search() {
 
         if (val !== '') {
           $this.addClass('active');
-          //$this.addClass('active-content');
+          /* $this.addClass('active-content'); */
         } else {
           $this.removeClass('active');
-          //$this.removeClass('active-content');
+          /* $this.removeClass('active-content'); */
         }
       }
     });
+
+
     /* 
     $(document).on('touchstart', function (event) {
       var $target = $(event.target);
@@ -482,6 +490,8 @@ function search() {
         $this.removeClass('active-content');
       }
     }); */
+
+
   });
 }
 
@@ -567,6 +577,7 @@ var slider = {
         rows = 2;
       }
 
+      //sliders
       if ($(this).is('.popular-projects__slider')) {
         slideCount = 2;
         slideCountLg = 2;
@@ -600,6 +611,15 @@ var slider = {
           initSlider($(this));
         }
       } 
+      else if ($(this).is('.popular-projects__slider-2')) {
+        slideCountSm = 2;
+        slideCountXs = 1;
+        rows = 2;
+        if($(this).is('.popular-projects__slider-2_type-2')) {
+          rows = 4;
+        }
+        initSlider($(this));
+      }
       else if ($(this).is('.home-banner')) {
         let $this = $(this);
         autoplay = true;
@@ -726,7 +746,7 @@ var slider = {
           centerMode: centerMode,
           slidesToShow: slideCount,
           slidesToScroll: slideCount,
-          //autoplay: autoplay,
+          autoplay: autoplay,
           autoplaySpeed: $target.data('autoplay-timeout') || 5000,
           responsive: [{
             breakpoint: brakepoints.lg,
@@ -848,26 +868,53 @@ var select = {
   }
 };
 
-function header() {
-  var $header = $('.header'),
-      height,
-      scroll;
-  check();
-  $(window).scroll(function () {
-    check();
-  });
+const Header = {
+  init: function() {
+    this.$element = document.querySelector('.header');
+    this.$top = document.querySelector('.header__top');
+    this.$bottom = document.querySelector('.header__bottom');
 
-  function check() {
-    if ($(window).width() < brakepoints.md) {
-      scroll = $(window).scrollTop();
-      height = 130;
+    this.check = () => {
+      let h1 = this.$top.getBoundingClientRect().height + this.$bottom.getBoundingClientRect().height,
+          h2 = this.$element.getBoundingClientRect().height;
 
-      if (scroll > height) {
-        $header.addClass('fixed');
-      } else {
-        $header.removeClass('fixed');
+      if(window.pageYOffset > h1 && !this.state) {
+        this.state = true;
+        this.h_old = h1;
+        $wrapper.style.paddingTop = `${h2}px`;
+        this.$element.classList.add('header_fixed');
+      } else if(window.pageYOffset < this.h_old && this.state) {
+        this.state = false;
+        $wrapper.style.paddingTop = '0px';
+        this.$element.classList.remove('header_fixed');
       }
     }
+
+    this.check();
+    window.addEventListener('scroll', this.check);
+  }
+}
+
+const ScrollTop = {
+  init: function() {
+    this.$trigger = document.querySelector('.js-scroll-top');
+
+    this.check = () => {
+      if(window.pageYOffset > 50 && !this.state) {
+        this.$trigger.classList.add('visible');
+        this.state = true;
+      } else if(window.pageYOffset <= 50 && this.state) {
+        this.$trigger.classList.remove('visible');
+        this.state = false;
+      }
+    }
+
+    this.check();
+    window.addEventListener('scroll', this.check);
+
+    this.$trigger.addEventListener('click', () => {
+      $("html, body").animate({scrollTop:0}, 500);
+    })
   }
 }
 

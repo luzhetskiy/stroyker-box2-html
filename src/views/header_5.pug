@@ -1,0 +1,21 @@
+extends layout/layout
+
+block title
+  title Шапка
+
+block variables
+  -var content = 'main_muted'
+  -var header_bottom = 'header__bottom_type-2'
+  -var header_transparent = true
+
+block content 
+  section.section 
+    .image.image_cover(style='height:400px;margin-top:-30px;')
+      img(data-src="./img/Group 732.jpg", alt="img").lazyload
+
+  section.section
+    .container 
+      .page-container
+        p Для <mark>header__bottom</mark> добавляется класс-модификатор <mark>header__bottom_transparent</mark>, фон пропадает и контент страницы смещается выше. Учитывая этот факт, возможность делать низ шапки прозрачным доступна исключительно <strong>на главной странице</strong>, на остальных страницах класс должен <strong>отсутствовать</strong> в любом случае.
+
+  

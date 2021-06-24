@@ -77,6 +77,36 @@ block content
             +card2('Отделочные работы', 'img/7eaf93e9c47993e5b22277de3a30b89e.png', grid)
             +card2('Проектные работы', 'img/767773b7699f15e02052b250d92c0c7f.png', grid)
             +card2('Отделочные работы', 'img/e79cec4f0a120d2e96a1701cf4ef8db3.png', grid)
+        
+        section.section.popular-projects
+          h2.section__title Популярные услуги
+          .slider.slider_grid.slider_arrows.popular-projects__slider-2.row.grid
+            include blocks/cards
+            -var grid = 'col grid__block'
+            +wide-card('', grid)
+            +wide-card('', grid)
+            +wide-card('', grid)
+            +wide-card('', grid)
+            +wide-card('', grid)
+          .section__more.popular-projects__more
+            a(href="#").button.button_style-1.button_xl.section__more-button Смотреть все услуги
+
+        section.section.popular-projects
+          h2.section__title Популярные услуги
+          .slider.slider_grid.slider_arrows.popular-projects__slider-2.popular-projects__slider-2_type-2.row.grid
+            include blocks/cards
+            -var grid = 'col grid__block'
+            +wide-card('', grid)
+            +wide-card('', grid)
+            +wide-card('', grid)
+            +wide-card('', grid)
+            +wide-card('', grid)
+            +wide-card('', grid)
+            +wide-card('', grid)
+            +wide-card('', grid)
+          .section__more.popular-projects__more
+            a(href="#").button.button_style-1.button_xl.section__more-button Смотреть все услуги
+        
         section.section
           h2 Почему мы лучше продаем стройматериалы
           p Инвестируем в заводы, производящие листовые строительные материалы (ДСП ЦСП ФАНЕРА, ОСБ и т.д.) заключаем договора, выкупаем партии продукции, везем вагонами или фурами на склад и после поставляют постоянным клиентам типа “Красной цены”, “Сатурна”, “Центр строя” и т.д. Если есть товар в наличии и их цена ниже, то мы продаем, если нет — то продают конкуренты.

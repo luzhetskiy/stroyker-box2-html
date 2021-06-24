@@ -3,8 +3,8 @@
   visibility: hidden;
   font-size: 1.125rem;
   position: fixed;
-  top: 50px;
-  height: calc(100% - 50px);
+  top: 60px;
+  height: calc(100% - 60px);
   background-color: var(--color-sections-bg, #F5F5F5);
   width: 100%;
   z-index: 110;
@@ -245,19 +245,20 @@
       }
     }
   }
-}
 
-@include media-breakpoint-down(md) {
-  .mobile-nav {
+
+  @include media-breakpoint-down(md) {
     display: block;
   }
+  @include media-breakpoint-down(xs) {
+    top: 50px;
+    height: calc(100% - 50px);
+    &__contact-button .button {
+      width: 100%;
+    }
+    &__dropdown-content {
+      width: calc(100% + 40px);
+      margin-left: -20px;
+    }
+  }
 }
-@include media-breakpoint-down(xs) {
-  .mobile-nav__contact-button .button {
-    width: 100%;
-  }
-  .mobile-nav__dropdown-content {
-    width: calc(100% + 40px);
-    margin-left: -20px;
-  }
-} 

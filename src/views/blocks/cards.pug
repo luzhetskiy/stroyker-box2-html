@@ -20,7 +20,10 @@ mixin card1(image, discount, grid)
       .project-preview-card__content
         .project-preview-card__content-top
           img(src="img/icons/rating_3.5.svg", alt="image").project-preview-card__rating
-          a(href="portfolio-project.html").project-preview-card__title Модель дома кд25 180 м2 с террасой три спальни гардероб и санузел
+          if image==true
+            a(href="portfolio-project.html").project-preview-card__title Модель дома кд25 180 м2 с террасой 
+          else 
+            a(href="portfolio-project.html").project-preview-card__title Модель дома кд25 180 м2 с террасой три спальни гардероб и санузел
         .project-preview-card__content-bottom
           .project-preview-card__buttons  
             a(href="#").button.button_style-1 Узнать цену
@@ -228,3 +231,34 @@ mixin card7(type, classes)
         else if type=='3'
           span.preview-block__label(style='background-color:#C3E27F;') Дистрибьютор
         h6.preview-block__title DISTORIUM.RU - первый умный дистрибьютер на платформе стройкер
+
+mixin wide-card(image, grid)
+  .wide-project-card(class=grid)
+    .wide-project-card__container
+      a(href="portfolio-project.html").wide-project-card__image
+        .image.image_cover
+          img(data-src="img/image 28.jpg", alt="image").lazyload
+      .wide-project-card__content
+        span.wide-project-card__index 20464111
+        .wide-project-card__text
+          h4.wide-project-card__title Услуга как услуга
+          p.wide-project-card__description Уникальаня услуга по цене среднерыночной, большой опыт в реализации таких услуг 
+        .wide-project-card__bottom 
+          .card-price.wide-project-card__price
+            .card-price__content
+              span.card-price__current
+                | 89 537,50 
+                span  ₽/шт 
+              span.card-price__old 99 999,99
+          
+          .calc-count-block.calc-count-block_style-2.wide-project-card__calc
+            a(href="javascript:void(0);").button.button_style-1.calc-count-block__button.js-minus 
+              svg.icon
+                use(xlink:href="img/icons/icons-sprite.svg#minus")
+            .input.calc-count-block__input
+              input(type="number" name='ddd' value='1').input__element
+            a(href="javascript:void(0);").button.button_style-1.calc-count-block__button.js-plus 
+              svg.icon
+                use(xlink:href="img/icons/icons-sprite.svg#plus")
+
+          button.button.button_style-1.wide-project-card__button Заказать услугу
