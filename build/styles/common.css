@@ -5105,9 +5105,12 @@ a:not([class]):hover {
       margin-left: -16px; }
       .slider_grid.slick-dotted {
         padding-bottom: 35px; }
-      .slider_grid.slick-initialized.grid,
-      .slider_grid.slick-initialized .grid__block {
+      .slider_grid.slick-initialized.grid {
         margin-bottom: 0 !important; }
+        .slider_grid.slick-initialized.grid .slick-list {
+          margin-bottom: -15px; }
+        .slider_grid.slick-initialized.grid .grid__block {
+          margin-bottom: 15px; }
       .slider_grid .slick-list {
         padding: 0 8px; }
       .slider_grid .slick-dots {
@@ -9225,6 +9228,10 @@ a:not([class]):hover {
     .faq-element__head-title {
       font-size: 1rem;
       line-height: 1.3; } }
+
+.product-slider_rows-2 .slick-slide, .product-slider_rows-3 .slick-slide {
+  display: grid;
+  grid-auto-rows: 1fr; }
 
 /*========== Reviews ==========*/
 .reviews__title {

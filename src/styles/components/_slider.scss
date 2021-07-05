@@ -161,9 +161,14 @@
         padding-bottom: 35px;
       }
       &.slick-initialized {
-        &.grid,
-        .grid__block {
+        &.grid {
           margin-bottom: 0 !important;
+          .slick-list {
+            margin-bottom: -15px;
+          }
+          .grid__block {
+            margin-bottom: 15px;
+          }
         }
       }
       .slick-list {

@@ -4586,3 +4586,12 @@
     }
   }
 }
+
+.product-slider {
+  &_rows-2, &_rows-3 {
+    .slick-slide {
+      display: grid;
+      grid-auto-rows: 1fr;
+    }
+  }
+}

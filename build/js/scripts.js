@@ -553,6 +553,7 @@ var slider = {
           slideCountSm = 1,
           slideCountXs = 1,
           rows = 1,
+          rowsXs = 1,
           arrows = false,
           dots = false,
           centerMode = false,
@@ -681,6 +682,14 @@ var slider = {
           slideCountLg = 4;
         }
 
+        if($(this).is('.product-slider_rows-2')) {
+          rows = 2;
+          rowsXs = 2;
+        } else if($(this).is('.product-slider_rows-3')) {
+          rows = 3;
+          rowsXs = 2;
+        }
+
         slideCountMd = 3;
         slideCountSm = 2;
         slideCountXs = 1;
@@ -771,7 +780,7 @@ var slider = {
             settings: {
               slidesToShow: slideCountXs,
               slidesToScroll: slideCountXs,
-              rows: 1
+              rows: rowsXs
             }
           }]
         });
