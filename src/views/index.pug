@@ -126,6 +126,8 @@ block content
         +card4(false, 'col product-card_catalogue grid__block', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
         +card4(true, 'col product-card_catalogue grid__block', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
 
+
+
   section.section.popular-projects
     .container
       .row
@@ -231,7 +233,7 @@ block content
             img(data-src="./img/Frame_1_6.jpg", alt="image").lazyload
         
         .additionalLinks-block.col-md-6
-          .additionalLinks-block__container
+          .additionalLinks-block__container(data-custom-interaction)
             .background.background_right.additionalLinks-block__background.lazyload(data-src='img/dsddddd.png')
             h2.additionalLinks-block__title Наши реализованные<br> проекты
             p.additionalLinks-block__text В сезон таких специалистов тяжело найти, предлагаем функцию запрос бригады. 
@@ -241,20 +243,16 @@ block content
               span Посмотреть все объекты
 
         .additionalLinks-block.col-md-6
-          .additionalLinks-block__container
+          .additionalLinks-block__container(data-custom-interaction)
             .background.background_left.lazyload(data-src='./img/Frame_15_2.jpg')
+
         .additionalLinks-block.col-md-6
-          .additionalLinks-block__container
-            .background.background_left.lazyload(data-src='./img/Frame_15_2.jpg')
+          .additionalLinks-block__container(data-custom-interaction)
+            .background.background_right.lazyload(data-src='./img/teaser.jpeg')
+
         .additionalLinks-block.col-md-6
-          .additionalLinks-block__container
-            .background.background_left.lazyload(data-src='./img/Frame_15_2.jpg')
-        .additionalLinks-block.col-md-6
-          .additionalLinks-block__container
-            .background.background_left.lazyload(data-src='./img/Frame_15_2.jpg')
-        .additionalLinks-block.col-md-6
-          .additionalLinks-block__container
-            .background.background_left.lazyload(data-src='./img/Frame_15_2.jpg')
+          .additionalLinks-block__container(data-custom-interaction)
+            .background.background_right.lazyload(data-src='./img/teaser.jpeg')
   
   section.section.services
     .container
@@ -317,7 +315,7 @@ block content
           h2.section__title.services__title Вопрос - ответ
           .faq-section__elements
             .faq-element.toggle-section
-              .faq-element__head.toggle-section__head.js-touch-hover
+              .faq-element__head.toggle-section__head(data-custom-interaction)
                 h4.faq-element__head-title Что такое SEO?
                 span.faq-element__trigger
                   svg.icon
@@ -325,7 +323,7 @@ block content
               .faq-element__content.toggle-section__content
                 p Это оптимизация для продвижения Вашего сайта в поисковиках.
             .faq-element.toggle-section
-              .faq-element__head.toggle-section__head.js-touch-hover
+              .faq-element__head.toggle-section__head(data-custom-interaction)
                 h4.faq-element__head-title Где заполняется данный текст? 
                 span.faq-element__trigger
                   svg.icon
@@ -333,7 +331,7 @@ block content
               .faq-element__content.toggle-section__content
                 p Для редакции  - зайдите в панель администрирования, после этого найдите пунтк "Статичные тексты". Из открытого списка выберите "SEP-Текст для главной страницы сайта". Перед Вами откроется понятный и простой текстовый редактор, в котором Вы сможете отредактировать/заменить всю необходимую информацию и максимально поможете своему сайту в продвижении.
             .faq-element.toggle-section
-              .faq-element__head.toggle-section__head.js-touch-hover
+              .faq-element__head.toggle-section__head(data-custom-interaction)
                 h4.faq-element__head-title Какие рекомендации к заполнению?
                 span.faq-element__trigger
                   svg.icon

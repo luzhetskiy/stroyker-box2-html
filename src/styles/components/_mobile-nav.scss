@@ -89,8 +89,7 @@
         position: absolute;
         transition: opacity $trs1;
       }
-      &.touch,
-      &.hover {
+      &[data-touch], &[data-hover] {
         color: var(--color-accent-darker, #1C52AC);
       }
       &_style-1 {
@@ -142,9 +141,7 @@
         fill: var(--color-accent, #2363D1);
       }
     }
-    &.touch,
-    &.hover,
-    &.active {
+    &[data-touch], &[data-hover], &.active {
       .icon {
         &:first-child {
           fill: var(--color-accent, #2363D1);
@@ -202,8 +199,7 @@
       fill: var(--color-border-1, #D9D9DE);
       transition: fill $trs1;
     }
-    &.touch,
-    &.hover {
+    &[data-touch], &[data-hover] {
       .icon {
         fill: var(--color-accent, #2363D1);
       }
@@ -235,8 +231,7 @@
       margin-left: 19px;
       transition: transform $trs1;
     }
-    &.touch,
-    &.hover {
+    &[data-touch], &[data-hover] {
       color: var(--color-accent-darker, #1C52AC);
     }
     &.active {

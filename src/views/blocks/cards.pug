@@ -65,7 +65,7 @@ mixin card3(image, classes)
 
 mixin card4(image, classes, label, title)     
   .product-card(class=classes)
-    .product-card__container.js-touch-hover
+    .product-card__container(data-custom-interaction)
       a(href="tovar.html").product-card__link-area
       if image==true
         .product-card__image.image.image.image_contain

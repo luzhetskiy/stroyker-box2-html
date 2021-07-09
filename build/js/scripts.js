@@ -13,12 +13,13 @@ const brakepoints = {
   md: 992,
   lg: 1280
 };
+
 const $wrapper = document.querySelector('.wrapper');
 
 customScroll();
 $(document).ready(function () {
+  CustomInteractionEvents.init();
   select.init();
-  touchHoverEvents();
   inputs();
   search();
   nav();
@@ -61,143 +62,78 @@ function getParent(elemSelector, parentSelector) {
   return null;
 } 
 
-
-function touchHoverEvents() {
-  document.addEventListener('touchstart', event);
-  document.addEventListener('touchend', event);
-  document.addEventListener('mouseenter', event, true);
-  document.addEventListener('mouseleave', event, true);
-  document.addEventListener('mousedown', event);
-  document.addEventListener('mouseup', event);
-  document.addEventListener('contextmenu', event);
-  var targets = 'a[class], button, label, input, textarea, tr, .js-touch-hover, .selectric-items li, .selectric .label, .button, .comparison-property',
-      touchEndDelay = 250,
-      //ms    
-      touch,
-      timeout;
-
-  function event(event) {
-    var $targets = [];
-    $targets[0] = event.target !== document ? event.target.closest(targets) : null;
-    var $element = $targets[0],
-        i = 0;
-
-    while ($targets[0]) {
-      $element = $element.parentNode;
-
-      if ($element !== document) {
-        if ($element.matches(targets)) {
-          i++;
-          $targets[i] = $element;
+const CustomInteractionEvents = Object.create({
+  targets: {
+    value: 'a, button, label, input, textarea, tr, [data-custom-interaction], .selectric-items li, .selectric .label, .button, .comparison-property'
+  },
+  delay: {
+    value: 100
+  }, 
+  init() {
+    this.events = (event) => {
+      let $targets = [];
+      $targets[0] = event.target!==document?event.target.closest(this.targets.value):null;
+      let $element = $targets[0], i = 0;
+  
+      while($targets[0]) {
+        $element = $element.parentNode;
+        if($element!==document) {
+          if($element.matches(this.targets.value)) {
+            i++;
+            $targets[i] = $element;
+          }
+        } 
+        else {
+          break;
         }
-      } else {
-        break;
       }
-    }
-
-    if ($targets[0]) {
+  
       //touchstart
-      if (event.type == 'touchstart') {
-        clearTimeout(timeout);
-        touch = true;
-
-        var _iterator = _createForOfIteratorHelper(document.querySelectorAll(targets)),
-            _step;
-
-        try {
-          for (_iterator.s(); !(_step = _iterator.n()).done;) {
-            var $target = _step.value;
-            $target.classList.remove('touch');
-          }
-        } catch (err) {
-          _iterator.e(err);
-        } finally {
-          _iterator.f();
+      if(event.type=='touchstart') {
+        this.touched = true;
+        if(this.timeout) clearTimeout(this.timeout);
+        if($targets[0]) {
+          for(let $target of $targets) $target.setAttribute('data-touch', '');
         }
-
-        var _iterator2 = _createForOfIteratorHelper($targets),
-            _step2;
-
-        try {
-          for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-            var _$target = _step2.value;
-
-            _$target.classList.add('touch');
-
-            $(_$target).trigger('customTouchstart');
-          }
-        } catch (err) {
-          _iterator2.e(err);
-        } finally {
-          _iterator2.f();
+      } 
+      //touchend
+      else if(event.type=='touchend' || (event.type=='contextmenu' && this.touched)) {
+        this.timeout = setTimeout(() => {this.touched = false}, 500);
+        if($targets[0]) {
+          setTimeout(()=>{
+            for(let $target of $targets) {
+              $target.removeAttribute('data-touch');
+            }
+          }, this.delay.value)
         }
-      } //touchend
-      else if (event.type == 'touchend') {
-          setTimeout(function () {
-            var _iterator3 = _createForOfIteratorHelper($targets),
-                _step3;
-
-            try {
-              for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
-                var _$target2 = _step3.value;
-
-                _$target2.classList.remove('touch');
-
-                $(_$target2).trigger('customTouchend');
-              }
-            } catch (err) {
-              _iterator3.e(err);
-            } finally {
-              _iterator3.f();
-            }
-          }, touchEndDelay);
-          timeout = setTimeout(function () {
-            touch = false;
-          }, 1000);
-        } //context menu
-        else if (event.type == 'contextmenu') {
-            var _iterator4 = _createForOfIteratorHelper($targets),
-                _step4;
-
-            try {
-              for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
-                var _$target3 = _step4.value;
-
-                _$target3.classList.remove('touch');
-
-                $(_$target3).trigger('customTouchend');
-              }
-            } catch (err) {
-              _iterator4.e(err);
-            } finally {
-              _iterator4.f();
-            }
-
-            timeout = setTimeout(function () {
-              touch = false;
-            }, 1000);
-          } //mouseenter
-
-
-      if (event.type == 'mouseenter' && !touch && $targets[0] == event.target) {
-        $targets[0].classList.add('hover');
-        $($targets[0]).trigger('customMouseenter');
-      } //mouseleave
-      else if (event.type == 'mouseleave' && !touch && $targets[0] == event.target) {
-          $targets[0].classList.remove('hover');
-          $targets[0].classList.remove('focus');
-          $($targets[0]).trigger('customMouseleave');
-        } //mousedown
-
-
-      if (event.type == 'mousedown') {
-        $targets[0].classList.add('focus');
-      } else if (event.type == 'mouseup') {
-        $targets[0].classList.remove('focus');
+      } 
+      //mouseenter
+      if(event.type=='mouseenter' && !this.touched && $targets[0] && $targets[0]==event.target) {
+        $targets[0].setAttribute('data-hover', '');
+      }
+      //mouseleave
+      else if(event.type=='mouseleave' && !this.touched && $targets[0] && $targets[0]==event.target) {
+        $targets[0].removeAttribute('data-click');
+        $targets[0].removeAttribute('data-hover');
+      }
+      //mousedown
+      if(event.type=='mousedown' && !this.touched && $targets[0]) {
+        $targets[0].setAttribute('data-click', '');
+      } 
+      //mouseup
+      else if(event.type=='mouseup' && !this.touched  && $targets[0]) {
+        $targets[0].removeAttribute('data-click');
       }
     }
+    document.addEventListener('touchstart',  this.events);
+    document.addEventListener('touchend',    this.events);
+    document.addEventListener('mouseenter',  this.events, true);
+    document.addEventListener('mouseleave',  this.events, true);
+    document.addEventListener('mousedown',   this.events);
+    document.addEventListener('mouseup',     this.events);
+    document.addEventListener('contextmenu', this.events);
   }
-}
+})
 
 function lazy() {
   //add lazy backgrounds

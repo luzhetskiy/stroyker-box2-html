@@ -200,8 +200,7 @@
         stroke: var(--color-comment-button, #2363D1);
         fill: transparent;
       }
-      &.touch,
-      &.hover {
+      &[data-touch], &[data-hover] {
         .icon {
           fill: var(--color-comment-button, #2363D1);
         }

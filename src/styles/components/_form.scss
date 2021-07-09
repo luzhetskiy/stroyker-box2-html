@@ -288,8 +288,7 @@
     .selectric {
       border-color: var(--color-border-1, #D9D9DE);
       .label {
-        &.touch,
-        &.hover {
+        &[data-touch], &[data-hover] {
           color: var(--color-accent, #2363D1);
         }
       }
@@ -309,8 +308,7 @@
             background-color: var(--color-accent, #2363D1);
             color: #fff;
           }
-          &.touch,
-          &.hover {
+          &[data-touch], &[data-hover] {
             color: var(--color-accent, #2363D1);
           }
         }
@@ -330,8 +328,7 @@
       border-color: var(--color-border-3, #A7A7AB);
       .label {
         padding-left: 10px;
-        &.touch,
-        &.hover {
+        &[data-touch], &[data-hover] {
           color: var(--color-accent, #2363D1);
         }
       }
@@ -353,8 +350,7 @@
             background-color: var(--color-accent, #2363D1);
             color: #fff;
           }
-          &.touch,
-          &.hover {
+          &[data-touch], &[data-hover] {
             color: var(--color-accent, #2363D1);
           }
         }

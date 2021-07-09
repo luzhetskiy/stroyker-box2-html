@@ -38,8 +38,7 @@
       opacity: 0.75;
       transition: opacity $trs1, fill $trs1;
     }
-    &.touch,
-    &.hover {
+    &[data-touch], &[data-hover] {
       svg {
         opacity: 1;
         fill: var(--color-accent, #2363D1);
@@ -268,8 +267,7 @@
     overflow: hidden;
     transition: background-color $trs1, color $trs1, border-color $trs1;
     text-decoration: none;
-    &.touch,
-    &.hover {
+    &[data-touch], &[data-hover] {
       color: var(--color-block-services-hover, #fff);
       background-color: var(--color-block-services-hover-bg, #2363D1);
       border-color: var(--color-block-services-hover-bg, #2363D1);
@@ -321,6 +319,7 @@
 .additionalLinks-block {
   margin-bottom: 32px;
   &__container {
+    overflow: hidden;
     background-color: #fff;
     position: relative;
     padding: 30px 70px 30px 100px;
@@ -332,6 +331,20 @@
     color: #000;
     border-radius: 2px;
     min-height: 200px;
+    .background {
+      will-change: transform;
+      &_left {
+        transform-origin: left;
+      }
+      &_right {
+        transform-origin: right;
+      }
+    }
+    &[data-touch], &[data-hover] {
+      .background {
+        transform: scale(1.025);
+      }
+    }
   }
   &__background {
     background-size: auto 100%;
@@ -386,8 +399,7 @@
       .icon {
         fill: var(--color-button1-icon, #2363D1);
       }
-      &.touch,
-      &.hover {
+      &[data-touch], &[data-hover] {
         color: var(--color-button1-hover, #fff);
         background-color: var(--color-button1-hover-bg, #2363D1);
         border-color: var(--color-button1-hover-border, #2363D1);
@@ -425,8 +437,7 @@
     text-decoration: none;
     transition: color $trs1;
     display: block;
-    &.touch,
-    &.hover {
+    &[data-touch], &[data-hover] {
       color: var(--color-accent-darker, #1C52AC);
     }
   }

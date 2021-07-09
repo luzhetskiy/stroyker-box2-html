@@ -51,8 +51,7 @@
         width: 14px;
         height: 14px;
       }
-      &.touch,
-      &.hover {
+      &[data-touch], &[data-hover] {
         background-color: var(--color-popup-close-bg-hover, #2363D1);
         border-color: var(--color-popup-close-border-hover, #2363D1);
         .icon {
@@ -137,8 +136,7 @@
     color: inherit;
     transition: color $trs1;
     text-decoration: none;
-    &.touch,
-    &.hover {
+    &[data-touch], &[data-hover] {
       color: var(--color-accent-darker, #1C52AC);
     }
   }

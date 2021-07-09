@@ -71,14 +71,14 @@
   overflow: hidden;
   transition: background-color 0.25s ease-out, border-color 0.25s ease-out;
   text-decoration: none; }
-  .kabinet-category-block__container.touch, .kabinet-category-block__container.hover {
+  .kabinet-category-block__container[data-touch], .kabinet-category-block__container[data-hover] {
     background-color: var(--color-block-services-hover-bg, #2363D1);
     border-color: var(--color-block-services-hover-bg, #2363D1); }
-    .kabinet-category-block__container.touch .icon, .kabinet-category-block__container.hover .icon {
+    .kabinet-category-block__container[data-touch] .icon, .kabinet-category-block__container[data-hover] .icon {
       fill: var(--color-block-services-hover, #fff); }
-    .kabinet-category-block__container.touch .kabinet-category-block__title, .kabinet-category-block__container.hover .kabinet-category-block__title {
+    .kabinet-category-block__container[data-touch] .kabinet-category-block__title, .kabinet-category-block__container[data-hover] .kabinet-category-block__title {
       color: var(--color-block-services-hover, #fff); }
-    .kabinet-category-block__container.touch .kabinet-category-block__text, .kabinet-category-block__container.hover .kabinet-category-block__text {
+    .kabinet-category-block__container[data-touch] .kabinet-category-block__text, .kabinet-category-block__container[data-hover] .kabinet-category-block__text {
       color: var(--color-block-services-hover, #fff); }
 
 .kabinet-category-block__arrow {
@@ -192,9 +192,9 @@
         fill: var(--color-accent, #2363d17e);
         transition: fill 0.25s ease-out;
         margin-right: 10px; }
-      .kabinet-block__nav-link.touch, .kabinet-block__nav-link.hover {
+      .kabinet-block__nav-link[data-touch], .kabinet-block__nav-link[data-hover] {
         color: var(--color-accent-darker, #1C52AC); }
-        .kabinet-block__nav-link.touch .icon, .kabinet-block__nav-link.hover .icon {
+        .kabinet-block__nav-link[data-touch] .icon, .kabinet-block__nav-link[data-hover] .icon {
           fill: var(--color-accent-darker, #1C52AC); }
       .kabinet-block__nav-link.active {
         background-color: var(--color-accent, #2363D1);
@@ -242,9 +242,9 @@
       margin-bottom: 0 !important; }
       .kabinet-block__mobile-toggle.active .icon {
         transform: rotate(180deg); }
-    .kabinet-block__mobile-toggle.touch, .kabinet-block__mobile-toggle.hover {
+    .kabinet-block__mobile-toggle[data-touch], .kabinet-block__mobile-toggle[data-hover] {
       color: var(--color-accent, #2363D1); }
-      .kabinet-block__mobile-toggle.touch .icon, .kabinet-block__mobile-toggle.hover .icon {
+      .kabinet-block__mobile-toggle[data-touch] .icon, .kabinet-block__mobile-toggle[data-hover] .icon {
         fill: var(--color-accent, #2363D1); }
   @media (max-width: 1279.98px) {
     .kabinet-block__content {
@@ -323,7 +323,7 @@
     padding: inherit;
     transition: color 0.25s ease-out;
     padding-left: 40px; }
-    .kabinet-stages-table__link.touch, .kabinet-stages-table__link.hover {
+    .kabinet-stages-table__link[data-touch], .kabinet-stages-table__link[data-hover] {
       color: var(--color-accent-darker, #1C52AC); }
     .kabinet-stages-table__link:before {
       content: '';
@@ -412,7 +412,7 @@
       height: 2px;
       transition: opacity 0.25s ease-out;
       background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMCIgaWQ9ItCh0LvQvtC5XzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNCAyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0IDI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48ZyBzdHlsZT0ib3BhY2l0eTowLjU7Ij48Y2lyY2xlIHN0eWxlPSJmaWxsOiMxQzUyQUM7IiBjeD0iMSIgY3k9IjEiIHI9IjEiLz48L2c+PC9zdmc+); }
-    .kabinet-stages-nav__link.touch:after, .kabinet-stages-nav__link.hover:after, .kabinet-stages-nav__link.active:after {
+    .kabinet-stages-nav__link[data-touch]:after, .kabinet-stages-nav__link[data-hover]:after, .kabinet-stages-nav__link.active:after {
       opacity: 0; }
     .kabinet-stages-nav__link.active {
       pointer-events: none;

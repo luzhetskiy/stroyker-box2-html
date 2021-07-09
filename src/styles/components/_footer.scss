@@ -47,8 +47,7 @@
     transition: opacity $trs1;
     display: inline-block;
     font-size: 0.75rem;
-    &.touch,
-    &.hover {
+    &[data-touch], &[data-hover] {
       opacity: 1;
     }
   }
@@ -155,8 +154,7 @@
       height: 14px;
       margin: auto;
     }
-    &.touch,
-    &.hover {
+    &[data-touch], &[data-hover] {
       &:before {
         opacity: 1;
       }
@@ -239,7 +237,7 @@
     display: block;
     width: 100%;
   }
-  &.touch, &.hover {
+  &[data-touch], &[data-hover] {
     opacity: 0.6;
   }
   @include media-breakpoint-down(sm) {

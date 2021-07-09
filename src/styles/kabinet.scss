@@ -1,8 +1,11 @@
-@import "./components/variables";
-@import "./components/variables";
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins/deprecate";
 @import "../../node_modules/bootstrap/scss/mixins/breakpoints";
+@import "../../node_modules/bootstrap/scss/mixins/grid-framework";
+@import "../../node_modules/bootstrap/scss/mixins/grid";
+//variables
+@import "./components/variables";
 
 .kabinet {
   &__exit-button {
@@ -92,8 +95,7 @@
     overflow: hidden;
     transition: background-color $trs1, border-color $trs1;
     text-decoration: none;
-    &.touch,
-    &.hover {
+    &[data-touch], &[data-hover] {
       background-color: var(--color-block-services-hover-bg, #2363D1);
       border-color: var(--color-block-services-hover-bg, #2363D1);
       .icon {
@@ -237,8 +239,7 @@
         transition: fill $trs1;
         margin-right: 10px;
       }
-      &.touch,
-      &.hover {
+      &[data-touch], &[data-hover] {
         color: var(--color-accent-darker, #1C52AC);
         .icon {
           fill: var(--color-accent-darker, #1C52AC);
@@ -303,8 +304,7 @@
         transform: rotate(180deg);
       }
     }
-    &.touch,
-    &.hover {
+    &[data-touch], &[data-hover] {
       color: var(--color-accent, #2363D1);
       .icon {
         fill: var(--color-accent, #2363D1);
@@ -415,8 +415,7 @@
     padding: inherit;
     transition: color $trs1;
     padding-left: 40px;
-    &.touch,
-    &.hover {
+    &[data-touch], &[data-hover] {
       color: var(--color-accent-darker, #1C52AC);
     }
     &:before {
@@ -535,9 +534,7 @@
       transition: opacity $trs1;
       background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMCIgaWQ9ItCh0LvQvtC5XzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNCAyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0IDI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj48ZyBzdHlsZT0ib3BhY2l0eTowLjU7Ij48Y2lyY2xlIHN0eWxlPSJmaWxsOiMxQzUyQUM7IiBjeD0iMSIgY3k9IjEiIHI9IjEiLz48L2c+PC9zdmc+);
     }
-    &.touch,
-    &.hover,
-    &.active {
+    &[data-touch], &[data-hover], &.active {
       &:after {
         opacity: 0;
       }

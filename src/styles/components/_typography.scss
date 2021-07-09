@@ -179,8 +179,7 @@ table:not([class]) {
     width: 25%;
   }
   tr {
-    &.touch,
-    &.hover {
+    &[data-touch], &[data-hover] {
       td {
         background-color: var(--color-table-row-hover, #F5F5F5);
       }
@@ -188,47 +187,30 @@ table:not([class]) {
   }
 }
 
-a:not([class]),
-.link {
+a:not([class]), .link {
   color: var(--color-accent-darker, #1C52AC);
   text-decoration: none;
-  transition: color $trs1;
+  transition: color $trs1, border-color $trs1;
   position: relative;
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    opacity: 0;
-    transition: opacity $trs1;
-    background-color: var(--color-accent-darker, #1C52AC);
+  border-bottom: 1px solid transparent;
+
+  &[data-touch], &[data-hover] {
+    color: var(--color-accent-darker, #1C52AC);
+    border-color: currentColor;
   }
 }
+
 .link {
-  &.touch, &.hover {
-    color: var(--color-accent-darker, #1C52AC);
-    &:after {
-      opacity: 1;
-    }
-  }
   &_without-border {
     &:after {
       display: none;
     }
   }
 }
+
 a:not([class]) {
   &:visited {
     color: var(--color-link-visited, #B46CB8);
-  }
-  &:hover {
-    color: var(--color-accent-darker, #1C52AC);
-    &:after {
-      opacity: 1;
-    }
   }
 }
 

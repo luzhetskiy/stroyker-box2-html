@@ -11,6 +11,7 @@ block scripts
 block style
   link(rel="stylesheet" href="./styles/jquery.fancybox.css")
 block content
+
   section.section.section_small-margin.project-head
     .container
       .project-head__container.display-container
@@ -317,14 +318,15 @@ block content
                                   svg.icon
                                     use(xlink:href="img/icons/icons-sprite.svg#download")
                                   span Скачать
+          //calculator
+          include blocks/calculator
+        
+        
         .col-xl-20pc.col-lg-3.d-none.d-lg-block.item-info__advertising
           include blocks/advertising
           include blocks/advertising
-  section.section
-    .container
-      .row
-        .col-xl-80pc.col-lg-9
-          include blocks/calculator
+  
+  
   section.section.section_padding.section_no-margin.section_background-white
     .container
       .row.justify-content-center

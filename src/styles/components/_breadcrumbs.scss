@@ -46,8 +46,7 @@
       opacity: 0;
       transition: opacity $trs1;
     }
-    &.touch,
-    &.hover {
+    &[data-touch], &[data-hover] {
       color: var(--color-breadcrumbs-link_hover, #1C52AC);
       &:after {
         opacity: 0.5;

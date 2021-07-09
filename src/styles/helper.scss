@@ -13,7 +13,6 @@ $trs: .25s ease-in-out;
 $font1: 'Roboto', sans-serif;
 $font2: 'Open Sans', sans-serif;
 
-
 .helper {
   font-family: $font1;
   position: fixed;
@@ -54,7 +53,7 @@ $font2: 'Open Sans', sans-serif;
       stroke: currentColor;
       transition: transform $trs;
     }
-    &.touch, &.hover {
+    &[data-touch], &[data-hover] {
       color: $color-active;
     }
   }
@@ -102,7 +101,7 @@ $font2: 'Open Sans', sans-serif;
       border-radius: 2px;
       text-decoration: none;
       border: none;
-      &.touch, &.hover {
+      &[data-touch], &[data-hover] {
         background-color: $color-hover;
       }
       &.active {

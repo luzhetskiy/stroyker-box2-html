@@ -93,13 +93,12 @@
         }
       }
     }
-    &.touch,
-    &.hover {
+    &[data-touch], &[data-hover] {
       &:after {
         background-color: var(--color-category-block-hover, rgba(28, 82, 172, 0.75));
       }
     }
-  }
+  } 
   &__title {
     padding: 20px 40px 20px 20px;
     width: 100%;
@@ -171,8 +170,7 @@
       z-index: 2;
       will-change: opacity $trs1;
     }
-    &.touch,
-    &.hover {
+    &[data-touch], &[data-hover] {
       &:before {
         opacity: 0.7;
       }
@@ -254,8 +252,7 @@
       z-index: 2;
       will-change: opacity $trs1;
     }
-    &.touch,
-    &.hover {
+    &[data-touch], &[data-hover] {
       &:before {
         opacity: 0.5;
       }
@@ -404,6 +401,14 @@
   width: 100%;
   height: 380px;
   overflow: hidden;
+  img {
+    will-change: transform;
+  }
+  &[data-touch], &[data-hover] {
+    img {
+      transform: scale(1.05);
+    }
+  }
   @include media-breakpoint-down(lg) {
     height: auto;
     &:before {
@@ -495,8 +500,7 @@
       transition: opacity $trs1;
       background: linear-gradient(0deg, rgba(35, 99, 209, 0.5), rgba(35, 99, 209, 0.5))
     }
-    &.touch,
-    &.hover {
+    &[data-touch], &[data-hover] {
       &:after {
         opacity: 1;
       }
@@ -539,8 +543,7 @@
     text-decoration: none;
     transition: color $trs1;
     margin-right: 120px;
-    &.touch,
-    &.hover {
+    &[data-touch], &[data-hover] {
       color: var(--color-accent, #2363D1);
     }
   }
@@ -815,8 +818,7 @@
     transition: background-color $trs1;
     pointer-events: none;
     border-radius: 0 2px 2px 0;
-    &.touch,
-    &.hover {
+    &[data-touch], &[data-hover] {
       background-color: var(--color-header-search-active-button-hover-bg, #1C52AC);
     }
     .icon {
@@ -946,8 +948,7 @@
       display: block;
       fill: var(--color-accent, #2363D1)
     }
-    &.touch,
-    &.hover {
+    &[data-touch], &[data-hover] {
       background-color: var(--color-sections-bg, #F5F5F5);
     }
     &_style-2 {
@@ -1090,9 +1091,7 @@
       width: 12px;
       height: 12px;
     }
-    &.touch,
-    &.hover,
-    &.active {
+    &[data-touch], &[data-hover], &.active {
       color: var(--color-accent-darker, #1C52AC);
       .icon {
         fill: var(--color-accent-darker, #1C52AC);
@@ -1241,9 +1240,7 @@
     border-radius: 2px;
     border-color: transparent;
     transition: background-color $trs1, border-color $trs1, color $trs1;
-    &.touch,
-    &.hover,
-    &.active {
+    &[data-touch], &[data-hover], &.active {
       border-color: var(--color-pagination-accent, #2363D1);
     }
     &.active {
@@ -1329,8 +1326,7 @@
       opacity: 0;
       background: linear-gradient(0, #2363D1 7.58%, rgba(35, 99, 209, 0.2) 112%);
     }
-    &.touch,
-    &.hover {
+    &[data-touch], &[data-hover] {
       &:before {
         opacity: 0;
       }
@@ -1408,8 +1404,7 @@
       margin: auto;
       fill: #fff;
     }
-    &.touch,
-    &.hover {
+    &[data-touch], &[data-hover] {
       background-color: var(--color-socials-hover-bg, #1C52AC);
     }
   }
@@ -1716,8 +1711,7 @@
     &:not(:first-child) {
       margin-left: -1px;
     }
-    &.touch,
-    &.hover {
+    &[data-touch], &[data-hover] {
       color: var(--color-accent, #2363D1);
     }
     &.active {
@@ -1739,9 +1733,7 @@
       &:not(:first-child) {
         margin-left: 16px;
       }
-      &.active,
-      &.touch,
-      &.hover {
+      &[data-touch], &[data-hover], &.active {
         color: var(--color-button1-hover, #fff);
         background-color: var(--color-button1-hover-bg, #E7EEF6);
         border-color: var(--color-button1-hover-border, #2363D1);
@@ -1777,8 +1769,7 @@
     &:not(:first-child) {
       margin-left: -1px;
     }
-    &.touch,
-    &.hover {
+    &[data-touch], &[data-hover] {
       color: var(--color-accent, #2363D1);
     }
     &.active {
@@ -1798,6 +1789,11 @@
     }
     &-head {
       display: none;
+    }
+  }
+  &__container {
+    &:not(:last-child) {
+      margin-bottom: var(--small-content-margin);
     }
   }
   @include media-breakpoint-up(lg) {
@@ -1848,8 +1844,7 @@
             transform: rotate(180deg);
           }
         }
-        &.touch,
-        &.hover {
+        &[data-touch], &[data-hover] {
           color: var(--color-accent, #2363D1);
           .icon {
             fill: var(--color-accent, #2363D1);
@@ -2302,8 +2297,7 @@
         fill: var(--color-text-light, #BDBDBD);
         transition: fill $trs1;
       }
-      &.touch,
-      &.hover {
+      &[data-touch], &[data-hover] {
         .icon {
           fill: var(--color-accent, #2363D1);
         }
@@ -2750,8 +2744,7 @@
         padding: 45px;
       }
     }
-    &.touch,
-    &.hover {
+    &[data-touch], &[data-hover] {
       &:after {
         opacity: 1;
       }
@@ -2829,8 +2822,7 @@
     background-color: #fff;
     position: relative;
     transition: border-color $trs1;
-    &.touch,
-    &.hover {
+    &[data-touch], &[data-hover] {
       border-color: var(--color-border-3, #A7A7AB);
     }
   }
@@ -2904,8 +2896,7 @@
     color: inherit;
     text-decoration: none;
     transition: color $trs1;
-    &.touch,
-    &.hover {
+    &[data-touch], &[data-hover] {
       color: var(--color-accent, #2363D1);
     }
   }
@@ -3189,8 +3180,7 @@
       transition: opacity $trs1;
       border-radius: 2px;
     }
-    &.touch,
-    &.hover {
+    &[data-touch], &[data-hover] {
       &:after {
         opacity: 0.5;
       }
@@ -3261,8 +3251,7 @@
     background-color: var(--color-accent-darker, #1C52AC);
     transition: opacity $trs1;
     border-radius: 2px;
-    &.touch,
-    &.hover {
+    &[data-touch], &[data-hover] {
       opacity: 0.5;
     }
   }
@@ -3355,8 +3344,7 @@
         opacity: 0.3;
         z-index: 2;
       }
-      &.touch,
-      &.hover {
+      &[data-touch], &[data-hover] {
         &:before {
           opacity: 0.5;
         }
@@ -3779,8 +3767,7 @@
       border: 1px solid var(--color-table-border, #E5E5EA);
       background-color: #fff;
       &-link {
-        &.touch,
-        &.hover {
+        &[data-touch], &[data-hover] {
           color: var(--color-accent, #2363D1);
           background-color: var(--color-normal-light-bg-button, #F3F6FB);
           .icon {
@@ -3949,8 +3936,7 @@
           fill: var(--color-button1-icon, #2363D1);
           stroke: var(--color-button1-icon, #2363D1);
         }
-        &.touch,
-        &.hover {
+        &[data-touch], &[data-hover] {
           color: var(--color-button1-hover, #fff);
           background-color: var(--color-button1-hover-bg, #E7EEF6);
           border-color: var(--color-button1-hover-border, #2363D1);
@@ -3978,8 +3964,7 @@
       .icon {
         top: 6px;
       }
-      &.touch,
-      &.hover {
+      &[data-touch], &[data-hover] {
         color: var(--color-accent, #2363D1);
         .icon {
           fill: var(--color-accent, #2363D1);
@@ -4103,8 +4088,7 @@
     &-prev {
       left: 0;
     }
-    &.touch,
-    &.hover {
+    &[data-touch], &[data-hover] {
       .icon {
         fill: var(--color-accent-darker, #1C52AC);
       }
@@ -4249,7 +4233,7 @@
     color: #fff;
     text-decoration: none;
     transition: opacity $trs1;
-    &.touch, &.hover {
+    &[data-touch], &[data-hover] {
       .preview-block__image:after {
         opacity: 0.2;
       }
@@ -4429,8 +4413,7 @@
       transition: opacity $trs1;
       background: linear-gradient(0deg, rgba(35, 99, 209, 0.5), rgba(35, 99, 209, 0.5))
     }
-    &.touch,
-    &.hover {
+    &[data-touch], &[data-hover] {
       &:after {
         opacity: 1;
       }
@@ -4532,7 +4515,7 @@
     position: relative;
     user-select: none;
     cursor: pointer;
-    &.touch, &.hover {
+    &[data-touch], &[data-hover] {
       .faq-element__trigger {
         background-color: var(--color-button1-hover-bg, #E7EEF6);
         border-color: var(--color-button1-hover-border, #2363D1);
