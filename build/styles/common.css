@@ -2981,10 +2981,12 @@ body {
 
 * {
   box-sizing: border-box;
-  min-height: 0;
-  min-width: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  outline: none; }
+  outline: none;
+  min-width: 0px;
+  min-height: 0px; }
   *:before, *:after {
     box-sizing: border-box; }
 
