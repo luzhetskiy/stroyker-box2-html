@@ -80,6 +80,15 @@ block content
         
         section.section.popular-projects
           h2.section__title Популярные услуги
+          .row.grid
+            include blocks/cards
+            -var grid = 'col-12 grid__block'
+            +wide-card('', grid)
+            +wide-card('', grid)
+            +wide-card('', grid)
+
+        section.section.popular-projects
+          h2.section__title Популярные услуги
           .slider.slider_grid.slider_arrows.popular-projects__slider-2.row.grid
             include blocks/cards
             -var grid = 'col grid__block'
