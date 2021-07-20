@@ -1,5 +1,4 @@
 .custom-banner-1 {
-  font-family: "Muller", sans-serif;
   .main_screen__wrapper {
     margin-top: -30px;
     display: block;
@@ -22,11 +21,9 @@
     margin: 0;
     padding: 0;
   }
-  .main_screen__wrapper .main_screen__headline ,
-  .simple_content_wrapper .main_screen__headline {
+  .main_screen__wrapper .main_screen__headline {
     width: 100%;
     display: block;
-    /* font-family: 'Muller Heavy'; */
     font-weight: 900;
     color: #f9f9f9;
     font-size: 72px;
@@ -198,7 +195,7 @@
     line-height: 16px;
   }
   .catalog_rubrics__item__link .catalog_rubrics__item__headline {
-    width: 50%;
+    width: 60%;
     display: inline-block;
     vertical-align: top;
     text-decoration: underline;

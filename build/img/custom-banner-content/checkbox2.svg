@@ -1,0 +1,18 @@
+<svg width="52" height="49" viewBox="0 0 52 49" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>V_2</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(1747 5778)">
+<g id="V_2">
+<g id="Subtract">
+<use xlink:href="#path0_fill" transform="translate(-1747 -5776)" fill="#FFFFFF" fill-opacity="0.97"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path1_stroke" transform="translate(-1734 -5775.5)" fill="#BDBDBD"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" fill-rule="evenodd" d="M 34 0L 5 0L 0 0L 0 5L 0 42L 0 47L 5 47L 42 47L 47 47L 47 42L 47 18L 42 18L 42 42L 5 42L 5 5L 34 5L 34 0Z"/>
+<path id="path1_stroke" d="M 10 27.5L 8.23223 29.2678L 10.0163 31.0518L 11.7839 29.2515L 10 27.5ZM -1.76777 19.2678L 8.23223 29.2678L 11.7678 25.7322L 1.76777 15.7322L -1.76777 19.2678ZM 11.7839 29.2515L 38.7839 1.75148L 35.2161 -1.75148L 8.21609 25.7485L 11.7839 29.2515Z"/>
+</defs>
+</svg>
