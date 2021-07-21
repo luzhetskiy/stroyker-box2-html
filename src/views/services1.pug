@@ -24,15 +24,13 @@ block content
         .col-xl-20pc.col-lg-3.popular-projects__advertising
           include blocks/advertising
         .col-xl.col-lg-9
-          h2.section__title Популярные услуги
-          .slider.slider_grid.slider_arrows.popular-projects__slider-2.row.grid
+          h2.section__title Популярные услуги слайдер 2 ряда
+          .slider-constructor(data-slides='1' data-rows='1' data-md-rows='2')
             include blocks/cards
-            -var grid = 'col grid__block'
-            +wide-card('', grid)
-            +wide-card('', grid)
-            +wide-card('', grid)
-            +wide-card('', grid)
-            +wide-card('', grid)
+            +wide-card()
+            +wide-card()
+            +wide-card()
+            +wide-card()
       .section__more.popular-projects__more
         a(href="#").button.button_style-1.button_xl.section__more-button Смотреть все услуги
 
@@ -43,18 +41,13 @@ block content
           include blocks/advertising
           include blocks/advertising
         .col-xl.col-lg-9
-          h2.section__title Популярные услуги
-          .slider.slider_grid.slider_arrows.popular-projects__slider-2.popular-projects__slider-2_type-2.row.grid
+          h2.section__title Популярные услуги слайдер 4 ряда
+          .slider-constructor(data-slides='1' data-rows='1' data-md-rows='2' data-lg-rows='4')
             include blocks/cards
-            -var grid = 'col grid__block'
-            +wide-card('', grid)
-            +wide-card('', grid)
-            +wide-card('', grid)
-            +wide-card('', grid)
-            +wide-card('', grid)
-            +wide-card('', grid)
-            +wide-card('', grid)
-            +wide-card('', grid)
+            +wide-card()
+            +wide-card()
+            +wide-card()
+            +wide-card()
       .section__more.popular-projects__more
         a(href="#").button.button_style-1.button_xl.section__more-button Смотреть все услуги
   

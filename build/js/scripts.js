@@ -7,11 +7,11 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 
-const brakepoints = {
-  xs: 576,
-  sm: 768,
-  md: 992,
-  lg: 1280
+const breakpoints = {
+  sm: 576,
+  md: 768,
+  lg: 992,
+  xl: 1280
 };
 
 const $wrapper = document.querySelector('.wrapper');
@@ -42,10 +42,13 @@ $(document).ready(function () {
   comparison();
   gallery();
   lazy();
+
+  //slider constructor
+  document.querySelectorAll('.slider-constructor').forEach($this => {
+    new SliderConstructor($this).init();
+  })
+
 });
-
-
-
 
 function getParent(elemSelector, parentSelector) {
   var elem = document.querySelector(elemSelector);
@@ -526,10 +529,10 @@ var slider = {
           let initialized = false;
 
           var check = function check() {
-            if ($(window).width() < brakepoints.xs && !initialized) {
+            if ($(window).width() < breakpoints.sm && !initialized) {
               initialized = true;
               initSlider($(_this4));
-            } else if ($(window).width() >= brakepoints.xs && initialized) {
+            } else if ($(window).width() >= breakpoints.sm && initialized) {
               initialized = false;
               setTimeout(function () {
                 $(_this4).slick('unslick');
@@ -570,8 +573,8 @@ var slider = {
 
         let checkSize = function() {
           w = $this.width(),
-          h = $(window).width()<brakepoints.xs?w*res_mobile:w*res_desktop;
-          console.log($(window).width()<brakepoints.xs)
+          h = $(window).width()<breakpoints.sm?w*res_mobile:w*res_desktop;
+          console.log($(window).width()<breakpoints.sm)
           $this.height(h);
         }
 
@@ -646,11 +649,11 @@ var slider = {
         slideCountXs = 2;
         let initialized = false;
         let check = function check() {
-          if ($(window).width() < brakepoints.lg && !initialized) {
+          if ($(window).width() < breakpoints.xl && !initialized) {
             initialized = true;
             initSlider($(_this4));
           } 
-          else if ($(window).width() >= brakepoints.lg && initialized) {
+          else if ($(window).width() >= breakpoints.xl && initialized) {
             initialized = false;
             setTimeout(function () {
               $(_this4).slick('unslick');
@@ -694,25 +697,25 @@ var slider = {
           autoplay: autoplay,
           autoplaySpeed: $target.data('autoplay-timeout') || 5000,
           responsive: [{
-            breakpoint: brakepoints.lg,
+            breakpoint: breakpoints.xl,
             settings: {
               slidesToShow: slideCountLg,
               slidesToScroll: slideCountLg
             }
           }, {
-            breakpoint: brakepoints.md,
+            breakpoint: breakpoints.lg,
             settings: {
               slidesToShow: slideCountMd,
               slidesToScroll: slideCountMd
             }
           }, {
-            breakpoint: brakepoints.sm,
+            breakpoint: breakpoints.md,
             settings: {
               slidesToShow: slideCountSm,
               slidesToScroll: slideCountSm
             }
           }, {
-            breakpoint: brakepoints.xs,
+            breakpoint: breakpoints.sm,
             settings: {
               slidesToShow: slideCountXs,
               slidesToScroll: slideCountXs,
@@ -730,7 +733,7 @@ var slider = {
           rows: 0,
           asNavFor: '.nav-slider',
           responsive: [{
-            breakpoint: brakepoints.sm,
+            breakpoint: breakpoints.md,
             settings: {
               dots: true
             }
@@ -781,13 +784,13 @@ var slider = {
           prevArrow: "<button type=\"button\" class=\"button button_style-1 slider__prev\">".concat(slider.arrowPrev, "<span>\u041F\u0440\u0435\u0434.</span></button>"),
           rows: 0,
           responsive: [{
-            breakpoint: brakepoints.lg,
+            breakpoint: breakpoints.xl,
             settings: {
               slidesToShow: 3,
               slidesToScroll: 3
             }
           }, {
-            breakpoint: brakepoints.md,
+            breakpoint: breakpoints.lg,
             settings: {
               slidesToShow: 2,
               slidesToScroll: 2
@@ -996,7 +999,7 @@ function scrollToTab() {
         index = $tab.index('.tabs__block'),
         y;
 
-    if ($(window).width() < brakepoints.md) {
+    if ($(window).width() < breakpoints.lg) {
       $('.item-info .toggle-section__head').eq(index).not('.active').trigger('click');
       y = $tab.offset().top - 50;
     } else {
@@ -1100,42 +1103,27 @@ function rating() {
 }
 
 function calculator() {
-  var $element = $('.calc-count-block');
-  $element.each(function () {
-    var $this = $(this),
-        $plus = $this.find('.js-plus'),
-        $minus = $this.find('.js-minus'),
-        $input = $this.find('input'),
-        val = +$input.val();
-    check();
-    $plus.on('click', function () {
-      val++;
-      check();
-      $input.trigger('change');
-    });
-    $minus.on('click', function () {
-      val--;
-      check();
-      $input.trigger('change');
-    });
-    $input.on('change input', function () {
-      setTimeout(function () {
-        val = +$input.val();
-        check();
-      }, 100);
-    });
+  let change = ($input, value) => {
+    let val = +$input.val();
 
-    function check() {
-      if (val < 1 || val == 1) {
-        val = 1;
-        $minus.addClass('disabled');
-      } else {
-        $minus.removeClass('disabled');
-      }
+    if(value=='-') $input.val(Math.max(val - 1, 1));
 
-      $input.val(val);
-    }
-  });
+    else if(value=='+') $input.val(val + 1);
+
+    else $input.val(Math.max(val, 1));
+  }
+
+  $(document).on('click', '.calc-count-block .js-plus', function(event) {
+    change($(event.target).parents('.calc-count-block').find('input'), '+');
+  })
+
+  $(document).on('click', '.calc-count-block .js-minus', function(event) {
+    change($(event.target).parents('.calc-count-block').find('input'), '-');
+  })
+
+  $(document).on('input', '.calc-count-block input', function(event) {
+    change($(event.target), $(event.target).val());
+  })
 }
 
 function stagesToggle() {
@@ -1468,5 +1456,78 @@ function gallery() {
       return false;
     });
     
+  }
+}
+
+
+//new sliders constructor
+class SliderConstructor {
+  constructor($element) {
+    this.$element = $element;
+  }
+
+  init() {
+
+    let vector = '<svg class="icon" viewBox="0 0 10.5 18.1"><path stroke="none" d="M9,0l1.4,1.4L2.8,9l7.6,7.6L9,18.1L0,9C0,9,9.1,0,9,0z"></path></svg>',
+        next_arrow = `<button type="button" class="button button_style-1 slick-next">${vector}</button>`,
+        prev_arrow = `<button type="button" class="button button_style-1 slick-prev">${vector}</button>`;
+
+    let autoplay = this.$element.getAttribute('data-autoplay-timeout') ? true : false,
+        autoplay_timeout = this.$element.getAttribute('data-autoplay-timeout') || 5000;
+
+    let slides_count = +this.$element.getAttribute('data-slides') || 1,
+        slides_sm_count = +this.$element.getAttribute('data-sm-slides') || slides_count,
+        slides_md_count = +this.$element.getAttribute('data-md-slides') || slides_sm_count,
+        slides_lg_count = +this.$element.getAttribute('data-lg-slides') || slides_md_count,
+        slides_xl_count = +this.$element.getAttribute('data-xl-slides') || slides_lg_count;
+
+    let rows_count = +this.$element.getAttribute('data-rows') || 1,
+        rows_sm_count = +this.$element.getAttribute('data-sm-rows') || rows_count,
+        rows_md_count = +this.$element.getAttribute('data-md-rows') || rows_sm_count,
+        rows_lg_count = +this.$element.getAttribute('data-lg-rows') || rows_md_count,
+        rows_xl_count = +this.$element.getAttribute('data-xl-rows') || rows_lg_count;
+
+    console.log()
+
+    $(this.$element).slick({
+      autoplay: autoplay,
+      autoplaySpeed: autoplay_timeout,
+      mobileFirst: true,
+      slidesToShow: slides_count,
+      slidesToScroll: slides_count,
+      rows: rows_count,
+      nextArrow: next_arrow,
+      prevArrow: prev_arrow,
+      dots: true,
+      responsive: [{
+        breakpoint: breakpoints.sm - 1,
+        settings: {
+          slidesToShow: slides_sm_count,
+          slidesToScroll: slides_sm_count,
+          rows: rows_sm_count
+        }
+      }, {
+        breakpoint: breakpoints.md - 1,
+        settings: {
+          slidesToShow: slides_md_count,
+          slidesToScroll: slides_md_count,
+          rows: rows_md_count
+        }
+      }, {
+        breakpoint: breakpoints.lg - 1,
+        settings: {
+          slidesToShow: slides_lg_count,
+          slidesToScroll: slides_lg_count,
+          rows: rows_lg_count
+        }
+      }, {
+        breakpoint: breakpoints.xl - 1,
+        settings: {
+          slidesToShow: slides_xl_count,
+          slidesToScroll: slides_xl_count,
+          rows: rows_xl_count
+        }
+      }]
+    })
   }
 }

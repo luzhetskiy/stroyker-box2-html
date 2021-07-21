@@ -1,3 +1,6 @@
+//variables
+@import "./components/variables";
+
 //bootstrap components
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/variables";
@@ -8,9 +11,6 @@
 
 /*========== Global variables ==========*/
 @import "./components/global-variables";
-
-//variables
-@import "./components/variables";
 
 //normalize.css
 @import "../../node_modules/normalize.css/normalize";

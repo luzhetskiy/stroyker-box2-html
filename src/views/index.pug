@@ -55,78 +55,137 @@ block content
         .col-xl-20pc.col-lg-3.popular-projects__advertising
           include blocks/advertising
         .col-xl.col-lg-9
-          h2.section__title Популярные проекты домов
-          .slider.slider_grid.slider_arrows.popular-projects__slider.row
+          h2.section__title Популярные проекты слайдер 1 ряд
+          .slider-constructor(data-slides='1' data-sm-slides='2')
             include blocks/cards
-            -var grid = 'col'
-            +card1(true, true, grid)
-            +card1(true, true, grid)
-            +card1(true, true, grid)
-            +card1(true, true, grid)
-            +card1(true, true, grid)
-            +card1(false, false, grid)
+            +card1(false, true)
+            +card1(true, true)
+            +card1(true, true)
+            +card1(true, true)
+            +card1(true, true)
       .section__more.popular-projects__more
         a(href="#").button.button_style-1.button_xl.section__more-button Смотреть все проекты
+
   
   section.section
     .container
-      h2.section__title Хиты продаж
-      .slider.slider_grid.slider_arrows.row.grid.product-slider
+      h2.section__title Хиты продаж 1 ряд
+      .slider-constructor(data-slides='1' data-rows='2' data-sm-slides='2' data-sm-rows='1' data-md-slides='3' data-lg-slides='4' data-xl-slides='5')
         include blocks/cards
-        +card4(true, 'col product-card_catalogue grid__block', 4, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
-        +card4(false, 'col product-card_catalogue grid__block', 2, 'Фанера ФК')
-        +card4(true, 'col product-card_catalogue grid__block', 3, 'Фанера ФК')
-        +card4(false, 'col product-card_catalogue grid__block', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
-        +card4(true, 'col product-card_catalogue grid__block', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
-        +card4(true, 'col product-card_catalogue grid__block', 3, 'Фанера ФК')
-        +card4(false, 'col product-card_catalogue grid__block', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
-        +card4(true, 'col product-card_catalogue grid__block', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(true, 'product-card_catalogue', 4, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(false, 'product-card_catalogue', 2, 'Фанера ФК')
+        +card4(true, 'product-card_catalogue', 3, 'Фанера ФК')
+        +card4(false, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(true, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(true, 'product-card_catalogue', 3, 'Фанера ФК')
+        +card4(false, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(true, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
 
   section.section
     .container
-      h2.section__title Хиты продаж
-      .slider.slider_grid.slider_arrows.row.grid.product-slider.product-slider_rows-2
-        include blocks/cards
-        +card4(true, 'col product-card_catalogue grid__block', 4, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
-        +card4(false, 'col product-card_catalogue grid__block', 2, 'Фанера ФК')
-        +card4(true, 'col product-card_catalogue grid__block', 3, 'Фанера ФК')
-        +card4(false, 'col product-card_catalogue grid__block', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
-        +card4(true, 'col product-card_catalogue grid__block', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
-        +card4(true, 'col product-card_catalogue grid__block', 3, 'Фанера ФК')
-        +card4(false, 'col product-card_catalogue grid__block', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
-        +card4(true, 'col product-card_catalogue grid__block', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
-        +card4(true, 'col product-card_catalogue grid__block', 4, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
-        +card4(false, 'col product-card_catalogue grid__block', 2, 'Фанера ФК')
-        +card4(true, 'col product-card_catalogue grid__block', 3, 'Фанера ФК')
-        +card4(false, 'col product-card_catalogue grid__block', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
-        +card4(true, 'col product-card_catalogue grid__block', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
-        +card4(true, 'col product-card_catalogue grid__block', 3, 'Фанера ФК')
-        +card4(false, 'col product-card_catalogue grid__block', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
-        +card4(true, 'col product-card_catalogue grid__block', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+      .row.align-items-end
+        .col-xl-20pc.col-lg-3.d-none.d-lg-block
+          include blocks/advertising
+        .col-xl.col-lg-9
+          h2.section__title Хиты продаж 1 ряд c рекламой
+          .slider-constructor(data-slides='1' data-rows='2' data-sm-slides='2' data-sm-rows='1' data-md-slides='3' data-xl-slides='4')
+            include blocks/cards
+            +card4(true, 'product-card_catalogue', 4, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+            +card4(false, 'product-card_catalogue', 2, 'Фанера ФК')
+            +card4(true, 'product-card_catalogue', 3, 'Фанера ФК')
+            +card4(false, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+            +card4(true, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+            +card4(true, 'product-card_catalogue', 3, 'Фанера ФК')
+            +card4(false, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+            +card4(true, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+
 
   section.section
     .container
-      h2.section__title Хиты продаж
-      .slider.slider_grid.slider_arrows.row.grid.product-slider.product-slider_rows-3
+      h2.section__title Хиты продаж 2 ряда
+      .slider-constructor(data-slides='1' data-rows='2' data-sm-slides='2' data-md-slides='3' data-lg-slides='4' data-xl-slides='5')
         include blocks/cards
-        +card4(true, 'col product-card_catalogue grid__block', 4, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
-        +card4(false, 'col product-card_catalogue grid__block', 2, 'Фанера ФК')
-        +card4(true, 'col product-card_catalogue grid__block', 3, 'Фанера ФК')
-        +card4(false, 'col product-card_catalogue grid__block', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
-        +card4(true, 'col product-card_catalogue grid__block', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
-        +card4(true, 'col product-card_catalogue grid__block', 3, 'Фанера ФК')
-        +card4(false, 'col product-card_catalogue grid__block', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
-        +card4(true, 'col product-card_catalogue grid__block', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
-        +card4(true, 'col product-card_catalogue grid__block', 4, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
-        +card4(false, 'col product-card_catalogue grid__block', 2, 'Фанера ФК')
-        +card4(true, 'col product-card_catalogue grid__block', 3, 'Фанера ФК')
-        +card4(false, 'col product-card_catalogue grid__block', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
-        +card4(true, 'col product-card_catalogue grid__block', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
-        +card4(true, 'col product-card_catalogue grid__block', 3, 'Фанера ФК')
-        +card4(false, 'col product-card_catalogue grid__block', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
-        +card4(true, 'col product-card_catalogue grid__block', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(true, 'product-card_catalogue', 4, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(false, 'product-card_catalogue', 2, 'Фанера ФК')
+        +card4(true, 'product-card_catalogue', 3, 'Фанера ФК')
+        +card4(false, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(true, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(true, 'product-card_catalogue', 3, 'Фанера ФК')
+        +card4(false, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(true, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(true, 'product-card_catalogue', 3, 'Фанера ФК')
+        +card4(false, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(true, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(true, 'product-card_catalogue', 3, 'Фанера ФК')
+        +card4(false, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(true, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+
+  section.section
+    .container
+      .row.align-items-end
+        .col-xl-20pc.col-lg-3.d-none.d-lg-block
+          include blocks/advertising
+          include blocks/advertising
+        .col-xl.col-lg-9
+          h2.section__title Хиты продаж 2 ряда c рекламой
+          .slider-constructor(data-slides='1' data-rows='2' data-sm-slides='2' data-md-slides='3' data-xl-slides='4')
+            include blocks/cards
+            +card4(true, 'product-card_catalogue', 4, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+            +card4(false, 'product-card_catalogue', 2, 'Фанера ФК')
+            +card4(true, 'product-card_catalogue', 3, 'Фанера ФК')
+            +card4(false, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+            +card4(true, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+            +card4(true, 'product-card_catalogue', 3, 'Фанера ФК')
+            +card4(false, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+            +card4(true, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+            +card4(true, 'product-card_catalogue', 3, 'Фанера ФК')
+            +card4(false, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+            +card4(true, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+            +card4(true, 'product-card_catalogue', 3, 'Фанера ФК')
+            +card4(false, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+            +card4(true, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+
+  section.section
+    .container
+      h2.section__title Хиты продаж 3 ряда
+      .slider-constructor(data-slides='1' data-rows='2' data-sm-slides='2' data-md-rows='3' data-md-slides='3' data-lg-slides='4' data-xl-slides='5')
+        include blocks/cards
+        +card4(true, 'product-card_catalogue', 4, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(false, 'product-card_catalogue', 2, 'Фанера ФК')
+        +card4(true, 'product-card_catalogue', 3, 'Фанера ФК')
+        +card4(false, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(true, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(true, 'product-card_catalogue', 3, 'Фанера ФК')
+        +card4(false, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(true, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(true, 'product-card_catalogue', 3, 'Фанера ФК')
+        +card4(false, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(true, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(true, 'product-card_catalogue', 3, 'Фанера ФК')
+        +card4(false, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(true, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(false, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(true, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(true, 'product-card_catalogue', 3, 'Фанера ФК')
+        +card4(false, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(true, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
 
 
+  section.section.section_custom-background.popular-projects(style='background-color:#F5F5F5;')
+    .container
+      .row
+        .col-xl-20pc.col-lg-3.popular-projects__advertising
+          include blocks/advertising
+        .col-xl.col-lg-9
+          h2.section__title Популярные услуги слайдер 2 ряда
+          .slider-constructor(data-slides='1' data-rows='1' data-md-rows='2')
+            include blocks/cards
+            +wide-card()
+            +wide-card()
+            +wide-card()
+            +wide-card()
+      .section__more.popular-projects__more
+        a(href="#").button.button_style-1.button_xl.section__more-button Смотреть все услуги
 
   section.section.popular-projects
     .container
@@ -135,55 +194,17 @@ block content
           include blocks/advertising
           include blocks/advertising
         .col-xl.col-lg-9
-          h2.section__title Популярные проекты домов
-          .slider.slider_grid.slider_arrows.popular-projects__slider.popular-projects__slider_type-2.row.grid
+          h2.section__title Популярные услуги слайдер 4 ряда
+          .slider-constructor(data-slides='1' data-rows='1' data-md-rows='2' data-lg-rows='4')
             include blocks/cards
-            -var grid = 'col grid__block'
-            +card1(false, true, grid)
-            +card1(true, true, grid)
-            +card1(true, true, grid)
-            +card1(true, true, grid)
-            +card1(true, true, grid)
-      .section__more.popular-projects__more
-        a(href="#").button.button_style-1.button_xl.section__more-button Смотреть все проекты
-
-  section.section.section_custom-background.popular-projects(style='background-color:#F5F5F5;')
-    .container
-      .row
-        .col-xl-20pc.col-lg-3.popular-projects__advertising
-          include blocks/advertising
-        .col-xl.col-lg-9
-          h2.section__title Популярные услуги
-          .slider.slider_grid.slider_arrows.popular-projects__slider-2.row.grid
-            include blocks/cards
-            -var grid = 'col grid__block'
-            +wide-card('', grid)
-            +wide-card('', grid)
-            +wide-card('', grid)
-            +wide-card('', grid)
-            +wide-card('', grid)
-      .section__more.popular-projects__more
-        a(href="#").button.button_style-1.button_xl.section__more-button Смотреть все услуги
-
-  section.section.section_custom-background.popular-projects(style='background-image: url("./img/image 6.jpg");')
-    .container
-      .row
-        .col-xl-20pc.col-lg-3.popular-projects__advertising
-          include blocks/advertising
-          include blocks/advertising
-        .col-xl.col-lg-9
-          h2.section__title Популярные услуги
-          .slider.slider_grid.slider_arrows.popular-projects__slider-2.popular-projects__slider-2_type-2.row.grid
-            include blocks/cards
-            -var grid = 'col grid__block'
-            +wide-card('', grid)
-            +wide-card('', grid)
-            +wide-card('', grid)
-            +wide-card('', grid)
-            +wide-card('', grid)
-            +wide-card('', grid)
-            +wide-card('', grid)
-            +wide-card('', grid)
+            +wide-card()
+            +wide-card()
+            +wide-card()
+            +wide-card()
+            +wide-card()
+            +wide-card()
+            +wide-card()
+            +wide-card()
       .section__more.popular-projects__more
         a(href="#").button.button_style-1.button_xl.section__more-button Смотреть все услуги
   

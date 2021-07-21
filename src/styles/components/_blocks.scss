@@ -16,14 +16,6 @@
   }
 }
 
-.aside {
-  .advertising-preview {
-    &:not(:last-child) {
-      margin-bottom: 20px;
-    }
-  }
-}
-
 .card-labels {
   position: absolute;
   top: 0;
@@ -55,7 +47,7 @@
   line-height: 1.25rem;
   &__container {
     min-height: 140px;
-    color: #fff;
+    color: var(--color-small-card-text, #fff);
     border-radius: 2px;
     overflow: hidden;
     display: flex;
@@ -82,6 +74,7 @@
       width: 100%;
       height: 100%;
       z-index: 1;
+      background-color: transparent;
       &_contain {
         z-index: 3;
         opacity: 0.2;
@@ -114,8 +107,7 @@
       width: 16px;
       height: 16px;
       bottom: 22px;
-      transition: fill $trs1;
-      fill: #fff;
+      fill: currentColor;
     }
   }
   img {
@@ -401,6 +393,9 @@
   width: 100%;
   height: 380px;
   overflow: hidden;
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
   img {
     will-change: transform;
   }
@@ -422,11 +417,6 @@
 .popular-projects {
   &__advertising {
     padding-top: 56px;
-    .advertising-preview {
-      &:not(:last-child) {
-        margin-bottom: 20px;
-      }
-    }
   }
   &__more {
     justify-content: flex-end;
@@ -1745,11 +1735,6 @@
 .item-info {
   &__advertising {
     padding-top: 50px;
-    .advertising-preview {
-      &:not(:last-child) {
-        margin-bottom: 20px;
-      }
-    }
   }
   &__tab-head {
     display: flex;
@@ -2819,11 +2804,14 @@
     flex-direction: column;
     border: 1px solid var(--color-border-1, #D9D9DE);
     border-radius: 2px;
-    background-color: #fff;
+    background-color: var(--color-product-card-bg, #fff);
     position: relative;
     transition: border-color $trs1;
     &[data-touch], &[data-hover] {
       border-color: var(--color-border-3, #A7A7AB);
+      .product-card__image img {
+        transform: scale(1.05);
+      }
     }
   }
   .button, .input {
@@ -2854,6 +2842,7 @@
     img {
       padding: 20px;
       z-index: 1;
+      will-change: transform;
     }
   }
   &__link-area {
@@ -2930,6 +2919,16 @@
   }
   .calc-count-block {
     max-width: 65px;
+  }
+  @include media-breakpoint-up(lg) {
+    .slick-slide & {
+      min-height: 375px;
+    }
+  }
+  @include media-breakpoint-up(xl) {
+    .slick-slide & {
+      min-height: 380px;
+    }
   }
   @include media-breakpoint-down(sm) {
     &__buttons .button_icon {
@@ -4387,7 +4386,7 @@
     height: 100%;
     border: 1px solid var(--color-border-1, #D9D9DE);
     border-radius: 2px;
-    background-color: #fff;
+    background-color: var(--color-service-card-bg, #fff);
     min-height: 180px;
     display: flex;
   }
@@ -4396,6 +4395,7 @@
     position: relative;
     z-index: 1;
     .image {
+      position: absolute;
       width: 100%;
       height: 100%;
     }

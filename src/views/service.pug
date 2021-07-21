@@ -138,6 +138,18 @@ block content
                   td Доставка
                   td 36,00&nbsp;₽
                   td Да
+
+        section.section
+          h2.section__title Популярные услуги слайдер 2 ряда
+          .slider-constructor(data-slides='1' data-rows='1' data-md-rows='2')
+            include blocks/cards
+            +wide-card()
+            +wide-card()
+            +wide-card()
+            +wide-card()
+
+            
+
         section.section
           h2.section__title Другие услуги
           .row.grid
@@ -149,12 +161,12 @@ block content
             +card2('Проектные работы', 'img/e79cec4f0a120d2e96a1701cf4ef8db3.png', grid)
             +card2('Отделочные работы', 'img/56dcc810efa71925168c0d36d5c3fbf7.png', grid)
 
+        
+
 
       .d-none.d-xl-block.col-xl-20pc
 
 
-
-      
   section.section
     .container
       .row.justify-content-center

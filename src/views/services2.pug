@@ -79,40 +79,38 @@ block content
             +card2('Отделочные работы', 'img/e79cec4f0a120d2e96a1701cf4ef8db3.png', grid)
         
         section.section.popular-projects
-          h2.section__title Популярные услуги
+          h2.section__title Популярные услуги просто списком
           .row.grid
             include blocks/cards
             -var grid = 'col-12 grid__block'
-            +wide-card('', grid)
-            +wide-card('', grid)
-            +wide-card('', grid)
+            +wide-card(grid)
+            +wide-card(grid)
+            +wide-card(grid)
+            +wide-card(grid)
 
         section.section.popular-projects
-          h2.section__title Популярные услуги
-          .slider.slider_grid.slider_arrows.popular-projects__slider-2.row.grid
+          h2.section__title Популярные услуги слайдер 2 ряда
+          .slider-constructor(data-slides='1' data-rows='1' data-md-rows='2')
             include blocks/cards
-            -var grid = 'col grid__block'
-            +wide-card('', grid)
-            +wide-card('', grid)
-            +wide-card('', grid)
-            +wide-card('', grid)
-            +wide-card('', grid)
+            +wide-card()
+            +wide-card()
+            +wide-card()
+            +wide-card()
           .section__more.popular-projects__more
             a(href="#").button.button_style-1.button_xl.section__more-button Смотреть все услуги
 
         section.section.popular-projects
-          h2.section__title Популярные услуги
-          .slider.slider_grid.slider_arrows.popular-projects__slider-2.popular-projects__slider-2_type-2.row.grid
+          h2.section__title Популярные услуги слайдер 4 ряда
+          .slider-constructor(data-slides='1' data-rows='1' data-md-rows='2' data-lg-rows='4')
             include blocks/cards
-            -var grid = 'col grid__block'
-            +wide-card('', grid)
-            +wide-card('', grid)
-            +wide-card('', grid)
-            +wide-card('', grid)
-            +wide-card('', grid)
-            +wide-card('', grid)
-            +wide-card('', grid)
-            +wide-card('', grid)
+            +wide-card()
+            +wide-card()
+            +wide-card()
+            +wide-card()
+            +wide-card()
+            +wide-card()
+            +wide-card()
+            +wide-card()
           .section__more.popular-projects__more
             a(href="#").button.button_style-1.button_xl.section__more-button Смотреть все услуги
         
