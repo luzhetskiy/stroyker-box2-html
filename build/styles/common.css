@@ -5794,7 +5794,7 @@ a:not([class]):visited {
       height: 100%;
       top: 0;
       left: 0;
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: var(--color-category-block-hover, rgba(0, 0, 0, 0.6));
       transition: background-color 0.25s ease-out;
       z-index: 2; }
     .category-card__container .image {
