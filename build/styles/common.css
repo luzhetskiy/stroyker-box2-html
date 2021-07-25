@@ -3043,11 +3043,13 @@ table {
   position: relative;
   margin-bottom: 72px; }
   .section_custom-background {
-    padding: 60px 0;
+    padding: 72px 0;
     background-size: cover;
     background-position: center; }
     .section_custom-background ~ .section_custom-background {
       margin-top: -72px; }
+    .section_custom-background:last-child {
+      margin-bottom: 0; }
   .section_small-margin {
     margin-bottom: 60px; }
   .section_small-padding {
@@ -3070,8 +3072,10 @@ table {
   @media (min-width: 576px) {
     .section {
       margin-bottom: 60px; }
-      .section_custom-background ~ .section_custom-background {
-        margin-top: -60px; }
+      .section_custom-background {
+        padding: 60px 0; }
+        .section_custom-background ~ .section_custom-background {
+          margin-top: -60px; }
       .section_no-margin {
         margin: 0 !important; }
       .section_small-margin {

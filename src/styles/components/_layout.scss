@@ -25,11 +25,14 @@
   position: relative;
   margin-bottom: 72px;
   &_custom-background {
-    padding: 60px 0;
+    padding: 72px 0;
     background-size: cover;
     background-position: center;
     & ~ .section_custom-background {
       margin-top: -72px;
+    }
+    &:last-child {
+      margin-bottom: 0;
     }
   }
   &_small-margin {
@@ -61,6 +64,7 @@
   @include media-breakpoint-up(sm) {
     margin-bottom: 60px;
     &_custom-background {
+      padding: 60px 0;
       & ~ .section_custom-background {
         margin-top: -60px;
       }
