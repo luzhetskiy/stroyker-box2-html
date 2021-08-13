@@ -7921,12 +7921,21 @@ a:not([class]):visited {
   position: relative;
   z-index: 2; }
 
+.product-card .card-price__current {
+  line-height: 20px;
+  height: 20px; }
+
+.product-card .card-price__label {
+  font-size: 12px;
+  line-height: 14px; }
+
 .product-card__card-price {
   margin-bottom: 12px;
   pointer-events: none; }
 
 .product-card__buttons {
   display: flex;
+  justify-content: space-between;
   margin: 0 -4px; }
   .product-card__buttons .button {
     min-width: 0px;
@@ -8017,6 +8026,11 @@ a:not([class]):visited {
 .product-card .calc-count-block {
   max-width: 65px; }
 
+@media (min-width: 576px) {
+  .product-card__title {
+    max-height: 60px;
+    overflow: hidden; } }
+
 @media (min-width: 992px) {
   .slick-slide .product-card {
     min-height: 375px; } }
@@ -8102,7 +8116,7 @@ a:not([class]):visited {
     .product-card .card-price__old {
       margin: 0;
       position: absolute;
-      bottom: 1.5rem;
+      bottom: 20px;
       left: 62px; } }
 
 @media (min-width: 768px) {

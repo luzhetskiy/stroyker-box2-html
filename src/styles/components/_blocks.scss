@@ -2818,12 +2818,21 @@
     position: relative;
     z-index: 2;
   }
+  .card-price__current {
+    line-height: 20px;
+    height: 20px;
+  }
+  .card-price__label {
+    font-size: 12px;
+    line-height: 14px;
+  }
   &__card-price {
     margin-bottom: 12px;
     pointer-events: none;
   }
   &__buttons {
     display: flex;
+    justify-content: space-between;
     margin: 0 -4px;
     .button {
       min-width: 0px;
@@ -2920,6 +2929,12 @@
   .calc-count-block {
     max-width: 65px;
   }
+  @include media-breakpoint-up(sm) {
+    &__title {
+      max-height: 60px;
+      overflow: hidden;
+    }
+  }
   @include media-breakpoint-up(lg) {
     .slick-slide & {
       min-height: 375px;
@@ -3001,7 +3016,6 @@
         right: 100%;
         width: 700px;
         margin-right: 13px;
-        //
         display: none;
       }
       .card-label {
@@ -3036,7 +3050,7 @@
       &__old {
         margin: 0;
         position: absolute;
-        bottom: 1.5rem;
+        bottom: 20px;
         left: 62px;
       }
     }
