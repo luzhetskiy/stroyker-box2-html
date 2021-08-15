@@ -202,9 +202,7 @@ a:not([class]), .link {
 
 .link {
   &_without-border {
-    &:after {
-      display: none;
-    }
+    border: none;
   }
 }
 

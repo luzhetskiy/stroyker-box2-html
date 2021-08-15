@@ -102,7 +102,7 @@
   }
   &__small-button {
     text-decoration: none;
-    color: #fff;
+    color: var(--color-header-labels, #fff);
     transition: color $trs1;
     display: flex;
     align-items: center;
@@ -118,7 +118,6 @@
     }
     &_auth {
       margin-right: 19px;
-      color: var(--color-accent, #2363D1);
       .icon {
         width: 21px;
         height: 25px;
@@ -153,6 +152,7 @@
       }
       span {
         margin-left: 13px;
+        color: #fff;
         background-color: var(--color-accent, #2363D1);
         border-radius: 24px;
         transition: background-color $trs1;
