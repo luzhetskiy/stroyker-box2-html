@@ -203,7 +203,7 @@
 
 .comparison-property {
   padding: 10px 26px;
-  transition: background-color 0.25s ease-out; }
+  transition: background-color 0.15s ease-out; }
   .comparison-property strong {
     display: none; }
   .comparison-property_style-2 {

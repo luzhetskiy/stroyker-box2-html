@@ -1,0 +1,47 @@
+extends layout/layout
+block title
+  title Партнерская сеть
+block breadcrumbs 
+  -var title = 'Партнерская сеть'
+  include blocks/breadcrumbs
+block content
+  section.section.affiliate-network
+    .container
+      h1.section__title Партнерская сеть
+      .affiliate-network__map 
+        .affiliate-network__map-head
+          p Сотрудничаем с компаниями области
+          h2.affiliate-network__title-element Партнёров в регионе Самара — 2
+        .affiliate-network__map-element
+
+      .affiliate-network__items.row.grid
+        mixin box()
+          //box
+          .contact-box.grid__block.col-md-6.col-lg-4.col-xl-3
+            .contact-box__container 
+              h3.contact-box__title Центральный офис
+              ul.contact-box__list
+                li.contact-box__item  
+                  svg.icon
+                    use(xlink:href="img/icons/icons-sprite.svg#location")
+                  | г. Самара, ул. Ново-Вокзальная, д. 17, офис 134
+                li.contact-box__item  
+                  svg.icon
+                    use(xlink:href="img/icons/icons-sprite.svg#smartphone")
+                  | +7 987 443-37-77, +7 987 443-37-77
+                li.contact-box__item  
+                  svg.icon
+                    use(xlink:href="img/icons/icons-sprite.svg#mail")
+                  a(href="#dsfdsfsdf") website@gmail.com
+                li.contact-box__item  
+                  svg.icon
+                    use(xlink:href="img/icons/icons-sprite.svg#planet")
+                  a(href="#dsfggg") website.ru
+        +box()
+        +box()
+        +box()
+        +box()
+        +box()
+
+  -var formTitle = 'Остались вопросы?'
+  include blocks/form
