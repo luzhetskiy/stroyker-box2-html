@@ -6026,7 +6026,7 @@ a:not([class]):visited {
   display: none; }
 
 .card-price__no-price {
-  height: 1.5rem; }
+  height: 20px; }
 
 .card-price__current {
   font-weight: 700;
