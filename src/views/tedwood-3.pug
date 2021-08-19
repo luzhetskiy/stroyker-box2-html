@@ -1,0 +1,183 @@
+extends layout/layout
+block title
+  title Пружинный узел TEDWOOD
+
+block style
+  link(rel="stylesheet" href="./styles/tedwood.css")
+
+block content
+  section.section.tedwood-head 
+    .container 
+      .tedwood-head__text
+        h2.tedwood-head__sub-title Технология TEDWOOD
+        h1.tedwood-head__title Скрытая проводка
+        ul.tedwood-head__list 
+          li.tedwood-head__item 
+            img(src="./img/tedwood/checkbox-blue.svg", alt="icon").icon
+            | Точное изготовление каналов<br> строго по проекту
+          li.tedwood-head__item 
+            img(src="./img/tedwood/checkbox-blue.svg", alt="icon").icon
+            | Возможность изготовления каналов<br> непосредственно в процессе строительства
+          li.tedwood-head__item 
+            img(src="./img/tedwood/checkbox-blue.svg", alt="icon").icon
+            | Применима для всех видов<br> стеновых материалов
+          li.tedwood-head__item 
+            img(src="./img/tedwood/checkbox-blue.svg", alt="icon").icon
+            | Выполнение требований ПУЭ, п.7.1.37, п.7.1.38<br> для безопасной эксплуатации электропроводки
+    .image.tedwood-head__background.tedwood-head__background_style-2
+      img(src="./img/tedwood/product_bg_image_blue.jpeg", alt="img").lazyload
+
+  section.section
+    .container
+      .row.justify-content-center
+        .col-xl-10
+          .tedwood-image-block
+            .tedwood-image-block__text
+              p В процессе строительства деревянного строения, необходимо качественно и высокопроизводительно изготовить вертикальные каналы для размещения в толще стены электропроводки
+            .tedwood-image-block__image.image.image_cover
+              img(src="./img/tedwood/IMG_7191.jpeg", alt="image").lazyload
+
+  section.section
+    .container
+      .row.justify-content-center
+        .col-xl-10
+          h2.h1.section__title ПУЭ — правила безопасности
+          p Путём многолетнего опыта строительства деревянных домов, был найден и реализован способ самостоятельного получения качественных вертикальных каналов для размещения проводов и кабелей, в процессе строительства деревянного строения в полном соответствии с 
+            strong ПУЭ «Правила эксплуатации электропроводки» от 08.07.2002 № 204
+          p 
+            strong 7.1.37. 
+            | Электропроводку в помещениях следует выполнять сменяемой:<br> скрыто — в каналах строительных конструкций или замоноличенных трубах
+          p 
+            strong 7.1.38. 
+            | Электрические сети, прокладываемые за непроходными подвесными потолками и в перегородках, рассматриваются как скрытые электропроводки и их следует выполнять:
+            br
+            | - за потолками и в перегородках из негорючих материалов - выполненных из негорючих материалов трубах и коробах, а также кабелями, не распространяющими горение, то есть можно выполнить электропроводку без применения металлических труб, негорючих коробов и т.п. материалов в случае применения кабеля, не распространяющего горение.
+          p Канал должен обеспечить возможность линейного расширения кабеля, а также исключить возможность механического воздействия на провод, кабель в процессе усушки и усадки ограждающей конструкции.
+
+  section.section.tedwood-technology.section_custom-background(style='background-color:#333;')
+    .container 
+      .row.justify-content-center
+        .col-xl-10
+          .tedwood-technology__container 
+            .tedwood-technology__image.image.image_contain 
+              img(data-src="./img/tedwood/tech3.jpeg", alt="image").lazyload
+            .tedwood-technology__content 
+              h2.h1.section__title.tedwood-technology__title Технология
+              .tedwood-technology__items 
+                .tedwood-technology__item 
+                  img(src="./img/tedwood/house_blue.svg", alt="icon").icon
+                  p Технология, позволяет в процессе сборки силовой части строения, выполнять технологический канал от 1-го до последнего венца, через который впоследствии протаскивается провод для монтажа электросистемы.
+                .tedwood-technology__item 
+                  img(src="./img/tedwood/tool_blue.svg", alt="icon").icon
+                  p Сконструированная оснастка позволяет без особых усилий при помощи дрели с установленным в нее спиральным сверлом, диаметром 32 мм, высверливать в толще стены отверстия до 450 мм глубиной за одно сверление без видимых отклонений от оси стены, создавая при этом один сплошной вертикальный канал, для будущего размещения электропроводки.
+                .tedwood-technology__item 
+                  img(src="./img/tedwood/crown_blue.svg", alt="icon").icon
+                  p Оснастка применима для всех типов деревянных деталей, таких как брус, бревно в независимости от профиля, строжки, влажности.
+  
+  section.section
+    .container
+      .row.grid
+        .grid__block.col-md-6.col-xl-5.offset-xl-1
+          .video
+            iframe(src='https://www.youtube.com/embed/AeWY-nSTbcA' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+
+  section.section.section_custom-background(style='background-color:#F5F5F5;')
+    .container
+      .row.justify-content-center
+        .col-xl-10
+          h2.h1.section__title Преимущества
+          .tedwood-benefits 
+            .tedwood-benefits__item 
+              img(src="./img/tedwood/money_blue.svg", alt="icon").icon
+              p Стоимость комплекта деталей, снизится из-за отсутствия в процессе производства дополнительных операций. Соответственно будет ниже стоимость проектных работ из-за отсутствия в проекте силовой конструкции перечня деталей под сверление каналов
+            .tedwood-benefits__item 
+              img(src="./img/tedwood/can_modify.svg", alt="icon").icon
+              p Безопасность деревянного дома в части электропроводки будет значительно выше, так как каналы для прокладки электропровода просторные, и не создают натяжений провода в процессе усушки древесины
+            .tedwood-benefits__item 
+              img(src="./img/tedwood/time_blue.svg", alt="icon").icon
+              p Сроки производства комплекта деталей, а также проектирование силовой конструкции снизятся из-за отсутствия в процессе производства дополнительных операций и упущенного времени на согласование проекта. Появляется возможность вносить изменения в процессе строительства
+            .tedwood-benefits__item 
+              img(src="./img/tedwood/brilliant.svg", alt="icon").icon
+              p Качество полученных каналов будет выше за счёт вертикальной соосности участков канала между собой, так как отдельные участки канала производятся с помощью оснастки имеющей направляющий подшипник, который идеально позиционирует процесс сверления
+          
+          p Зачем это делать на предприятии, если можно эту операцию произвести на стройплощадке, с гарантией контроля качества и возможностью внесения дополнений в проект электрики, с очевидным снижением стоимости работ и повышением уровня безопасности Вашего дома?
+
+  section.section
+    .container
+      .section__title.row.justify-content-center
+        .col-xl-10
+          h2.h1 Конструкция оснастки TEDWOOD «Скрытая проводка»
+      picture
+        source(srcset='./img/tedwood/скрытая электропровдка_конструкция.jpeg')
+        img(src='./img/tedwood/скрытая электропровдка_конструкция.jpeg' alt='img')
+
+  section.section.section_custom-background(style='background-color:#F5F5F5;')
+    .container
+      .row.justify-content-center
+        .col-xl-10
+          h2.h1.section__title Принцип работы
+          .tedwood-steps
+            //step
+            .tedwood-steps__item
+              .tedwood-steps__item-index(style='color:#2D9CDB;') 1
+              .tedwood-steps__item-text   
+                h3.h2 Настройка оснастки
+                p Устанавливается месторасположение будущего канала в толще стены, с помощью регулируемых упоров фиксируется его месторасположение в конструкции оснастки.
+                p Регулируется лазерная линейка, по отношению к вертикали. Для этого устанавливается оснастка на набранные 3 ряда, включается лазерная линейка и определяется соответствие вертикали. Если лазерный луч имеет отклонение, то его можно настроить с помощью имеющихся на его корпусе регулировок.
+              .tedwood-steps__item-image.image.image_cover 
+                img(data-src="./img/tedwood/blue_step1.jpeg", alt="img").lazyload
+
+            //step
+            .tedwood-steps__item
+              .tedwood-steps__item-image.image.image_cover 
+                img(data-src="./img/tedwood/blue_step2.jpeg", alt="img").lazyload
+              .tedwood-steps__item-text   
+                h3.h2 Разметка отверстий, сверление
+                p Выполняем разметку будущих вертикальных каналов в зоне выступающей части фундамента, внутри строения, путем нанесения рисок маркером черного цвета, перпендикулярно оси стены.
+                p Сверлим перпендикулярно расположенное по отношению к оси канала отверстие для отвода стружки в зоне нижней части каждого канала. Набрав набор из 3-х рядов, устанавливаем настроенную оснастку, фиксируем ее и сверлим канальное отверстие.
+              .tedwood-steps__item-index(style='color:#2D9CDB;') 2
+            
+            //step
+            .tedwood-steps__item
+              .tedwood-steps__item-index(style='color:#2D9CDB;') 3
+              .tedwood-steps__item-text   
+                h3.h2 Очистка каналов, сверление места установки подрозетника
+                p В процессе сверления каналов, необходимо постоянно отслеживать чистоту получаемых каналов, с помощью стального прута, так как оставшаяся в каналах стружка может в последствии мешать прокладке провода.
+                p После сборки домокомплекта, можно разметить места установки розеток, выключателей и высверлить для их установки отверстия, под диаметр установочной коробки.
+              .tedwood-steps__item-image.image.image_cover 
+                img(data-src="./img/tedwood/blue_step3.jpeg", alt="img").lazyload
+
+            //step
+            .tedwood-steps__item
+              .tedwood-steps__item-image.image.image_cover 
+                img(data-src="./img/tedwood/blue_step4.jpeg", alt="img").lazyload
+              .tedwood-steps__item-text   
+                h3.h2 Прокладка электропровода
+                p Прокладка или точнее протаскивание провода, процедура понятная каждому электрику, тем более что диаметр канала довольно большой, что значительно облегчает работу по протягиванию проводов через полость каналов.
+                p Для получения более подробной информации посмотрите каталог TEDWOOD, где более подробно можно ознакомиться с инструкциями по применению оснасток и крепежа.
+              .tedwood-steps__item-index(style='color:#2D9CDB;') 4
+
+  section.section
+    .container
+      .row.justify-content-center
+        .col-xl-10
+          h2.h1.section__title Скачать каталог TEDWOOD
+          .documents
+            table.documents__table
+              tr.documents__item
+                td.documents__item-title 
+                  a(href="#").documents__item-link.link.link_without-border Каталог TEDWOOD
+                td.documents__item-icon
+                  .documents__item-icon-item
+                    svg.icon
+                      use(xlink:href="img/icons/icons-sprite.svg#doc")
+                    span pdf
+                td.documents__item-size 18.4 mb
+                td.documents__item-button
+                  a(href="#" download).button.button_style-1.documents__button 
+                    svg.icon
+                      use(xlink:href="img/icons/icons-sprite.svg#download")
+                    span Скачать
+
+  -var formTitle = 'Напишите нам'
+  include blocks/form

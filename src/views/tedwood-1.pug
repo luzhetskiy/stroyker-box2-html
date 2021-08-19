@@ -1,0 +1,230 @@
+extends layout/layout
+block title
+  title Тёплый угол
+
+block style
+  link(rel="stylesheet" href="./styles/tedwood.css")
+
+block content
+
+  section.section.tedwood-head
+    .container 
+      .tedwood-head__text
+        h2.tedwood-head__sub-title Технология TEDWOOD
+        h1.tedwood-head__title Тёплый угол
+        ul.tedwood-head__list 
+          li.tedwood-head__item 
+            img(src="./img/tedwood/checkbox4.svg", alt="icon").icon
+            | 100% результат утепления<br> угловых соединений
+          li.tedwood-head__item 
+            img(src="./img/tedwood/checkbox4.svg", alt="icon").icon
+            | 50% экономия средств<br> на отоплении дома
+          li.tedwood-head__item 
+            img(src="./img/tedwood/checkbox4.svg", alt="icon").icon
+            | Соблюдение ГОСТ 30974-2002<br> "Угловые соединения"
+          li.tedwood-head__item 
+            img(src="./img/tedwood/checkbox4.svg", alt="icon").icon
+            | В доме всегда тепло,<br> ведь из углов не дует!
+    .image.tedwood-head__background.tedwood-head__background_style-1
+      img(src="./img/tedwood/p1.jpeg", alt="img").lazyload  
+
+  section.section 
+    .container 
+      .row.justify-content-center
+        .col-xl-10 
+          h2.h1.section__title ГОСТ — методическое указание
+          p Не зависимо от того построено строение из профилированного бруса камерной сушки или из клееного бруса, тем более из материалов естественной влажности все это изготовлено из древесины и это является определяющим фактором неминуемого возникновения зазоров в различных типах продольно-профильных и угловых соединениях деревянных деталей, по причине естественного процесса усушки древесины в течении времени.
+          p 
+            strong ГОСТ 30974-2002 "Угловые соединения бревенчатых и брусчатых малоэтажных зданий".
+          p 
+            strong П.4. «Конструкции и размеры» 
+            | - раздел, в котором рассматриваются профильные и угловые соединения, допуски и отклонения при производстве стеновых деталей, а также разъясняются требования к сборке конструкций.
+          p 
+            strong П.4.3. 
+            | Пункт рассматривающий вопросы связанные с внесением зазоров в различные виды сечений деревянных деталей при их производстве и строительстве конструкций из них.
+          p При назначении размеров сечений брусьев следует учитывать припуски на величину усушки, определяемые в соответствии с ГОСТ 6782.1, ГОСТ 6782.2, и усадки, вызванной уплотнением материалов для заделки швов.
+          p 
+            strong П.4.5. 
+            | Пункт рассматривает предельные отклонения размеров сечений фрезерованных клееных брусьев по высоте, ширине и другим размерам.
+          p 
+            strong П. 4.9. 
+            | Пункт рассматривает способы уплотнений деталей между собой при строительстве сооружений из профилированных деталей.
+          p В местах сопряжения элементов следует предусматривать зазоры для установки изоляционных прокладок, компенсирующих изменения линейных размеров элементов стен от их усадки и усушки. В качестве изоляционных прокладок следует применять ленточные эластомерные и полимерные материалы или пенные утеплители.
+      picture
+        source(srcset='./img/tedwood/ТУ 000001.jpeg')
+        img(src='./img/tedwood/ТУ 000001.jpeg' alt='img')
+      
+      .row.justify-content-center
+        .col-xl-10 
+          p Устранение последствий усушки древесины очень дорогая услуга на рынке деревянного домостроения, порой стоимость производства работ и материалов превышают стоимость самого здания. Тепловизионное обследование прошедших ремонт зданий показывает, что успехов можно достичь только в устранении декоративных повреждений, а вот восстановить герметичность угловых соединений качественно не удается.
+      
+  section.section
+    .container 
+      .row.grid
+        .grid__block.col-md-6.col-xl-5.offset-xl-1
+          .video
+            iframe(src='https://www.youtube.com/embed/T7mOuunZBVk' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+
+  section.section 
+    .container 
+      .row.justify-content-center
+        .col-xl-10 
+          h2.h1.section__title TEDWOOD — практическое решение
+          p В 2017 году автором был получен ПАТЕНТ № 2652227 «Способ образования вертикального канала в угловом соединении стены и устройство для его осуществления» или инструментальная оснастка «Теплый угол».
+      picture
+        source(srcset='./img/tedwood/ТУ002.jpeg')
+        img(src='./img/tedwood/ТУ002.jpeg' alt='img')
+
+  section.section
+    .container
+      .row.justify-content-center
+        .col-xl-10
+          h2.h1.section__title Мосты холода устранены
+          p Термограммы обследуемых деревянных зданий четко указывают на проблемные места, являясь единственным аргументом в пользу того или иного способа решения поставленной задачи.
+          p Компания TEDWOOD при разработке способов устранения недостатков деревянных конструкций применяет только один способ оценки — тепловизионное обследование зданий.
+      picture
+        source(srcset='./img/tedwood/4_Теплый угол.jpeg')
+        img(src='./img/tedwood/4_Теплый угол.jpeg' alt='img')
+
+  section.section
+    .container
+      .row.justify-content-center
+        .col-xl-10 
+          h2.h1.section__title Технология TEDWOOD оснастка «Тёплый угол»
+      picture
+        source(srcset='./img/tedwood/ТУ04.jpeg')
+        img(src='./img/tedwood/ТУ04.jpeg' alt='img')
+
+  section.section
+    .container
+      .row.justify-content-center
+        .col-xl-10 
+          h2.h1.section__title Инструменты и материалы
+          p Специалисты TEDWOOD имея научно-производственную базу по строительству деревянных домов, испытали на практике различные виды расходных материалов и выбрали то, что подходит для выполнения поставленной задачи в вопросе утепления угловых соединений.
+          p 
+            strong Пенный герметик 
+            | — этот элемент технологии наиболее важный, так как именно он устраняет причину промерзания углов путем заполнения пустот. Пена должна иметь низкий коэффициент вторичного расширения, низкую плотность и высокую эластичность после отверждения, так как деревянные детали всегда переживают деформации, что может быть причиной повреждения утеплителя в канале.
+          p 
+            strong Не простая пена Soudal Flexi Foam 
+            | — обладает свойством «памяти» которое позволяет застывшей массе после полного ее сжатия возвращаться к своему первоначальному состоянию на подобии поролона, предотвращая тем самым возможность ее разрыва и образования пустот в заполненных пеной каналах.
+
+      .tedwood-tools.row.grid
+        .tedwood-tools__item.col-md-6.grid__block 
+          .tedwood-tools__item-container(data-custom-interaction) 
+            .tedwood-tools__item-text
+              h6.tedwood-tools__item-title Пистолет для подачи<br> пены в канала
+            .image.image_contain
+              img(data-src="./img/tedwood/cat5.png", alt="image").lazyload
+        .tedwood-tools__item.col-md-6.grid__block
+          .tedwood-tools__item-container(data-custom-interaction) 
+            .tedwood-tools__item-text
+              h6.tedwood-tools__item-title Пена для заполнения каналов Soudal Flexi Foam
+            .image.image_contain
+              img(data-src="./img/tedwood/cat3.png", alt="image").lazyload
+        .tedwood-tools__item.col-md-6.grid__block
+          .tedwood-tools__item-container(data-custom-interaction) 
+            .tedwood-tools__item-text
+              h6.tedwood-tools__item-title Cпиральное сверло
+              p 32×600 мм
+            .image.image_contain
+              img(data-src="./img/tedwood/cat2.png", alt="image").lazyload
+        .tedwood-tools__item.col-md-6.grid__block
+          .tedwood-tools__item-container(data-custom-interaction) 
+            .tedwood-tools__item-text
+              h6.tedwood-tools__item-title Cпиральное сверло
+              p 32×160–320 мм
+            .image.image_contain
+              img(data-src="./img/tedwood/cat4.png", alt="image").lazyload
+        .tedwood-tools__item.col-md-6.grid__block
+          .tedwood-tools__item-container(data-custom-interaction) 
+            .tedwood-tools__item-text
+              h6.tedwood-tools__item-title Cпиральное сверло
+              p 8 мм
+            .image.image_contain
+              img(data-src="./img/tedwood/cat6.png", alt="image").lazyload
+        .tedwood-tools__item.col-md-6.grid__block
+          .tedwood-tools__item-container(data-custom-interaction) 
+            .tedwood-tools__item-text
+              h6.tedwood-tools__item-title Дрель - миксер
+            .image.image_contain
+              img(data-src="./img/tedwood/drel2.png", alt="image").lazyload
+
+  section.section
+    .container
+      .section__title.row.justify-content-center
+        .col-xl-10 
+          h2.h1 Миф не прошедший проверку временем
+      picture
+        source(srcset='./img/tedwood/ТУ06.jpeg')
+        img(src='./img/tedwood/ТУ06.jpeg' alt='img')
+
+  section.section.section_custom-background(style='background-color:#F5F5F5;')
+    .container
+      .row.justify-content-center
+        .col-xl-10
+          h2.h1.section__title Принцип работы
+          .tedwood-steps
+            //step
+            .tedwood-steps__item
+              .tedwood-steps__item-index(style='color:#f27c1c;') 1
+              .tedwood-steps__item-text   
+                h3.h2 Настройка оснастки
+                p Устанавливается настроенная оснастка на замковое соединение брусовой стены, с помощью винтового зажима, углового зажима производится фиксация.
+                p С помощью горизонтального поворотного упора оснастка позиционируется в замке и далее позволяет без лишних действий перейти от правого угла замка к левому, имея при этом качественную опору на сопрягаемые оси.
+              .tedwood-steps__item-image.image.image_cover 
+                img(data-src="./img/tedwood/step1.jpeg", alt="img").lazyload
+
+            //step
+            .tedwood-steps__item
+              .tedwood-steps__item-image.image.image_cover 
+                img(data-src="./img/tedwood/step2.jpeg", alt="img").lazyload
+              .tedwood-steps__item-text   
+                h3.h2 Очистка каналов
+                p По окончанию получения каналов необходимо очистить их от посторонних предметов - стружка, щепа, обрезки межвенцового утеплителя. Процедура производится с помощью стальной арматуры диаметром 6-8 мм.
+                p Канал должен быть идеально чистым, так как оставшейся мусор будет препятствовать качественному прохождению пены по вертикальному каналу.
+              .tedwood-steps__item-index(style='color:#f27c1c;') 2
+            
+            //step
+            .tedwood-steps__item
+              .tedwood-steps__item-index(style='color:#f27c1c;') 3
+              .tedwood-steps__item-text   
+                h3.h2 Очистка каналов
+                p По окончанию получения каналов необходимо очистить их от посторонних предметов - стружка, щепа, обрезки межвенцового утеплителя. Процедура производится с помощью стальной арматуры диаметром 6-8 мм.
+                p Канал должен быть идеально чистым, так как оставшейся мусор будет препятствовать качественному прохождению пены по вертикальному каналу.
+              .tedwood-steps__item-image.image.image_cover 
+                img(data-src="./img/tedwood/step3.jpeg", alt="img").lazyload
+
+            //step
+            .tedwood-steps__item
+              .tedwood-steps__item-image.image.image_cover 
+                img(data-src="./img/tedwood/step4.jpeg", alt="img").lazyload
+              .tedwood-steps__item-text   
+                h3.h2 Заполнение пеной
+                p Перед началом заполнения вертикальных каналов пеной, герметично затыкаем каналы для отвода стружки. Сверлим первое отверстие в следующем межвенцовом соединении сверлом по дереву диаметром 8 мм для подачи через него пены в полость вертикального канала. Далее необходимо просверлить через каждые 4-5 рядов брусьев такие же отверстия для дозированной подачи пены в канал.
+                p Для получения более подробной информации посмотрите каталог TEDWOOD, где более подробно можно ознакомиться с инструкциями по применению оснасток и крепежа.
+              .tedwood-steps__item-index(style='color:#f27c1c;') 4
+  
+  section.section
+    .container
+      .row.justify-content-center
+        .col-xl-10
+          h2.h1.section__title Скачать каталог TEDWOOD
+          .documents
+            table.documents__table
+              tr.documents__item
+                td.documents__item-title 
+                  a(href="#").documents__item-link.link.link_without-border Каталог TEDWOOD
+                td.documents__item-icon
+                  .documents__item-icon-item
+                    svg.icon
+                      use(xlink:href="img/icons/icons-sprite.svg#doc")
+                    span pdf
+                td.documents__item-size 18.4 mb
+                td.documents__item-button
+                  a(href="#" download).button.button_style-1.documents__button 
+                    svg.icon
+                      use(xlink:href="img/icons/icons-sprite.svg#download")
+                    span Скачать
+
+  -var formTitle = 'Напишите нам'
+  include blocks/form

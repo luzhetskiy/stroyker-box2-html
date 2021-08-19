@@ -28,7 +28,7 @@
     padding: 72px 0;
     background-size: cover;
     background-position: center;
-    & ~ .section_custom-background {
+    & + .section_custom-background {
       margin-top: -72px;
     }
     &:last-child {
@@ -44,7 +44,6 @@
   &__title {
     margin-top: 0;
     margin-bottom: 28px;
-    display: block;
     span {
       margin-right: 1rem;
     }
@@ -65,7 +64,7 @@
     margin-bottom: 60px;
     &_custom-background {
       padding: 60px 0;
-      & ~ .section_custom-background {
+      & + .section_custom-background {
         margin-top: -60px;
       }
     }

@@ -21,7 +21,7 @@ $font2: 'Open Sans', sans-serif;
   top: 50%;
   transform: translate(-100%, -50%);
   transition: transform $trs;
-  width: 100%;
+  width: calc(100% - 40px);
   max-width: 420px;
   max-height: 100%;
   color: #000;

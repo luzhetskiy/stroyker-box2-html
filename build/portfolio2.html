@@ -759,7 +759,14 @@
     <script src="js/libs/scroll-lock.min.js"></script>
     <script src="js/libs/slick.js"></script>
     <script src="js/libs/lazysizes.min.js"></script>
-    <script>lazySizes.cfg.init = false;</script>
+    <script>
+      lazySizes.cfg.init = false;
+      lazySizes.cfg.customMedia = {
+        '--small': '(max-width: 575px)',
+        '--medium': '(max-width: 991px)',
+        '--large': '(max-width: 1279px)',
+      };
+    </script>
     <script src="js/libs/inputmask.min.js"></script>
     <script src="js/libs/validate.min.js"></script>
     <script src="js/libs/simplebar.min.js"></script>
@@ -804,6 +811,10 @@
         <!--section-->
         <div class="helper__section"><span class="helper__section-title">Вход / Регистраиция:</span>
           <div class="helper__section-content"><a class="helper__section-button" href="auth.html">Вход</a><a class="helper__section-button" href="reg.html">Регистрация</a><a class="helper__section-button" href="pass-reset.html">Восстановление пароля</a></div>
+        </div>
+        <!--section-->
+        <div class="helper__section"><span class="helper__section-title">Tedwood:</span>
+          <div class="helper__section-content"><a class="helper__section-button" href="tedwood-1.html">Лендинг 1</a><a class="helper__section-button" href="tedwood-2.html">Лендинг 2</a><a class="helper__section-button" href="tedwood-3.html">Лендинг 3</a></div>
         </div>
       </div>
     </div>

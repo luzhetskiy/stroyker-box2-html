@@ -1,0 +1,473 @@
+//variables
+@import "./components/variables";
+
+//bootstrap components
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins/deprecate";
+@import "../../node_modules/bootstrap/scss/mixins/breakpoints";
+@import "../../node_modules/bootstrap/scss/mixins/grid-framework";
+@import "../../node_modules/bootstrap/scss/mixins/grid";
+
+.tedwood-tools {
+  margin-top: 30px;
+  &__item {
+    .image {
+      position: absolute;
+      width: calc(50% - 20px);
+      height: calc(100% - 20px);
+      top: 10px;
+      right: 20px;
+      transition: transform $trs1;
+      img {
+        object-position: center right;
+      }
+    }
+    ul {
+      li {
+        &:not(:last-child) {
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+    &_1 {
+      .image {
+        top: 0;
+        height: auto;
+        width: 60%;
+        &::before {
+          content: '';
+          display: block;
+          padding-top: 103%;
+        }
+      }
+    }
+    &_2 {
+      .image {
+        margin-top: 20px;
+        position: relative;
+        top: initial;
+        right: initial;
+        width: 50%;
+        height: auto;
+        margin-left: 30px;
+        &::before {
+          content: '';
+          display: block;
+          padding-top: 16%;
+        }
+      }
+    }
+    &_3 {
+      .image {
+        width: calc(40% - 20px);
+        height: auto;
+        &::before {
+          content: '';
+          display: block;
+          padding-top: 63%;
+        }
+      }
+    }
+  }
+  &__item-container {
+    background-color: #f2f2f2;
+    position: relative;
+    padding: 30px 0 20px 0;
+    height: 100%;
+    min-height: 100px;
+    transition: transform $trs1, box-shadow $trs1;
+    overflow: hidden;
+    &[data-touch], &[data-hover] {
+      transform: translateY(-3px);
+      box-shadow: 0px 4px 7px #dedede;
+      .image {
+        transform: translateY(-3px);
+      }
+    }
+  }
+  &__item-title {
+    margin: 0;
+    &:not(:last-child) {
+      margin: 0 0 4px 0;
+    }
+    &_type-2 {
+      &:not(:last-child) {
+        margin: 0 0 15px 0;
+      }
+    }
+  }
+  &__item-text {
+    width: 50%;
+    padding: 0 20px 0 30px;
+    &_1 {
+      width: 60%;
+    }
+    &_2 {
+      width: 100%;
+    }
+    &_3 {
+      width: 60%;
+    }
+  }
+  @include media-breakpoint-down(xs) {
+    &__item-container {
+      padding: 16px 0;
+    }
+    &__item-text {
+      padding: 0 16px;
+    }
+  }
+}
+
+.tedwood-steps {
+  margin-top: 60px;
+  &__item {
+    display: flex;
+    position: relative;
+    &:not(:last-child) {
+      margin-bottom: 60px;
+    }
+  }
+  &__item-index {
+    font-size: 350px;
+    position: absolute;
+    font-weight: 700;
+    line-height: 0.8;
+    transform: translateY(-0.08em);
+    opacity: 0.5;
+    &:first-child {
+      left: -0.035em;
+    }
+    &:last-child {
+      right: -0.035em;
+    }
+  }
+  &__item-text {
+    flex: 1 1 60%;
+    position: relative;
+    z-index: 2;
+  }
+  &__item-image {
+    flex: 0 0 40%;
+    height: 245px;
+    position: relative;
+    z-index: 2;
+  }
+  @include media-breakpoint-up(lg) {
+    &__item-index {
+      & + .tedwood-steps__item-text {
+        padding-left: 90px;
+        padding-right: 30px;
+      }
+    }
+    &__item-image {
+      & + .tedwood-steps__item-text {
+        padding-left: 30px;
+        padding-right: 90px;
+      }
+    }
+  }
+  @include media-breakpoint-down(md) {
+    &__item {
+      display: flex;
+      flex-direction: column;
+    }
+    &__item-text {
+      order: 2;
+      padding-left: 130px;
+    }
+    &__item-image {
+      flex: 0 0 300px;
+      margin-bottom: 20px;
+    }
+    &__item-index {
+      top: 327px;
+      font-size: 200px;
+      &:last-child {
+        left: -0.035em;
+        right: initial;
+      }
+    }
+  }
+  @include media-breakpoint-down(xs) {
+    margin-top: 40px;
+    &__item-image {
+      flex: 0 0 200px;
+    }
+    &__item-index {
+      top: 225px;
+      font-size: 100px;
+    }
+    &__item-text {
+      padding-left: 70px;
+    }
+    &__item {
+      &:not(:last-child) {
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
+.tedwood-head {
+  background-color: #f2f2f2;
+  padding: 60px 0;
+  margin-top: -30px;
+  color: #333;
+  position: relative;
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+  &__background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: transparent;
+    max-width: 1920px;
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+    }
+    &_style-1 {
+      height: 78%;
+      top: 22%;
+      img {
+        object-fit: contain;
+        object-position: right bottom;
+      }
+    }
+    &_style-2 {
+      left: 55%;
+      img {
+        object-fit: cover;
+        object-position: center center;
+      }
+    }
+  }
+  &__sub-title {
+    font-size: 30px;
+    line-height: 1;
+    font-weight: 400;
+    margin-bottom: 15px;
+    color: inherit;
+  }
+  &__title {
+    font-weight: 900;
+    font-size: 72px;
+    line-height: 1;
+    margin-bottom: 45px;
+    margin-top: 0;
+  }
+  &__list {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+  }
+  &__item {
+    padding: 0 0 0 3em;
+    position: relative;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 1.16;
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+    .icon {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 2em;
+      height: 2em;
+      display: block;
+    }
+  }
+  @include media-breakpoint-down(lg) {
+    &__sub-title {
+      font-size: 20px;
+    }
+    &__title {
+      font-size: 42px;
+    }
+    &__item {
+      font-size: 20px;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    &__background {
+      &_style-1 {
+        left: 60%;
+      }
+      &_style-2 {
+        left: 62%;
+      }
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    &__background {
+      &_style-1 {
+        left: 50%;
+        margin-bottom: -60px;
+        margin-top: 20px;
+        width: 1060px;
+        top: initial;
+        position: relative;
+        transform: translateX(-68%);
+        &::before {
+          content: '';
+          display: block;
+          padding-top: 28.125%;
+        }
+      }
+      &_style-2 {
+        left: 50%;
+        margin-bottom: -60px;
+        margin-top: 40px;
+        width: 1200px;
+        top: initial;
+        position: relative;
+        transform: translateX(-65%);
+        &::before {
+          content: '';
+          display: block;
+          padding-top: 32%;
+        }
+      }
+    }
+  }
+  @include media-breakpoint-down(xs) {
+    padding: 40px 0;
+    &__sub-title {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    &__title {
+      font-size: 32px;
+      margin-bottom: 35px;
+    }
+    &__item {
+      font-size: 16px;
+      &:not(:last-child) {
+        margin-bottom: 25px;
+      }
+    }
+    &__background {
+      &_style-1 {
+        left: 49%;
+        width: 193%;
+        margin-bottom: -40px;
+      }
+    }
+  }
+}
+
+.tedwood-image-block {
+  display: flex;
+  background-color: #f2f2f2;
+  &__text {
+    flex: 1 1 50%;
+    padding: 60px;
+  }
+  &__image {
+    flex: 1 1 50%;
+  }
+  @include media-breakpoint-down(md) {
+    &__text {
+      padding: 40px;
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    &__text {
+      padding: 30px 20px;
+    }
+  }
+  @include media-breakpoint-down(xs) {
+    flex-direction: column;
+    &__image {
+      flex: 0 0 200px;
+    }
+    &__image {
+      order: 2;
+    }
+  }
+}
+
+.tedwood-technology {
+  color: #fff;
+  &__container {
+    display: flex;
+  }
+  &__title {
+    color: inherit;
+  }
+  &__image {
+    flex: 1 1 45%;
+    &::before {
+      content: '';
+      display: block;
+      padding-top: 80%;
+    }
+  }
+  &__content {
+    flex: 1 1 55%;
+    padding-left: 60px;
+  }
+  &__item {
+    padding-left: 60px;
+    position: relative;
+    .icon {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      left: 0;
+      top: 5px;
+    }
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    &__container {
+      display: block;
+    }
+    &__image {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    &__content {
+      padding: 30px 0 0 0;
+    }
+  }
+}
+
+.tedwood-benefits {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 60px;
+  row-gap: 30px;
+  margin-bottom: 30px;
+  &__item {
+    padding-left: 60px;
+    position: relative;
+    .icon {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      left: 0;
+      top: 5px;
+    }
+  }
+  @include media-breakpoint-down(lg) {
+    column-gap: 30px;
+  }
+  @include media-breakpoint-down(md) {
+    grid-template-columns: 1fr;
+  }
+}

@@ -22,8 +22,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
     <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
     <link rel="stylesheet" href="styles/color-theme.css">
-    <link rel="stylesheet" href="styles/kabinet.css">
     <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/kabinet.css">
     <!--helper-->
     <link rel="stylesheet" href="styles/helper.css">
   </head>
@@ -577,7 +577,14 @@
     <script src="js/libs/scroll-lock.min.js"></script>
     <script src="js/libs/slick.js"></script>
     <script src="js/libs/lazysizes.min.js"></script>
-    <script>lazySizes.cfg.init = false;</script>
+    <script>
+      lazySizes.cfg.init = false;
+      lazySizes.cfg.customMedia = {
+        '--small': '(max-width: 575px)',
+        '--medium': '(max-width: 991px)',
+        '--large': '(max-width: 1279px)',
+      };
+    </script>
     <script src="js/libs/inputmask.min.js"></script>
     <script src="js/libs/validate.min.js"></script>
     <script src="js/libs/simplebar.min.js"></script>
@@ -622,6 +629,10 @@
         <!--section-->
         <div class="helper__section"><span class="helper__section-title">Вход / Регистраиция:</span>
           <div class="helper__section-content"><a class="helper__section-button" href="auth.html">Вход</a><a class="helper__section-button" href="reg.html">Регистрация</a><a class="helper__section-button" href="pass-reset.html">Восстановление пароля</a></div>
+        </div>
+        <!--section-->
+        <div class="helper__section"><span class="helper__section-title">Tedwood:</span>
+          <div class="helper__section-content"><a class="helper__section-button" href="tedwood-1.html">Лендинг 1</a><a class="helper__section-button" href="tedwood-2.html">Лендинг 2</a><a class="helper__section-button" href="tedwood-3.html">Лендинг 3</a></div>
         </div>
       </div>
     </div>

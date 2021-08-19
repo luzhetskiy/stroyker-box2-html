@@ -1,0 +1,230 @@
+extends layout/layout
+block title
+  title Пружинный узел TEDWOOD
+
+block style
+  link(rel="stylesheet" href="./styles/tedwood.css")
+
+block content
+
+  section.section.tedwood-head 
+    .container 
+      .tedwood-head__text
+        h2.tedwood-head__sub-title Технология TEDWOOD
+        h1.tedwood-head__title Пружинный<br> узел TEDWOOD
+        ul.tedwood-head__list 
+          li.tedwood-head__item 
+            img(src="./img/tedwood/checkbox_gray.svg", alt="icon").icon
+            | Шуруп стягивает детали между<br> собой с силой до 1200 кг!
+          li.tedwood-head__item 
+            img(src="./img/tedwood/checkbox_gray.svg", alt="icon").icon
+            | Пружина устраняет появление щелей<br> между деталями с силой до 260 кг!
+          li.tedwood-head__item 
+            img(src="./img/tedwood/checkbox_gray.svg", alt="icon").icon
+            | Коническая пружина не поддается<br> разрушению при полном ее сжатии!
+          li.tedwood-head__item 
+            img(src="./img/tedwood/checkbox_gray.svg", alt="icon").icon
+            | Выполнение требований ГОСТ 30974-2002<br> "Угловые соединения"
+
+    .image.tedwood-head__background.tedwood-head__background_style-2
+      img(src="./img/tedwood/p3.jpeg", alt="img").lazyload
+        
+  section.section 
+    .container 
+      .row.justify-content-center
+        .col-xl-10 
+          h2.h1.section__title ГОСТ — методическое указание
+          p В процессе строительства деревянного строения необходимо использовать специальный винтовой крепеж способный не только одномоментно соединить детали между собой с полным устранением зазоров между ними, но и предотвратить появление зазоров между деталями в будущем из-за неминуемых процессов усушки и коробления древесины.
+          p Усушка и набухание древесины являются причиной коробления деталей, о чем предупреждает 
+            strong ГОСТ 30974-2002 "Угловые соединения бревенчатых и брусчатых малоэтажных зданий"
+            | .
+          p О креплении элементов стен между собой по высоте рассказывает п. 4.12. (настоящего ГОСТ) в котором упоминается только винтовая тяга (компенсатор), а это резьбовая шпилька, шуруп для лаг и реек или шуруп с вмонтированной в конструкцию пружиной, так как пружина в конструкции с винтовой тягой обеспечивает компенсацию отсутствующей естественной силы у винтовой тяги, необходимой для подтягивания деталей между собой.<br> 
+            strong Пункт 4.12. 
+            | Элементы стен и простенков могут быть соединены по высоте при помощи 
+            strong винтовых тяг (компенсаторов)
+            |.
+          p 
+            strong Нагель 
+            | — упоминается в ГОСТ 30974-2002 "Угловые соединения бревенчатых и брусчатых малоэтажных зданий" в п. 4.7. только в качестве элемента укрепляющего угловые и Т-образные  соединения брусьев 
+            strong с коренным шипом и на шпонках 
+            | (это 2 типа угловых соединений брусьев без выступающего остатка и не имеющего паза — гребневое соединение между собой).
+          p 
+            strong Нагель — это не крепеж скрепляющий детали с целью предотвращения образования зазоров, а лишь фиксатор положения деталей между собой для удержания стен в вертикальных осях, в течении периода усадки здания у непрофилированных деталей.
+          p В 2010 году автор получил ПАТЕНТ № 90510 «Крепежный узел для сборки деревянных конструкций» и ПАТЕНТ № 2399729 «Способ изготовления деревянных домов», что послужило началом развития проекта Пружинный узел «СИЛА».
+
+      picture
+        source(srcset='./img/tedwood/1_способ монтажа.jpeg')
+        img(src='./img/tedwood/1_способ монтажа.jpeg' alt='img')
+
+      .row.justify-content-center
+        .col-xl-10 
+          p Конструкция Пружинного узла оказалась настолько простой и доступной для копирования, что этим нехитрым делом занялись многие, а вот желания понять работу метода для обеспечения достижения цели изобретения и действительного устранения недостатка деревянных конструкций ни у кого не возникло.
+          p Производители копий стали вносить в конструкцию Пружинного узла ряд неосмысленных внедрений наносящих вред способу монтажа деревянных конструкций, а также вред изобретению как результату работы автора изобретения.
+
+  section.section 
+    .container 
+      .row.justify-content-center
+        .col-xl-10 
+          h2.h1.section__title Цилиндрическая пружина — от теории к практике
+          p Активное применение Пружинного узла в деревянном домостроении позволило автору увидеть достоинство способа, а также выявить конструктивные недостатки Пружинного узла образца 2009 года с цилиндрической пружиной сжатия которые необходимо было устранить.
+          
+      picture
+        source(srcset='./img/tedwood/ЦП испытание шурупа.jpeg')
+        img(src='./img/tedwood/ЦП испытание шурупа.jpeg' alt='img')
+
+  section.section
+    .container 
+      .row.justify-content-center
+        .col-xl-10 
+          .row 
+            .col-md-8.mb-4.mb-md-0
+              h2.h1.section__title Коническая пружина — практика основа теории
+              p Выявленные автором изобретения конструктивные недостатки межвенцовых креплений с цилиндрической пружиной сжатия, легли в основу необходимой модернизации крепежа. 
+              p Цель модернизации — сохранение энергии упругого элемента, а также увеличение жесткости при сохранении габаритных размеров.
+              p Несколько лет потребовалось автору для испытаний и внедрения новой конструкции Пружинного узла с конической пружиной в практической строительной деятельности. Итогом поиска правильного решения стала новая конструкция Пружинного узла, чья безупречная работа подтверждает достижение поставленных целей и задач.
+              p В 2017 году автором был получен ПАТЕНТ № 180024 «Крепежный элемент для соединения деревянных конструкций» с конической пружиной, Пружинный узел «TEDWOOD».
+            .offset-md-1.col-md-3
+              picture
+                source(srcset='./img/tedwood/modernisation.png')
+                img(src='./img/tedwood/modernisation.png' alt='img' style='margin:0 !important;width:100% !important;')
+
+      picture
+        source(srcset='./img/tedwood/ПУ20190710.jpeg')
+        img(src='./img/tedwood/ПУ20190710.jpeg' alt='img')
+
+      .row.justify-content-center
+        .col-xl-10 
+          p Пружинный узел «TEDWOOD» — это не просто шуруп с пружиной, а по настоящему работающее крепление способное устранить зазоры между деталями уже при сборке силовой конструкции, а также устранять последствия усушки деревянных деталей в течении времени предотвращая появление щелей между ними.
+
+  section.section
+    .container 
+      .row.grid
+        .grid__block.col-md-6.col-xl-5.offset-xl-1
+          .video
+            iframe(src='https://www.youtube.com/embed/-BIT-FkzE3Y' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+        .grid__block.col-md-6.col-xl-5
+          .video
+            iframe(src='https://www.youtube.com/embed/nNtEV8b1rUo' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
+
+  section.section
+    .container 
+      .row.justify-content-center
+        .col-xl-10 
+          h2.h1.section__title Монтажный инструмент
+
+      .tedwood-tools.row.grid
+        .tedwood-tools__item.tedwood-tools__item_1.col-md-6.grid__block 
+          .tedwood-tools__item-container(data-custom-interaction) 
+            .tedwood-tools__item-text.tedwood-tools__item-text_1
+              h2.tedwood-tools__item-title.tedwood-tools__item-title_type-2 Дрель - миксер
+              ul 
+                li 230 V, 710 W
+                li 500 об./мин
+                li 50 Н*м
+                li Реверс
+                li Патрон ключевой от 16 мм
+                li Марки: Makita DS4010, DeWALT D 21520, Интерскол Д-16, Einhell TC-MX 1100 E, Elitech ДМ 1100 РЭ
+            .image.image_contain
+              img(data-src="./img/tedwood/drel.png", alt="image").lazyload
+
+        .col-md-6
+
+          .tedwood-tools__item.tedwood-tools__item_2.grid__block 
+            .tedwood-tools__item-container(data-custom-interaction) 
+              .tedwood-tools__item-text.tedwood-tools__item-text_2 
+                h2.tedwood-tools__item-title.tedwood-tools__item-title_type-2 Двухпроходное сверло
+                ul 
+                  li Общая длина сверла 240 мм
+                  li Диаметр отверстия для прохождения шурупа 14 мм
+                  li Диаметр отверстия для установки пружинного блока 35 мм
+                  li Хвостовик шестигранный 14 мм
+              .image.image_contain
+                img(data-src="./img/tedwood/combi.png", alt="image").lazyload
+
+          .tedwood-tools__item.tedwood-tools__item_3.grid__block 
+            .tedwood-tools__item-container(data-custom-interaction) 
+              .tedwood-tools__item-text.tedwood-tools__item-text_3
+                h2.tedwood-tools__item-title.tedwood-tools__item-title_type-2 Торцевой гаечный ключ
+                ul 
+                  li Внутренний шестигранник 14 мм
+                  li Длина 90 мм
+                  li Хвостовик шестигранный 14 мм
+              .image.image_contain
+                img(data-src="./img/tedwood/sidekey.png", alt="image").lazyload
+
+  section.section
+    .container 
+      .section__title.row.justify-content-center
+        .col-xl-10 
+          h2.h1 Миф не прошедший проверку временем
+        
+      picture
+        source(srcset='./img/tedwood/6.jpeg')
+        img(src='./img/tedwood/6.jpeg' alt='img')
+
+  section.section.section_custom-background(style='background-color:#F5F5F5;')
+    .container
+      .row.justify-content-center
+        .col-xl-10
+          h2.h1.section__title Принцип работы
+          .tedwood-steps
+            //step
+            .tedwood-steps__item
+              .tedwood-steps__item-index(style='color:#BDBDBD;') 1
+              .tedwood-steps__item-text   
+                h3.h2 Сверление отверстий
+                p Первым этапом работ по установке межвенцового крепежа считается разметка мест сверления установочных отверстий. На каждой детали размечаются места установки Пружинных узлов, которые устанавливаются по краям и по ее пролету с шагом расстановки не более 1,5 - 2 метров друг от друга в зависимости от размера бруса в сечении. Каждый следующий ряд размечается со смещением мест установки крепежей минимум на 100 - 150 мм влево или вправо по оси детали, по отношению к ниже установленному креплению.
+              .tedwood-steps__item-image.image.image_cover 
+                img(data-src="./img/tedwood/step1_1.jpeg", alt="img").lazyload
+
+            //step
+            .tedwood-steps__item
+              .tedwood-steps__item-image.image.image_cover 
+                img(data-src="./img/tedwood/step1_2.jpeg", alt="img").lazyload
+              .tedwood-steps__item-text   
+                h3.h2 Нюансы сверления
+                p Сверление установочных отверстий на размеченных деревянных деталях, производится комбинированным сверлом. Первая часть сверла создает проходное отверстие для беспрепятственного прохождения шурупа через брус, а вторая часть сверла создает посадочное отверстие для установки пружинного блока в массиве бруса. Глубина сверления зависит от высоты детали, так как прежде всего необходимо получить проходное отверстие для беспрепятственного прохождения шурупа через верхнюю деталь. Если длинны сверла не хватает, то сверло нужно удлинить.
+              .tedwood-steps__item-index(style='color:#BDBDBD;') 2
+            
+            //step
+            .tedwood-steps__item
+              .tedwood-steps__item-index(style='color:#BDBDBD;') 3
+              .tedwood-steps__item-text   
+                h3.h2 Установка Пружинного узла
+                p Качественно установив деталь на свое место необходимо расставить Пружинные узлы по своим местам и вкрутить их до полного сжатия. Если после полного сжатия креплений качественного уплотнения нет, то необходимо определить и устранить причину препятствующую плотному сжатию деталей, после чего опять установить крепеж по установочным отверстиям для последующего вворачивания.
+              .tedwood-steps__item-image.image.image_cover 
+                img(data-src="./img/tedwood/step1_3.jpeg", alt="img").lazyload
+
+            //step
+            .tedwood-steps__item
+              .tedwood-steps__item-image.image.image_cover 
+                img(data-src="./img/tedwood/step1_4.jpeg", alt="img").lazyload
+              .tedwood-steps__item-text   
+                h3.h2 Нюансы установки
+                p Вворачивание крепежа производится дрель - миксером с установленной в ее патрон гаечной головкой на 14 мм. Вначале вворачиваются Пружинные узлы по краям детали, далее вворачиваются крепления по пролету. Вворачивается Пружинный узел до полного сжатия пружины и устранения зазора между деталями. Для получения более подробной информации ознакомьтесь с каталогом "TEDWOOD", где более подробно можно ознакомиться с инструкциями по применению оснасток и крепежа.
+              .tedwood-steps__item-index(style='color:#BDBDBD;') 4
+
+  section.section
+    .container
+      .row.justify-content-center
+        .col-xl-10
+          h2.h1.section__title Скачать каталог TEDWOOD
+          .documents
+            table.documents__table
+              tr.documents__item
+                td.documents__item-title 
+                  a(href="#").documents__item-link.link.link_without-border Каталог TEDWOOD
+                td.documents__item-icon
+                  .documents__item-icon-item
+                    svg.icon
+                      use(xlink:href="img/icons/icons-sprite.svg#doc")
+                    span pdf
+                td.documents__item-size 18.4 mb
+                td.documents__item-button
+                  a(href="#" download).button.button_style-1.documents__button 
+                    svg.icon
+                      use(xlink:href="img/icons/icons-sprite.svg#download")
+                    span Скачать
+
+  -var formTitle = 'Напишите нам'
+  include blocks/form
