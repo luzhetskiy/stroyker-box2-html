@@ -40,13 +40,15 @@ $(document).ready(function () {
   jsRange();
   gridToggle();
   comparison();
-  gallery();
+  
   lazy();
 
   //slider constructor
   document.querySelectorAll('.slider-constructor').forEach($this => {
     new SliderConstructor($this).init();
   })
+
+  gallery();
 
 });
 
@@ -1444,9 +1446,12 @@ function gallery() {
     $.fancybox.defaults.autoFocus = false;
     $.fancybox.defaults.backFocus = false;
     $.fancybox.defaults.animationDuration = 500;
+    $.fancybox.defaults.hideScrollbar = false;
 
-    $('.slide [data-fancybox]').on('click', function() {
-      let $selector = $(this).parents('.slider').find('.slick-slide:not(.slick-cloned) a');
+  
+
+    $('.slick-slide [data-fancybox]').on('click', function() {
+      let $selector = $(this).parents('.slick-slider').find('.slick-slide:not(.slick-cloned) a');
 
       $.fancybox.open( $selector, {
           selector : $selector,
@@ -1455,10 +1460,18 @@ function gallery() {
 
       return false;
     });
+
+    $(document).on('beforeShow.fb', function( e, instance, slide ) {
+      scrollLock.disablePageScroll();
+    });
+
+    $(document).on('beforeClose.fb', function( e, instance, slide ) {
+      scrollLock.clearQueueScrollLocks();
+      scrollLock.enablePageScroll();
+    });
     
   }
 }
-
 
 //new sliders constructor
 class SliderConstructor {
@@ -1475,6 +1488,9 @@ class SliderConstructor {
     let autoplay = this.$element.getAttribute('data-autoplay-timeout') ? true : false,
         autoplay_timeout = this.$element.getAttribute('data-autoplay-timeout') || 5000;
 
+    let arrows = this.$element.getAttribute('data-no-arrows')=='' ? false : true,
+        adaptiveHeight = this.$element.getAttribute('data-adaptive-height')=='' ? true : false;
+
     let slides_count = +this.$element.getAttribute('data-slides') || 1,
         slides_sm_count = +this.$element.getAttribute('data-sm-slides') || slides_count,
         slides_md_count = +this.$element.getAttribute('data-md-slides') || slides_sm_count,
@@ -1487,6 +1503,8 @@ class SliderConstructor {
         rows_lg_count = +this.$element.getAttribute('data-lg-rows') || rows_md_count,
         rows_xl_count = +this.$element.getAttribute('data-xl-rows') || rows_lg_count;
 
+    console.log(arrows)
+
     $(this.$element).slick({
       autoplay: autoplay,
       autoplaySpeed: autoplay_timeout,
@@ -1496,6 +1514,8 @@ class SliderConstructor {
       rows: rows_count,
       nextArrow: next_arrow,
       prevArrow: prev_arrow,
+      arrows: arrows,
+      adaptiveHeight: adaptiveHeight,
       dots: true,
       responsive: [{
         breakpoint: breakpoints.sm - 1,

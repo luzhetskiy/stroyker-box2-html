@@ -259,6 +259,11 @@
       }
     }
   }
+  &[data-adaptive-height] {
+    .slick-slide {
+      height: 100%;
+    }
+  }
   .slick-arrow {
     position: absolute;
     width: 40px;
@@ -292,8 +297,10 @@
     }
   }
   @include media-breakpoint-up(sm) {
-    .slick-dots {
-      display: none !important;
+    &:not([data-no-arrows]) {
+      .slick-dots {
+        display: none !important;
+      }
     }
     .slick-prev, .slick-next {
       display: flex !important;
@@ -301,7 +308,7 @@
   }
   @include media-breakpoint-down(xs) {
     .slick-list {
-      overflow: visible;
+      overflow: visible !important;
     }
     .slick-slide {
       row-gap: 15px;

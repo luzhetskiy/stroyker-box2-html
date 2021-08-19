@@ -6,6 +6,12 @@ block breadcrumbs
   include blocks/breadcrumbs
 block variables
   -var content = 'main_muted'
+
+block scripts
+  script(src='js/libs/jquery.fancybox.min.js')
+block style
+  link(rel="stylesheet" href="./styles/jquery.fancybox.css")
+
 block content
   .container
     .row
@@ -66,6 +72,30 @@ block content
                 td Доставка
                 td 36,00&nbsp;₽
                 td Да
+          
+          h3 Карточки
+          .row.grid 
+            include blocks/cards
+            .grid__block.col-sm-6.col-xl-4
+              +image-card(1, 1)
+            .grid__block.col-sm-6.col-xl-4
+              +image-card(1, 1)
+            .grid__block.col-sm-6.col-xl-4
+              +image-card(2, 1)
+            .grid__block.col-sm-6.col-xl-4
+              +image-card(3, 1)
+            .grid__block.col-sm-6.col-xl-4
+              +image-card(1, 1)
+
+          h3 Слайдер
+          .slider-constructor(data-no-arrows data-adaptive-height data-sm-slides='2' data-xl-slides='3')
+            include blocks/cards
+            +image-card(1, 2)
+            +image-card(1, 2)
+            +image-card(2, 2)
+            +image-card(3, 2)
+            +image-card(1, 2)
+          
           h3 Приложенные файлы
           .documents
             table.documents__table
