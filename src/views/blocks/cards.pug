@@ -144,9 +144,13 @@ mixin card5(title, classes)
         span.small-wiki-card__date АПРЕЛЬ, 2019
       .small-wiki-card__content
         .small-wiki-card__title=title
-mixin card6(title, classes)
+
+mixin card6(title, classes, type)
   .services-item-block(class=classes)
     a(href="service.html").services-item-block__container
+      if type == 2
+        .services-item-block__image.image.image_cover
+          img(data-src="./img/image 35.jpg", alt="image").lazyload
       h3.services-item-block__title=title
         svg.icon
           use(xlink:href="img/icons/icons-sprite.svg#arrow-right")
@@ -272,3 +276,15 @@ mixin image-card(type, index)
       .image-card-item__title Lorem ipsum dolor sit amet consectetur adipisicing elit
     else if type == 2
       .image-card-item__title Lorem ipsum dolor sit amet
+
+mixin banner-item-element(type)
+  a(href="#" style="background-color:#F5F5F5;").banner-item-element
+    if type == 1
+      .banner-item-element__text-content
+        h3 Lorem, ipsum dolor
+        p Ipsum dolor sit amet consectetur adipisicing elit.
+        p Ipsum dolor sit amet consectetur adipisicing elit.
+    else if type == 2
+      .banner-item-element__image.image.image_cover 
+        img(data-src="./img/image 35.jpg", alt="image").lazyload
+

@@ -49,6 +49,20 @@ block content
                 span забронировать 
                 span.d-none.d-lg-inline бригаду
 
+  section.section.section_custom-background(style='background-image:url("./img/image 22.jpg");')
+    include blocks/cards
+    .container 
+      .row.grid 
+        //element
+        .grid__block.col-lg-4.col-md-6 
+          +banner-item-element(1)
+        //element
+        .grid__block.col-lg-4.col-md-6  
+          +banner-item-element(2)
+        //element
+        .grid__block.col-lg-4.col-md-6  
+          +banner-item-element(2)
+
   section.section.popular-projects
     .container
       .row
@@ -65,7 +79,6 @@ block content
             +card1(true, true)
       .section__more.popular-projects__more
         a(href="#").button.button_style-1.button_xl.section__more-button Смотреть все проекты
-
   
   section.section
     .container
@@ -172,6 +185,8 @@ block content
 
 
   section.section.section_custom-background.popular-projects(style='background-color:#F5F5F5;')
+    .image.image_cover.section__background 
+      img(src="./img/image 22.jpg", alt="image").lazyload
     .container
       .row
         .col-xl-20pc.col-lg-3.popular-projects__advertising
@@ -281,7 +296,7 @@ block content
       .services__container.row.grid
         include blocks/cards
         +card6('Доставка и оплата и далее на две строчки', 'grid__block col-lg-3 col-sm-6')
-        +card6('Доставка', 'grid__block col-lg-3 col-sm-6')
+        +card6('Доставка', 'grid__block col-lg-3 col-sm-6', 2)
         +card6('Расчет доставки', 'grid__block col-lg-3 col-sm-6')
         +card6('Политика обработки персональных данных', 'grid__block col-lg-3 col-sm-6')
       .services__more.section__more
@@ -365,6 +380,7 @@ block content
   include blocks/form
 
   section.section.section_custom-background.section-partners(style="background-color: #DBDBDB")
+  
     .container
       h2.section__title.section-partners__title Наши 
         mark партнёры

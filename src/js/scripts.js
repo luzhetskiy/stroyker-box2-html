@@ -1446,6 +1446,7 @@ function gallery() {
     $.fancybox.defaults.autoFocus = false;
     $.fancybox.defaults.backFocus = false;
     $.fancybox.defaults.animationDuration = 500;
+    $.fancybox.defaults.animationEffect= "fade";
     $.fancybox.defaults.hideScrollbar = false;
 
   

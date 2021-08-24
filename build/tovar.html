@@ -23,6 +23,7 @@
     <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
     <link rel="stylesheet" href="styles/color-theme.css">
     <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="./styles/jquery.fancybox.css">
     <!--helper-->
     <link rel="stylesheet" href="styles/helper.css">
   </head>
@@ -321,13 +322,13 @@
                       <!--главный слайдер-->
                       <div class="slider item-slider">
                                                 <!--slide-->
-                                                <div class="item-slider__slide image image_cover"><img class="lazyload" data-src="img/image 22.jpg" alt="image"></div>
+                                                <div class="item-slider__slide"><a class="image image_cover" href="img/image 22.jpg" data-fancybox="gallery"><img class="lazyload" data-src="img/image 22.jpg" alt="image"></a></div>
                                                 <!--slide-->
-                                                <div class="item-slider__slide image image_cover"><img class="lazyload" data-src="img/image 35.jpg" alt="image"></div>
+                                                <div class="item-slider__slide"><a class="image image_cover" href="img/image 35.jpg" data-fancybox="gallery"><img class="lazyload" data-src="img/image 35.jpg" alt="image"></a></div>
                                                 <!--slide-->
-                                                <div class="item-slider__slide image image_cover"><img class="lazyload" data-src="img/image 22.jpg" alt="image"></div>
+                                                <div class="item-slider__slide"><a class="image image_cover" href="img/image 22.jpg" data-fancybox="gallery"><img class="lazyload" data-src="img/image 22.jpg" alt="image"></a></div>
                                                 <!--slide-->
-                                                <div class="item-slider__slide image image_cover"><img class="lazyload" data-src="img/image 35.jpg" alt="image"></div>
+                                                <div class="item-slider__slide"><a class="image image_cover" href="img/image 35.jpg" data-fancybox="gallery"><img class="lazyload" data-src="img/image 35.jpg" alt="image"></a></div>
                       </div>
                     </div>
                     <!--навигационный слайдер-->
@@ -1353,81 +1354,7 @@
     <script src="js/libs/ion.rangeSlider.min.js"></script>
     <script src="js/libs/popper.min.js"></script>
     <script src="js/libs/tippy.min.js"></script>
-    <script src="js/libs/Chart.js"></script>
-    <script src="js/libs/utils.js"></script>
-    <script>
-      var MONTHS = ['Январь','Февраль',	'Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
-      var config = {
-      type: 'line',
-      data: {
-      labels: ['Январь','Февраль',	'Март','Апрель','Май','Июнь','Июль'],
-      datasets: [{
-      label: 'Цена',
-      backgroundColor: window.chartColors.blue,
-      borderColor: window.chartColors.blue,
-      data: [
-      randomScalingFactor(),
-      randomScalingFactor(),
-      randomScalingFactor(),
-      randomScalingFactor(),
-      randomScalingFactor(),
-      randomScalingFactor(),
-      randomScalingFactor()
-      ],
-      fill: false,
-      }, {
-      label: 'Цена по карте',
-      fill: false,
-      backgroundColor: window.chartColors.red,
-      borderColor: window.chartColors.red,
-      data: [
-      randomScalingFactor(),
-      randomScalingFactor(),
-      randomScalingFactor(),
-      randomScalingFactor(),
-      randomScalingFactor(),
-      randomScalingFactor(),
-      randomScalingFactor()
-      ],
-      }]
-      },
-      options: {
-      responsive: true,
-      tooltips: {
-      mode: 'index',
-      intersect: false,
-      },
-      hover: {
-      mode: 'nearest',
-      intersect: true
-      },
-      scales: {
-      x: {
-      display: true,
-      scaleLabel: {
-      display: true,
-      labelString: 'Month'
-      }
-      },
-      y: {
-      display: true,
-      scaleLabel: {
-      display: true,
-      labelString: 'Value'
-      }
-      }
-      }
-      }
-      };
-      window.onload = function() {
-      var ctx = document.getElementById('canvas').getContext('2d');
-      window.myLine = new Chart(ctx, config);
-      };
-      
-      
-      
-      
-    </script>
+    <script src="js/libs/jquery.fancybox.min.js"></script>
     <!--scripts-->
     <script src="js/scripts.js"></script>
     <!--preview only-->

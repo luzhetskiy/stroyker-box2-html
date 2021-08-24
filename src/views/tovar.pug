@@ -78,7 +78,10 @@ block scripts
     window.myLine = new Chart(ctx, config);
     };
 
-
+block scripts
+  script(src='js/libs/jquery.fancybox.min.js')
+block style
+  link(rel="stylesheet" href="./styles/jquery.fancybox.css")
 
 
 block content
@@ -111,8 +114,9 @@ block content
               .slider.item-slider
                 mixin slide(href)
                   //slide
-                  .item-slider__slide.image.image_cover
-                    img(data-src=href alt="image").lazyload
+                  .item-slider__slide
+                    a(href=href data-fancybox='gallery').image.image_cover
+                      img(data-src=href alt="image").lazyload
                 +slide('img/image 22.jpg')
                 +slide('img/image 35.jpg')
                 +slide('img/image 22.jpg')
