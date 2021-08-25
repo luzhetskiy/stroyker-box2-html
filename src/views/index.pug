@@ -6,11 +6,35 @@ block title
 block content
   .home-banner-wrapper
     //banner
-    .home-banner.slider.slider_arrows.slider_dots(data-desktop-ratio='0.35' data-mobile-ratio='0.7')
-      a(href="#").home-banner__slide.image.image_cover
-        img(data-src="./img/26128 1.jpg", alt="image").lazyload
-      a(href="#").home-banner__slide.image.image_cover
-        img(data-src="./img/26128 1.jpg", alt="image").lazyload
+    .home-banner.slider.slider_arrows.slider_dots(data-desktop-ratio='0.38' data-mobile-ratio='0.88')
+      //slide
+      .home-banner__slide
+        .image.image_cover
+          img(data-src="./img/image 35.jpg", alt="image").lazyload
+        .home-banner__slide-container.container
+          .home-banner__slide-content
+            h2 Заголовок слайда
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, nobis autem sunt dolorem quam, quisquam voluptate recusandae qui, enim aperiam fugiat officiis.
+            a(href="#").button.button_style-2 Кнопка 
+      //slide
+      .home-banner__slide.home-banner__slide_right
+        .image.image_cover
+          img(data-src="./img/image 35.jpg", alt="image").lazyload
+        .home-banner__slide-container.container
+          .home-banner__slide-content
+            h2 Заголовок слайда
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, nobis autem sunt dolorem quam, quisquam voluptate recusandae qui, enim aperiam fugiat officiis.
+            a(href="#").button.button_style-2 Кнопка 
+      //slide
+      a(href="#").home-banner__slide.home-banner__slide_right
+        .image.image_cover
+          img(data-src="./img/26128 1.jpg", alt="image").lazyload
+      //slide
+      a(href="#").home-banner__slide
+        .image.image_cover
+          img(data-src="./img/26128 1.jpg", alt="image").lazyload
+      
+
     //categories
     section.section.home-categories
       .container

@@ -575,8 +575,8 @@ var slider = {
 
         let checkSize = function() {
           w = $this.width(),
-          h = $(window).width()<breakpoints.sm?w*res_mobile:w*res_desktop;
-          console.log($(window).width()<breakpoints.sm)
+          h = $(window).width()<breakpoints.md?w*res_mobile:w*res_desktop;
+          console.log($(window).width()<breakpoints.md)
           $this.height(h);
         }
 

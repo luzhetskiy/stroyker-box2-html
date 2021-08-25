@@ -43,7 +43,7 @@
     opacity: 0;
     max-width: 100%;
     visibility: hidden;
-    transition: opacity $trs3, visibility $trs3, transform $trs1;
+    transition: opacity $trs2, visibility $trs2, transform $trs1;
     &.lazyloaded {
       opacity: 1;
       visibility: visible;
