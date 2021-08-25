@@ -8,31 +8,50 @@ block content
     //banner
     .home-banner.slider.slider_arrows.slider_dots(data-desktop-ratio='0.38' data-mobile-ratio='0.88')
       //slide
-      .home-banner__slide
-        .image.image_cover
-          img(data-src="./img/image 35.jpg", alt="image").lazyload
-        .home-banner__slide-container.container
-          .home-banner__slide-content
-            h2 Заголовок слайда
-            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, nobis autem sunt dolorem quam, quisquam voluptate recusandae qui, enim aperiam fugiat officiis.
-            a(href="#").button.button_style-2 Кнопка 
-      //slide
-      .home-banner__slide.home-banner__slide_right
-        .image.image_cover
-          img(data-src="./img/image 35.jpg", alt="image").lazyload
-        .home-banner__slide-container.container
-          .home-banner__slide-content
-            h2 Заголовок слайда
-            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, nobis autem sunt dolorem quam, quisquam voluptate recusandae qui, enim aperiam fugiat officiis.
-            a(href="#").button.button_style-2 Кнопка 
-      //slide
-      a(href="#").home-banner__slide.home-banner__slide_right
+      a(href="#").home-banner__slide
         .image.image_cover
           img(data-src="./img/26128 1.jpg", alt="image").lazyload
       //slide
       a(href="#").home-banner__slide
         .image.image_cover
           img(data-src="./img/26128 1.jpg", alt="image").lazyload
+    
+    //categories
+    section.section.home-categories
+      .container
+        .row.grid
+          include blocks/cards
+          -var grid = 'grid__block home-categories__block col-lg-3 col-md-6 col-12'
+          +card2('Деревянные дома', 'img/56dcc810efa71925168c0d36d5c3fbf7.png', grid)
+          +card2('Кровельные работы', 'img/7eaf93e9c47993e5b22277de3a30b89e.png', grid)
+          +card2('Пропитки для бревен', 'img/767773b7699f15e02052b250d92c0c7f.png', grid)
+          +card2('Проектирование', 'img/e79cec4f0a120d2e96a1701cf4ef8db3.png', grid)
+  
+  .home-banner-wrapper
+    //banner
+    .home-banner.slider.slider_arrows.slider_dots
+      //slide
+      .home-banner__slide
+        .image.image_cover
+          img(data-src="./img/image 35.jpg", alt="image").lazyload
+        .home-banner__slide-container.container
+          //Если нужен фон, добавляется модификатор home-banner__slide-content_bg
+          //Если вертикальное выравнивание по правой стороне, добавляется модификатор home-banner__slide-content_right
+          .home-banner__slide-content.home-banner__slide-content_right
+            h2 Заголовок слайда
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, nobis autem sunt dolorem quam, quisquam voluptate recusandae qui, enim aperiam fugiat officiis.
+            a(href="#").button.button_style-2 Кнопка 
+      //slide
+      .home-banner__slide
+        .image.image_cover
+          img(data-src="./img/image 35.jpg", alt="image").lazyload
+        .home-banner__slide-container.container
+          //Если нужен фон, добавляется модификатор home-banner__slide-content_bg
+          //Если вертикальное выравнивание по правой стороне, добавляется модификатор home-banner__slide-content_right
+          .home-banner__slide-content.home-banner__slide-content_bg
+            h2 Заголовок слайда
+            p Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, nobis autem sunt dolorem quam, quisquam voluptate recusandae qui, enim aperiam fugiat officiis.
+            a(href="#").button.button_style-2 Кнопка 
       
 
     //categories
@@ -46,6 +65,7 @@ block content
           +card2('Пропитки для бревен', 'img/767773b7699f15e02052b250d92c0c7f.png', grid)
           +card2('Проектирование', 'img/e79cec4f0a120d2e96a1701cf4ef8db3.png', grid)
   
+
   section.section.about-us
     .background(data-src='https://placehold.co/600x600').lazyload.about-us__background
     .container
@@ -118,7 +138,7 @@ block content
         +card4(false, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
         +card4(true, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
 
-  section.section
+  //section.section
     .container
       .row.align-items-end
         .col-xl-20pc.col-lg-3.d-none.d-lg-block
@@ -136,8 +156,7 @@ block content
             +card4(false, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
             +card4(true, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
 
-
-  section.section
+  //section.section
     .container
       h2.section__title Хиты продаж 2 ряда
       .slider-constructor(data-slides='1' data-rows='2' data-sm-slides='2' data-md-slides='3' data-lg-slides='4' data-xl-slides='5')
@@ -157,7 +176,7 @@ block content
         +card4(false, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
         +card4(true, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
 
-  section.section
+  //section.section
     .container
       .row.align-items-end
         .col-xl-20pc.col-lg-3.d-none.d-lg-block
@@ -182,7 +201,7 @@ block content
             +card4(false, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
             +card4(true, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
 
-  section.section
+  //section.section
     .container
       h2.section__title Хиты продаж 3 ряда
       .slider-constructor(data-slides='1' data-rows='2' data-sm-slides='2' data-md-rows='3' data-md-slides='3' data-lg-slides='4' data-xl-slides='5')
@@ -207,7 +226,6 @@ block content
         +card4(false, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
         +card4(true, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
 
-
   section.section.section_custom-background.popular-projects(style='background-color:#F5F5F5;')
     .image.image_cover.section__background 
       img(src="./img/image 22.jpg", alt="image").lazyload
@@ -226,7 +244,7 @@ block content
       .section__more.popular-projects__more
         a(href="#").button.button_style-1.button_xl.section__more-button Смотреть все услуги
 
-  section.section.popular-projects
+  //section.section.popular-projects
     .container
       .row
         .col-xl-20pc.col-lg-3.popular-projects__advertising

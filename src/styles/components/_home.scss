@@ -1,21 +1,23 @@
 .home-banner {
   margin-top: -30px;
   position: relative;
-  height: 700px;
-  .slick-list {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-  }
-  .slick-track {
-    height: 100%;
-  }
-  .slick-slide {
-    height: 100%;
-    &>div {
+  min-height: 400px;
+  &[data-desktop-ratio][data-mobile-ratio] {
+    .slick-list {
+      position: absolute;
+      width: 100%;
       height: 100%;
+      top: 0;
+      left: 0;
+    }
+    .slick-track {
+      height: 100%;
+    }
+    .slick-slide {
+      height: 100%;
+      &>div {
+        height: 100%;
+      }
     }
   }
   &__slide {
@@ -37,10 +39,19 @@
     height: 100%;
     display: flex;
     align-items: center;
-    padding-bottom: 47px;
+    padding-top: 60px;
+    padding-bottom: 120px;
   }
   &__slide-content {
     width: 350px;
+    &_bg {
+      padding: 20px;
+      border-radius: 4px;
+      background-color: var(--color-banner-content-bg, #fff);
+    }
+    &_right {
+      margin: 0 0 0 auto;
+    }
   }
   &__arrow {
     position: absolute;
@@ -74,15 +85,6 @@
   .slick-dots {
     bottom: 20px;
   }
-  @include media-breakpoint-up(md) {
-    &__slide {
-      &_right {
-        .home-banner__slide-container {
-          justify-content: flex-end;
-        }
-      }
-    }
-  }
   @include media-breakpoint-up(lg) {
     &:not(:last-child) {
       .slick-dots {
@@ -91,12 +93,16 @@
     }
   }
   @include media-breakpoint-down(md) {
+    min-height: 350px;
     &__slide-container {
-      padding-bottom: 32px;
+      padding-top: 40px;
+      padding-bottom: 70px;
     }
     &__slide-content {
-      padding: 0 60px;
-      width: 400px;
+      margin: 0 0 0 50px;
+      &_right {
+        margin: 0 50px 0 auto;
+      }
     }
     &__prev {
       left: calc(50% - 358px);
@@ -106,13 +112,6 @@
     }
   }
   @include media-breakpoint-down(sm) {
-    &__slide {
-      &_right {
-        img {
-          object-position: right center; 
-        }
-      }
-    }
     &__prev {
       left: calc(50% - 266px);
     }
@@ -121,9 +120,13 @@
     }
   }
   @include media-breakpoint-down(xs) {
+    min-height: 200px;
+    &__slide-container {
+      justify-content: center;
+    }
     &__slide-content {
-      width: 100%;
-      padding: 0 40px;
+      margin: 0;
+      width: calc(100% - 70px);
     }
     &__prev {
       left: 4px;
