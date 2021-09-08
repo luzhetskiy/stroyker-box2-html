@@ -1,7 +1,11 @@
 .home-banner {
+  --min-height: 400px;
   margin-top: -30px;
   position: relative;
-  min-height: 400px;
+  min-height: var(--min-height);
+  .slick-slide {
+    min-height: var(--min-height);
+  }
   &[data-desktop-ratio][data-mobile-ratio] {
     .slick-list {
       position: absolute;
@@ -15,8 +19,14 @@
     }
     .slick-slide {
       height: 100%;
+      min-height: initial !important;
       &>div {
         height: 100%;
+      }
+    }
+    .image {
+      img {
+        object-position: center right;
       }
     }
   }
@@ -93,7 +103,7 @@
     }
   }
   @include media-breakpoint-down(md) {
-    min-height: 350px;
+    --min-height: 300px;
     &__slide-container {
       padding-top: 40px;
       padding-bottom: 70px;
@@ -120,7 +130,7 @@
     }
   }
   @include media-breakpoint-down(xs) {
-    min-height: 200px;
+    --min-height: 200px;
     &__slide-container {
       justify-content: center;
     }
