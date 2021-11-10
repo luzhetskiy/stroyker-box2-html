@@ -8,6 +8,8 @@ block breadcrumbs
 
 block content
 
+  include blocks/cards
+
   section.section
     .container  
       h2.mb-25 Кнопки
@@ -86,13 +88,26 @@ block content
             svg.icon
               use(xlink:href="./img/icons/icons-sprite.svg#cart")
 
+  section.section
+    .container  
+      h2.mb-25 Карточки товаров 
+        span.text-color-accent 1.0
+
+      .d-grid.column-gap-grid.row-gap-grid.row-gap-sm-20.grid-columns-1.grid-columns-sm-2.grid-columns-md-3.grid-columns-lg-4.grid-columns-xl-5
+
+        +card4(true,  '', 4, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(false, '', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(false, '', 2, 'Фанера ФК')
+        +card4(true,  '', 3, 'Фанера ФК')
+
+
       
   section.section
     .container  
       h2.mb-25 Карточки товаров 
-        span.text-color-accent 2.1
+        span.text-color-accent 2.0
 
-      .d-grid.column-gap-grid.row-gap-25.row-gap-sm-20.grid-columns-2.grid-columns-md-3.grid-columns-lg-4.grid-columns-xl-5
+      .d-grid.column-gap-grid.row-gap-grid.row-gap-sm-20.grid-columns-2.grid-columns-md-3.grid-columns-lg-4.grid-columns-xl-5
         +product_card_v2({
           
         })
@@ -103,12 +118,12 @@ block content
           style: '3'
         })
 
-  //section.section
+  section.section
     .container  
       h2.mb-25 Карточки товаров 
-        span.text-color-accent 2.2
+        span.text-color-accent 2.1
 
-      .d-grid.column-gap-grid.row-gap-25.row-gap-sm-20.grid-columns-1.grid-columns-sm-2.grid-columns-md-3.grid-columns-lg-4.grid-columns-xl-5
+      .d-grid.column-gap-grid.row-gap-grid.row-gap-sm-20.grid-columns-1.grid-columns-sm-2.grid-columns-md-3.grid-columns-lg-4.grid-columns-xl-5
         +product_card_v2({
           type: '2'
         })

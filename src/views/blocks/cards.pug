@@ -63,7 +63,8 @@ mixin card3(image, classes)
           svg.icon
             use(xlink:href="img/icons/icons-sprite.svg#arrow-right")
 
-mixin card4(image, classes, label, title)     
+mixin card4(image, classes, label, title)
+  //шаб карточки старт  
   .product-card(class=classes)
     .product-card__container(data-custom-interaction)
       a(href="tovar.html").product-card__link-area
@@ -134,7 +135,8 @@ mixin card4(image, classes, label, title)
                 a(href="#").button.button_style-1.button_icon.product-card__bottom-item
                   svg.icon
                     use(xlink:href="img/icons/icons-sprite.svg#comparison")
-
+  //шаб карточки старт
+  
 mixin card5(title, classes)
   .small-wiki-card(class=classes)
     a(href="text.html").small-wiki-card__container

@@ -1,5 +1,6 @@
 mixin product_card_v2(params = {})
-  .product-card-v2(class=`${params.type=='2'?'product-card-v2_type-2':'product-card-v2_type-1'}`) 
+  //шаб карточки старт
+  .product-card-v2(class=`${params.type=='2'?'product-card-v2_type-2':'product-card-v2_type-1'}` data-custom-interaction) 
     a(href="#").product-card-v2__link
 
     .product-card-v2__image 
@@ -70,6 +71,6 @@ mixin product_card_v2(params = {})
               span  
                 span Много товара
                 span В корзину
-
+  //шаб карточки конец
 
 
