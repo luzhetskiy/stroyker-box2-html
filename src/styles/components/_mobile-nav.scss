@@ -242,10 +242,10 @@
   }
 
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     display: block;
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     top: 50px;
     height: calc(100% - 50px);
     &__contact-button .button {

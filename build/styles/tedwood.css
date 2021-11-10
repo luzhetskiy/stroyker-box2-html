@@ -100,14 +100,14 @@
     height: 245px;
     position: relative;
     z-index: 2; }
-  @media (min-width: 992px) {
+  @media (min-width: 1024px) {
     .tedwood-steps__item-index + .tedwood-steps__item-text {
       padding-left: 90px;
       padding-right: 30px; }
     .tedwood-steps__item-image + .tedwood-steps__item-text {
       padding-left: 30px;
       padding-right: 90px; } }
-  @media (max-width: 991.98px) {
+  @media (max-width: 1023.98px) {
     .tedwood-steps__item {
       display: flex;
       flex-direction: column; }
@@ -213,7 +213,7 @@
       font-size: 42px; }
     .tedwood-head__item {
       font-size: 20px; } }
-  @media (max-width: 991.98px) {
+  @media (max-width: 1023.98px) {
     .tedwood-head__background_style-1 {
       left: 60%; }
     .tedwood-head__background_style-2 {
@@ -269,7 +269,7 @@
     padding: 60px; }
   .tedwood-image-block__image {
     flex: 1 1 50%; }
-  @media (max-width: 991.98px) {
+  @media (max-width: 1023.98px) {
     .tedwood-image-block__text {
       padding: 40px; } }
   @media (max-width: 767.98px) {
@@ -309,7 +309,7 @@
       top: 5px; }
     .tedwood-technology__item:not(:last-child) {
       margin-bottom: 30px; }
-  @media (max-width: 991.98px) {
+  @media (max-width: 1023.98px) {
     .tedwood-technology__container {
       display: block; }
     .tedwood-technology__image {
@@ -338,7 +338,7 @@
     .tedwood-benefits {
       -moz-column-gap: 30px;
            column-gap: 30px; } }
-  @media (max-width: 991.98px) {
+  @media (max-width: 1023.98px) {
     .tedwood-benefits {
       grid-template-columns: 1fr; } }
 

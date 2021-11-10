@@ -34,12 +34,12 @@
       opacity: 0;
     }
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     &_mobile {
       & > .scrollbar__content {
         position: relative;
         z-index: 1;
-        overflow: scroll;
+        overflow-y: scroll;
         -webkit-overflow-scrolling: touch;
         max-height: inherit;
         height: 100%;
@@ -287,7 +287,7 @@
     opacity: 1 !important;
   }
 }
-@include media-breakpoint-down(md) {
+@include media-breakpoint-down(lg) {
   .simplebar-track.simplebar-vertical {
     width: 7px;
     background-color: transparent;

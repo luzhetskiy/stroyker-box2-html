@@ -1,13 +1,10 @@
 //variables
 @import "./components/variables";
-
 //bootstrap components
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/variables";
-@import "../../node_modules/bootstrap/scss/mixins/deprecate";
 @import "../../node_modules/bootstrap/scss/mixins/breakpoints";
-@import "../../node_modules/bootstrap/scss/mixins/grid-framework";
-@import "../../node_modules/bootstrap/scss/mixins/grid";
+
 
 .kabinet {
   &__exit-button {
@@ -23,7 +20,7 @@
       top: 0;
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     &__title {
       display: block;
       padding: 60px 0 0 0;
@@ -49,7 +46,7 @@
   &__title {
     margin: 0 0 16px 0;
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     margin-bottom: 35px;
     &__kabinet-icon {
       margin-right: 16px;
@@ -69,7 +66,7 @@
     margin: auto;
     fill: #fff;
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     width: 60px;
     height: 60px;
     .icon {
@@ -143,7 +140,7 @@
     left: 38px;
     top: 28px;
   }
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-down(xl) {
     &__container {
       padding: 80px 70px 20px 20px;
     }
@@ -159,12 +156,12 @@
       bottom: 30px;
     }
   }
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     &__container {
       min-height: 0px;
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     &__text {
       min-height: 36px;
     }
@@ -313,12 +310,12 @@
       }
     }
   }
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-down(xl) {
     &__content {
       padding: 40px;
     }
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     display: block;
     &__aside {
       background-color: #fff;
@@ -351,12 +348,12 @@
       border-radius: 0;
      }
   }
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     &__content {
       padding: 30px 20px;
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     margin-left: -16px;
     margin-right: -16px;
     &__head .kabinet-icon {
@@ -447,7 +444,7 @@
       }
     }
   }
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     margin-bottom: -16px;
     &__head {
       display: none !important;
@@ -555,12 +552,12 @@
       color: var(--color-stage-3, #1C52AC);
     }
   }
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     &__link {
       font-size: 1rem;
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     &__item {
       &:not(:last-child) {
         margin-right: 15px;
@@ -608,7 +605,7 @@
       color: var(--color-stage-3, #1C52AC);
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     &:not(:last-child) {
       margin-bottom: 20px;
     }
@@ -633,7 +630,7 @@
       text-align: left !important;
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     max-width: calc(100% + 32px);
   }
 }

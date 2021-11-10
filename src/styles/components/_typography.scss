@@ -255,7 +255,7 @@ a:not([class]) {
   }
 }
 
-@include media-breakpoint-down(xs) {
+@include media-breakpoint-down(sm) {
   h1, .h1 {
     font-size: 1.625rem;
     line-height: 1.2;

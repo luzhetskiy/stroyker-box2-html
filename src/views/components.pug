@@ -1,0 +1,122 @@
+extends layout/layout
+block title
+  title Компоненты
+block breadcrumbs 
+  -var title = 'Компоненты'
+  include blocks/breadcrumbs
+
+
+block content
+
+  section.section
+    .container  
+      h2.mb-25 Кнопки
+
+      .d-flex.flex-wrap.column-gap-grid.row-gap-20
+        
+        .d-flex.flex-column.align-items-start.row-gap-15
+          button.button.button_style-1.button_xl 
+            svg.icon
+              use(xlink:href="./img/icons/icons-sprite.svg#document")
+            span Шаблон кнопки
+          button.button.button_style-1.button_xl 
+            span Шаблон кнопки
+            svg.icon
+              use(xlink:href="./img/icons/icons-sprite.svg#document")
+          button.button.button_style-1
+            svg.icon
+              use(xlink:href="./img/icons/icons-sprite.svg#document")
+            span Шаблон кнопки
+          button.button.button_style-1
+            span Шаблон кнопки
+            svg.icon
+              use(xlink:href="./img/icons/icons-sprite.svg#document")
+
+        .d-flex.flex-column.align-items-start.row-gap-15
+          button.button.button_style-2.button_xl 
+            svg.icon
+              use(xlink:href="./img/icons/icons-sprite.svg#document")
+            span Шаблон кнопки
+          button.button.button_style-2.button_xl 
+            span Шаблон кнопки
+            svg.icon
+              use(xlink:href="./img/icons/icons-sprite.svg#document") 
+          button.button.button_style-2 
+            svg.icon
+              use(xlink:href="./img/icons/icons-sprite.svg#document")
+            span Шаблон кнопки
+          button.button.button_style-2
+            span Шаблон кнопки
+            svg.icon
+              use(xlink:href="./img/icons/icons-sprite.svg#document") 
+
+        .d-flex.flex-column.align-items-start.row-gap-15
+          button.button.button_style-5.button_xl 
+            svg.icon
+              use(xlink:href="./img/icons/icons-sprite.svg#document")
+            span Шаблон кнопки
+          button.button.button_style-5.button_xl
+            span Шаблон кнопки
+            svg.icon
+              use(xlink:href="./img/icons/icons-sprite.svg#document")
+          button.button.button_style-5 
+            svg.icon
+              use(xlink:href="./img/icons/icons-sprite.svg#document")
+            span Шаблон кнопки
+          button.button.button_style-5
+            span Шаблон кнопки
+            svg.icon
+              use(xlink:href="./img/icons/icons-sprite.svg#document")
+
+        .d-flex.flex-column.align-items-start.row-gap-15
+          button.button.button_disabled.button_xl 
+            svg.icon
+              use(xlink:href="./img/icons/icons-sprite.svg#cart")
+            span Шаблон кнопки
+          button.button.button_disabled.button_xl
+            span Шаблон кнопки
+            svg.icon
+              use(xlink:href="./img/icons/icons-sprite.svg#cart")
+          button.button.button_disabled 
+            svg.icon
+              use(xlink:href="./img/icons/icons-sprite.svg#cart")
+            span Шаблон кнопки
+          button.button.button_disabled
+            span Шаблон кнопки
+            svg.icon
+              use(xlink:href="./img/icons/icons-sprite.svg#cart")
+
+      
+  section.section
+    .container  
+      h2.mb-25 Карточки товаров 
+        span.text-color-accent 2.1
+
+      .d-grid.column-gap-grid.row-gap-25.row-gap-sm-20.grid-columns-2.grid-columns-md-3.grid-columns-lg-4.grid-columns-xl-5
+        +product_card_v2({
+          
+        })
+        +product_card_v2({
+          style: '2'
+        })
+        +product_card_v2({
+          style: '3'
+        })
+
+  //section.section
+    .container  
+      h2.mb-25 Карточки товаров 
+        span.text-color-accent 2.2
+
+      .d-grid.column-gap-grid.row-gap-25.row-gap-sm-20.grid-columns-1.grid-columns-sm-2.grid-columns-md-3.grid-columns-lg-4.grid-columns-xl-5
+        +product_card_v2({
+          type: '2'
+        })
+        +product_card_v2({
+          style: '2',
+          type: '2'
+        })
+        +product_card_v2({
+          style: '3',
+          type: '2'
+        })

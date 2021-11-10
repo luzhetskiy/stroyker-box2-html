@@ -178,7 +178,7 @@
     visibility: visible;
     transform: translateY(0);
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     padding: 24px 20px;
   }
 }
@@ -213,7 +213,7 @@
   }
 }
 
-@include media-breakpoint-down(xs) {
+@include media-breakpoint-down(sm) {
   .popup-feedback {
     &__form-input {
       margin-bottom: 16px;

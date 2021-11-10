@@ -113,7 +113,7 @@
   img {
     filter: grayscale(100%);
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     &__container {
       height: 180px;
     }
@@ -188,12 +188,12 @@
       background-color: var(--color-label-news, #3EC28F);
     }
   }
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     &__content {
       padding: 28px 15px;
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     &__text {
       font-size: 0.75rem;
     }
@@ -254,12 +254,12 @@
     background-color: var(--color-sections-bg, #F5F5F5);
     padding: 35px 100px 35px 60px;
   }
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-down(xl) {
     &__content {
       padding: 35px 40px;
     }
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     &__content {
       padding: 35px;
       flex: 1 1 50%;
@@ -271,7 +271,7 @@
       flex: 0 0 calc(50% - 10px);
     }
   }
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     &__container {
       flex-direction: column;
       flex: 0 0 auto;
@@ -291,7 +291,7 @@
       padding: 45px 20px 30px 20px;
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     &__container {
       margin-left: -16px;
       margin-right: -16px;
@@ -403,7 +403,7 @@
       transform: scale(1.05);
     }
   }
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-down(xl) {
     height: auto;
     &:before {
       content: '';
@@ -440,7 +440,7 @@
       visibility: visible; 
     }
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     &__advertising {
       display: none;
     } 
@@ -551,7 +551,7 @@
     position: relative;
     flex: 1 1 100%;
   }
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-down(xl) {
     &__content {
       padding: 12px 12px 15px 12px;
     }
@@ -642,7 +642,7 @@
       }
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     &__table {
       width: 100%;
       tr {
@@ -955,7 +955,7 @@
       }
     }
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     &:not(:last-child) {
       margin-bottom: 24px;
     }
@@ -993,7 +993,7 @@
     color: var(--color-text-muted, #767676);
     opacity: 0.75;
   }
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-down(xl) {
     flex-direction: row;
     &__items {
       order: 0;
@@ -1004,7 +1004,7 @@
       margin: 0 0 0 30px;
     }
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     &__items {
       margin-bottom: 0;
       align-items: flex-end;
@@ -1017,7 +1017,7 @@
       flex: 1 1 100%;
     }
   }
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     &__container {
       display: block;
     }
@@ -1096,7 +1096,7 @@
       }
     }
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     &__container {
       display: block;
     }
@@ -1115,10 +1115,10 @@
     display: block;
     margin: 0 0 8px 0;
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     flex: 1 1 50%;
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     &__button {
       width: 40px;
       min-width: 40px;
@@ -1174,7 +1174,7 @@
       margin-bottom: 15px;
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     &__buttons {
       .button {
         width: 100%;
@@ -1233,7 +1233,7 @@
       }
     }
   }
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     margin-top: 24px;
     &__list {
       justify-content: center;
@@ -1349,7 +1349,7 @@
       top: 0;
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     &__container {
       padding: 24px 12px;
       height: 250px;
@@ -1490,7 +1490,7 @@
       }
     }
   }
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-down(xl) {
     &__info {
       margin-top: 40px;
     }
@@ -1515,7 +1515,7 @@
       }
     }
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     &__center {
       padding-top: 0;
     }
@@ -1538,7 +1538,7 @@
       }
     }
   }
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     &__image {
       margin-bottom: 12px;
     }
@@ -1546,7 +1546,7 @@
       padding-left: 10px;
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     &__center {
       padding: 0 8px;
     }
@@ -1587,7 +1587,7 @@
       margin-right: 16px;
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     &__share-popup {
       right: -11px;
       &::before {
@@ -1635,7 +1635,7 @@
     display: block;
     max-width: 120px;
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     padding: 42px 0 0 0;
     &__text {
       font-size: 1rem;
@@ -1644,7 +1644,7 @@
       width: 130px;
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     text-align: center;
     &__container {
       flex-direction: column;
@@ -1698,7 +1698,7 @@
       border-color: var(--color-table-border, #E5E5EA);
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     margin-bottom: 25px;
     &__link {
       border: 1px solid var(--color-button1-border, #B7CBE5);
@@ -1779,7 +1779,7 @@
       }
     }
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     &__tab-head {
       display: none !important;
     }
@@ -1831,7 +1831,7 @@
       background-color: transparent;
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     &__specifications {
       font-size: 1.125rem;
       p {
@@ -1872,7 +1872,7 @@
       }
     }
   }
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     &__total {
       margin-top: 24px;
       padding: 10px 16px 0 16px;
@@ -1881,7 +1881,7 @@
       }
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     &__total {
       padding: 10px 16px 0 16px;
       margin: 20px -16px 0 -16px;
@@ -1923,7 +1923,7 @@
       right: 20px;
       top: 12px;
     }
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(md) {
       &__arrow {
         right: 16px;
       }
@@ -1931,7 +1931,7 @@
         padding: 12px 16px;
       }
     }
-    @include media-breakpoint-down(xs) {
+    @include media-breakpoint-down(sm) {
       margin-left: -16px;
       margin-right: -16px;
     }
@@ -1967,7 +1967,7 @@
       padding: 12px 20px;
       border-bottom: 1px solid var(--color-table-border, #E5E5EA);
     }
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(md) {
       td {
         border: none;
         padding: 12px 16px;
@@ -2012,7 +2012,7 @@
         border-bottom: 1px solid var(--color-border-2, #BDBDBD);
       }
     }
-    @include media-breakpoint-down(xs) {
+    @include media-breakpoint-down(sm) {
     }
   }
 }
@@ -2094,7 +2094,7 @@
       }
     }
   }
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     &__item {
       &-link {
         margin: 0;
@@ -2106,7 +2106,7 @@
       }
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     &:not(:last-child) {
       margin-bottom: 32px;
     }
@@ -2186,7 +2186,7 @@
         padding-left: 24px;
       }
     }
-    @include media-breakpoint-down(lg) {
+    @include media-breakpoint-down(xl) {
       &:nth-child(odd) {
         .project-layouts-block__container {
           padding-right: 12px;
@@ -2198,7 +2198,7 @@
         }
       }
     }
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(md) {
       &:nth-child(odd) {
         .project-layouts-block__container {
           padding-right: 0;
@@ -2217,7 +2217,7 @@
   .calc-count-block {
     margin: 0 auto;
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     &__container {
       padding-top: 24px;
     }
@@ -2243,7 +2243,7 @@
         top: 3px;
       }
     }
-    @include media-breakpoint-down(xs) {
+    @include media-breakpoint-down(sm) {
       &__title {
         margin-bottom: 24px;
       }
@@ -2312,7 +2312,7 @@
       white-space: nowrap;
       font-weight: 700;
     }
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(lg) {
       &__close {
         padding-left: 20px;
         padding-right: 20px;
@@ -2327,7 +2327,7 @@
         padding-right: 20px;
       }
     }
-    @include media-breakpoint-down(xs) {
+    @include media-breakpoint-down(sm) {
       margin: 0 -16px;
       width: calc(100% + 32px);
       &__item {
@@ -2371,13 +2371,13 @@
     justify-content: flex-end;
     padding: 30px 80px 40px 0;
     border-bottom: 1px solid var(--color-table-border, #E5E5EA);
-    @include media-breakpoint-down(lg) {
+    @include media-breakpoint-down(xl) {
       padding: 32px 80px 32px 0;
     }
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(lg) {
       padding: 32px 20px 32px 0;
     }
-    @include media-breakpoint-down(xs) {
+    @include media-breakpoint-down(sm) {
       margin: 0 -16px;
       padding: 32px 16px;
     }
@@ -2404,7 +2404,7 @@
         padding-right: 100px;
       }
     }
-    @include media-breakpoint-down(xs) {
+    @include media-breakpoint-down(sm) {
       width: 100%;
       td {
         &:first-child {
@@ -2424,7 +2424,7 @@
     &__head-item {
       margin-bottom: 16px;
     }
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(md) {
       margin-top: 54px;
       &__head {
         margin-bottom: 38px;
@@ -2442,7 +2442,7 @@
     &__submit {
       padding: 0 35px;
     }
-    @include media-breakpoint-down(xs) {
+    @include media-breakpoint-down(sm) {
       &__submit {
         width: 100%;
       }
@@ -2529,7 +2529,7 @@
         top: 0;
       }
     }
-    @include media-breakpoint-down(lg) {
+    @include media-breakpoint-down(xl) {
       &__container {
         padding: 40px;
       }
@@ -2556,7 +2556,7 @@
         }
       }
     }
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(lg) {
       &__container {
         padding: 30px;
        }
@@ -2569,12 +2569,12 @@
         }
       }
     }
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(md) {
       &__container {
         padding: 30px 16px;
       }
     }
-    @include media-breakpoint-down(xs) {
+    @include media-breakpoint-down(sm) {
       &__container {
         padding: 30px 8px;
         margin: 0 -8px;
@@ -2671,7 +2671,7 @@
       }
     }
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     &__slider {
       .image {
         height: auto;
@@ -2686,7 +2686,7 @@
       margin-bottom: 40px;
     }
   }
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     &__info {
       &-container {
         padding: 20px 15px;
@@ -2943,12 +2943,12 @@
       min-height: 380px;
     }
   }
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     &__buttons .button_icon {
       width: 66px;
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     &_catalogue {
       .product-card {
         &__buttons {
@@ -3305,7 +3305,7 @@
   &__button {
     display: none;
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     &.grid__block {
       margin-bottom: 35px;
     }
@@ -3423,12 +3423,12 @@
       top: 0;
     }
   }
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-down(xl) {
     &__content {
       padding: 40px;
     }
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     &__content {
       flex: 1 1 50%;
       padding: 40px 30px;
@@ -3437,7 +3437,7 @@
       flex: 1 1 50%;
     }
   }
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     flex-direction: column;
     &__content {
       order: 2;
@@ -3451,7 +3451,7 @@
       margin-bottom: 16px;
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     &__content {
       padding: 20px 16px;
     }
@@ -3553,7 +3553,7 @@
       }
     }
   }
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-down(xl) {
     margin-top: 110px;
     &__info_style-2 .brigade-diagram__info-content {
       transform: translate(-15%, 15%) scale(0.7);
@@ -3562,7 +3562,7 @@
       transform: translate(15%, 15%) scale(0.7);
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     margin-top: 30px;
     margin-bottom: 65px;
     &__circle {
@@ -3809,7 +3809,7 @@
       padding: 20px 30px;
     }
   }
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-down(xl) {
     &__images {
       flex: 1 1 35%;
       max-width: 35%;
@@ -3820,7 +3820,7 @@
       flex: 1 1 40%;
     }
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     &__index {
       left: 50%;
       right: auto;
@@ -3854,7 +3854,7 @@
     }
 
   }
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     &__nav-next {
       padding: 0 40px 0 0;
       .icon {
@@ -3960,7 +3960,7 @@
       }
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     &__review-line {
       justify-content: space-between;
     }
@@ -4035,22 +4035,22 @@
       }
     }
   }
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-down(xl) {
     flex: 1 1 25%;
     max-width: 25%;
     &__section {
       padding: 15px 20px;
     }
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     flex: 1 1 100%;
     max-width: 100%;
     margin-top: 40px;
   }
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     margin-top: 30px;
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     &__section {
       padding: 15px;
     }
@@ -4131,7 +4131,7 @@
   }
 }
 
-@include media-breakpoint-down(md) {
+@include media-breakpoint-down(lg) {
   .project-preview-card {
     &__image {
       flex: 0 0 200px;
@@ -4139,7 +4139,7 @@
     }
   }
 } 
-@include media-breakpoint-down(sm) {
+@include media-breakpoint-down(md) {
   .logo {
     &__link {
       display: block;
@@ -4171,7 +4171,7 @@
 
 
 
-@include media-breakpoint-down(xs) {
+@include media-breakpoint-down(sm) {
   .logo {
     &__link {
       width: 117px;
@@ -4218,7 +4218,7 @@
       }
     }
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     &__form {
       margin-bottom: 30px;
     }
@@ -4231,12 +4231,12 @@
     height: 100%;
     padding: 40px;
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     &__slider {
       display: none;
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     &__content {
       padding: 0;
       background-color: transparent;
@@ -4308,7 +4308,7 @@
       font-size: 1.125rem;
     }
   }
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-down(xl) {
     &__text {
       margin-bottom: 28px;
     }
@@ -4322,12 +4322,12 @@
       height: 100%;
     }
   }
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-down(xl) {
     &__content {
       margin-bottom: 30px;
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     .image {
       margin: 0 -16px;
     }
@@ -4381,7 +4381,7 @@
       margin: 20px 0 0 0;
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     min-height: 400px;
     &__form {
       text-align: center;
@@ -4477,12 +4477,12 @@
   &__button, &__calc, &__price {
     margin-bottom: 15px;
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     &__image {
       flex: 0 0 332px;
     }
   }
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     &__container {
       flex-direction: column;
     }
@@ -4579,7 +4579,7 @@
   &__content {
     padding: 5px 20px 20px 20px;
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     &__content {
       padding: 5px 15px 15px 15px;
     }
@@ -4621,12 +4621,12 @@
   &__title-element {
     margin-top: 0;
   }
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-down(xl) {
     &__map-element {
       height: 400px;
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     &__map {
       margin-bottom: 30px;
     }
@@ -4705,5 +4705,219 @@
     position: relative;
     z-index: 2;
     padding: 25px 20px;
+  }
+}
+
+
+.product-card-v2 {
+  --pd: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-card-border, transparent);
+  border-radius: 2px;
+  &__link {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: none;
+  }
+  &__image {
+    position: relative;
+    .image {
+      &::before {
+        content: '';
+        display: block;
+        padding-top: 70%;
+      }
+      img {
+        padding: var(--pd);
+      }
+    }
+  }
+  &__labels {
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    padding: 0 var(--pd);
+    display: flex;
+    gap: 2px;
+  }
+  &__label {
+    padding: 0 8px;
+    width: auto;
+    font-weight: 500;
+  }
+  &__rating {
+    position: absolute;
+    width: 85px;
+    height: auto;
+    top: 5px;
+    right: 5px;
+    z-index: 2;
+  }
+  &__rating-stars {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  &__title {
+    hyphens: auto;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    flex: 0 0 auto;
+    margin-bottom: 15px;
+    line-height: 1.5;
+  }
+  &__content {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px var(--pd) var(--pd) var(--pd);
+  }
+  &__content-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &__cart-button {
+    width: 100%;
+    .icon {
+      width: 26px;
+      height: 26px;
+    }
+    & > span {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      row-gap: 4px;
+      span {
+        line-height: 1;
+        &:not(:last-child) {
+          font-size: 10px;
+        }
+        &:not(:first-child) {
+          font-size: 16px;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+  &__pricing {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1;
+    gap: 6px;
+  }
+  &__pricing-txt {
+    font-size: 12px;
+    line-height: 1.25;
+  }
+  &__price {
+    font-size: 20px;
+    font-weight: 700;
+    &.text-color-accent {
+      span {
+        color: var(--color-text, #333333);
+      }
+    }
+    span {
+      font-weight: normal;
+      font-size: 16px;
+    }
+  }
+  &__old-price {
+    color: var(--color-text-muted, #767676);
+    font-size: 16px;
+    position: relative;
+    padding: 0 3px;
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: var(--color-old-price, #C43228);
+      top: calc(45% - 1px);
+      left: 0;
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    --pd: 0;
+    border: none;
+    &__title {
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+    &__pricing-txt {
+      font-size: 10px;
+    }
+    &__content {
+      padding-top: 10px;
+    }
+    &__price {
+      font-size: 16px;
+      span {
+        font-size: 12px;
+      }
+    }
+    &__old-price {
+      font-size: 12px;
+    }
+    &__button {
+      height: 40px;
+      line-height: 38px;
+      padding: 0 10px;
+      min-width: initial;
+      font-size: 14px;
+    }
+    &__cart-button {
+      padding: 0 10px;
+      min-width: initial;
+      height: 40px;
+      line-height: 38px;
+      .icon {
+        width: 20px;
+        height: 20px;
+      }
+      & > span {
+        span {
+          &:not(:last-child) {
+            font-size: 8px;
+          }
+          &:not(:first-child) {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    &_type-1 {
+      .product-card-v2 {
+        &__rating {
+          top: 0;
+          right: 0;
+        }
+        &__label {
+          font-size: 10px;
+          line-height: 15px;
+          padding: 0 5px;
+        }
+        
+      }
+    }
   }
 }

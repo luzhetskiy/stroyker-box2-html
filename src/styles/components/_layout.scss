@@ -4,9 +4,7 @@
   min-height: 100vh;
   overflow: hidden;
 }
-.container {
-  padding: 0 16px;
-}
+
 .main {
   flex: 1 1 100%;
   @include media-breakpoint-up(sm) {
@@ -15,6 +13,7 @@
     }
   }
 }
+
 .content {
   padding: 30px 0 0 0;
   display: flex;
@@ -24,6 +23,10 @@
 .section {
   position: relative;
   margin-bottom: 72px;
+  & > .container {
+    position: relative;
+    z-index: 2;
+  }
   &__background {
     position: absolute;
     width: 100%;
@@ -103,12 +106,12 @@
       }
     }
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     &__more {
       margin-top: 32px;
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     &__more-button {
       width: 100%;
     }
@@ -121,7 +124,7 @@
 h1.section__title {
   margin-top: 0;
   margin-bottom: 32px;
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     margin-bottom: 28px;
   }
 }
@@ -204,7 +207,7 @@ h1.section__title {
   &__head {
     margin-bottom: 35px;
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     margin-bottom: -24px;
     &__block {
       margin-bottom: 24px;

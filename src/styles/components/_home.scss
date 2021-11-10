@@ -102,7 +102,7 @@
       }
     }
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     --min-height: 300px;
     &__slide-container {
       padding-top: 40px;
@@ -121,7 +121,7 @@
       right: calc(50% - 358px);
     }
   }
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     &__prev {
       left: calc(50% - 266px);
     }
@@ -129,7 +129,7 @@
       right: calc(50% - 266px);
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     --min-height: 200px;
     &__slide-container {
       justify-content: center;
@@ -186,7 +186,7 @@
       }
     }
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     margin-top: 24px;
     &__block {
       .category-card {
@@ -197,7 +197,7 @@
     }
   }
   
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     margin-top: 24px;
     margin-bottom: 41px;
   }
@@ -256,12 +256,12 @@
       }
     }
   }
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-down(xl) {
     &__background {
       max-width: 928px;
     }
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     &__container {
       position: relative;
       margin: 0 -4px;
@@ -338,13 +338,13 @@
       }
     }
   }
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     &__background {
       background-position: center bottom;
       max-width: 508px;
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     padding: 40px 0;
     &-block {
       &__button {
@@ -426,12 +426,12 @@
       fill: var(--color-block-services, #1C52AC);
     }
   }
-  @include media-breakpoint-between(sm, lg) {
+  @include media-breakpoint-between(sm, xl) {
     &__title {
       font-size: 1rem;
     }
   }
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-down(xl) {
     &__title {
       padding: 24px 60px 24px 24px;
     }
@@ -444,7 +444,7 @@
   .row {
     margin-bottom: -32px;
   }
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     padding: 32px 0;
   }
 }
@@ -505,12 +505,12 @@
     width: 100%;
     height: auto;
   }
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-down(xl) {
     &__container {
       padding: 30px 40px;
     }
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     &__container {
       padding: 30px 20px;
     }
@@ -519,7 +519,7 @@
       line-height: 1.375rem;
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     &__container {
       padding: 24px 16px;
     }

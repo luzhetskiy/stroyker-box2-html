@@ -1,13 +1,10 @@
 //variables
 @import "./components/variables";
-
 //bootstrap components
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/variables";
-@import "../../node_modules/bootstrap/scss/mixins/deprecate";
 @import "../../node_modules/bootstrap/scss/mixins/breakpoints";
-@import "../../node_modules/bootstrap/scss/mixins/grid-framework";
-@import "../../node_modules/bootstrap/scss/mixins/grid";
+
 
 body.compensate-for-scrollbar {
   overflow: hidden;
@@ -556,6 +553,11 @@ body.compensate-for-scrollbar {
       padding-right: 12px;
   }
 }
+
+
+
+
+
 /* Share */
 
 .fancybox-share {

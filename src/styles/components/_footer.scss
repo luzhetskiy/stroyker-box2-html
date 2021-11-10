@@ -162,7 +162,7 @@
   }
 }
 
-@include media-breakpoint-down(lg) {
+@include media-breakpoint-down(xl) {
   .footer {
     &-socials {
       justify-content: flex-start;
@@ -170,7 +170,7 @@
     }
   }
 }
-@include media-breakpoint-down(sm) {
+@include media-breakpoint-down(md) {
   .footer {
     &__bottom {
       flex-direction: column;
@@ -185,7 +185,7 @@
     }
   }
 }
-@include media-breakpoint-down(xs) {
+@include media-breakpoint-down(sm) {
   .footer {
     padding: 50px 0;
     text-align: center;
@@ -240,7 +240,7 @@
   &[data-touch], &[data-hover] {
     opacity: 0.6;
   }
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     margin-bottom: 20px;
     order: 1;
   }

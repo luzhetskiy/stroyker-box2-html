@@ -25,6 +25,14 @@
   color: var(--color-card-accent-4, #30C2FF);
 }
 
+.text-color-light {
+  color: var(--color-text-light, #BDBDBD);
+}
+
+.text-color-accent {
+  color: var(--color-accent, #2363D1);
+}
+
 .text-uppercase {
   text-transform: uppercase;
 }

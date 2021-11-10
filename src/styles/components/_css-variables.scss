@@ -1,10 +1,11 @@
 :root {
-  --grid-gutter-x: 20px;
+  --grid-gutter-width: 20px;
   --container-padding-x: 16px;
+
   --small-content-margin: 40px;
 
-  @include media-breakpoint-down(xs) {
-    --grid-gutter-x: 16px;
+  @include media-breakpoint-down(sm) {
+    --grid-gutter-width: 16px;
     --small-content-margin: 60px;
   }
 }

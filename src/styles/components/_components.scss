@@ -113,7 +113,7 @@
     opacity: 1;
     visibility: visible;
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     bottom: 60px;
     right: 15px;
   }
@@ -173,7 +173,7 @@
       }
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     bottom: 15px;
     right: 15px;
   }

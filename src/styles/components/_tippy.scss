@@ -62,7 +62,7 @@
   }
 }
 
-@include media-breakpoint-down(xs) {
+@include media-breakpoint-down(sm) {
   .tippy-box {
     padding: 20px;
   }

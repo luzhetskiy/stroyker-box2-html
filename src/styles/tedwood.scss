@@ -1,13 +1,10 @@
 //variables
 @import "./components/variables";
-
 //bootstrap components
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/variables";
-@import "../../node_modules/bootstrap/scss/mixins/deprecate";
 @import "../../node_modules/bootstrap/scss/mixins/breakpoints";
-@import "../../node_modules/bootstrap/scss/mixins/grid-framework";
-@import "../../node_modules/bootstrap/scss/mixins/grid";
+
 
 .tedwood-tools {
   margin-top: 30px;
@@ -110,7 +107,7 @@
       width: 60%;
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     &__item-container {
       padding: 16px 0;
     }
@@ -168,7 +165,7 @@
       }
     }
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     &__item {
       display: flex;
       flex-direction: column;
@@ -190,7 +187,7 @@
       }
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     margin-top: 40px;
     &__item-image {
       flex: 0 0 200px;
@@ -289,7 +286,7 @@
       display: block;
     }
   }
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-down(xl) {
     &__sub-title {
       font-size: 20px;
     }
@@ -300,7 +297,7 @@
       font-size: 20px;
     }
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     &__background {
       &_style-1 {
         left: 60%;
@@ -310,7 +307,7 @@
       }
     }
   }
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     &__background {
       &_style-1 {
         left: 50%;
@@ -342,7 +339,7 @@
       }
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     padding: 40px 0;
     &__sub-title {
       font-size: 16px;
@@ -378,17 +375,17 @@
   &__image {
     flex: 1 1 50%;
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     &__text {
       padding: 40px;
     }
   }
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     &__text {
       padding: 30px 20px;
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     flex-direction: column;
     &__image {
       flex: 0 0 200px;
@@ -433,7 +430,7 @@
       margin-bottom: 30px;
     }
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     &__container {
       display: block;
     }
@@ -464,10 +461,10 @@
       top: 5px;
     }
   }
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-down(xl) {
     column-gap: 30px;
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     grid-template-columns: 1fr;
   }
 }

@@ -1,13 +1,9 @@
 //variables
 @import "./components/variables";
-
 //bootstrap components
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/variables";
-@import "../../node_modules/bootstrap/scss/mixins/deprecate";
 @import "../../node_modules/bootstrap/scss/mixins/breakpoints";
-@import "../../node_modules/bootstrap/scss/mixins/grid-framework";
-@import "../../node_modules/bootstrap/scss/mixins/grid";
 
 
 
@@ -27,7 +23,7 @@
       margin-bottom: 10px;
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     margin-top: 20px;
   }
 }
@@ -53,7 +49,7 @@
     font-size: 1.124rem;
     color: #000;
   }
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     &__aside {
       .comparison-properties {
         display: none;
@@ -97,7 +93,7 @@
     margin: 0 -10px 0 -11px;
     padding-left: 1px;
   }
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     .slick-arrow {
       width: calc(50% - 50px);
       height: 46px;
@@ -138,7 +134,7 @@
       }
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     .slick-list {
       margin: 0 -16px;
       padding: 0 8px;
@@ -173,12 +169,12 @@
       width: 64px;
     }
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     &__delete {
       padding: 20px 0;
     }
   }
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     display: flex;
     flex-direction: column;
     &__delete {
@@ -242,7 +238,7 @@
       order: 3;
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     border-bottom: 0;
     &__delete {
       padding: 20px 8px;
@@ -269,7 +265,7 @@
   margin: 0;
   padding: 20px 0;
   list-style: none;
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     padding-bottom: 0;
   }
 }
@@ -286,14 +282,14 @@
   &[data-touch], &[data-hover] {
     background-color: var(--color-sections-bg, #F5F5F5);
   }
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     padding: 10px;
     strong {
       display: block;
       margin-bottom: 6px;
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     padding: 10px 8px;
   }
 }

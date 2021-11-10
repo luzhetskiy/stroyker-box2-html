@@ -82,7 +82,7 @@
       background-color: transparent !important;
     }
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     opacity: 0;
     visibility: hidden;
     position: fixed;
@@ -162,7 +162,7 @@
       margin-top: 30px;
     }
   }
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     &__reset {
       margin-top: 15px;
     }

@@ -536,7 +536,7 @@
   
 
 
-@include media-breakpoint-down(md) {
+@include media-breakpoint-down(lg) {
   .form-section {
     &__content {
       padding: 30px;
@@ -549,7 +549,7 @@
   }
 }
 
-@include media-breakpoint-down(sm) {
+@include media-breakpoint-down(md) {
   .form-section {
     &__content {
       border-width: 2px;
@@ -557,7 +557,7 @@
     }
   }
 }
-@include media-breakpoint-up(sm) {
+@include media-breakpoint-up(md) {
   .form {
     &__upload-button {
       background-color: transparent !important;
@@ -565,7 +565,7 @@
     }
   }
 }
-@include media-breakpoint-down(xs) {
+@include media-breakpoint-down(sm) {
   .form {
     &__input, &__upload {
       margin-bottom: 16px;

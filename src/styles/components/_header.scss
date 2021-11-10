@@ -319,12 +319,12 @@
       }
     }
   }
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-down(xl) {
     &__phone {
       display: none;
     }
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     &_fixed {
       .header__search {
         display: none;
@@ -411,7 +411,7 @@
     }
   }
   
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-down(sm) {
     &_fixed {
       .header__buttons-group {
         top: -10px;
@@ -465,7 +465,7 @@
       }
     }
   }
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     display: flex;
   }
 }
