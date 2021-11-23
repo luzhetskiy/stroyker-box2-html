@@ -18,10 +18,6 @@ mixin product_card_v2(params = {})
         .card-label.card-label_style-1.product-card-v2__label Новинка
         .card-label.card-label_style-2.product-card-v2__label Хит 
         .card-label.card-label_style-3.product-card-v2__label Эконом
-        
-      
-
-        
 
     .product-card-v2__content 
       .product-card-v2__title 
@@ -49,19 +45,15 @@ mixin product_card_v2(params = {})
         .product-card-v2__buttons
           if params.style=='2'
 
-            button.button.button_disabled.button_xl.product-card-v2__cart-button 
-              svg.icon
-                use(xlink:href="./img/icons/icons-sprite.svg#cart")
+            button.button.button_disabled.button_xl.product-card-v2__cart-button
               span  
                 span Товар ожидается 
-                span В корзину
+                span узнать о наличии
 
           else if params.style=='3'
 
             button.button.button_style-1.button_xl.product-card-v2__button 
               span Узнать стоимость
-            button.button.button_style-1.button_xl.product-card-v2__button 
-              span Узнать о наличии
 
           else 
 
