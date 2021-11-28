@@ -32,8 +32,22 @@ header.header(data-scroll-lock-fill-gap)
               .col-auto
                 a(href="#cities" data-popup-open data-popup-close).button.button_style-1.city-question-popup__button Нет
         .header__contact-items
-          a(href="tel:+79874433777").header__phone +7 987 443-37-77
+
+          .header__phones
+            //Это опционально
+            //количество строк текста = количество номеров
+            //вид строки при одном номере уточнить
+            button.header__phones-toggle(onclick="this.remove();")
+              | Показать 443-37-77
+              br
+              | номера... 711-93-93
+            //Это опционально
+            .header__phones-inner
+              a(href="tel:+79874433777").header__phone +7 987 443-37-77
+              a(href="tel:+79874433777").header__phone +7 927 711-93-93
+
           a(href="#feedback" data-popup-open).button.button_style-1 Заказать звонок
+        
         //nav toggle
         a(href="javascript:void(0);").nav-toggle
           span
@@ -42,7 +56,7 @@ header.header(data-scroll-lock-fill-gap)
   
   
   if header_style !== 'landing'
-    .header__bottom(class=header_bottom?header_bottom:'' class=header_transparent?'header__bottom_transparent':'' data-scroll-lock-fill-gap)
+    .header__bottom(class=header_bottom?header_bottom:'' class=header_transparent?'header__bottom_transparent':'')
       .container
         .search.header__search
           form(action="#").search__form

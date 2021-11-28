@@ -2,6 +2,7 @@
   flex-shrink: 0;
   position: relative;
   z-index: 100;
+
   &_fixed {
     position: fixed;
     top: 0;
@@ -10,7 +11,6 @@
     box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.15);
     animation: .25s ease-out 0s slideHeader;
   }
-
 
   &__top {
     background-color: var(--color-header-top, #fff);
@@ -64,12 +64,58 @@
       }
     }
   }
-  &__phone {
+  &__contact-items {
+    display: flex;
+    align-items: center;
+  }
+  &__phones {
+    margin-right: 17px;
     font-weight: 700;
     color: var(--color-header-phone, #333333);
+  }
+  &__phones-toggle {
+    position: relative;
+    font-weight: inherit;
+    color: inherit;
+    transition: color $trs1;
+    padding-left: 20px;
+    &::before, &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      animation: flicker 1s linear infinite;
+    }
+    &::before {
+      width: 15px;
+      height: 15px;
+      left: 0;
+      border-radius: 50%;
+      border-width: 2px;
+      border-style: solid;
+      border-color: currentColor;
+    }
+    &::after {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      left: 5px;
+      background-color: currentColor;
+    }
+    &[data-touch], &[data-hover] {
+      color: var(--color-header-phone-hover, #1C52AC);
+    }
+    & ~ .header__phones-inner {
+      display: none;
+    }
+  }
+  &__phone {
+    display: block;
+    color: inherit;
+    font-weight: inherit;
     text-decoration: none;
     transition: color $trs1;
-    margin-right: 17px;
     &[data-touch], &[data-hover] {
       color: var(--color-header-phone-hover, #1C52AC);
     }
@@ -247,28 +293,11 @@
       margin-left: 40px;
     }
     &_fixed {
-      .header-nav, .header__city, .header__buttons-group {
+      .header__bottom {
         display: none;
       }
       .header__top {
         padding: 15px 0;
-      }
-      .header__bottom {
-        --search-height: 40px;
-        --search-padding: 9px 16px;
-        --container-grid: 500px auto;
-        --padding-y: 0;
-        pointer-events: none;
-        position: absolute;
-        width: 100%;
-        top: 50%;
-        transform: translateY(-50%);
-      }
-      .header__search {
-        width: 400px;
-        margin-left: 240px;
-        margin-right: 40px;
-        pointer-events: all;
       }
     }
   }
@@ -320,7 +349,7 @@
     }
   }
   @include media-breakpoint-down(xl) {
-    &__phone {
+    &__phones {
       display: none;
     }
   }
@@ -478,5 +507,17 @@
   to {
     transform: translateY(0);
     box-shadow: 0px 0px 6px 1px rgba(0,0,0,0.15);
+  }
+}
+
+@keyframes flicker {
+  0% {
+    color: #fff;
+  }
+  80% {
+    color: var(--color-accent);
+  }
+  100% {
+    color: #fff;
   }
 }

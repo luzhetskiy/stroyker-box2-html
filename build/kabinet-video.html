@@ -68,12 +68,21 @@
                   </div>
                 </div>
               </div>
-              <div class="header__contact-items"><a class="header__phone" href="tel:+79874433777">+7 987 443-37-77</a><a class="button button_style-1" href="#feedback" data-popup-open>Заказать звонок</a></div>
+              <div class="header__contact-items">
+                <div class="header__phones">
+                  <!--Это опционально-->
+                  <!--количество строк текста = количество номеров-->
+                  <!--вид строки при одном номере уточнить-->
+                  <button class="header__phones-toggle" onclick="this.remove();">Показать 443-37-77<br>номера… 711-93-93</button>
+                  <!--Это опционально-->
+                  <div class="header__phones-inner"><a class="header__phone" href="tel:+79874433777">+7 987 443-37-77</a><a class="header__phone" href="tel:+79874433777">+7 927 711-93-93</a></div>
+                </div><a class="button button_style-1" href="#feedback" data-popup-open>Заказать звонок</a>
+              </div>
               <!--nav toggle--><a class="nav-toggle" href="javascript:void(0);"><span></span><span></span><span></span></a>
             </div>
           </div>
         </div>
-        <div class="header__bottom" data-scroll-lock-fill-gap>
+        <div class="header__bottom">
           <div class="container">
             <div class="search header__search">
               <form class="search__form" action="#">
