@@ -53,7 +53,6 @@ block content
             p Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, nobis autem sunt dolorem quam, quisquam voluptate recusandae qui, enim aperiam fugiat officiis.
             a(href="#").button.button_style-2 Кнопка 
       
-
     //categories
     section.section.home-categories
       .container
@@ -65,7 +64,6 @@ block content
           +card2('Пропитки для бревен', 'img/767773b7699f15e02052b250d92c0c7f.png', grid)
           +card2('Проектирование', 'img/e79cec4f0a120d2e96a1701cf4ef8db3.png', grid)
   
-
   section.section.about-us
     .background(data-src='https://placehold.co/600x600').lazyload.about-us__background
     .container
@@ -309,6 +307,14 @@ block content
         //.additionalLinks-block.col-md-6
           .image.additionalLinks-block__image
             img(data-src="./img/Frame_1_6.jpg", alt="image").lazyload
+
+        .additionalLinks-block.col-md-6
+          .additionalLinks-block__container.additionalLinks-block__static-image.image(data-custom-interaction)
+            img(data-src="./img/staticImage.jpeg", alt="image").lazyload
+
+        .additionalLinks-block.col-md-6
+          .additionalLinks-block__container.additionalLinks-block__static-image.image(data-custom-interaction)
+            img(data-src="./img/staticImage.jpeg", alt="image").lazyload
         
         .additionalLinks-block.col-md-6
           .additionalLinks-block__container(data-custom-interaction)

@@ -11787,6 +11787,11 @@ h1.section__title {
         transform-origin: right; }
     .additionalLinks-block__container[data-touch] .background, .additionalLinks-block__container[data-hover] .background {
       transform: scale(1.025); }
+  .additionalLinks-block__static-image {
+    padding: 0 !important;
+    overflow: hidden; }
+    .additionalLinks-block__static-image[data-touch] img, .additionalLinks-block__static-image[data-hover] img {
+      transform: scale(1.025); }
   .additionalLinks-block__background {
     background-size: auto 100%; }
   .additionalLinks-block__title {
