@@ -5,6 +5,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   display: inline-flex;
+  gap: 12px;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -17,15 +18,11 @@
   min-width: 144px;
   font-weight: 400;
   .icon {
+    fill: currentColor;
+    stroke: currentColor;
     height: 18px;
     width: 18px;
     transition: fill $trs1;
-    &:not(:last-child) {
-      margin-right: 12px;
-    }
-    &:not(:first-child) {
-      margin-left: 12px;
-    }
   }
   &_style-1 {
     border: 1px solid var(--color-button1-border, #B7CBE5);
@@ -36,7 +33,7 @@
       stroke: var(--color-button1-icon, #2363D1);
     }
     &[data-touch], &[data-hover] {
-      color: var(--color-button1-hover, #fff);
+      color: var(--color-button1-hover, #1C52AC);
       background-color: var(--color-button1-hover-bg, #E7EEF6);
       border-color: var(--color-button1-hover-border, #2363D1);
       .icon {
@@ -169,14 +166,17 @@
       margin-left: 12px;
     }
   }
+
   &_disabled {
-    border: 1px solid var(--color-text-muted, #767676);
+    border: 1px solid #767676;
     color: #fff;
-    background-color: var(--color-text-muted, #767676);
-    cursor: default;
+    background-color: #767676;
     .icon {
       fill: currentColor;
       stroke: currentColor;
+    }
+    &[data-touch], &[data-hover] {
+      background-color: #818181;
     }
   }
 }

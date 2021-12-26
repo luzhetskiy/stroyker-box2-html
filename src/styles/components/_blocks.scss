@@ -21,24 +21,46 @@
   top: 0;
   left: 0;
   z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
+
 .card-label {
   display: block;
-  width: 50px;
-  font-size: 0.75rem;
+  width: auto;
+  min-width: 50px;
+  font-size: 12px;
+  padding: 0 5px;
   color: #fff;
   line-height: 20px;
   text-align: center;
   font-weight: 700;
   position: relative;
+  &_style-1 {
+    background-color: var(--color-label-sale, #FF9500);
+  }
+  &_style-2 {
+    background-color: var(--color-label-new, #30C2FF);
+  }
   &_style-3 {
     background-color: var(--color-label-hit, #3EC28F);
   }
-  &_style-2 {
+  &_style-4 {
+    background-color: var(--color-label-stock, #D74853);
+  }
+
+  &_style-new {
+    background-color: var(--color-label-new, #30C2FF);
+  }
+  &_style-sale {
     background-color: var(--color-label-sale, #FF9500);
   }
-  &_style-1 {
-    background-color: var(--color-label-new, #3EC28F);
+  &_style-hit {
+    background-color: var(--color-label-hit, #3EC28F);
+  }
+  &_style-stock {
+    background-color: var(--color-label-stock, #D74853);
   }
 }
 
@@ -2802,6 +2824,7 @@
     flex-direction: column;
     border: 1px solid var(--color-border-1, #D9D9DE);
     border-radius: 2px;
+    overflow: hidden;
     background-color: var(--color-product-card-bg, #fff);
     position: relative;
     transition: border-color $trs1;
@@ -2980,12 +3003,12 @@
           top: 100%;
           right: auto;
           left: 0;
-          margin-top: 5px;
+          margin-top: 2px;
         }
         &__index {
           bottom: 100%;
           top: auto;
-          font-size: 0.625rem;
+          font-size: 10px;
           line-height: 13px;
           margin-bottom: 5px;
         }
@@ -3017,8 +3040,10 @@
         display: none;
       }
       .card-label {
-        font-size: 0.625rem;
-        width: 36px;
+        font-size: 10px;
+        min-width: 36px;
+        top: -32px;
+        left: -16px;
       }
       .card-price {
         margin: 0;
@@ -4734,7 +4759,10 @@
         padding: var(--pd);
       }
       &_no-image {
-        background-color: var(--color-sections-bg, #F5F5F5);
+        background-color: #F5F5F5;
+        img {
+          padding: 25px !important;
+        }
       }
     }
   }
@@ -4797,6 +4825,7 @@
   }
   &__cart-button {
     width: 100%;
+    padding: 0;
     position: relative;
     z-index: 3;
     .icon {

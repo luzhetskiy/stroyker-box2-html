@@ -1,9 +1,15 @@
 extends layout/layout
 block title
   title Компоненты
+
 block breadcrumbs 
   -var title = 'Компоненты'
   include blocks/breadcrumbs
+
+block scripts
+  script(src='js/libs/jquery.fancybox.min.js')
+block style
+  link(rel="stylesheet" href="./styles/jquery.fancybox.css")
 
 
 block content
@@ -90,10 +96,11 @@ block content
 
   section.section
     .container  
-      h2.mb-25 Карточки товаров 
-        span.text-color-accent 1.0
+      .mb-25
+        h2.mb-20 Превью товаров 
+          span.text-color-accent  1.0
 
-      .d-grid.column-gap-grid.row-gap-grid.row-gap-sm-20.grid-columns-1.grid-columns-sm-2.grid-columns-md-3.grid-columns-lg-4.grid-columns-xl-5
+      .d-grid.gap-grid.row-gap-sm-20.grid-columns-sm-2.grid-columns-md-3.grid-columns-lg-4.grid-columns-xl-5
 
         +card4(true,  '', 4, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
         +card4(false, '', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
@@ -101,51 +108,189 @@ block content
         +card4(true,  '', 3, 'Фанера ФК')
 
   section.section
-    .container  
-      h2.mb-25 Карточки товаров 
-        span.text-color-accent 1.1 
-        | (разница в стилизации в мобильной версии)
+    .container
+      .mb-25
+        h2.mb-20 Превью товаров 
+          span.text-color-accent 1.1
 
-      .d-grid.column-gap-grid.row-gap-grid.row-gap-sm-20.grid-columns-1.grid-columns-sm-2.grid-columns-md-3.grid-columns-lg-4.grid-columns-xl-5
+      .d-grid.gap-grid.row-gap-sm-20.grid-columns-sm-2.grid-columns-md-3.grid-columns-lg-4.grid-columns-xl-5
 
         +card4(true,  'product-card_catalogue', 4, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
         +card4(false, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
         +card4(false, 'product-card_catalogue', 2, 'Фанера ФК')
         +card4(true,  'product-card_catalogue', 3, 'Фанера ФК')
-
-
-      
+    
   section.section
     .container  
-      h2.mb-25 Карточки товаров 
-        span.text-color-accent 2.0
+      .mb-25
+        h2.mb-20 Превью товаров 
+          span.text-color-accent 2.0
+        p Меняется только класс у родителя <strong>product-card-v2_type-1</strong>
 
-      .d-grid.column-gap-grid.row-gap-grid.row-gap-sm-20.grid-columns-2.grid-columns-md-3.grid-columns-lg-4.grid-columns-xl-5
-        +product_card_v2({
+      .d-grid.gap-grid.row-gap-sm-20.grid-columns-2.grid-columns-md-3.grid-columns-lg-4.grid-columns-xl-5
+        +product-card-v2({
           
         })
-        +product_card_v2({
+        +product-card-v2({
           style: '2'
         })
-        +product_card_v2({
+        +product-card-v2({
           style: '3'
         })
 
   section.section
     .container  
-      h2.mb-25 Карточки товаров 
-        span.text-color-accent 2.1 
-        | (разница в стилизации в мобильной версии)
+      .mb-25
+        h2.mb-20 Превью товаров 
+          span.text-color-accent 2.1
+        p Отличие по стилю в мобильной версии.<br> 
+          | Меняется только класс у родителя <strong>product-card-v2_type-2</strong>
 
-      .d-grid.column-gap-grid.row-gap-grid.row-gap-sm-20.grid-columns-1.grid-columns-sm-2.grid-columns-md-3.grid-columns-lg-4.grid-columns-xl-5
-        +product_card_v2({
+      .d-grid.gap-grid.row-gap-sm-20.grid-columns-sm-2.grid-columns-md-3.grid-columns-lg-4.grid-columns-xl-5
+        +product-card-v2({
           type: '2'
         })
-        +product_card_v2({
+        +product-card-v2({
           style: '2',
           type: '2'
         })
-        +product_card_v2({
+        +product-card-v2({
           style: '3',
           type: '2'
         })
+
+  section.section
+    .container  
+      .mb-25
+        h2.mb-20 Сетка для каталога с фильтром 
+          span.text-color-accent 2.0
+          
+      .row
+        aside.aside.col-xl-20pc.col-lg-3 
+          h4.d-none.d-lg-block Фильтр
+        
+        .col-xl.col-lg-9
+          //меняется родительский div для карточек
+          .d-grid.gap-grid.row-gap-sm-20.grid-columns-2.grid-columns-md-3.grid-columns-xl-4.mb-25
+            +product-card-v2()
+            +product-card-v2({
+              style: '2'
+            })
+            +product-card-v2({
+              style: '3'
+            })
+            +product-card-v2()
+
+  section.section
+    .container  
+      .mb-25
+        h2.mb-20 Сетка для каталога с фильтром 
+          span.text-color-accent 2.1
+          
+      .row
+        aside.aside.col-xl-20pc.col-lg-3 
+          h4.d-none.d-lg-block Фильтр
+        
+        .col-xl.col-lg-9
+          //меняется родительский div для карточек
+          .d-grid.gap-grid.row-gap-sm-20.grid-columns-sm-2.grid-columns-md-3.grid-columns-xl-4.mb-25
+            +product-card-v2({
+              type: '2'
+            })
+            +product-card-v2({
+              style: '2',
+              type: '2'
+            })
+            +product-card-v2({
+              style: '3',
+              type: '2'
+            })
+            +product-card-v2({
+              type: '2'
+            })
+
+  section.section
+    .container
+      h2.section__title Шаблон контентного слайдера 
+         span.text-color-accent 3 слайда
+      .slider-constructor(data-slides='1' data-md-slides='2' data-lg-slides='3' data-adaptive-height)  
+        +content-slide({
+          text: true,
+          gallery: true
+        })
+        +content-slide({
+          text: true
+        })
+        +content-slide({
+          gallery: true
+        })
+        +content-slide({
+          text: true,
+          gallery: true
+        })
+
+  section.section
+    .container
+      h2.section__title Шаблон контентного слайдера 
+         span.text-color-accent 4 слайда
+      .slider-constructor(data-slides='1' data-md-slides='2' data-lg-slides='3' data-xl-slides='4' data-adaptive-height)  
+        +content-slide({
+          text: true,
+          gallery: true
+        })
+        +content-slide({
+          text: true
+        })
+        +content-slide({
+          gallery: true
+        })
+        +content-slide({
+          text: true,
+          gallery: true
+        })
+        +content-slide({
+          gallery: true
+        })
+
+  section.section
+    .container
+      h2.section__title Шаблон контентного слайдера 
+         span.text-color-accent 6 слайдов
+
+      .slider-constructor(data-slides='2' data-sm-slides='3' data-md-slides='4' data-lg-slides='5' data-xl-slides='6' data-adaptive-height)  
+        +content-slide({
+          gallery: true,
+          fixedImageSize: true
+        })
+        +content-slide({
+          fixedImageSize: true
+        })
+        +content-slide({
+          gallery: true,
+          fixedImageSize: true
+        })
+        +content-slide({
+          gallery: true,
+          fixedImageSize: true
+        })
+        +content-slide({
+          fixedImageSize: true
+        })
+        +content-slide({
+          gallery: true,
+          fixedImageSize: true
+        })
+        +content-slide({
+          gallery: true,
+          fixedImageSize: true
+        }) 
+
+      
+      .mt-30
+        p Так же здесь сделал варианты, где обертка подстраивается под размер изображений.  
+          strong style = --image-size:145%
+          |, где 145% - соотношение высоты картинки к ее ширине. 
+          br
+          | Размер блока нужно знать заранее чтобы небыло скачков страницы после загрузки изображения.
+          br
+          | В остальных случаях если пропорция не указана, картинка режется с соотношением сторон 16 / 9.

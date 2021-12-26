@@ -1481,7 +1481,6 @@ class SliderConstructor {
   }
 
   init() {
-
     let vector = '<svg class="icon" viewBox="0 0 10.5 18.1"><path stroke="none" d="M9,0l1.4,1.4L2.8,9l7.6,7.6L9,18.1L0,9C0,9,9.1,0,9,0z"></path></svg>',
         next_arrow = `<button type="button" class="button button_style-1 slick-next">${vector}</button>`,
         prev_arrow = `<button type="button" class="button button_style-1 slick-prev">${vector}</button>`;

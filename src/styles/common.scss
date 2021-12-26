@@ -45,15 +45,10 @@ $utilities: map-merge(
         6: repeat(6, 1fr)
       )
     ),
-    "width": (
-      property: width,
-      class: w,
-      responsive: true,
-      values: (
-        100: 100%,
-        auto: auto
-      )
-    ),
+    "width": map-merge(
+      map-get($utilities, "width"),
+      ( responsive: true )
+    )
   )
 );
 

@@ -1,5 +1,4 @@
-mixin product_card_v2(params = {})
-  //шаб карточки старт
+mixin product-card-v2(params = {})
   .product-card-v2(class=`${params.type=='2'?'product-card-v2_type-2':'product-card-v2_type-1'}` data-custom-interaction) 
     a(href="#").product-card-v2__link
 
@@ -14,10 +13,14 @@ mixin product_card_v2(params = {})
       .product-card-v2__rating
         img(src="img/icons/rating_3.5.svg", alt="image").product-card-v2__rating-stars
 
-      .product-card-v2__labels 
-        .card-label.card-label_style-1.product-card-v2__label Новинка
-        .card-label.card-label_style-2.product-card-v2__label Хит 
-        .card-label.card-label_style-3.product-card-v2__label Эконом
+      if params.style!=='3'
+        .product-card-v2__labels
+          if params.style=='2'
+            .card-label.card-label_style-stock.product-card-v2__label Уценка
+            .card-label.card-label_style-new.product-card-v2__label Новинка
+          else 
+            .card-label.card-label_style-sale.product-card-v2__label Распродажа
+            .card-label.card-label_style-hit.product-card-v2__label Хит 
 
     .product-card-v2__content 
       .product-card-v2__title 
@@ -63,6 +66,30 @@ mixin product_card_v2(params = {})
               span  
                 span Много товара
                 span В корзину
-  //шаб карточки конец
 
 
+mixin content-slide(params = {})
+  .content-slide
+    .content-slide__container
+        if params.gallery && !params.fixedImageSize
+          a(href="./img/e79cec4f0a120d2e96a1701cf4ef8db3.png" data-fancybox).content-slide__image
+            .image.image_cover
+              img(data-src="./img/e79cec4f0a120d2e96a1701cf4ef8db3.png", alt="image").lazyload
+        else if !params.gallery && !params.fixedImageSize 
+          .content-slide__image
+            .image.image_cover
+              img(data-src="./img/image 28.jpg", alt="image").lazyload
+
+        else if params.gallery && params.fixedImageSize
+          a(href="./img/staticImage.jpeg" data-fancybox style="--image-size:145%;").content-slide__image
+            .image.image_cover
+              img(data-src="./img/staticImage.jpeg", alt="image").lazyload
+        else 
+          .content-slide__image(style="--image-size:145%;")
+            .image.image_cover
+              img(data-src="./img/staticImage.jpeg", alt="image").lazyload
+      
+        if params.text
+          .content-slide__text-content 
+            h4 Lorem ipsum dolor
+            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum eveniet quae ducimus voluptatibus? Fuga labore corrupti cupiditate.

@@ -1,9 +1,10 @@
 html {
   font-size: 16px;
 }
+
 body {
   font-family: 'Golos', sans-serif;
-  text-rendering: geometricPrecision;
+  text-rendering: optimizeSpeed;
   color: var(--color-text, #333333);
   font-size: 0.875rem;
   line-height: 1.25rem;

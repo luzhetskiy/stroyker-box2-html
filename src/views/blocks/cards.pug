@@ -5,9 +5,10 @@ mixin card1(image, discount, grid)
         span.project-preview-card__index 20464111
         if image==true
           .card-labels
-            span.card-label.card-label_style-1 Sale
-            span.card-label.card-label_style-2 New
-            span.card-label.card-label_style-3 Hit
+            span.card-label.card-label_style-sale Sale
+            span.card-label.card-label_style-new New
+            span.card-label.card-label_style-hit Hit
+            span.card-label.card-label_style-stock Скидка
           .image.image_cover
             img(data-src="img/image 28.jpg", alt="image").lazyload
           span.project-preview-card__status Премиум
@@ -71,14 +72,16 @@ mixin card4(image, classes, label, title)
       if image==true
         .product-card__image.image.image.image_contain
           .card-labels
-            span.card-label.card-label_style-1 New
+            span.card-label.card-label_style-hit Hit
+            span.card-label.card-label_style-stock Скидка
           img(data-src="img/soppka.png", alt="image").lazyload
           span.product-card__status Премиум
       else 
         .product-card__image.image.image.image_contain.image_no-image
           .card-labels
-            span.card-label.card-label_style-3 Hit
-            span.card-label.card-label_style-2 Sale
+            span.card-label.card-label_style-sale Sale
+            span.card-label.card-label_style-new New
+            
           img(data-src="img/icons/product-placeholder.svg", alt="placeholder").lazyload
           span.product-card__status Эконом
       .product-card__content

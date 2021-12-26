@@ -182,3 +182,37 @@
 [data-fancybox] {
   cursor: zoom-in;
 }
+
+.content-slide {
+  &__container {
+    display: flex !important;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+  &__image {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    --image-size: 56.25%;
+    &::before {
+      content: '';
+      display: block;
+      padding-top: var(--image-size);
+    }
+    .image {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      transition: transform $trs1;
+      will-change: transform;
+    }
+    &[data-touch], &[data-hover] {
+      .image {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
