@@ -67,29 +67,44 @@ mixin product-card-v2(params = {})
                 span Много товара
                 span В корзину
 
+mixin content-placeholder()
+  .content-placeholder
+    span Просто заглушка
 
-mixin content-slide(params = {})
-  .content-slide
-    .content-slide__container
-        if params.gallery && !params.fixedImageSize
-          a(href="./img/e79cec4f0a120d2e96a1701cf4ef8db3.png" data-fancybox).content-slide__image
-            .image.image_cover
-              img(data-src="./img/e79cec4f0a120d2e96a1701cf4ef8db3.png", alt="image").lazyload
-        else if !params.gallery && !params.fixedImageSize 
-          .content-slide__image
-            .image.image_cover
-              img(data-src="./img/image 28.jpg", alt="image").lazyload
-
-        else if params.gallery && params.fixedImageSize
-          a(href="./img/staticImage.jpeg" data-fancybox style="--image-size:145%;").content-slide__image
-            .image.image_cover
-              img(data-src="./img/staticImage.jpeg", alt="image").lazyload
+mixin content-standard-box(params = {})
+  -var imageSrc = params.imageSrc?params.imageSrc:'./img/e79cec4f0a120d2e96a1701cf4ef8db3.png'
+  .content-standard-box
+    .content-standard-box__container
+      if params.image
+        if params.gallery
+          a(href=imageSrc data-fancybox).content-image.image-zoom
+            .image
+              img(src=imageSrc, alt="image")
         else 
-          .content-slide__image(style="--image-size:145%;")
-            .image.image_cover
-              img(data-src="./img/staticImage.jpeg", alt="image").lazyload
-      
-        if params.text
-          .content-slide__text-content 
-            h4 Lorem ipsum dolor
-            p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum eveniet quae ducimus voluptatibus? Fuga labore corrupti cupiditate.
+          .content-image.image-zoom
+            .image
+              img(src=imageSrc, alt="image")
+      if params.text
+        .content-standard-box__text-content
+          h4 Lorem ipsum dolor
+          p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum eveniet quae ducimus voluptatibus? Fuga labore corrupti cupiditate.
+
+mixin content-background-box(params = {})
+  -var imageSrc = params.imageSrc?params.imageSrc:'./img/e79cec4f0a120d2e96a1701cf4ef8db3.png'
+  //если нужно, родительский .content-background-box может быть ссылкой
+  .content-background-box.image-zoom
+    .content-background-box__container
+      if params.background
+        .content-background-box__background(style="background-color:#F5F5F5;")
+
+      if params.image 
+        .content-background-box__background-image 
+          .image.image_cover
+            img(src=imageSrc, alt="image")
+
+      if params.text
+        .content-background-box__text-content
+          h4 Lorem ipsum dolor
+          p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum eveniet quae ducimus voluptatibus? Fuga labore corrupti cupiditate.
+          p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum eveniet quae ducimus voluptatibus? Fuga labore corrupti cupiditate.
+

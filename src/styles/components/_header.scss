@@ -69,11 +69,13 @@
     align-items: center;
   }
   &__phones {
-    margin-right: 17px;
+    line-height: 20px;
+    margin-right: 20px;
     font-weight: 700;
     color: var(--color-header-phone, #333333);
   }
   &__phones-toggle {
+    white-space: nowrap;
     position: relative;
     font-weight: inherit;
     color: inherit;

@@ -23,73 +23,73 @@ block content
       .d-flex.flex-wrap.column-gap-grid.row-gap-20
         
         .d-flex.flex-column.align-items-start.row-gap-15
-          button.button.button_style-1.button_xl 
+          a(href="#").button.button_style-1.button_xl 
             svg.icon
               use(xlink:href="./img/icons/icons-sprite.svg#document")
             span Шаблон кнопки
-          button.button.button_style-1.button_xl 
+          a(href="#").button.button_style-1.button_xl 
             span Шаблон кнопки
             svg.icon
               use(xlink:href="./img/icons/icons-sprite.svg#document")
-          button.button.button_style-1
+          a(href="#").button.button_style-1
             svg.icon
               use(xlink:href="./img/icons/icons-sprite.svg#document")
             span Шаблон кнопки
-          button.button.button_style-1
+          a(href="#").button.button_style-1
             span Шаблон кнопки
             svg.icon
               use(xlink:href="./img/icons/icons-sprite.svg#document")
 
         .d-flex.flex-column.align-items-start.row-gap-15
-          button.button.button_style-2.button_xl 
+          a(href="#").button.button_style-2.button_xl 
             svg.icon
               use(xlink:href="./img/icons/icons-sprite.svg#document")
             span Шаблон кнопки
-          button.button.button_style-2.button_xl 
+          a(href="#").button.button_style-2.button_xl 
             span Шаблон кнопки
             svg.icon
               use(xlink:href="./img/icons/icons-sprite.svg#document") 
-          button.button.button_style-2 
+          a(href="#").button.button_style-2 
             svg.icon
               use(xlink:href="./img/icons/icons-sprite.svg#document")
             span Шаблон кнопки
-          button.button.button_style-2
+          a(href="#").button.button_style-2
             span Шаблон кнопки
             svg.icon
               use(xlink:href="./img/icons/icons-sprite.svg#document") 
 
         .d-flex.flex-column.align-items-start.row-gap-15
-          button.button.button_style-5.button_xl 
+          a(href="#").button.button_style-5.button_xl 
             svg.icon
               use(xlink:href="./img/icons/icons-sprite.svg#document")
             span Шаблон кнопки
-          button.button.button_style-5.button_xl
+          a(href="#").button.button_style-5.button_xl
             span Шаблон кнопки
             svg.icon
               use(xlink:href="./img/icons/icons-sprite.svg#document")
-          button.button.button_style-5 
+          a(href="#").button.button_style-5 
             svg.icon
               use(xlink:href="./img/icons/icons-sprite.svg#document")
             span Шаблон кнопки
-          button.button.button_style-5
+          a(href="#").button.button_style-5
             span Шаблон кнопки
             svg.icon
               use(xlink:href="./img/icons/icons-sprite.svg#document")
 
         .d-flex.flex-column.align-items-start.row-gap-15
-          button.button.button_disabled.button_xl 
+          a(href="#").button.button_disabled.button_xl 
             svg.icon
               use(xlink:href="./img/icons/icons-sprite.svg#cart")
             span Шаблон кнопки
-          button.button.button_disabled.button_xl
+          a(href="#").button.button_disabled.button_xl
             span Шаблон кнопки
             svg.icon
               use(xlink:href="./img/icons/icons-sprite.svg#cart")
-          button.button.button_disabled 
+          a(href="#").button.button_disabled 
             svg.icon
               use(xlink:href="./img/icons/icons-sprite.svg#cart")
             span Шаблон кнопки
-          button.button.button_disabled
+          a(href="#").button.button_disabled
             span Шаблон кнопки
             svg.icon
               use(xlink:href="./img/icons/icons-sprite.svg#cart")
@@ -211,86 +211,85 @@ block content
 
   section.section
     .container
-      h2.section__title Шаблон контентного слайдера 
-         span.text-color-accent 3 слайда
-      .slider-constructor(data-slides='1' data-md-slides='2' data-lg-slides='3' data-adaptive-height)  
-        +content-slide({
-          text: true,
-          gallery: true
-        })
-        +content-slide({
+      h2.section__title Текст(опционально) + Картинка на фоне(опционально) + Цвет фона(опционально)
+      .d-grid.row-gap-25.column-gap-grid.grid-columns-md-2.grid-columns-lg-3
+        +content-background-box({
+          background: true,
           text: true
         })
-        +content-slide({
-          gallery: true
+        +content-background-box({
+          image: true,
+          imageSrc: './img/image 35.jpg',
+          text: true
         })
-        +content-slide({
-          text: true,
-          gallery: true
+        +content-background-box({
+          image: true
         })
 
   section.section
     .container
-      h2.section__title Шаблон контентного слайдера 
-         span.text-color-accent 4 слайда
-      .slider-constructor(data-slides='1' data-md-slides='2' data-lg-slides='3' data-xl-slides='4' data-adaptive-height)  
-        +content-slide({
-          text: true,
-          gallery: true
+      h2.section__title Картинка(опционально) + галерея(опционально) + текст(опционально)
+      .d-grid.row-gap-25.column-gap-grid.grid-columns-md-2.grid-columns-lg-3
+        +content-standard-box({
+          image: true
         })
-        +content-slide({
+        +content-standard-box({
+          image: true,
+          gallery: true,
           text: true
         })
-        +content-slide({
-          gallery: true
+        +content-standard-box({
+          text: true
         })
-        +content-slide({
-          text: true,
-          gallery: true
-        })
-        +content-slide({
-          gallery: true
-        })
+
 
   section.section
     .container
-      h2.section__title Шаблон контентного слайдера 
-         span.text-color-accent 6 слайдов
+      h2.section__title Сетка для контента 
+        span.text-color-accent 3 в ряд
+      .d-grid.row-gap-25.column-gap-grid.grid-columns-md-2.grid-columns-lg-3
+        +content-placeholder()
+        +content-placeholder()
+        +content-placeholder()
 
+  section.section
+    .container
+      h2.section__title Сетка для контента 
+        span.text-color-accent 2 в ряд
+      .d-grid.row-gap-25.column-gap-grid.grid-columns-md-2
+        +content-placeholder()
+        +content-placeholder()
+
+  section.section
+    .container
+      h2.section__title Слайдер для контента 
+         span.text-color-accent 3 в ряд
+      .slider-constructor(data-slides='1' data-md-slides='2' data-lg-slides='3' data-adaptive-height)
+        +content-placeholder()
+        +content-placeholder()
+        +content-placeholder()
+        +content-placeholder()
+
+  section.section
+    .container
+      h2.section__title Слайдер для контента 
+        span.text-color-accent 4 в ряд
+      .slider-constructor(data-slides='1' data-md-slides='2' data-lg-slides='3' data-xl-slides='4' data-adaptive-height)
+        +content-placeholder()
+        +content-placeholder()
+        +content-placeholder()
+        +content-placeholder()
+        +content-placeholder() 
+
+  section.section
+    .container
+      h2.section__title Слайдер для контента 
+        span.text-color-accent 6 в ряд
       .slider-constructor(data-slides='2' data-sm-slides='3' data-md-slides='4' data-lg-slides='5' data-xl-slides='6' data-adaptive-height)  
-        +content-slide({
-          gallery: true,
-          fixedImageSize: true
-        })
-        +content-slide({
-          fixedImageSize: true
-        })
-        +content-slide({
-          gallery: true,
-          fixedImageSize: true
-        })
-        +content-slide({
-          gallery: true,
-          fixedImageSize: true
-        })
-        +content-slide({
-          fixedImageSize: true
-        })
-        +content-slide({
-          gallery: true,
-          fixedImageSize: true
-        })
-        +content-slide({
-          gallery: true,
-          fixedImageSize: true
-        }) 
-
-      
-      .mt-30
-        p Так же здесь сделал варианты, где обертка подстраивается под размер изображений.  
-          strong style = --image-size:145%
-          |, где 145% - соотношение высоты картинки к ее ширине. 
-          br
-          | Размер блока нужно знать заранее чтобы небыло скачков страницы после загрузки изображения.
-          br
-          | В остальных случаях если пропорция не указана, картинка режется с соотношением сторон 16 / 9.
+        +content-placeholder()
+        +content-placeholder()
+        +content-placeholder()
+        +content-placeholder()
+        +content-placeholder()
+        +content-placeholder()
+        +content-placeholder()
