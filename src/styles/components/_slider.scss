@@ -25,7 +25,6 @@
 .slick-slider .slick-list {
   transform: translate3d(0, 0, 0);
 }
-
 .slick-track {
   position: relative;
   left: 0;
@@ -40,11 +39,9 @@
     pointer-events: none;
   }
 }
-
 .slick-arrow.slick-hidden {
   display: none;
 }
-
 .slick-dots {
   z-index: 3;
   position: absolute;
@@ -192,7 +189,6 @@
     }
   }
 }
-
 .mobile-advertising__slider {
   .slick-arrow {
     display: none !important;
@@ -258,7 +254,9 @@
     & > div:not([class]) {
       display: flex;
       & > * {
-        display: block !important;
+        &:not(.product-card-v2) {
+          display: block !important;
+        }
       }
     }
   }
@@ -314,7 +312,7 @@
       overflow: visible !important;
     }
     .slick-slide {
-      row-gap: 15px;
+      row-gap: var(--grid-gutter-width);
     }
     .slick-prev, .slick-next {
       display: none !important;

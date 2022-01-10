@@ -1,0 +1,176 @@
+extends layout/layout
+block title
+  title Шаблоны слайдеров
+
+block breadcrumbs 
+  -var title = 'Шаблоны слайдеров'
+  include blocks/breadcrumbs
+
+block content
+
+  section.section
+    .container
+      h2.section__title Превью 
+        span.text-color-accent 1.1
+      .slider-constructor(data-slides='1' data-rows='2' data-sm-slides='2' data-sm-rows='1' data-md-slides='3' data-lg-slides='4' data-xl-slides='5')
+        include blocks/cards
+        +card4(true, 'product-card_catalogue', 4, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(false, 'product-card_catalogue', 2, 'Фанера ФК')
+        +card4(true, 'product-card_catalogue', 3, 'Фанера ФК')
+        +card4(false, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(true, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(true, 'product-card_catalogue', 3, 'Фанера ФК')
+        +card4(false, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(true, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+
+  section.section
+    .container
+      h2.section__title Превью 
+        span.text-color-accent 2.1
+      .slider-constructor(data-slides='1' data-rows='2' data-sm-slides='2' data-sm-rows='1' data-md-slides='3' data-lg-slides='4' data-xl-slides='5')
+        +product-card-v2({
+          type: '2'
+        })
+        +product-card-v2({
+          style: '2',
+          type: '2'
+        })
+        +product-card-v2({
+          style: '3',
+          type: '2'
+        })
+        +product-card-v2({
+          type: '2'
+        })
+        +product-card-v2({
+          style: '2',
+          type: '2'
+        })
+        +product-card-v2({
+          style: '3',
+          type: '2'
+        })
+
+  section.section
+    .container
+      h2.section__title Превью 
+        span.text-color-accent 1.1
+      .slider-constructor(data-slides='1' data-rows='2' data-sm-slides='2' data-md-slides='3' data-lg-slides='4' data-xl-slides='5')
+        +card4(true, 'product-card_catalogue', 4, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(false, 'product-card_catalogue', 2, 'Фанера ФК')
+        +card4(true, 'product-card_catalogue', 3, 'Фанера ФК')
+        +card4(false, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(true, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4 Фанера ФК 18х1525х1525 мм Фанера ФК 18х1525х1525 мм')
+        +card4(true, 'product-card_catalogue', 3, 'Фанера ФК')
+        +card4(false, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(true, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(true, 'product-card_catalogue', 3, 'Фанера ФК')
+        +card4(false, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(true, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(true, 'product-card_catalogue', 3, 'Фанера ФК')
+        +card4(false, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+        +card4(true, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+
+  section.section
+    .container
+      h2.section__title Превью 
+        span.text-color-accent 2.1
+      .slider-constructor(data-slides='1' data-rows='2' data-sm-slides='2' data-md-slides='3' data-lg-slides='4' data-xl-slides='5')
+        +product-card-v2({
+          type: '2'
+        })
+        +product-card-v2({
+          style: '2',
+          type: '2'
+        })
+        +product-card-v2({
+          style: '3',
+          type: '2'
+        })
+        +product-card-v2({
+          type: '2'
+        })
+        +product-card-v2({
+          style: '2',
+          type: '2'
+        })
+        +product-card-v2({
+          style: '3',
+          type: '2'
+        })
+        +product-card-v2({
+          type: '2'
+        })
+        +product-card-v2({
+          style: '2',
+          type: '2'
+        })
+        +product-card-v2({
+          style: '3',
+          type: '2'
+        })
+        +product-card-v2({
+          type: '2'
+        })
+        +product-card-v2({
+          style: '2',
+          type: '2'
+        })
+        +product-card-v2({
+          style: '3',
+          type: '2'
+        })
+
+
+  section.section
+    .container
+      .row
+        aside.aside.col-xl-20pc.col-lg-3
+          h4.d-none.d-lg-block aside
+        .col-xl.col-lg-9
+          //секция
+          section.section
+            h2.section__title Превью 
+              span.text-color-accent 1.1
+            .slider-constructor(data-slides='1' data-rows='2' data-sm-slides='2' data-sm-rows='1' data-md-slides='3' data-xl-slides='4')
+              +card4(true, 'col product-card_catalogue', 4, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+              +card4(false, 'col product-card_catalogue', 2, 'Фанера ФК')
+              +card4(true, 'col product-card_catalogue', 3, 'Фанера ФК')
+              +card4(false, 'col product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+              +card4(true, 'col product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+              +card4(true, 'col product-card_catalogue', 3, 'Фанера ФК')
+              +card4(false, 'col product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
+
+  section.section
+    .container
+      .row
+        aside.aside.col-xl-20pc.col-lg-3
+          h4.d-none.d-lg-block aside
+        .col-xl.col-lg-9
+          //секция
+          section.section
+            h2.section__title Превью 
+              span.text-color-accent 2.1
+            .slider-constructor(data-slides='1' data-rows='2' data-sm-slides='2' data-sm-rows='1' data-md-slides='3' data-xl-slides='4')
+              +product-card-v2({
+                type: '2'
+              })
+              +product-card-v2({
+                style: '2',
+                type: '2'
+              })
+              +product-card-v2({
+                style: '3',
+                type: '2'
+              })
+              +product-card-v2({
+                type: '2'
+              })
+              +product-card-v2({
+                style: '2',
+                type: '2'
+              })
+              +product-card-v2({
+                style: '3',
+                type: '2'
+              })

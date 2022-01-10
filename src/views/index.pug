@@ -136,6 +136,36 @@ block content
         +card4(false, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
         +card4(true, 'product-card_catalogue', 1, 'Фанера ФК 18х1525х1525 мм сорт 4/4')
 
+  section.section
+    .container
+      h2.section__title Хиты продаж 1 ряд
+      .slider-constructor(data-slides='1' data-rows='2' data-sm-slides='2' data-sm-rows='1' data-md-slides='3' data-lg-slides='4' data-xl-slides='5')
+        include blocks/cards
+        +product-card-v2({
+          type: '2'
+        })
+        +product-card-v2({
+          style: '2',
+          type: '2'
+        })
+        +product-card-v2({
+          style: '3',
+          type: '2'
+        })
+        +product-card-v2({
+          type: '2'
+        })
+        +product-card-v2({
+          style: '2',
+          type: '2'
+        })
+        +product-card-v2({
+          style: '3',
+          type: '2'
+        })
+
+
+
   //section.section
     .container
       .row.align-items-end
