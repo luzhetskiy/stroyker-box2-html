@@ -1503,8 +1503,6 @@ class SliderConstructor {
         rows_lg_count = +this.$element.getAttribute('data-lg-rows') || rows_md_count,
         rows_xl_count = +this.$element.getAttribute('data-xl-rows') || rows_lg_count;
 
-    console.log(arrows)
-
     $(this.$element).slick({
       autoplay: autoplay,
       autoplaySpeed: autoplay_timeout,

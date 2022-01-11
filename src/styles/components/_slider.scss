@@ -298,6 +298,14 @@
     }
   }
   @include media-breakpoint-up(sm) {
+    &_no-title {
+      &:not([data-no-arrows]) {
+        padding-top: 56px;
+        .slick-prev, .slick-next {
+          top: -4px;
+        }
+      }
+    }
     &:not([data-no-arrows]) {
       .slick-dots {
         display: none !important;

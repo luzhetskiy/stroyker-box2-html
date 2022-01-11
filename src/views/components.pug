@@ -243,6 +243,23 @@ block content
 
   section.section
     .container
+      h2.section__title Картинки с закруглением
+      .d-grid.row-gap-25.column-gap-grid.grid-columns-md-2.grid-columns-lg-3
+        +content-standard-box({
+          image: true,
+          imageRadius: true
+        })
+        +content-standard-box({
+          image: true,
+          imageRadius: true,
+          gallery: true,
+          text: true
+        })
+
+
+
+  section.section
+    .container
       h2.section__title Сетка для контента 
         span.text-color-accent 3 в ряд
       .d-grid.row-gap-25.column-gap-grid.grid-columns-md-2.grid-columns-lg-3

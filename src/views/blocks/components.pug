@@ -77,11 +77,11 @@ mixin content-standard-box(params = {})
     .content-standard-box__container
       if params.image
         if params.gallery
-          a(href=imageSrc data-fancybox).content-image.image-zoom
+          a(href=imageSrc data-fancybox class=params.imageRadius?"content-image_radius":"").content-image.image-zoom
             .image
               img(src=imageSrc, alt="image")
         else 
-          .content-image.image-zoom
+          .content-image.image-zoom(class=params.imageRadius?"content-image_radius":"")
             .image
               img(src=imageSrc, alt="image")
       if params.text
