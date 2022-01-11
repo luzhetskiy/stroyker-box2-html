@@ -1,1 +1,1 @@
-{"version":3,"sources":["global-config-variables.scss"],"names":[],"mappings":"AAAA;EACE,qBAAiB;EACjB,6BAAwB,EAAA","file":"../global-config-variables.css","sourcesContent":[":root {\n  --buttons-radius: 2px;\n  --content-images-radius: 10px;\n}"]}
+{"version":3,"sources":["global-config-variables.scss"],"names":[],"mappings":"AAAA;EACE,qBAAiB;EACjB,6BAAwB;EACxB,8BAAyB,EAAA","file":"../global-config-variables.css","sourcesContent":[":root {\n  --buttons-radius: 6px;\n  --content-blocks-radius: 10px;\n  --product-preview-radius: 10px;\n}"]}
