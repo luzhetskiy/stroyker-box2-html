@@ -69,20 +69,21 @@ mixin card4(image, classes, label, title)
   .product-card(class=classes)
     .product-card__container(data-custom-interaction)
       a(href="tovar.html").product-card__link-area
-      if image==true
-        .product-card__image.image.image.image_contain
+      .product-card__image
+        if image==true
+          .image.image.image_contain
+            img(data-src="img/soppka.png", alt="image").lazyload
+            img(data-src="img/test.jpg", alt="image").lazyload
           .card-labels
             span.card-label.card-label_style-hit Hit
             span.card-label.card-label_style-stock Скидка
-          img(data-src="img/soppka.png", alt="image").lazyload
           span.product-card__status Премиум
-      else 
-        .product-card__image.image.image.image_contain.image_no-image
+        else 
+          .image.image.image_contain.image_no-image
+            img(data-src="img/icons/product-placeholder.svg", alt="placeholder").lazyload
           .card-labels
             span.card-label.card-label_style-sale Sale
             span.card-label.card-label_style-new New
-            
-          img(data-src="img/icons/product-placeholder.svg", alt="placeholder").lazyload
           span.product-card__status Эконом
       .product-card__content
         .product-card__content-top
