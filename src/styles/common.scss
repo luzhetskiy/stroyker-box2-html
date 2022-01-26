@@ -64,9 +64,6 @@ $utilities: map-get-multiple($utilities, ("display", "order", "flex", "flex-shri
 /*========== Basic ==========*/
 @import "./components/basic";
 
-/*========== Components ==========*/
-@import "./components/components";
-
 /*========== Typography ==========*/
 @import "./components/typography";
 
@@ -78,6 +75,9 @@ $utilities: map-get-multiple($utilities, ("display", "order", "flex", "flex-shri
 
 /*========== Buttons ==========*/
 @import './components/buttons';
+
+/*========== Components ==========*/
+@import "./components/components";
 
 /*========== Tooltips ==========*/
 @import "./components/tippy";
