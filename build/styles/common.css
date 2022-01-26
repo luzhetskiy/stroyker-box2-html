@@ -4096,6 +4096,20 @@ img {
   overflow: hidden;
   position: relative;
   border-radius: var(--content-blocks-radius, 0px); }
+  .content-image .image img {
+    transition: opacity 0.15s ease-out, visibility 0.15s ease-out; }
+    .content-image .image img:not(:first-child) {
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 2; }
+  .content-image[data-touch] .image img:not(:first-child), .content-image[data-hover] .image img:not(:first-child) {
+    opacity: 1;
+    visibility: visible; }
 
 .content-standard-box__container {
   height: 100%;
@@ -4379,6 +4393,19 @@ img {
         .product-card-v2_type-2 .product-card-v2__rating {
           right: initial;
           left: 0; } }
+
+.background-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0; }
+  .background-video__element {
+    display: block;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover; }
 
 /*========== Typography ==========*/
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {

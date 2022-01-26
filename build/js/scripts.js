@@ -69,7 +69,7 @@ function getParent(elemSelector, parentSelector) {
 
 const CustomInteractionEvents = Object.create({
   targets: {
-    value: 'a, button, label, input, textarea, tr, [data-custom-interaction], .selectric-items li, .selectric .label, .button, .comparison-property, .image-zoom'
+    value: 'a, button, label, input, textarea, tr, [data-custom-interaction], .selectric-items li, .selectric .label, .button, .comparison-property, .image-zoom, .content-image'
   },
   delay: {
     value: 100
