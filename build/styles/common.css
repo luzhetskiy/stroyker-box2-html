@@ -4747,7 +4747,8 @@ img {
   display: block;
   overflow: hidden;
   position: relative;
-  border-radius: var(--content-blocks-radius, 0px); }
+  border-radius: var(--content-blocks-radius, 0px);
+  transform: translateZ(0); }
   .content-image .image img {
     transition: opacity 0.15s ease-out, visibility 0.15s ease-out; }
     .content-image .image img:not(:first-child) {
