@@ -7,6 +7,7 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 const breakpoints = {
+  xs: 0,
   sm: 576,
   md: 768,
   lg: 1024,
@@ -51,6 +52,26 @@ $(document).ready(function () {
   gallery();
 
 });
+
+function throttle(func, interval, context) {
+  let isCooldown = false;
+  return function() {
+    if (isCooldown) return;
+    func.apply(context || this, arguments);
+    isCooldown = true;
+    setTimeout(() => isCooldown = false, interval);
+  };
+}
+
+function debounce(func, interval, context) {
+  let timeout = false;
+  return function() {
+    if (timeout) clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      func.apply(context || this, arguments);
+    }, interval);
+  };
+}
 
 function getParent(elemSelector, parentSelector) {
   var elem = document.querySelector(elemSelector);
@@ -576,7 +597,6 @@ var slider = {
         let checkSize = function() {
           w = $this.width(),
           h = $(window).width()<breakpoints.md?w*res_mobile:w*res_desktop;
-          console.log($(window).width()<breakpoints.md)
           $this.height(h);
         }
 
@@ -1474,76 +1494,161 @@ function gallery() {
   }
 }
 
-//new sliders constructor
 class SliderConstructor {
-  constructor($element) {
-    this.$element = $element;
+  constructor(element) {
+    this.element = element;
   }
 
   init() {
-    let vector = '<svg class="icon" viewBox="0 0 10.5 18.1"><path stroke="none" d="M9,0l1.4,1.4L2.8,9l7.6,7.6L9,18.1L0,9C0,9,9.1,0,9,0z"></path></svg>',
-        next_arrow = `<button type="button" class="button button_style-1 slick-next">${vector}</button>`,
-        prev_arrow = `<button type="button" class="button button_style-1 slick-prev">${vector}</button>`;
+    this.sliderWidth = window.innerWidth;
 
-    let autoplay = this.$element.getAttribute('data-autoplay-timeout') ? true : false,
-        autoplay_timeout = this.$element.getAttribute('data-autoplay-timeout') || 5000;
+    this.htmlElements = {};
+    this.htmlElements.vector = '<svg class="icon" fill="currentColor" viewBox="0 0 10.5 18.1"><path stroke="none" d="M9,0l1.4,1.4L2.8,9l7.6,7.6L9,18.1L0,9C0,9,9.1,0,9,0z"></path></svg>';
+    this.htmlElements.nextArrow = `<button type="button" class="button button_style-1 slick-next">${this.htmlElements.vector}</button>`;
+    this.htmlElements.prevArrow = `<button type="button" class="button button_style-1 slick-prev">${this.htmlElements.vector}</button>`;
 
-    let arrows = this.$element.getAttribute('data-no-arrows')=='' ? false : true,
-        adaptiveHeight = this.$element.getAttribute('data-adaptive-height')=='' ? true : false;
+    this.params = {};
 
-    let slides_count = +this.$element.getAttribute('data-slides') || 1,
-        slides_sm_count = +this.$element.getAttribute('data-sm-slides') || slides_count,
-        slides_md_count = +this.$element.getAttribute('data-md-slides') || slides_sm_count,
-        slides_lg_count = +this.$element.getAttribute('data-lg-slides') || slides_md_count,
-        slides_xl_count = +this.$element.getAttribute('data-xl-slides') || slides_lg_count;
+    this.params.autoplay = this.element.getAttribute('data-autoplay-timeout') !== null;
+    this.params.autoplayTimeout = +this.element.getAttribute('data-autoplay-timeout') || 5000;
 
-    let rows_count = +this.$element.getAttribute('data-rows') || 1,
-        rows_sm_count = +this.$element.getAttribute('data-sm-rows') || rows_count,
-        rows_md_count = +this.$element.getAttribute('data-md-rows') || rows_sm_count,
-        rows_lg_count = +this.$element.getAttribute('data-lg-rows') || rows_md_count,
-        rows_xl_count = +this.$element.getAttribute('data-xl-rows') || rows_lg_count;
+    this.params.arrows = this.element.getAttribute('data-no-arrows') === null ? true : false;
 
-    $(this.$element).slick({
-      autoplay: autoplay,
-      autoplaySpeed: autoplay_timeout,
+    this.params.adaptiveHeight = this.element.getAttribute('data-adaptive-height') !== null;
+
+    this.params.count = {};
+    this.params.count.xs = +this.element.getAttribute('data-slides')    || 1;
+    this.params.count.sm = +this.element.getAttribute('data-sm-slides') || this.params.count.xs;
+    this.params.count.md = +this.element.getAttribute('data-md-slides') || this.params.count.sm;
+    this.params.count.lg = +this.element.getAttribute('data-lg-slides') || this.params.count.md;
+    this.params.count.xl = +this.element.getAttribute('data-xl-slides') || this.params.count.lg;
+
+    this.params.rows = {};
+    this.params.rows.xs = +this.element.getAttribute('data-rows')    || 1,
+    this.params.rows.sm = +this.element.getAttribute('data-sm-rows') || this.params.rows.xs,
+    this.params.rows.md = +this.element.getAttribute('data-md-rows') || this.params.rows.sm,
+    this.params.rows.lg = +this.element.getAttribute('data-lg-rows') || this.params.rows.md,
+    this.params.rows.xl = +this.element.getAttribute('data-xl-rows') || this.params.rows.lg;
+
+    this.params.state = {};
+    Object.keys(breakpoints).forEach((key, index) => {
+      const breakpoint = index !== 0 ? '-' + key + '-' : '-';
+      const attr = this.element.getAttribute(`data${breakpoint}mounted`);
+
+      if (attr === null && index !== 0) {
+        const prevKey = Object.keys(breakpoints)[index - 1];
+        this.params.state[key] = this.params.state[prevKey];
+      } else if (attr === 'true' || (index === 0 && attr !== 'false')) {
+        this.params.state[key] = true;
+      } else {
+        this.params.state[key] = false;
+      }
+    })
+
+    this.slides = [];
+    this.containsMobileHiddenSlides = false;
+    this.element.childNodes.forEach(slide => {
+      if (!slide.tagName) return;
+      if (slide.getAttribute('data-slide-mobile-hidden') !== null) {
+        this.containsMobileHiddenSlides = true;
+      }
+      this.slides.push(slide);
+    });
+    
+    this.checkSliderState();
+    this.checkSliderStateDebounced = debounce(this.checkSliderState, 500, this);
+    window.addEventListener('resize', this.checkSliderStateDebounced);
+  }
+
+  checkSliderState() {
+    if (this.mounted && this.sliderWidth === window.innerWidth) return;
+    this.sliderWidth = window.innerWidth;
+
+    if (this.mounted) {
+      this.unmount();
+    }
+
+    let state;
+    for (const breakpoint in breakpoints) {
+      if (window.innerWidth >= breakpoints[breakpoint]) {
+        state = this.params.state[breakpoint];
+      }
+    }
+
+    if (state) {
+      this.element.classList.remove('visible');
+      if (this.containsMobileHiddenSlides) {
+        this.checkSlidesVisibility();
+      }
+      this.mount();
+    } else {
+      this.element.classList.add('visible');
+    }
+  }
+
+  checkSlidesVisibility() {
+    this.slides.forEach(slide => {
+      slide.remove();
+    })
+    
+    this.slides.forEach(slide => {
+      const shouldBeHidden = slide.getAttribute('data-slide-mobile-hidden') !== null;
+      const breakpoint = window.innerWidth < breakpoints.sm;
+      if (!(shouldBeHidden && breakpoint)) {
+        this.element.insertAdjacentElement('beforeend', slide);
+      } 
+    })
+  }
+
+  mount() {
+    $(this.element).slick({
+      autoplay: this.params.autoplay,
+      autoplaySpeed: this.params.autoplayTimeout,
       mobileFirst: true,
-      slidesToShow: slides_count,
-      slidesToScroll: slides_count,
-      rows: rows_count,
-      nextArrow: next_arrow,
-      prevArrow: prev_arrow,
-      arrows: arrows,
-      adaptiveHeight: adaptiveHeight,
+      slidesToShow: this.params.count.xs,
+      slidesToScroll: this.params.count.xs,
+      rows: this.params.rows.xs,
+      nextArrow: this.htmlElements.nextArrow,
+      prevArrow: this.htmlElements.prevArrow,
+      arrows: this.params.arrows,
+      adaptiveHeight: this.params.adaptiveHeight,
       dots: true,
+      accessibility: false,
       responsive: [{
         breakpoint: breakpoints.sm - 1,
         settings: {
-          slidesToShow: slides_sm_count,
-          slidesToScroll: slides_sm_count,
-          rows: rows_sm_count
+          slidesToShow: this.params.count.sm,
+          slidesToScroll: this.params.count.sm,
+          rows: this.params.rows.sm
         }
       }, {
         breakpoint: breakpoints.md - 1,
         settings: {
-          slidesToShow: slides_md_count,
-          slidesToScroll: slides_md_count,
-          rows: rows_md_count
+          slidesToShow: this.params.count.md,
+          slidesToScroll: this.params.count.md,
+          rows: this.params.rows.md
         }
       }, {
         breakpoint: breakpoints.lg - 1,
         settings: {
-          slidesToShow: slides_lg_count,
-          slidesToScroll: slides_lg_count,
-          rows: rows_lg_count
+          slidesToShow: this.params.count.lg,
+          slidesToScroll: this.params.count.lg,
+          rows: this.params.rows.lg
         }
       }, {
         breakpoint: breakpoints.xl - 1,
         settings: {
-          slidesToShow: slides_xl_count,
-          slidesToScroll: slides_xl_count,
-          rows: rows_xl_count
+          slidesToShow: this.params.count.xl,
+          slidesToScroll: this.params.count.xl,
+          rows: this.params.rows.xl
         }
       }]
     })
+    this.mounted = true;
+  }
+
+  unmount() {
+    $(this.element).slick('unslick');
+    this.mounted = false;
   }
 }
