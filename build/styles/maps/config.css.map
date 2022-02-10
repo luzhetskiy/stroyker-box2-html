@@ -1,0 +1,1 @@
+{"version":3,"sources":["config.scss","config.css"],"names":[],"mappings":"AAAA;EACE,qBAAA;EACA,6BAAA;EACA,8BAAA;ACCF","file":"../config.css","sourcesContent":[":root {\n  --buttons-radius: 6px;\n  --content-blocks-radius: 10px;\n  --product-preview-radius: 10px;\n}",":root {\n  --buttons-radius: 6px;\n  --content-blocks-radius: 10px;\n  --product-preview-radius: 10px;\n}"]}

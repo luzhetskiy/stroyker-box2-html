@@ -23,6 +23,11 @@ body {
     box-sizing: border-box;
   }
 }
+
+a, button, input, textarea, select, label {
+  touch-action: manipulation;
+}
+
 button, input, textarea, select {
   outline: none;
   display: block;
@@ -37,6 +42,7 @@ button, input, textarea, select {
   text-rendering: inherit;
   line-height: inherit;
 }
+
 a, button, label, [data-touch-hover] {
   user-select: none;
   cursor: pointer;
@@ -44,23 +50,33 @@ a, button, label, [data-touch-hover] {
     user-select: none;
   }
 }
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
 input[type=number] {
   -moz-appearance: textfield;
 }
+
 input {
   &:-webkit-autofill {
     box-shadow: 0 0 0px 1000px transparent inset;
     transition: background-color 5000s;
   }
 }
+
 textarea {
   resize: none;
 }
+
 table {
   border-collapse: collapse;
+}
+
+img {
+  display: block;
+  user-select: none;
 }

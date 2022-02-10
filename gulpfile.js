@@ -2,13 +2,14 @@ var gulp = require("gulp"),
     browsersync = require("browser-sync").create(),
     autoprefixer = require("gulp-autoprefixer"),
     pug = require('gulp-pug'),
-    sass = require("gulp-sass"),
     sourcemaps = require("gulp-sourcemaps"),
     typograf = require('gulp-typograf'),
     favicons = require("gulp-favicons"),
     newer = require("gulp-newer"),
     watch = require("gulp-watch"),
     clean = require("gulp-clean");
+
+const sass = require('gulp-sass')(require('sass'));
 
 let $images = ["./src/img/**/*.{jpg,jpeg,png,gif}", "!./src/img/favicons/*.{jpg,jpeg,png,gif}"],
     $images_watch = $images,
@@ -50,7 +51,7 @@ gulp.task("scripts", function() {
 gulp.task("styles", function() {
   return gulp.src($styles)
     .pipe(sourcemaps.init())
-    .pipe(sass())
+    .pipe(sass.sync().on('error', sass.logError))
     .pipe(autoprefixer())
     .pipe(sourcemaps.write("./maps/"))
     .pipe(gulp.dest("./build/styles/"))

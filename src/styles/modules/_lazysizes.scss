@@ -1,0 +1,11 @@
+img {
+  &.lazyload, &.lazyloading {
+    opacity: 0;
+    visibility: hidden;
+  }
+  &.lazyloaded {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity $trs2, visibility $trs2, transform $trs1;
+  }
+}

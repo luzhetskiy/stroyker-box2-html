@@ -1,0 +1,90 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+  xxl: 1600px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1212px
+);
+
+$spacers: (
+  grid: var(--grid-gutter-width),
+  0: 0,
+  10: 10px,
+  15: 15px,
+  20: 20px,
+  25: 25px,
+  30: 30px,
+  35: 35px,
+  40: 40px,
+  45: 45px,
+  50: 50px
+);
+
+$grid-gutter-width: var(--grid-gutter-width);
+$container-padding-x: var(--container-padding-x);
+$card-group-margin: $grid-gutter-width;
+
+$rfs-unit: px;
+
+$trs1: .15s ease-out;
+$trs2: .25s ease-out;
+$trs3: 1s ease-out;
+
+$shadow: 0px 2px 25px rgba(118, 118, 118, 0.15);
+
+$font2: 'Russo One';
+
+//bootstrap components
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins/breakpoints";
+@import "../../node_modules/bootstrap/scss/mixins/container";
+@import "../../node_modules/bootstrap/scss/mixins/grid";
+@import "../../node_modules/bootstrap/scss/mixins/utilities";
+@import "../../node_modules/bootstrap/scss/vendor/rfs";
+@import "../../node_modules/bootstrap/scss/utilities";
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "column-gap": (
+      property: column-gap,
+      class: column-gap,
+      responsive: true,
+      values: $spacers
+    ),
+    "row-gap": (
+      property: row-gap,
+      class: row-gap,
+      responsive: true,
+      values: $spacers
+    ),
+    "grid-columns": (
+      property: grid-template-columns,
+      class: grid-columns,
+      responsive: true,
+      values: (
+        1: repeat(1, 1fr),
+        2: repeat(2, 1fr),
+        3: repeat(3, 1fr),
+        4: repeat(4, 1fr),
+        5: repeat(5, 1fr),
+        6: repeat(6, 1fr)
+      )
+    ),
+    "width": map-merge(
+      map-get($utilities, "width"),
+      ( responsive: true )
+    )
+  )
+);
+
+$utilities: map-get-multiple($utilities, ("display", "order", "flex", "flex-shrink", "flex-direction", "flex-wrap", "justify-content", "align-items", "margin-top", "margin-bottom", "margin-start", "margin-end", "padding-top", "padding-bottom", "padding-start", "padding-end", "font-weight", "text-align", "gap", "width", "column-gap", "row-gap", "grid-columns"));
