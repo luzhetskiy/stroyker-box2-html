@@ -7055,6 +7055,13 @@ a:not([class]):visited {
   }
 }
 @media (max-width: 575.98px) {
+  .section__background img {
+    -o-object-position: center right;
+       object-position: center right;
+  }
+  .section_custom-background {
+    background-position: center right;
+  }
   .section__more-button {
     width: 100%;
   }

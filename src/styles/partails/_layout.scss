@@ -178,6 +178,14 @@
     }
   }
   @include media-breakpoint-down(sm) {
+    &__background {
+      img {
+        object-position: center right;
+      }
+    }
+    &_custom-background {
+      background-position: center right;
+    }
     &__more-button {
       width: 100%;
     }
