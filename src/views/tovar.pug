@@ -1,4 +1,5 @@
-extends layout/layout
+extends layouts/default
+
 block title
   title Товар
 block breadcrumbs 
@@ -7,8 +8,8 @@ block breadcrumbs
 block variables
   -var content = 'main_muted'
 block scripts
-  script(src="js/libs/Chart.js")
-  script(src="js/libs/utils.js")
+  script(src="scripts/libs/Chart.js")
+  script(src="scripts/libs/utils.js")
   script.
     var MONTHS = ['Январь','Февраль',	'Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
     var config = {

@@ -229,7 +229,7 @@
 .kabinet-block__nav-link .icon {
   width: 22px;
   height: 22px;
-  fill: var(--color-accent, #2363d17e);
+  fill: var(--color-accent, rgba(35, 99, 209, 0.4941176471));
   transition: fill 0.15s ease-out;
   margin-right: 10px;
 }

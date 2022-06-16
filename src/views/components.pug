@@ -1,4 +1,5 @@
-extends layout/layout
+extends layouts/default
+
 block title
   title Компоненты
 
@@ -7,7 +8,8 @@ block breadcrumbs
   include blocks/breadcrumbs
 
 block scripts
-  script(src='js/libs/jquery.fancybox.min.js')
+  script(src='scripts/libs/jquery.fancybox.min.js')
+  
 block style
   link(rel="stylesheet" href="./styles/jquery.fancybox.css")
 

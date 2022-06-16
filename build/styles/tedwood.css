@@ -10,8 +10,7 @@
   transition: transform 0.15s ease-out;
 }
 .tedwood-tools__item .image img {
-  -o-object-position: center right;
-     object-position: center right;
+  object-position: center right;
 }
 .tedwood-tools__item ul li:not(:last-child) {
   margin-bottom: 0.5rem;
@@ -215,19 +214,15 @@
   top: 22%;
 }
 .tedwood-head__background_style-1 img {
-  -o-object-fit: contain;
-     object-fit: contain;
-  -o-object-position: right bottom;
-     object-position: right bottom;
+  object-fit: contain;
+  object-position: right bottom;
 }
 .tedwood-head__background_style-2 {
   left: 55%;
 }
 .tedwood-head__background_style-2 img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center center;
-     object-position: center center;
+  object-fit: cover;
+  object-position: center center;
 }
 .tedwood-head__sub-title {
   font-size: 30px;
@@ -424,8 +419,7 @@
 .tedwood-benefits {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  -moz-column-gap: 60px;
-       column-gap: 60px;
+  column-gap: 60px;
   row-gap: 30px;
   margin-bottom: 30px;
 }
@@ -442,8 +436,7 @@
 }
 @media (max-width: 1279.98px) {
   .tedwood-benefits {
-    -moz-column-gap: 30px;
-         column-gap: 30px;
+    column-gap: 30px;
   }
 }
 @media (max-width: 1023.98px) {

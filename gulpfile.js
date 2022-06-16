@@ -1,128 +1,179 @@
-var gulp = require("gulp"),
-    browsersync = require("browser-sync").create(),
-    autoprefixer = require("gulp-autoprefixer"),
-    pug = require('gulp-pug'),
-    sourcemaps = require("gulp-sourcemaps"),
-    typograf = require('gulp-typograf'),
-    favicons = require("gulp-favicons"),
-    newer = require("gulp-newer"),
-    watch = require("gulp-watch"),
-    clean = require("gulp-clean");
+const env = process.env.NODE_ENV
 
+const { task, watch, series, parallel, src, dest } = require('gulp');
+
+const browserSync = require('browser-sync');
+const del = require('del');
+const pug = require('gulp-pug');
+const typograf = require('gulp-typograf');
 const sass = require('gulp-sass')(require('sass'));
+const autoprefixer = require('gulp-autoprefixer');
+const sourcemaps = require('gulp-sourcemaps');
+const favicons = require('gulp-favicons');
+const babel = require("gulp-babel");
+const webpack = require('webpack');
+const webpackStream = require('webpack-stream');
+const gulpif = require('gulp-if');
 
-let $images = ["./src/img/**/*.{jpg,jpeg,png,gif}", "!./src/img/favicons/*.{jpg,jpeg,png,gif}"],
-    $images_watch = $images,
+const server = browserSync.create();
 
-    $pug = ["./src/views/**/*.pug", "!./src/views/blocks/*.pug", "!./src/views/layout/*.pug"],
-    $pug_watch = "./src/views/**/*.pug",
+const paths = {
+  views: {
+    src:   ['./src/views/**/*.pug', '!./src/views/blocks/*.pug', '!./src/views/layouts/*.pug'],
+    watch: ['./src/views/**/*'],
+    build:  './build/'
+  },
+  styles: {
+    src:   ['./src/styles/**/*.scss'],
+    watch: ['./src/styles/**/*'],
+    build:  './build/styles/'
+  },
+  scripts: {
+    src:   ['./src/scripts/main.js'],
+    watch: ['./src/scripts/**/*'],
+    build:  './build/scripts/'
+  },
+  favicons: {
+    src:   ['./src/favicons/*.{jpg,jpeg,png,gif}'],
+    build:  './build/favicons/'
+  },
+  other: {
+    src: [
+      './src/**/*',
+      '!./src/views/**',
+      '!./src/styles/**', 
+      '!./src/scripts/main.js', 
+      '!./src/favicons/**',
+    ],
+    build: './build/'
+  }
+}
 
-    $scripts = ["./src/js/*.js"],
-    $scripts_watch = ["./src/js/**/*"],
-
-    $styles = ["./src/styles/**/*.scss", "!./src/styles/components/**/*.scss"],
-    $styles_watch = "./src/styles/**/*.scss",
-
-    $favicons = "./src/img/favicons/*.{jpg,jpeg,png,gif}"
-
-    $other = ["./src/**/*", 
-              "!./src/img/**/*.{jpg,jpeg,png,gif}", 
-              "!./src/img/favicons/*.{jpg,jpeg,png,gif}", 
-              "!./src/js/*.js",
-              "!./src/styles/**/*", 
-              "!./src/views", 
-              "!./src/views/**/*", 
-              ];
-
-gulp.task("pug", function() {
-  return gulp.src($pug)
-    .pipe(pug({pretty:true}))
-    .pipe(typograf({locale:['ru']}))
-    .pipe(gulp.dest("./build/"))
-    .on("end", browsersync.reload);
+task('views', function() {
+  return src(paths.views.src)
+    .pipe(pug({ pretty: true }))
+    .pipe(typograf({ 
+      locale: ['ru', 'en']
+    }))
+    .pipe(dest(() => paths.views.build))
 });
 
-gulp.task("scripts", function() {
-  return gulp.src($scripts)
-    .pipe(gulp.dest("./build/js/"))
-    .on("end", browsersync.reload);
+task('styles', function() {
+  return src(paths.styles.src)
+    .pipe(gulpif(env === 'development', 
+      sourcemaps.init() 
+    ))
+    .pipe(sass.sync(env === 'production' ? { outputStyle: 'compressed' } : {}).on('error', sass.logError))
+    .pipe(gulpif(env === 'production', 
+      autoprefixer()
+    ))
+    .pipe(gulpif(env === 'development', 
+      sourcemaps.write('./maps')
+    ))
+    .pipe(dest(paths.styles.build))
 });
 
-gulp.task("styles", function() {
-  return gulp.src($styles)
-    .pipe(sourcemaps.init())
-    .pipe(sass.sync().on('error', sass.logError))
-    .pipe(autoprefixer())
-    .pipe(sourcemaps.write("./maps/"))
-    .pipe(gulp.dest("./build/styles/"))
-    .on("end", browsersync.reload);
-});
-
-gulp.task("images", function () {
-  return gulp.src($images)
-    .pipe(newer("./build/img/"))
-    .pipe(gulp.dest("./build/img/"))
-    .on("end", browsersync.reload);
-});
-
-gulp.task("favicons", function () {
-  return gulp.src($favicons)
-    .pipe(favicons({
-      icons: {
-        appleIcon: true,
-        favicons: true,
-        online: false,
-        appleStartup: false,
-        android: false,
-        firefox: false,
-        yandex: false,
-        windows: false,
-        coast: false
+task('scripts', function() {
+  return src(paths.scripts.src)
+    .pipe(webpackStream({
+      mode: process.env.NODE_ENV,
+      devtool: 'eval-source-map',
+      output: {
+        filename: 'main.js',
+      },
+      performance: {
+        hints: false,
+        maxEntrypointSize: 1000,
+        maxAssetSize: 1000
+      },
+      module: {
+        rules: [
+          {
+            test: /\.(js|jsx)$/,
+            exclude: /node_modules/,
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env', {
+                'plugins': [
+                  '@babel/plugin-proposal-class-properties',
+                  '@babel/plugin-transform-runtime'
+                ]
+              }]
+            }
+          },
+          {
+            test: /\.(frag|vert|glsl)$/,
+            use: [
+              { 
+                loader: 'glsl-shader-loader',
+                options: {}  
+              }
+            ]
+          },
+          {
+            test: /\.css$/i,
+            use: ["style-loader", "css-loader"],
+          }
+        ]
       }
     }))
-    .pipe(gulp.dest("./build/img/favicons/"))
+    .pipe(dest(paths.scripts.build))
 });
 
-gulp.task("other", function () {
-  return gulp.src($other)
-    .pipe(gulp.dest("./build/"))
-    .on("end", browsersync.reload);
+task('favicons', function () {
+  return src(paths.favicons.src)
+    .pipe(
+      favicons({
+        path: 'img/favicons/',
+        html: 'index.html',
+        pipeHTML: true,
+        icons: {
+          favicons: true,
+          android: false, 
+          appleIcon: false,
+          appleStartup: false,
+          windows: false,
+          yandex: false,
+        }
+      })
+    )
+    .pipe(dest(paths.favicons.build))
 });
 
-gulp.task("clean", function () {
-  return gulp.src("./build/*", {
-      read: false
-    })
-    .pipe(clean())
+task('other', function () {
+  return src(paths.other.src)
+    .pipe(dest(paths.other.build))
 });
 
-gulp.task("serve", function () {
-  return new Promise((res, rej) => {
-    browsersync.init({
-      server: "./build/",
-      tunnel: false,
-      port: 9000
-    });
-    res();
+function clean(done) {
+  del.sync(['build']);
+  done();
+}
+
+function serve(done) {
+  server.init({
+    server: {
+      baseDir: './build/'
+    }
   });
-});
 
-gulp.task("watch", function () {
-  return new Promise((res) => {
-    watch($pug_watch, gulp.series("pug"));
-    watch($styles_watch, gulp.series("styles"));
-    watch($scripts_watch, gulp.series("scripts"));
-    watch($images_watch, gulp.series("images"));
-    watch($favicons, gulp.series("favicons"));
-    watch($other, gulp.series("other"));
-    res();
-  });
-});
+  watch(paths.views.watch, series('views', reload));
+  watch(paths.styles.watch, series('styles', reload));
+  watch(paths.scripts.watch, series('scripts', reload));
+  watch(paths.other.src, series('other', reload));
+  
+  done();
+}
 
-gulp.task("default", 
-  gulp.series(
-    "clean",
-    gulp.parallel("pug", "styles", "scripts", "images", "favicons", "other"),
-    gulp.parallel("watch", "serve")
+function reload(done) {
+  server.reload();
+  done();
+}
+
+task('default', 
+  series(
+    clean,
+    parallel('views', 'styles', 'scripts', 'favicons', 'other'),
+    serve
   )
 );
