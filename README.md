@@ -1,7 +1,7 @@
 # stroyker-box2-html
 https://luzhetskiy.github.io/stroyker-box2-html/build/index.html
 
-## Install the dependencies
+### Install the dependencies
 ```
 npm install
 ```
