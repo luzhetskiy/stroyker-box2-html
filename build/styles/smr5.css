@@ -943,6 +943,10 @@
 }
 
 @media only screen and (max-width: 767px) {
+    .sc-job-area {
+        padding-top: 43px;
+        padding-bottom: 56px;
+    }
     .sc-job-area .map-img{
         top: 0;
         width: 395px;
@@ -952,6 +956,32 @@
         top: 42px;
         left: -62px;
         width: 630px;
+    }
+
+    .sc-job-area h2 {
+        font-size: 17px;
+        line-height: 29px;
+    }
+
+    .sc-job-area .text-box{
+        padding-left: 0;
+    }
+    .sc-job-area .text-box h4 {
+        font-size: 14px;
+    }
+    .sc-job-area .text-box p {
+        margin-bottom: 15px;
+    }
+    .sc-job-area .object-info {
+        padding-top: 37px;
+    }
+    .sc-job-area .object-info p span {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .sc-job-area .object-info p {
+        font-size: 12px;
+        line-height: 15px;
     }
 }
 
