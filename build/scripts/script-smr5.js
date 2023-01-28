@@ -38,12 +38,29 @@ $(document).ready(function(){
     variableWidth: false
   });
 
-  // loc 
+  // Переключеиня контента для карты  
   $(".sc-job-area .loc").click(function(){
-    $(this).toggleClass('active').siblings().removeClass('active')
+    var thisElem = $(this);
+    thisElem.toggleClass('active').siblings().removeClass('active')
+    var elemTarget = $(thisElem.data("target")); 
+    elemTarget.siblings().css('display', 'none')
+    elemTarget.fadeIn(500)
   })
 
+  // ниже 767пкс. прике клике на локацию карты идет скролл к контенту 
+   $(function() {
+    if (window.matchMedia('(max-width: 767px)').matches) {
+      $(".sc-job-area .loc").click(function(){
+        $("html, body").animate({
+          scrollTop: $(".sc-job-area").offset().top -50
+        }, 500);
+      })
+    } else {
+        return false
+    }
+   });
 
+ 
 })
 
 
