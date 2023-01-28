@@ -291,9 +291,20 @@
 
 .sc-job-area .text-box {
     padding-left: 15px;
-    display: inline-block;
+    display: none;
     width: 100%;
     position: relative;
+    transition: 0.2s;
+    
+}
+
+.sc-job-area .text-box.active{
+    display: inline-block;
+}
+
+.sc-job-area .text-box.active{
+    display: inline-block;
+    opacity: 1;
 }
 
 .sc-job-area .text-box h4{
