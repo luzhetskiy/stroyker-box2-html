@@ -272,11 +272,227 @@
 }
 
 
+/* 14 лет на рынке  */
+.sc-in-market {
+    padding-top: 90px;
+    padding-bottom: 60px;
+}
+
+.sc-in-market p{
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.1em;
+    font-family: 'Raleway-Medium';
+    color: #838383;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.sc-in-market p span{
+    font-family: 'Unbounded-Medium';
+    font-size: 64px;
+    line-height: 79px;
+    letter-spacing: 0.2em;
+    color: #838383;
+    display: inline-block;
+}
+
+.sc-in-market h2{
+    font-family: 'Raleway-Medium';
+    font-size: 36px;
+    line-height: 42px;
+    letter-spacing: 0.1em;
+    color: #838383;
+    position: relative;
+    z-index: 1;
+}
+
+.sc-in-market h2 span{
+    font-family: 'Unbounded-Medium';
+    font-size: 120px;
+    line-height: 149px;
+    letter-spacing: 0.2em;
+    color: #838383;
+}
+
+.sc-in-market .text-box{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    min-height: 213px;
+    padding: 10px 20px 20px 60px;
+    border-top: 1px solid #D9D9D9;
+    border-right: 1px solid #D9D9D9;
+}
+
+.sc-in-market .market-block{
+    position: relative;
+}
+
+.sc-in-market .market-block:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    border: solid 2px #fff;
+}
+
+
+/* О КОМПАНИИ  */
+.sc-about-company{
+    padding-top: 60px;
+    padding-bottom: 65px;
+}
+
+.sc-about-company h2{
+    font-family: 'Unbounded-Medium';
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #DE7F2E;
+    position: relative;
+    margin-bottom: 40px;
+    z-index: 2;
+}
+
+.sc-about-company .text-box {
+    padding-left: 15px;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    transition: 0.2s;
+    max-width: 410px;
+    
+}
+
+.sc-about-company .text-box h4{
+    font-family: 'Unbounded-Regular';
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.05em;
+    text-decoration-line: underline;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.sc-about-company .text-box p{
+    font-family: 'Raleway-Regular';
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.05em;
+    color: #333333;
+    margin-bottom: 30px;
+}
+
+.sc-about-company .specialty-box{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    padding-top: 22px;
+}
+
+.sc-about-company .single-spec{
+    width: 33.3333%;
+}
+
+.sc-about-company .single-spec span{
+    display: inline-block;
+    width: 100%;
+    font-family: 'Raleway-Regular';
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+    color: #333333;
+
+}
+
+.sc-about-company .icon-box{
+    max-width: 63px;
+    height: 50px;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 15px;
+}
+
+.sc-about-company .icon-box img{
+    max-width: 100%;
+    max-height: 50px;
+}
+
+.sc-about-company .info-text{
+    padding-bottom: 50px;
+}
+
+.sc-about-company .company-photos{
+    position: relative;
+    min-height: 377px;
+    max-width: 596px;
+    margin-left: auto;
+}
+
+.sc-about-company .company-photos:before{
+    content: "";
+    position: absolute;
+    width: 65%;
+    height: 83%;
+    left: 0;
+    right: 0;
+    top: 20px;
+    margin: auto;
+    border: 1px solid #D9D9D9;
+}
+
+.sc-about-company .company-photos::after{
+    content: "";
+    position: absolute;
+    width: calc(65% - 30px);
+    height: calc(83% - 30px);
+    left: 0;
+    right: 0;
+    top: 35px;
+    margin: auto;
+    border: 1px solid #D9D9D9;
+    z-index: -1;
+}
+
+.sc-about-company .img-box{
+    display: block;
+}
+
+.sc-about-company .img-box img{
+    max-width: 100%;
+}
+
+.sc-about-company .i-width-1{
+    max-width: 360px;
+    left: 0;
+    top: 0;
+    position: absolute;
+}
+
+.sc-about-company .i-width-2{
+    max-width: 387px;
+    right: 0;
+    padding-top: 79px;
+    position: relative;
+    margin-left: auto;
+}
+
+
 /* Работаем в Самарской области */
 .sc-job-area{
     padding-top: 65px;
     padding-bottom: 70px;
 }
+
 .sc-job-area h2{
     font-family: 'Unbounded-Medium';
     font-size: 24px;
@@ -655,9 +871,342 @@
     line-height: 18px;
 }
 
+/* ПРОЕКТИРОВАНИЕ  */
+.sc-design{
+    padding-top: 243px;
+    padding-bottom: 241px;
+    position: relative;
+    background-image: url(../img/design-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.sc-design:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #333333;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+.sc-design .head-info{
+    background: rgba(0, 0, 0, 0.1);
+    border: 2px solid #FCFCFC;
+    backdrop-filter: blur(10px);
+    padding: 49px 50px 43px 50px;
+    max-width: 615px;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+
+}
+
+.sc-design .head-info span{
+    margin-top: 20px;
+    font-family: 'Raleway-Medium';
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0.1em;
+    color: #FFFFFF;
+    display: block;
+}
+
+.sc-design .head-info svg{
+    max-width: 100%;
+}
+
+.sc-design .info-box{
+    padding-top: 60px;
+    display: inline-block;
+    width: 100%;
+    max-width: 615px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.sc-design .info-box h4{
+    font-family: 'Unbounded-Regular';
+    font-size: 18px;
+    line-height: 22px;
+    text-align: right;
+    letter-spacing: 0.05em;
+    text-decoration: underline;
+    color: #FFFFFF;
+    max-width: 372px;
+    margin-left: auto;
+    margin-bottom: 40px;
+}
+
+.sc-design .info-box p{
+    font-family: 'Raleway-Regular';
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+    text-align: left;
+    max-width: 430px;
+    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.sc-design .bottom-info{
+    height: 155px;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.sc-design .bottom-info a{
+    font-family: 'Unbounded-Medium';
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    color: #FCFCFC;
+    border: none;
+    display: flex;
+    align-items: center;
+
+}  
+
+.sc-design .bottom-info a span{
+    text-decoration: underline;
+    text-underline-position: under;
+    margin-left: 20px;
+    margin-right: 20px;
+    transition: 0.2s;
+}
+
+.sc-design .bottom-info a:hover span{
+    text-decoration: none;
+    outline: none;
+    margin-left: 15px;
+    margin-right: 15px;
+}
 
 
 
+/* поколение инженеров */
+.sc-engineers{
+    padding-top: 40px;
+    padding-bottom: 90px;
+}
+
+.sc-engineers .eng-block{
+    position: relative;
+    padding-top: 40px;
+}
+
+.sc-engineers .eng-block:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 41.66666667%;
+    width: 1px;
+    height: 95%;
+    background-color: #D9D9D9;
+}
+
+.sc-engineers .eng-block:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: 1px;
+    background-color: #D9D9D9;
+}
+
+.sc-engineers .engineer-list-box{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-right: 23px;
+}
+
+.sc-engineers .list-photo{
+    max-width: 137px;
+    width: 100%;
+    padding-right: 5px;
+}
+
+.sc-engineers .single-engineer{
+   margin-bottom: 15px;
+}
+
+.sc-engineers .single-engineer span{
+    display: inline-block;
+    width: 100%;
+    font-family: 'Raleway-Regular';
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.05em;
+    color: #333333;
+}
+
+.sc-engineers .eng-photo {
+    max-width: 110px;
+    margin-bottom: 12px;
+}
+
+.sc-engineers .eng-photo img{
+    max-width: 100%;
+}
+
+.sc-engineers .list-info{
+    padding-left: 27px;
+    padding-top: 20px;
+    margin-left: 10px;
+    
+}
+
+.sc-engineers .list-info h4{
+    font-family: 'Unbounded-Regular';
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.05em;
+    text-decoration: underline;
+    color: #333333;
+    margin-left: -20px;
+    margin-bottom: 30px;
+}
+
+.sc-engineers .list-info p{
+    font-family: 'Raleway-Regular';
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.02em;
+    color: #333333;
+    margin-bottom: 25px;
+
+}
+
+.sc-engineers .list-info p span{
+    font-family: 'Unbounded-Regular';
+}
+
+.sc-engineers .form-box{
+    display: inline-block;
+    max-width: 398px;
+    padding-top: 17px;
+    width: 100%;
+    margin-left: 60px;
+}
+
+.sc-engineers .form-box p{
+    font-family: 'Unbounded-Medium';
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: 0.05em;
+    color: #2E3D7A;
+    margin-bottom: 30px;
+
+}
+
+.sc-engineers .form-box span{
+    font-family: 'Raleway-Regular';
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.05em;
+    color: #333333;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.sc-engineers .form-box input{
+    width: 100%;
+    border: 1px solid #E9E9E9;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-family: 'Raleway-Regular';
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.05em;
+    color: #555555;
+    height: 40px;
+    margin-bottom: 20px;
+
+}
+
+.sc-engineers .submit{
+    background: #DE7F2E;
+    padding: 13px 47px;
+    font-family: 'Raleway-Medium';
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.05em;
+    color: #FCFCFC;
+    transition: 0.2s;
+}
+
+.sc-engineers .submit:hover{
+    opacity: 0.7;
+}
+
+/* ВОПРОС - ОТВЕТ  */
+.sc-questioning{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.sc-questioning .quest-box{
+    display: inline-block;
+    width: 100%;
+    border: 1px solid #A9A9A9;
+    padding: 35px 60px;
+}
+
+.sc-questioning .text-box{
+    padding-left: 20px;
+    max-width: 40%;
+}
+
+.sc-questioning .quest-box h2{
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: 0.05em;
+    color: #DE7F2E;
+    font-family: 'Unbounded-Medium';
+    margin-bottom: 20px;
+}
+
+.sc-questioning .quest-box p{
+    font-family: 'Raleway-Regular';
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.05em;
+    color: #333333;
+    margin-bottom: 20px;
+
+}
+
+.sc-questioning .quest-box a {
+    font-family: 'Unbounded-Medium';
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.05em;
+    text-decoration: underline;
+    color: #333333;
+    border: none;
+    text-underline-position: under;
+}
+
+.sc-questioning .quest-box a:hover{
+    text-decoration: none;
+}
 
 /* SMR5 BANNER STYLES */
 @media only screen and (max-width: 1720px) {
@@ -934,7 +1483,254 @@
     }
 }
 
-/* --- END SMR5 BANNER STYLES --- */
+
+/* 14 лет на рынке  */
+@media (min-width: 1px){
+    .p-md-0 {
+        padding: 0!important;
+    }
+
+    .p-md-0 {
+        padding: 0!important;
+    }
+}
+
+@media only screen and (max-width: 1280px){
+
+    .sc-in-market h2{
+        font-size: 29px;
+        line-height: 36px;
+    }
+
+    .sc-in-market h2 span {
+        font-size: 94px;
+        line-height: 139px;
+    }
+
+    .sc-in-market p {
+        font-size: 14px;
+        line-height: 17px;
+    }
+
+    .sc-in-market p span {
+        font-size: 52px;
+        line-height: 60px;
+    }
+
+    .sc-in-market .text-box{
+        padding: 10px 20px 20px 30px;
+        min-height: 178px;
+
+    }
+
+   
+    
+}
+
+@media only screen and (max-width: 1024px) {
+
+    .sc-in-market {
+        padding-top: 60px;
+        padding-bottom: 35px;
+    }
+
+    .sc-in-market h2 {
+        font-size: 19px;
+        line-height: 26px;
+    }
+
+    .sc-in-market h2 span {
+        font-size: 61px;
+        line-height: 67px;
+    }
+
+    .sc-in-market p {
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .sc-in-market p span {
+        font-size: 37px;
+        line-height: 58px;
+    }
+
+    .sc-in-market .text-box{
+        min-height: 135px;
+    }
+
+
+}
+
+@media only screen and (max-width: 768px) {
+
+    .sc-in-market .text-box{
+        padding: 10px 20px 20px 20px;
+    }
+
+    .sc-in-market p span{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+
+    .sc-in-market {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .sc-in-market h2 {
+        font-size: 10px;
+        line-height: 15px;
+    }
+
+    .sc-in-market h2 span {
+        font-size: 29px;
+        line-height: 38px;
+    }
+
+    .sc-in-market p {
+        font-size: 10px;
+        line-height: 13px;
+    }
+
+    .sc-in-market p span {
+        font-size: 20px;
+        line-height: 30px;
+        width: 100%;
+    }
+
+    .sc-in-market .text-box{
+        padding: 15px 5px 15px 5px;
+        min-height: 110px;
+    }
+}
+
+/* О КОМПАНИИ  */
+@media only screen and (max-width: 1280px) {
+
+    .sc-about-company .company-photos {
+        position: relative;
+        min-height: auto;
+        max-width: 494px;
+    }
+
+    .sc-about-company .i-width-1 {
+        max-width: 300px;
+    }
+    .sc-about-company .i-width-2 {
+        max-width: 324px;
+    }
+    .sc-about-company .single-spec span {
+        font-size: 12px;
+        line-height: 17px;
+    }
+    .sc-about-company .info-text {
+        padding-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .sc-about-company .i-width-1 {
+        max-width: 180px;
+    }
+    .sc-about-company .i-width-2 {
+        max-width: 225px;
+    }
+    .sc-about-company .company-photos::after {
+        width: calc(65% - 20px);
+        height: calc(83% - 20px);
+        top: 30px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .sc-about-company{
+        padding-top: 35px;
+        padding-bottom: 30px;
+    }
+
+    .sc-about-company h2 {
+        font-size: 17px;
+        line-height: 29px;
+    }
+
+    .sc-about-company .text-box{
+        padding-left: 0;
+        max-width: 100%;
+    }
+    .sc-about-company .text-box h4 {
+        font-size: 14px;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+    .sc-about-company .text-box p {
+        margin-bottom: 15px;
+    }
+
+    .sc-about-company .company-photos{
+        margin-top: 20px;
+        margin-right: auto;
+    }
+
+    .sc-about-company .i-width-1 {
+        max-width: 55%;
+    }
+
+    .sc-about-company .i-width-2 {
+        max-width: 60%;
+        padding-top: 49px;
+    }
+
+    
+
+}
+
+@media only screen and (max-width: 576px) {
+
+    .sc-about-company{
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .sc-about-company .specialty-box{
+        padding-top: 0;
+    }
+
+    .sc-about-company .icon-box{
+       margin: 5px auto;
+    }
+
+    .sc-about-company .icon-box img{
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .sc-about-company .company-photos{
+        padding-right: 15px;
+    }
+
+    .sc-about-company .i-width-1{
+        margin-left: 15px;
+    }
+
+    .sc-about-company .i-width-2 img{
+        margin-left: auto;
+    }
+
+
+    .sc-about-company .single-spec{
+        text-align: center;
+    }
+
+    .sc-about-company .single-spec span {
+        font-size: 10px;
+        line-height: 14px;
+    }
+
+}
+
 
 /* Работаем в Самарской области */
 @media only screen and (max-width: 1023px) {
@@ -1142,4 +1938,169 @@
   
 
 
+}
+
+
+/* ПРОЕКТИРОВАНИЕ  */
+@media only screen and (max-width: 1024px) {
+
+    .sc-design{
+        padding-top: 118px;
+        padding-bottom: 190px;
+    }
+
+    .sc-design .bottom-info {
+        height: 104px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+
+
+    .sc-design .bottom-info a{
+        font-size: 10px;
+    }
+    
+    .sc-design .bottom-info a span{
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+   
+}
+
+@media only screen and (max-width: 576px) {
+
+    .sc-design {
+        padding-top: 55px;
+        padding-bottom: 139px;
+    }
+
+    .sc-design .head-info {
+        padding: 24px 25px 29px 25px;
+    }
+
+    .sc-design .head-info span {
+        margin-top: 8px;
+        font-size: 17px;
+        line-height: 24px;
+    }
+
+    .sc-design .info-box {
+        padding-top: 40px;
+    }
+
+    .sc-design .info-box h4 {
+        font-size: 13px;
+        line-height: 21px;
+        margin-bottom: 32px;
+    }
+
+    .sc-design .info-box p {
+        font-size: 12px;
+        line-height: 19px;
+    }
+
+}
+
+
+/* поколение инженеров */
+@media only screen and (max-width: 1280px) {
+    .sc-engineers .eng-block:after {
+        left: 49.666667%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .sc-engineers .eng-block:before,
+    .sc-engineers .eng-block::after {
+        display: none;
+    }
+
+    .sc-engineers .form-box{
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    .sc-engineers .submit{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+
+    .sc-engineers{
+        padding-bottom: 30px;
+    }
+
+    .sc-engineers .eng-block{
+        padding-top: 15px;
+    }
+
+    .sc-engineers .list-photo{
+        width: 30%;
+        flex-shrink: 0;
+    }
+
+    .sc-engineers .list-info{
+        padding-left: 0;
+        width: 70%;
+        padding-top: 10px;
+    }
+
+    .sc-engineers .list-info h4 {
+        font-size: 13px;
+        line-height: 18px;
+        margin-bottom: 17px;
+        margin-left: 0;
+    }
+
+    .sc-engineers .list-info p {
+        font-size: 12px;
+        line-height: 18px;
+        margin-bottom: 18px;
+    }
+
+    .sc-engineers .single-engineer span{
+        font-size: 10px;
+    }
+
+    .sc-engineers .form-box p {
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 10px;
+    }
+}
+
+/* ВОПРОС - ОТВЕТ  */
+
+@media only screen and (max-width: 768px){
+    .sc-questioning .text-box {
+        max-width: 100%;
+    }
+}
+
+@media only screen and (max-width: 576px){
+    .sc-questioning .quest-box h2 {
+        font-size: 17px;
+        line-height: 29px;
+        margin-bottom: 10px;
+    }
+
+    .sc-questioning .quest-box {
+        padding: 16px 20px;
+    }
+
+    .sc-questioning .text-box {
+        padding-left: 10px;
+    }
+
+    .sc-questioning .quest-box p {
+        font-size: 12px;
+        line-height: 18px;
+        margin-bottom: 10px;
+    }
 }
